@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useRef } from "react"
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
-import { sidebarWidth, topBarHeight } from "../Layout"
+import { sidebarWidth, topBarHeight } from "./Layout"
 import { Container, Center, Image, Box, Text } from "@chakra-ui/react"
 
 const SectionWrapper = forwardRef((props, ref) => {
@@ -15,7 +15,7 @@ const SectionWrapper = forwardRef((props, ref) => {
     isFirstSection,
     noPadding,
     overlay,
-    overlayColour = "radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%)",
+    overlayColour = "black",
     overlayOpacity,
     useGatsbyImage,
     ...parentProps

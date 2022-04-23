@@ -13,19 +13,7 @@ export const sidebarWidth = 90
 export const topBarHeight = 115
 
 export function Layout(props) {
-  const {
-    path,
-    startDark,
-    darkButton,
-    children,
-    usingFullPage,
-    overflowX,
-    currentSection,
-    setCurrentSection,
-    smoothScroll = false,
-    mainColor = null,
-    preFooterColor = "white",
-  } = props
+  const { path, children, smoothScroll = false } = props
 
   // App-level state
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -47,9 +35,7 @@ export function Layout(props) {
         <CurrentCategoryContext.Provider
           value={{ currentCategory, setCurrentCategory }}
         >
-          {!usingFullPage && (
-            <Nav path={path} startDark={startDark} darkButton={darkButton} />
-          )}
+          <Nav path={path} startDark={startDark} darkButton={darkButton} />
           <SmoothWrapper smoothScroll={smoothScroll}>
             <Box
               as="main"
@@ -60,7 +46,7 @@ export function Layout(props) {
               zIndex={0}
             >
               {children}
-              {!usingFullPage && <Footer preFooterColor={preFooterColor} />}
+              <Footer preFooterColor={preFooterColor} />
             </Box>
           </SmoothWrapper>
         </CurrentCategoryContext.Provider>
