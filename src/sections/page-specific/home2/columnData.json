@@ -1,0 +1,35 @@
+[
+  {
+    "subtitle": "Choose the best space",
+    "title": "Advisory",
+    "excerpt": "Our team of commercial leasing experts are comitted to finding the best space for your business needs.",
+    "image": "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,w_1200/v1650238653/two-skyscrapers-from-below-2021-08-31-23-11-08-utc.jpg",
+    "link": "/advisory",
+    "linkText": "Find the right space"
+  },
+  {
+    "subtitle": "A plan for productivity",
+    "title": "Strategy",
+    "excerpt": "Our entire process is informed by an initial assessment phase, with every project organised around making your work environment a catalyst for positive transformation. ",
+    "image": "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto:good,w_1200/v1650152866/greenery.jpg",
+    "link": "/strategy",
+    "linkText": "Workplace Strategy"
+  },
+  {
+    "subtitle": "Award-winning creations",
+    "title": "Design",
+    "excerpt": "World-class interior design is the true catalyst for user delight, staff productivity and effective utilisation of space.",
+    "image": "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,w_1200/v1641769271/Plants/couch.jpg",
+    "link": "/design",
+    "linkText": "Interior Design Services"
+  },
+  {
+    "subtitle": "We build our own designs",
+    "title": "Construction",
+    "excerpt": "Our master builders have over 20 years of experience bringing interior designs to life and will be in sync with the process.",
+    "image": "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,w_1200/v1649914286/drill-driver-tool-on-scaffolding-2021-08-26-23-04-18-utc.jpg",
+    "link": "/construction",
+    "position": "left",
+    "linkText": "Construction Services"
+  }
+]
