@@ -16,12 +16,12 @@ export const Seo = ({ props }) => {
 
   return (
     <SeoSiteSettingsContextProvider>
-      <SeoTitleDescription {...props} />
+      {/* <SeoTitleDescription {...props} />
       {yoastSeo && <SeoTwitter {...props} />}
       {yoastSeo && <SeoOg {...props} />}
       <SeoSchemaRaw {...props} />
       <CustomHeadElements {...props} />
-      <SeoSiteVerifications />
+      <SeoSiteVerifications /> */}
     </SeoSiteSettingsContextProvider>
   )
 }

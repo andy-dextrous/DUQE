@@ -109,20 +109,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Tactic Spaces`,
-        short_name: `Tactic`,
+        name: `DUQE Free Zone`,
+        short_name: `DUQE`,
         start_url: `/`,
         theme_color: `#9fc6bc`,
         display: `standalone`,
         icon: `./static/favicon.svg`,
-      },
-    },
-    {
-      resolve: `gatsby-source-youtube-v3`,
-      options: {
-        channelId: [defaultOptions.youTubeChannelId],
-        apiKey: process.env.YOUTUBE_API,
-        maxVideos: 50,
       },
     },
     `gatsby-plugin-offline`,
@@ -141,12 +133,6 @@ module.exports = {
         path: "./src/assets/images/",
       },
       __key: "images",
-    },
-    {
-      resolve: `gatsby-plugin-preconnect`,
-      options: {
-        domains: ["https://p.typekit.net/", "https://use.typekit.net"],
-      },
     },
   ],
 }

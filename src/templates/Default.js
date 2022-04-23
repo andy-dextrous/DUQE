@@ -1,18 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
 import { Layout } from "../components/Layout"
 import { Seo } from "../components/seo/components/index"
-import Content from "../sections/shared/Content"
-import HeroSmall from "../sections/shared/HeroSmall"
 
 function Default(props) {
-  const wpPage = props.data.wpPage
-
   return (
-    <Layout noFooterCTA isDark>
+    <Layout>
       <Seo props={props} />
-      <HeroSmall data={wpPage} />
-      <Content data={wpPage} />
+      <div>Default</div>
     </Layout>
   )
 }

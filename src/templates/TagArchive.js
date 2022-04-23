@@ -1,8 +1,6 @@
 import React from "react"
 import { Layout } from "../components/Layout"
-import { graphql } from "gatsby"
 import { Seo } from "../components/seo/components/index"
-import PostGrid from "../sections/shared/PostGrid"
 
 function TagArchive(props) {
   const {
@@ -15,13 +13,6 @@ function TagArchive(props) {
   return (
     <Layout noFooterCTA startDark>
       <Seo props={props} />
-      <PostGrid
-        posts={allWpPost.nodes}
-        currentPage={humanPageNumber}
-        numberOfPages={numberOfPages}
-        categories={categories}
-        currentSlug={pageContext.slug}
-      />
     </Layout>
   )
 }

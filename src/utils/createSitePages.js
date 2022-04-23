@@ -16,9 +16,6 @@ module.exports = async ({ actions, graphql }, options) => {
           template {
             templateName
           }
-          ACF_gravityFormId {
-            formId
-          }
           ${includeYoast ? PageSeoFromWP : ``}
         }
       }
@@ -28,7 +25,7 @@ module.exports = async ({ actions, graphql }, options) => {
   function getPageTemplate(wpTemplateName) {
     let templateComponent = path.resolve(
       `./src/templates/${
-        wpTemplateName !== "Default" ? wpTemplateName : "SimplePage"
+        wpTemplateName !== "Default" ? wpTemplateName : "Default"
       }.js`
     )
     return templateComponent
@@ -41,16 +38,7 @@ module.exports = async ({ actions, graphql }, options) => {
   // Create all site pages from templates matching WP Template names
   await Promise.all(
     pages.map(page => {
-      const {
-        template,
-        seo,
-        isFrontPage,
-        isPostsPage,
-        status,
-        id,
-        uri,
-        ACF_gravityFormId: { formId },
-      } = page
+      const { template, seo, isFrontPage, isPostsPage, status, id, uri } = page
       if (isPostsPage || status !== "publish") return
       if (options.pageCreateDebugOutput) {
         console.log(`[WILD_CHILD] create page: ${uri}`)
@@ -61,7 +49,6 @@ module.exports = async ({ actions, graphql }, options) => {
         context: {
           id: id,
           yoastSeo: includeYoast,
-          formId: formId,
           seo: {
             page: seo,
             general: options.generalSeoSettings,

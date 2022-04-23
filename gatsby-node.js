@@ -108,7 +108,7 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
 
   const postsPageTemplate = postsPage.nodes.length
     ? postsPage.nodes[0].template.templateName
-    : "SimplePage"
+    : "Default"
 
   // Pass options to createPages function
   const merged = {

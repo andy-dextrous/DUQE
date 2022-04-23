@@ -29,28 +29,21 @@ export function Layout(props) {
 
   return (
     <MenuContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
-      <CurrentSectionContext.Provider
-        value={{ setCurrentSection, currentSection }}
+      <CurrentCategoryContext.Provider
+        value={{ currentCategory, setCurrentCategory }}
       >
-        <CurrentCategoryContext.Provider
-          value={{ currentCategory, setCurrentCategory }}
-        >
-          <Nav path={path} startDark={startDark} darkButton={darkButton} />
-          <SmoothWrapper smoothScroll={smoothScroll}>
-            <Box
-              as="main"
-              id="tacticSpaces"
-              bg={mainColor}
-              className={smoothScroll ? "smooth" : ""}
-              overflowX={overflowX ? "unset" : "hidden"}
-              zIndex={0}
-            >
-              {children}
-              <Footer preFooterColor={preFooterColor} />
-            </Box>
-          </SmoothWrapper>
-        </CurrentCategoryContext.Provider>
-      </CurrentSectionContext.Provider>
+        <Nav path={path} />
+        <SmoothWrapper smoothScroll={smoothScroll}>
+          <Box
+            as="main"
+            id="tacticSpaces"
+            className={smoothScroll ? "smooth" : ""}
+          >
+            {children}
+            <Footer />
+          </Box>
+        </SmoothWrapper>
+      </CurrentCategoryContext.Provider>
     </MenuContext.Provider>
   )
 }

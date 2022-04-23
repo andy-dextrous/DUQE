@@ -61,7 +61,7 @@ const DEFAULT_OPTIONS = {
   developLimit: null,
   addColorModes: true,
   webfontsOptions: {},
-  useTypekitFonts: true,
+  useTypekitFonts: false,
   widgetAreas: {
     slideMenuWidgets: [
       /*"Categories", "RecentPosts", "Tags", "SocialFollow"*/
