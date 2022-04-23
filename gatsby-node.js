@@ -20,8 +20,9 @@ exports.onPreInit = () => {
     __dirname,
     `./src/@chakra-ui/gatsby-plugin/foundations/colours.js`
   )
-  let codeString = `const colors = ${JSON.stringify(dataObject, null, 2)}; 
-  module.exports = colors`
+
+  let codeString = `const colours = ${JSON.stringify(dataObject, null, 2)}; 
+  module.exports = colours`
 
   if (fs.existsSync(writePath)) {
     fs.writeFileSync(writePath, codeString, "utf8", { flag: "wx" }, err => {

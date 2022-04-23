@@ -6,6 +6,8 @@ import { useThemeOptions } from "../hooks/useThemeOptions"
 import { Box, chakra } from "@chakra-ui/react"
 
 export const LinkItem = ({ menuItem }) => {
+  // TODO incoporate page transitions
+
   const { wordPressUrl } = useThemeOptions()
   let url = menuItem.url
 

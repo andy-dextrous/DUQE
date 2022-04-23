@@ -1,5 +1,5 @@
 import { extendTheme } from "@chakra-ui/react"
-import { colors } from "./foundations/colors"
+import { colours } from "./foundations/colours"
 import textStyles from "./text-styles/textStyles"
 import fonts from "./foundations/fonts"
 import { styles } from "./global-style/globalStyle"
@@ -9,7 +9,7 @@ import { breakpoints } from "./foundations/breakpoints"
 import DEFAULT_OPTIONS from "../../../defaultOptions"
 
 const theme = {
-  colors,
+  colours,
   fonts,
   styles,
   textStyles,

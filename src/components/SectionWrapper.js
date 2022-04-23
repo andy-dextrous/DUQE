@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useRef } from "react"
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import { sidebarWidth, topBarHeight } from "./Layout"
-import { Container, Center, Image, Box, Text } from "@chakra-ui/react"
+import { Container, Center, Image, Box } from "@chakra-ui/react"
 
 const SectionWrapper = forwardRef((props, ref) => {
   const {
@@ -9,7 +9,6 @@ const SectionWrapper = forwardRef((props, ref) => {
     bgVideo,
     children,
     eager,
-    footer,
     fullImage,
     fullW = false,
     isFirstSection,
@@ -17,12 +16,16 @@ const SectionWrapper = forwardRef((props, ref) => {
     overlay,
     overlayColour = "black",
     overlayOpacity,
-    useGatsbyImage,
-    ...parentProps
+    ...containerStyles
   } = props
 
   // Prevents re-sourcing of Gatsby Image data and flash of content
   const imageDataRef = useRef(null)
+
+  /* TODO 
+    - use universal image component
+    - incorporate theme variables for section dimensions
+  */
 
   useEffect(() => {
     if (imageDataRef.current || !bgImage) return
@@ -50,25 +53,17 @@ const SectionWrapper = forwardRef((props, ref) => {
     <>
       <Center
         as="section"
-        zIndex={1}
         width={[
           "100vw",
           "100vw",
           fullImage ? "100%" : `calc(100vw - ${sidebarWidth}px)`,
         ]}
         position="relative"
-        ml={[0, 0, fullImage ? 0 : sidebarWidth + "px"]}
-        pb={fullW || noPadding ? 0 : [10, 10, 24]}
-        pt={
-          fullW || noPadding
-            ? 0
-            : isFirstSection
-            ? `${topBarHeight}px`
-            : [10, 10, 24]
-        }
-        minH={["60vh", "60vh", "100vh"]}
+        ml={[0, 0, sidebarWidth + "px"]}
+        pb={fullW ? 0 : [10, 10, 24]}
+        pt={fullW ? 0 : isFirstSection ? `${topBarHeight}px` : [10, 10, 24]}
         overflowX="hidden"
-        {...parentProps}
+        {...containerStyles}
       >
         {/* Main container for content. Sets dimensions */}
         <Container
@@ -146,23 +141,6 @@ const SectionWrapper = forwardRef((props, ref) => {
           </Box>
         )}
       </Center>
-
-      {/* Optional footer bar if this is the last section of page */}
-      {footer && (
-        <Center
-          bg="brandBlue.900"
-          h="60px"
-          position="relative"
-          w={["100vw", "100vw", `calc(100vw - ${sidebarWidth}px)`]}
-          ml={[0, 0, sidebarWidth + "px"]}
-        >
-          <Text color="white" fontSize={"sm"}>
-            {" "}
-            © {new Date().getFullYear()} | Tactic Spaces | Website by WILD
-            Creative
-          </Text>
-        </Center>
-      )}
     </>
   )
 })

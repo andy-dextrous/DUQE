@@ -68,6 +68,9 @@ const DEFAULT_OPTIONS = {
     ],
     sidebarWidgets: ["Categories", "RecentPosts"],
   },
+  // Site Variables
+  sidebarMenuWidth: 90,
+  topBarHeight: 115,
 
   // Build commands
   createPages: true,
