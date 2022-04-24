@@ -1,8 +1,8 @@
-import { Box } from "@chakra-ui/react"
 import React from "react"
+import { useRgba } from "../hooks/useRgba"
 import { Layout } from "../components/Layout"
 import SectionWrapper from "../components/SectionWrapper"
-import { useRgba } from "../hooks/useRgba"
+import { Box } from "@chakra-ui/react"
 
 function DummyContent() {
   return (

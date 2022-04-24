@@ -1,4 +1,4 @@
-import { useTheme, useToken } from "@chakra-ui/react"
+import { useToken } from "@chakra-ui/react"
 
 export function useRgba(hex, opacity = 1) {
   const [value] = useToken("colors", [hex])

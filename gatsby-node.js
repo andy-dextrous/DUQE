@@ -115,7 +115,7 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
     : "Default"
 
   // Pass options to createPages function
-  const merged = {
+  const config = {
     ...defaultOptions,
     postsPerPage: postsPerPage,
     seoFromWP,
@@ -127,13 +127,13 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
 
   // Create all pages requested by defaultOptions
   await Promise.all([
-    merged.useWpRedirects && createRedirects({ actions }, redirects),
-    merged.createPages && createSitePages({ actions, graphql }, merged),
-    merged.createPosts && createPosts({ actions, graphql }, merged),
-    merged.createCategories && createCategories({ actions, graphql }, merged),
-    merged.createTags && createTags({ actions, graphql }, merged),
-    merged.createUsers && createUsers({ actions, graphql }, merged),
-    merged.createCustomPostTypes &&
-      createCustomPostTypes({ actions, graphql }, merged),
+    config.useWpRedirects && createRedirects({ actions }, redirects),
+    config.createPages && createSitePages({ actions, graphql }, config),
+    config.createPosts && createPosts({ actions, graphql }, config),
+    config.createCategories && createCategories({ actions, graphql }, config),
+    config.createTags && createTags({ actions, graphql }, config),
+    config.createUsers && createUsers({ actions, graphql }, config),
+    config.createCustomPostTypes &&
+      createCustomPostTypes({ actions, graphql }, config),
   ])
 }

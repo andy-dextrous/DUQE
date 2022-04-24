@@ -87,10 +87,10 @@ module.exports = {
       options: {
         defaults: {
           formats: [`avif`, `webp`, `auto`],
-          placeholder: `blurred`,
-          quality: 75,
-          breakpoints: [100, 391, 768, 960, 1440, 1660, 1800],
-          backgroundColor: `#9fc6bc`,
+          placeholder: `none`,
+          quality: 80,
+          breakpoints: [391, 768, 960, 1440, 1660, 1800],
+          backgroundColor: `#000000`,
           tracedSVGOptions: {},
           blurredOptions: {},
           jpgOptions: {},
@@ -112,7 +112,7 @@ module.exports = {
         name: `DUQE Free Zone`,
         short_name: `DUQE`,
         start_url: `/`,
-        theme_color: `#9fc6bc`,
+        theme_color: `#E0DB2A`,
         display: `standalone`,
         icon: `./static/favicon.svg`,
       },
