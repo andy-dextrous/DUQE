@@ -72,7 +72,6 @@ export const SocialFollows = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Follow on ${name}`}
-                textStyle="linkHoverOpacity"
                 py="2"
                 mx="1"
                 sx={{

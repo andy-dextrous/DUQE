@@ -14,7 +14,7 @@ export const query = graphql`
   }
 `
 
-export const Image = ({
+export const SmartImage = ({
   img,
   alt = "",
   loading = "lazy",

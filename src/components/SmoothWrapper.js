@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react"
 import React, { useEffect, useRef } from "react"
-import { gsap, ScrollSmoother } from "../gsap"
+import { ScrollSmoother } from "../gsap"
 
 function SmoothWrapper({ smoothScroll, children }) {
   const wrapper = useRef()
@@ -16,16 +16,7 @@ function SmoothWrapper({ smoothScroll, children }) {
       normalizeScroll: true,
     })
 
-    smoother.scrollTrigger.refresh()
-
-    const q = gsap.utils.selector(wrapper.current)
-
-    smoother.effects(q(".hero__image-cont"), {
-      speed: () => gsap.utils.random(1.1, 1.4, 0.05),
-    })
-
     return () => {
-      smoother.scrollTrigger.refresh()
       smoother.kill()
     }
   }, [smoothScroll])

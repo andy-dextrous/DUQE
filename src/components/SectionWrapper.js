@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react"
 import { useThemeOptions } from "../hooks/useThemeOptions"
 import { Center, Box } from "@chakra-ui/react"
-import { Image } from "../components/images"
+import { SmartImage } from "../components/SmartImage"
 import Video from "./video/Video"
 
 const SectionWrapper = forwardRef((props, ref) => {
@@ -13,9 +13,8 @@ const SectionWrapper = forwardRef((props, ref) => {
     eager,
     isFirstSection,
     overlay,
-    overlayColor = "black",
+    overlayStyle,
     withContainer = true,
-    overlayOpacity,
     ...containerStyles
   } = props
 
@@ -31,8 +30,7 @@ const SectionWrapper = forwardRef((props, ref) => {
         pt={isFirstSection ? `${topBarHeight}px` : 0}
         {...containerStyles}
       >
-        {/* Main container for content. Sets dimensions */}
-        {withContainer && children ? (
+        {withContainer ? (
           <Box
             maxW="container.lg"
             h="full"
@@ -42,22 +40,16 @@ const SectionWrapper = forwardRef((props, ref) => {
             {children}
           </Box>
         ) : (
-          children
+          { children }
         )}
-        {(bgImage || overlay) && (
+        {(bgImage || overlay || bgVideo) && (
           <Box layerStyle="bgImage" ref={ref}>
             <Box layerStyle="fillSpace" position="relative">
-              {overlay && (
-                <Box
-                  layerStyle="overlay"
-                  bg={overlayColor}
-                  opacity={overlayOpacity}
-                />
+              {overlay && <Box layerStyle="overlay" {...overlayStyle} />}
+              {bgImage && (
+                <SmartImage img={bgImage} layerStyle="bgImage" alt={alt} />
               )}
-              {bgImage && !bgVideo && (
-                <Image img={bgImage} layerStyle="bgImage" alt={alt} />
-              )}
-              {bgVideo && !bgImage && <Video id="bgVideo" src={bgVideo} />}
+              {bgVideo && <Video id="bgVideo" src={bgVideo} />}
             </Box>
           </Box>
         )}
