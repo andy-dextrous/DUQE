@@ -5,13 +5,12 @@
 import { base } from "./foundations/typography"
 
 const globalCSS = {
+  main: { overflowX: "hidden", maxW: "100vw" },
   ...base,
 }
 
 const globalStyle = {
   global: {
-    main: { overflowX: "hidden", maxW: "100vw" },
-
     ...globalCSS,
   },
 }

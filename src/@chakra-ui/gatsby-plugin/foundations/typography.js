@@ -23,12 +23,11 @@ export const fonts = {
 }
 
 export const p = {
-  mb: 5,
   fontFamily: fonts.body,
 }
 export const a = {
   color: "inherit",
-  textDecoration: "underline",
+  textDecoration: "none",
   _hover: {
     textDecoration: "none",
   },
@@ -43,11 +42,12 @@ const heading = {
 export const h1 = {
   ...heading,
   fontSize: ["4xl", "5xl", "7xl"],
+  mb: 4,
 }
 export const h2 = {
   ...heading,
   fontSize: ["3xl", "4xl", "5xl"],
-  mb: [4],
+  mb: 4,
 }
 
 export const h3 = {
