@@ -5,13 +5,14 @@ import {
   Select,
   Textarea,
   useBreakpointValue,
+  VStack,
 } from "@chakra-ui/react"
 import React from "react"
 
 function ContactPageElements() {
   const buttonSize = useBreakpointValue(["sm", "sm", "lg"])
   return (
-    <>
+    <VStack spacing={8}>
       <HStack spacing={4} w="full" mb={4}>
         <Input
           placeholder="Enter your first name"

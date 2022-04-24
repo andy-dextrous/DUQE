@@ -36,8 +36,6 @@ const DEFAULT_OPTIONS = {
     { name: "vimeo", url: null },
     { name: "youtube", url: null },
   ],
-  cssVarPrefix: "duqe",
-  createColorPallete: true,
 
   //Theme options
   gatsbySourceWordPressOptions: { presets: [] },
@@ -69,8 +67,10 @@ const DEFAULT_OPTIONS = {
     sidebarWidgets: ["Categories", "RecentPosts"],
   },
   // Site Variables
-  sidebarMenuWidth: 90,
+  sidebarMenuMargin: 0,
   topBarHeight: 115,
+  cssVarPrefix: "duqe",
+  createColorPallete: true,
 
   // Build commands
   createPages: true,

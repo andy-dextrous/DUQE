@@ -1,26 +1,26 @@
-import { extendTheme } from "@chakra-ui/react"
-import { colours } from "./foundations/colours"
-import textStyles from "./text-styles/textStyles"
-import fonts from "./foundations/fonts"
-import { styles } from "./global-style/globalStyle"
-import { layerStyles } from "./layer-styles/layerStyles"
-import { Button } from "./components/button"
-import { breakpoints } from "./foundations/breakpoints"
 import DEFAULT_OPTIONS from "../../../defaultOptions"
+import { extendTheme } from "@chakra-ui/react"
+import { colors, breakpoints, fonts } from "./foundations"
+import { textStyles } from "./textStyles"
+import { layerStyles } from "./layerStyles"
+import { styles } from "./globalStyle"
+import components from "./components"
 
-const theme = {
-  colours,
+const theme = extendTheme({
+  colors,
   fonts,
+  breakpoints,
+  textStyles: {
+    ...textStyles,
+  },
+  layerStyles: {
+    ...layerStyles,
+  },
   styles,
-  textStyles,
-  layerStyles,
+  components,
   config: {
     cssVarPrefix: DEFAULT_OPTIONS.cssVarPrefix,
   },
-  components: {
-    Button,
-  },
-  breakpoints,
-}
+})
 
-export default extendTheme(theme)
+export default theme

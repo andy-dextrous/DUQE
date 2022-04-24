@@ -1,7 +1,4 @@
-// Presets are called layers in chakra-ui.
-// To apply a preset/layer ---> <Heading as:"h1" layerStyle:'base'>
-
-const layerStyles = {
+export const layerStyles = {
   fillSpaceAbsolute: {
     width: "100%",
     height: "100%",
@@ -35,7 +32,7 @@ const layerStyles = {
     w: "100%",
     h: "100%",
     opacity: "0.3",
-    zIndex: "-1",
+    zIndex: "1",
     position: "absolute",
     top: "0",
     left: "0",
@@ -50,5 +47,3 @@ const layerStyles = {
     position: "relative",
   },
 }
-
-export { layerStyles }

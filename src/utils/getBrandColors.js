@@ -1,10 +1,10 @@
-function getBrandColourPallete(THEME_CONFIG) {
-  const { brandColours } = THEME_CONFIG
-  const colourKeys = Object.entries(brandColours)
-  const colourShadeArray = colourKeys.map(key => {
+function getBrandColorPallete(THEME_CONFIG) {
+  const { brandColors } = THEME_CONFIG
+  const colorKeys = Object.entries(brandColors)
+  const colorShadeArray = colorKeys.map(key => {
     return [key[0], extractColorRange(key[1])]
   })
-  return Object.fromEntries(colourShadeArray)
+  return Object.fromEntries(colorShadeArray)
 }
 
 function hexToHSL(hex) {
@@ -50,6 +50,7 @@ function hexToHSL(hex) {
 
   return colorInHSL
 }
+
 function hslToHex(h, s, l) {
   h /= 360
   s /= 100
@@ -79,8 +80,8 @@ function hslToHex(h, s, l) {
   return `#${toHex(r)}${toHex(g)}${toHex(b)}`
 }
 
-function extractColorRange(brandColour) {
-  const initialValue = hexToHSL(brandColour)
+function extractColorRange(brandColor) {
+  const initialValue = hexToHSL(brandColor)
   const lightness = parseInt(initialValue.split(",")[2])
   const chakraUIMapping = [
     [50, 95],
@@ -107,7 +108,7 @@ function extractColorRange(brandColour) {
     const ints = hsl?.split(",").map(str => parseInt(str))
     if (!ints) return
     if (ints[2] === lightness) {
-      return brandColour.toLowerCase()
+      return brandColor.toLowerCase()
     } else {
       return hslToHex(ints[0], ints[1], ints[2])
     }
@@ -116,8 +117,8 @@ function extractColorRange(brandColour) {
   const output = hexValues.map((hex, i) => {
     return [chakraUIMapping[i][0], hex]
   })
-  output.push(["default", brandColour.toLowerCase()])
+  output.push(["default", brandColor.toLowerCase()])
   return Object.fromEntries(new Map(output))
 }
 
-module.exports = getBrandColourPallete
+module.exports = getBrandColorPallete

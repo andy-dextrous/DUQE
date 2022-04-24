@@ -3,7 +3,7 @@ const path = require("path")
 const generalSeoFromWP = require(`./src/utils/seo/generalSeoFromWP`)
 const defaultOptions = require(`./defaultOptions`)
 const THEME_CONFIG = require(`./themeConfig`)
-const getBrandColourPallette = require("./src/utils/getBrandColours")
+const getBrandColorPallette = require("./src/utils/getBrandColors")
 const createSitePages = require(`./src/utils/createSitePages`)
 const createPosts = require(`./src/utils/createPosts`)
 const createCategories = require(`./src/utils/createCategories`)
@@ -12,24 +12,27 @@ const createUsers = require(`./src/utils/createUsers`)
 const createCustomPostTypes = require("./src/utils/createCustomPostTypes")
 
 exports.onPreInit = () => {
-  // Create the chakra colour palette
+  // Create the chakra color palette
   if (!defaultOptions.createColorPallete) return
 
-  const dataObject = getBrandColourPallette(THEME_CONFIG)
+  const dataObject = getBrandColorPallette(THEME_CONFIG)
   const writePath = path.resolve(
     __dirname,
-    `./src/@chakra-ui/gatsby-plugin/foundations/colours.js`
+    `./src/@chakra-ui/gatsby-plugin/foundations/colors.js`
   )
 
-  let codeString = `const colours = ${JSON.stringify(dataObject, null, 2)}; 
-  module.exports = colours`
+  let codeString = `export const colors = ${JSON.stringify(
+    dataObject,
+    null,
+    2
+  )}`
 
   if (fs.existsSync(writePath)) {
     fs.writeFileSync(writePath, codeString, "utf8", { flag: "wx" }, err => {
       if (err) {
         return console.log(err)
       }
-      console.log("Chakra custom colour palette created!")
+      console.log("Chakra custom color palette created!")
     })
   }
 }

@@ -9,9 +9,7 @@ import { Link } from "gatsby"
 import { gsap, SplitText } from "../../gsap"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
 import { MenuContext } from "../Layout"
-
-import SectionWrapper from "../layouts/SectionWrapper"
-import LogoVertical from "../../assets/Icons/LogoVertical"
+import SectionWrapper from "../SectionWrapper"
 import { VStack, Text, Heading, Stack, Box, Center } from "@chakra-ui/react"
 import { SocialFollows } from "../social/SocialFollows"
 
@@ -272,9 +270,6 @@ function Modal() {
             </Box>
           </VStack>
         </Stack>
-        <Box id="modalLogo" position="fixed" ref={logoRef}>
-          <LogoVertical />
-        </Box>
       </Center>
     </SectionWrapper>
   )

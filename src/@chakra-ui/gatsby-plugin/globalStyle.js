@@ -2,10 +2,16 @@
 // Place all global CSS for every page here //
 //-----------------------------------------------//
 
-const globalCSS = {}
+import { base } from "./foundations/typography"
+
+const globalCSS = {
+  ...base,
+}
 
 const globalStyle = {
   global: {
+    main: { overflowX: "hidden", maxW: "100vw" },
+
     ...globalCSS,
   },
 }

@@ -1,3 +1,5 @@
+import { theme } from "@chakra-ui/react"
+
 const rem = px => px / 16 + "rem"
 export const fontSizes = {
   xs: rem(13),
@@ -16,38 +18,26 @@ export const fontSizes = {
 }
 
 export const fonts = {
-  body: "",
-  heading: "",
+  heading: `Montserrat, ${theme.fonts.heading}`,
+  body: `Montserrat, ${theme.fonts.body}`,
 }
 
-export const fontWeights = {
-  body: 400,
-  heading: "bold",
-  bold: 700,
+export const p = {
+  mb: 5,
+  fontFamily: fonts.body,
 }
-
-export const lineHeights = {
-  body: 1.8,
-  heading: 1.2,
-  loose: 2,
-}
-
-export const letterSpacings = {
-  loose: "2px",
-}
-
 export const a = {
   color: "inherit",
-  textDecoration: "",
+  textDecoration: "underline",
   _hover: {
-    textDecoration: "",
+    textDecoration: "none",
   },
 }
-
 const heading = {
-  fontFamily: "",
-  lineHeight: "",
-  fontWeight: "",
+  fontFamily: fonts.heading,
+  lineHeight: "tall",
+  fontWeight: "bold",
+  textTransform: "uppercase",
 }
 
 export const h1 = {
@@ -65,6 +55,7 @@ export const h3 = {
   fontSize: ["2xl", "3xl", "4xl"],
   mb: 4,
 }
+
 export const h4 = {
   ...heading,
   fontSize: ["xl", "2xl", "3xl"],
@@ -97,4 +88,11 @@ export const base = {
   h5,
   h6,
   blockquote,
+  "h1.chakra-heading": h1,
+  "h2.chakra-heading": h2,
+  "h3.chakra-heading": h3,
+  "h4.chakra-heading": h4,
+  "h5.chakra-heading": h5,
+  "h6.chakra-heading": h6,
+  "p.chakra-text": p,
 }

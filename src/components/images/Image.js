@@ -14,7 +14,14 @@ export const query = graphql`
   }
 `
 
-export const Image = ({ img, alt = "", loading = "lazy", data, ...props }) => {
+export const Image = ({
+  img,
+  alt = "",
+  loading = "lazy",
+  data,
+  parallax,
+  ...props
+}) => {
   const breakPoints = [
     "(max-width:428px)",
     "(max-width:768px)",
@@ -65,6 +72,7 @@ export const Image = ({ img, alt = "", loading = "lazy", data, ...props }) => {
           Array.isArray(img) ? imageRef.current : getImage(imageRef.current)
         }
         alt={img.altText}
+        imgStyle={{ width: "100%", height: parallax ? "180%" : "100%" }}
         {...props}
       />
     ) : (

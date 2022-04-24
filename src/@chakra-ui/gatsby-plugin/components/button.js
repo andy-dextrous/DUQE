@@ -1,6 +1,11 @@
-const buttonStyle = {
-  baseStyle: {},
-  variants: {},
+export const Button = {
+  baseStyle: { fontWeight: "bold" },
+  variants: {
+    poo: {
+      bg: "brown",
+      color: "white",
+    },
+  },
 
   sizes: {
     lg: {
@@ -15,5 +20,3 @@ const buttonStyle = {
     },
   },
 }
-
-export { buttonStyle as Button }

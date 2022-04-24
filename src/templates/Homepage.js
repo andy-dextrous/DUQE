@@ -1,5 +1,6 @@
 import React from "react"
 import { Seo } from "../components/seo/components/index"
+import { graphql } from "gatsby"
 import { Layout } from "./../components/Layout"
 
 function Homepage(props) {
@@ -13,10 +14,10 @@ function Homepage(props) {
 
 export default Homepage
 
-// const pageQuery = graphql`
-//   query GET_PAGE($id: String!) {
-//     wpPage(id: { eq: $id }) {
-
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query GET_PAGE($id: String!) {
+    wpPage(id: { eq: $id }) {
+      title
+    }
+  }
+`

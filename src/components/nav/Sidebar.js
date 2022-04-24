@@ -1,7 +1,5 @@
 import React, { useRef } from "react"
 import { Link } from "gatsby"
-
-import LogoVertical from "../../assets/Icons/LogoVertical"
 import Logo from "../../assets/logos/Logo"
 import { Center, Flex, useBreakpointValue } from "@chakra-ui/react"
 
@@ -9,7 +7,6 @@ function Sidebar() {
   const sidebarRef = useRef()
   const logo = useBreakpointValue({
     base: <Logo height="30px" />,
-    md: <LogoVertical />,
   })
 
   return (

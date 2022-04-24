@@ -1,9 +1,9 @@
 const THEME_CONFIG = {
-  // Place your primary brand colours here to populate Chakra UI with shades.
-  brandColours: {
-    brandYellow: "#5D2E8C",
-    brandBlue: "#121312",
-    brandConcrete: "#000000",
+  // Place your primary brand colors here to populate Chakra UI with shades.
+  brandColors: {
+    brandYellow: "#E0DB2A",
+    brandBlue: "#62C6C1",
+    brandConcrete: "#C9C8BA",
   },
 }
 

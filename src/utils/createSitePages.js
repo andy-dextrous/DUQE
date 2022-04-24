@@ -23,10 +23,11 @@ module.exports = async ({ actions, graphql }, options) => {
   `
 
   function getPageTemplate(wpTemplateName) {
+    const matchingGatsbyTemplate =
+      wpTemplateName !== "Default" ? wpTemplateName.replace(" ", "") : "Default"
+
     let templateComponent = path.resolve(
-      `./src/templates/${
-        wpTemplateName !== "Default" ? wpTemplateName : "Default"
-      }.js`
+      `./src/templates/${matchingGatsbyTemplate}.js`
     )
     return templateComponent
   }

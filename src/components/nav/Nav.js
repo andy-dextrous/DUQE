@@ -1,17 +1,16 @@
 import React from "react"
-// import Sidebar from "./Sidebar"
-// import TopBar from "./TopBar"
-// import Modal from "./Modal"
-// import Hamburger from "./Hamburger"
+import Sidebar from "./Sidebar"
+import TopBar from "./TopBar"
+import Modal from "./Modal"
+import Hamburger from "./Hamburger"
 
-function Nav({ startDark, darkButton }) {
+function Nav() {
   return (
     <>
-      {/* <Sidebar />
-      <TopBar startDark={startDark} darkButton={darkButton} />
-      <Modal />
-      <Hamburger /> */}
-      <div>Nav</div>
+      <Sidebar />
+      <TopBar />
+      {/* <Modal /> */}
+      <Hamburger />
     </>
   )
 }

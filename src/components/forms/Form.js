@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react"
 import axios from "axios"
 import { Box, FormControl, Heading, Text, VStack } from "@chakra-ui/react"
 
-function GetForm({ formElements, width = "100%", ...props }) {
+function GetForm({ formElements, ...props }) {
   const [submitted, setSubmitted] = useState(false)
   const [serverState, setServerState] = useState({
     submitting: false,
@@ -29,7 +29,7 @@ function GetForm({ formElements, width = "100%", ...props }) {
     setServerState({ submitting: true })
     axios({
       method: "post",
-      url: "https://getform.io/f/e90aebc9-f492-4a83-aa3d-e66a510b389f",
+      url: process.env.GETFORM_ENDPOINT,
       data: new FormData(form),
     })
       .then(r => {
@@ -51,20 +51,15 @@ function GetForm({ formElements, width = "100%", ...props }) {
       name="contact"
       onSubmit={handleOnSubmit}
       ref={formRef}
-      width={width}
       {...props}
     >
       <input type="hidden" name="form-name" value="contact" />
-      <VStack spacing={4}>
-        <FormControl>{formElements}</FormControl>
-      </VStack>
+      <FormControl>{formElements}</FormControl>
     </Box>
   ) : (
     <Box height={formHeight}>
-      <Heading color="brandGreen.500">Success</Heading>
-      <Text color="gray.50">
-        Thank you for your enquiry, we'll be in touch soon.
-      </Text>
+      <Heading>Success</Heading>
+      <Text>Thank you for your enquiry, we'll be in touch soon.</Text>
     </Box>
   )
 }
