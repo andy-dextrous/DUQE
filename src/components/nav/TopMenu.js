@@ -1,8 +1,8 @@
-import { HStack } from "@chakra-ui/react"
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Link } from "@chakra-ui/react"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
+import { HStack } from "@chakra-ui/react"
 
 function TopMenu({ startDark }) {
   const menu = useMenuQuery("Top Bar")

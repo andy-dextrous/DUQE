@@ -2,7 +2,7 @@ import React from "react"
 import parse, { domToReact } from "html-react-parser"
 import { Link as GatsbyLink } from "gatsby"
 import slashes from "remove-trailing-slash"
-import { useThemeOptions } from "../hooks/useThemeOptions"
+import { useThemeOptions } from "../../hooks/useThemeOptions"
 import { Link } from "@chakra-ui/react"
 
 function ParseWpContent(content, style) {
