@@ -1,6 +1,5 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
-import TopMenu from "./TopMenu"
 import { Button, HStack, Link, useBreakpointValue } from "@chakra-ui/react"
 import { useThemeOptions } from "../../hooks/useThemeOptions"
 

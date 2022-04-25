@@ -1,6 +1,6 @@
 import React from "react"
 import { useThemeOptions } from "../../hooks/useThemeOptions"
-import { Flex, Icon, IconButton, Link, Stack } from "@chakra-ui/react"
+import { Icon, IconButton, Link, Stack } from "@chakra-ui/react"
 import {
   FaDribbble,
   FaGithub,

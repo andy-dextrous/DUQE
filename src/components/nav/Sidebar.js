@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import Logo from "../../assets/logos/Logo"
 import { Center, Flex, VStack } from "@chakra-ui/react"
 import { useThemeOptions } from "../../hooks/useThemeOptions"
+import { useRgba } from "../../hooks/useRgba"
 import { SocialFollows } from "../social/SocialFollows"
 import Hamburger from "./Hamburger"
 
@@ -21,7 +22,7 @@ function Sidebar() {
       top="0"
       align="center"
       justify="center"
-      borderRight={["none", "none", "1px solid rgba(255,255,255,0.2)"]}
+      borderRight={["none", "none", `1px solid ${useRgba("#bbbbbb", 0.3)}`]}
       zIndex="sticky"
       display={["none", "none", "flex"]}
       ref={sidebarRef}

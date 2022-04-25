@@ -6,6 +6,13 @@ import { base } from "./foundations/typography"
 
 const globalCSS = {
   main: { overflowX: "hidden", maxW: "100vw" },
+
+  ".thin-h3.chakra-heading": {
+    fontSize: "36px",
+    fontWeight: "light",
+    textTransform: "unset",
+  },
+
   ...base,
 }
 

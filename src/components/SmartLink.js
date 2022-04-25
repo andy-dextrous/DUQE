@@ -1,47 +1,37 @@
 import React from "react"
 import slashes from "remove-trailing-slash"
 import { Link as GatsbyLink } from "gatsby"
-import { createLocalLink } from "../../utils/createLocalLink"
+import { createLocalLink } from "../utils/createLocalLink"
 import { useThemeOptions } from "../hooks/useThemeOptions"
-import { Box, chakra } from "@chakra-ui/react"
+import { Box, Link, Text } from "@chakra-ui/react"
 
-export const SmartLink = ({ menuItem }) => {
-  const { wordPressUrl } = useThemeOptions()
-  let url = menuItem.url
+export const SmartLink = ({ url, children }) => {
+  const { wordPressUrl, usePageTransitions } = useThemeOptions()
 
   if (
     !url.includes(wordPressUrl) &&
     (url.startsWith("https://") || url.startsWith("http://"))
   ) {
-    const targetRelAttrs =
-      menuItem.target === "_blank"
-        ? { target: "_blank", rel: "noopener noreferrer" }
-        : {}
+    const targetRelAttrs = { target: "_blank", rel: "noopener noreferrer" }
+
     return (
-      <chakra.a textStyle="specialLink" href={url} {...targetRelAttrs}>
-        {menuItem.label}
-      </chakra.a>
+      <Link href={url} {...targetRelAttrs}>
+        {children}
+      </Link>
     )
   } else {
-    return url !== "#" ? (
+    return !usePageTransitions ? (
       url === wordPressUrl ? (
-        <Box
-          as={GatsbyLink}
-          textStyle="specialLink"
-          to="/"
-          dangerouslySetInnerHTML={{ __html: menuItem.label }}
-        />
+        <Box as={GatsbyLink} to="/">
+          {children}
+        </Box>
       ) : (
-        <Box
-          as={GatsbyLink}
-          textStyle="specialLink"
-          fontWeight="bold"
-          to={createLocalLink(url, slashes(wordPressUrl))}
-          dangerouslySetInnerHTML={{ __html: menuItem.label }}
-        />
+        <Box as={GatsbyLink} to={createLocalLink(url, slashes(wordPressUrl))}>
+          {children}
+        </Box>
       )
     ) : (
-      <chakra.span textStyle="specialLink">{menuItem.label}</chakra.span>
+      <Text as="span">{children}</Text>
     )
   }
 }

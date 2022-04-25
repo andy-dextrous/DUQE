@@ -1,12 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
 import SectionWrapper from "../../../components/SectionWrapper"
 import { Button, Center, Heading, HStack, Text, VStack } from "@chakra-ui/react"
+import { SmartLink } from "../../../components/SmartLink"
 
 function Hero() {
   return (
     <SectionWrapper
-      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1650858611/DUQE/DUQE_Hero.jpg"
+      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650882721/DUQE-Hero-crop.png"
       h="100vh"
       overlay
       containerSize="xl"
@@ -19,22 +19,16 @@ function Hero() {
               disrupters
             </Text>
           </Heading>
-          <Heading
-            as="h3"
-            color="white"
-            fontSize="36px"
-            fontWeight="light"
-            textTransform="unset"
-          >
+          <Heading as="h3" color="white" className="thin-h3">
             Set up your company in DUQE Free Zone, based on the prestigious QE2.
           </Heading>
           <HStack w="full">
-            <Link to="#">
+            <SmartLink url="/">
               <Button>Start your business</Button>
-            </Link>
-            <Link to="#">
+            </SmartLink>
+            <SmartLink url="/">
               <Button variant="outlineWhite">How much does it cost?</Button>
-            </Link>
+            </SmartLink>
           </HStack>
         </VStack>
       </Center>
