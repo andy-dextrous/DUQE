@@ -14,12 +14,12 @@ export const fontSizes = {
   "6xl": rem(64),
   "7xl": rem(72),
   "8xl": rem(96),
-  "9xl": rem(128),
+  "9xl": rem(110),
 }
 
 export const fonts = {
-  heading: `Montserrat, ${theme.fonts.heading}`,
-  body: `Montserrat, ${theme.fonts.body}`,
+  heading: `"Helvetica Neue", ${theme.fonts.heading}`,
+  body: `"Helvetica Neue", ${theme.fonts.body}`,
 }
 
 export const p = {
@@ -34,15 +34,16 @@ export const a = {
 }
 const heading = {
   fontFamily: fonts.heading,
-  lineHeight: "tall",
-  fontWeight: "bold",
+  fontWeight: "800",
   textTransform: "uppercase",
 }
 
 export const h1 = {
   ...heading,
-  fontSize: ["4xl", "5xl", "7xl"],
-  mb: 4,
+  fontSize: ["4xl", "5xl", "9xl"],
+  lineHeight: "120px",
+  letterSpacing: "-0.01em",
+  fontWeight: "extrabold",
 }
 export const h2 = {
   ...heading,
@@ -90,9 +91,10 @@ export const base = {
   blockquote,
   "h1.chakra-heading": h1,
   "h2.chakra-heading": h2,
-  "h3.chakra-heading": h3,
+  // "h3.chakra-heading": h3,
   "h4.chakra-heading": h4,
   "h5.chakra-heading": h5,
   "h6.chakra-heading": h6,
   "p.chakra-text": p,
+  "a.chakra-link": a,
 }

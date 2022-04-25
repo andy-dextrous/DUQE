@@ -22,10 +22,10 @@ const DEFAULT_OPTIONS = {
   googleMapsLink: "",
   socialFollowLinks: [
     { name: "dribbble", url: null },
-    { name: "facebook", url: null },
+    { name: "facebook", url: "https://www.facebook.com" },
     { name: "github", url: null },
-    { name: "instagram", url: null },
-    { name: "linkedin", url: null },
+    { name: "instagram", url: "https://instagram.com" },
+    { name: "linkedin", url: "https://linkedin.com" },
     { name: "medium", url: null },
     { name: "pinterest", url: null },
     { name: "reddit", url: null },
@@ -56,6 +56,7 @@ const DEFAULT_OPTIONS = {
 
   useGravityForms: false,
   useNetlifyForms: false,
+  usePageTransitions: false,
   developLimit: null,
   addColorModes: true,
   webfontsOptions: {},
@@ -67,6 +68,7 @@ const DEFAULT_OPTIONS = {
     sidebarWidgets: ["Categories", "RecentPosts"],
   },
   // Site Variables
+  sidebarMenuWidth: 100,
   sidebarMenuMargin: 0,
   topBarHeight: 115,
   cssVarPrefix: "duqe",

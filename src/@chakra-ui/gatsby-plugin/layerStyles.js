@@ -31,11 +31,12 @@ export const layerStyles = {
   overlay: {
     w: "100%",
     h: "100%",
-    opacity: "0.3",
     zIndex: "1",
     position: "absolute",
     top: "0",
     left: "0",
+    bg: "linear-gradient(179.45deg, rgba(11, 11, 11, 0) 32.43%, #0B0B0B 99.75%), radial-gradient(63.13% 139.73% at 36.87% 47.07%, rgba(11, 11, 11, 0) 0%, #0B0B0B 100%);",
+    opacity: 1,
   },
 
   blogSidebar: {

@@ -10,7 +10,6 @@ function Nav() {
       <Sidebar />
       <TopBar />
       {/* <Modal /> */}
-      <Hamburger />
     </>
   )
 }

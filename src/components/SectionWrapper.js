@@ -15,6 +15,7 @@ const SectionWrapper = forwardRef((props, ref) => {
     overlay,
     overlayStyle,
     withContainer = true,
+    containerSize = "xl",
     ...containerStyles
   } = props
 
@@ -28,14 +29,14 @@ const SectionWrapper = forwardRef((props, ref) => {
         position="relative"
         ml={[0, 0, sidebarMenuMargin + "px"]}
         pt={isFirstSection ? `${topBarHeight}px` : 0}
+        px={["200px"]}
         {...containerStyles}
       >
         {withContainer ? (
           <Box
-            maxW="container.lg"
+            maxW={`container.${containerSize}`}
             h="full"
             py={[2, 4, 6, 8, 20]}
-            px={[2, 4, 6, 8, 20]}
           >
             {children}
           </Box>

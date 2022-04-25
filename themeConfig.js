@@ -4,6 +4,7 @@ const THEME_CONFIG = {
     brandYellow: "#E0DB2A",
     brandBlue: "#62C6C1",
     brandConcrete: "#C9C8BA",
+    dark: "0B0B0B",
   },
 }
 

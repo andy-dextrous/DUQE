@@ -3,22 +3,13 @@ import React, { useContext } from "react"
 import { MenuContext } from "../Layout"
 import ToggleIcon from "../../assets/icons/MenuToggleIcon"
 import { IoMdClose } from "react-icons/io"
-import { useThemeOptions } from "../../hooks/useThemeOptions"
 
-function Hamburger() {
+function Hamburger({ color }) {
   const { setIsMenuOpen, isMenuOpen, isMenuButtonDisabled } =
     useContext(MenuContext)
-  const { sidebarMenuMargin } = useThemeOptions()
 
   return (
-    <Center
-      h={["60px", "60px", "116px"]}
-      w={["60px", "60px", sidebarMenuMargin]}
-      position="fixed"
-      top="0"
-      left="0"
-      zIndex="popover"
-    >
+    <Center zIndex="popover">
       <Button
         className={isMenuOpen ? "active" : ""}
         variant="menuToggle"
@@ -27,7 +18,11 @@ function Hamburger() {
           !isMenuButtonDisabled && setIsMenuOpen(!isMenuOpen)
         }}
       >
-        {!isMenuOpen ? <ToggleIcon /> : <Icon as={IoMdClose} color="white" />}
+        {!isMenuOpen ? (
+          <ToggleIcon color={color} />
+        ) : (
+          <Icon as={IoMdClose} color={color} />
+        )}
       </Button>
     </Center>
   )

@@ -1,6 +1,6 @@
 import React from "react"
 import { useThemeOptions } from "../../hooks/useThemeOptions"
-import { Flex, Icon, IconButton, Link } from "@chakra-ui/react"
+import { Flex, Icon, IconButton, Link, Stack } from "@chakra-ui/react"
 import {
   FaDribbble,
   FaGithub,
@@ -22,6 +22,8 @@ export const SocialFollows = ({
   size = "sm",
   button = false,
   variant = "gray",
+  color,
+  ...styles
 }) => {
   const supportedIcons = [
     "dribbble",
@@ -60,7 +62,7 @@ export const SocialFollows = ({
 
   return (
     socialFollowLinks && (
-      <Flex justify="center" mb="12">
+      <Stack justify="center" {...styles}>
         {socialFollowLinks.map(({ name, url }) => {
           const index = supportedIcons.indexOf(name.toLowerCase())
           return (
@@ -74,24 +76,18 @@ export const SocialFollows = ({
                 aria-label={`Follow on ${name}`}
                 py="2"
                 mx="1"
-                sx={{
-                  svg: {
-                    fontSize: "2xl",
-                    verticalAlign: "middle",
-                    fill: "brandBlue.900",
-                  },
-                }}
+                // sx={{
+                //   svg: {
+                //     fontSize: "2xl",
+                //     verticalAlign: "middle",
+                //     fill: "brandBlue.900",
+                //   },
+                // }}
               >
                 {button && (
                   <IconButton
                     size={size}
                     variant={variant}
-                    _hover={{
-                      bg: variant === "white" ? "brandBlue.900" : "white",
-                      svg: {
-                        fill: variant === "white" ? "brandGreen.600" : "white",
-                      },
-                    }}
                     aria-label={`Follow on ${name}`}
                     icon={
                       <Icon
@@ -110,16 +106,24 @@ export const SocialFollows = ({
                             : "30px"
                         }
                         as={components[index]}
+                        color={color}
                       />
                     }
                   />
                 )}
-                {!button && <Icon as={components[index]} />}
+                {!button && (
+                  <Icon
+                    as={components[index]}
+                    color={color}
+                    w={size === "sm" ? "20px" : size === "md" ? "25px" : "30px"}
+                    h={size === "sm" ? "20px" : size === "md" ? "25px" : "30px"}
+                  />
+                )}
               </Link>
             )
           )
         })}
-      </Flex>
+      </Stack>
     )
   )
 }
