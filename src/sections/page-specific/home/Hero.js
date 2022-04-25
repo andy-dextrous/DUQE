@@ -6,7 +6,7 @@ import { SmartLink } from "../../../components/SmartLink"
 function Hero() {
   return (
     <SectionWrapper
-      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650882721/DUQE-Hero-crop.png"
+      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto,w_1920/v1650925763/Home-Hero.jpg"
       h="100vh"
       overlay
       containerSize="xl"
