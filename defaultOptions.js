@@ -6,7 +6,7 @@ const DEFAULT_OPTIONS = {
   //Site identity
   wordPressUrl: process.env.GATSBY_WORDPRESS_API_URL,
   siteUrl: "https://duqe.ae",
-  wordPressBaseUrl: "http://localhost:10008/",
+  wordPressBaseUrl: "https://duqe.me",
   siteTitle: "DUQE Free Zone",
   siteDescription: "We are DUQE",
   contact: {
