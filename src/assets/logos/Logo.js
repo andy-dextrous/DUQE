@@ -17,10 +17,9 @@ function Logo() {
       const trigger = ScrollTrigger.create({
         trigger: section,
         start: `top ${halfHeight},`,
-        markers: true,
         end: `top ${halfHeight + 5},`,
         onEnter: () => {
-          setColor(isLight ? "black" : "light")
+          setColor(isLight ? "black" : "white")
         },
         onEnterBack: self => {
           setColor(
@@ -45,7 +44,7 @@ function Logo() {
       duration: 0.4,
       ease: "Power3.out",
     })
-  })
+  }, [color])
 
   return (
     <svg

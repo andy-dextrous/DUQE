@@ -1,16 +1,17 @@
-import { useEffect, useLayoutEffect, useState, forwardRef } from "react"
+import React, { useEffect, useLayoutEffect, useState } from "react"
 import { gsap, ScrollTrigger } from "../gsap"
 
-export const useContrast = forwardRef((props, ref) => {
-  const [color, setColor] = useState("white")
+function useContrastingColor(initialColor = "white", id) {
+  const [color, setColor] = useState(initialColor)
 
   useLayoutEffect(() => {
     const sections = document.querySelectorAll("main section")
+    const ref = document.querySelector(`#${id}`)
     const scrollTriggers = []
 
     sections.forEach(section => {
-      const dimensions = ref.current.getBoundingClientRect()
-      const halfHeight = dimensions.top + dimensions.height / 2
+      const dimensions = ref?.getBoundingClientRect()
+      const halfHeight = dimensions?.top + dimensions?.height / 2
       const isWhite = section.classList.contains("white")
 
       const trigger = ScrollTrigger.create({
@@ -36,13 +37,19 @@ export const useContrast = forwardRef((props, ref) => {
     return () => {
       scrollTriggers.forEach(trigger => trigger.kill())
     }
-  }, [ref])
+  }, [id])
 
   useEffect(() => {
-    gsap.to(ref.current, {
+    console.log("change")
+    const ref = document.querySelector(`#${id}`)
+    gsap.to(ref, {
       fill: color,
       duration: 0.4,
       ease: "Power3.out",
     })
   }, [color])
-})
+
+  return color
+}
+
+export default useContrastingColor

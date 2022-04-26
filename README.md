@@ -4,6 +4,7 @@
 - Debug ScrollSmoother implementation
 - function: pass a hex value and an opacity and return the correct rgba
 - auth
+- debug useContrastingColor
 
 ## Workflow improvements
 

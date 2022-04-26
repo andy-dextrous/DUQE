@@ -1,15 +1,60 @@
-import React, { useRef } from "react"
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 import Logo from "../../assets/logos/Logo"
-import { Center, Flex, VStack } from "@chakra-ui/react"
+import { Box, Center, Flex, VStack } from "@chakra-ui/react"
 import { useThemeOptions } from "../../hooks/useThemeOptions"
 import { useRgba } from "../../hooks/useRgba"
 import { SocialFollows } from "../social/SocialFollows"
 import Hamburger from "./Hamburger"
+import { gsap, ScrollTrigger } from "../../gsap"
 
 function Sidebar() {
   const sidebarRef = useRef()
   const { sidebarMenuWidth } = useThemeOptions()
+  const ref = React.useRef()
+
+  const [color, setColor] = useState("white")
+
+  useLayoutEffect(() => {
+    const sections = document.querySelectorAll("main section")
+    const scrollTriggers = []
+
+    sections.forEach(section => {
+      const dimensions = ref.current.getBoundingClientRect()
+      const height = dimensions.top
+      const isLight = section.classList.contains("light")
+
+      const trigger = ScrollTrigger.create({
+        trigger: section,
+        start: `top ${height},`,
+        end: `top ${height + 5},`,
+        onEnter: () => {
+          setColor(isLight ? "black" : "white")
+        },
+        onEnterBack: self => {
+          setColor(
+            self.trigger.previousElementSibling.classList.contains("light")
+              ? "black"
+              : "white"
+          )
+        },
+      })
+
+      scrollTriggers.push(trigger)
+    })
+
+    return () => {
+      scrollTriggers.forEach(trigger => trigger.kill())
+    }
+  }, [])
+
+  useEffect(() => {
+    gsap.to(ref.current, {
+      fill: color,
+      duration: 0.4,
+      ease: "Power3.out",
+    })
+  }, [color])
 
   return (
     <Flex
@@ -34,14 +79,15 @@ function Sidebar() {
             <Logo color="white" />
           </Center>
         </Link>
-
-        <SocialFollows
-          direction="column"
-          spacing={8}
-          align="center"
-          color="white"
-          size="sm"
-        />
+        <Box ref={ref}>
+          <SocialFollows
+            direction="column"
+            spacing={8}
+            align="center"
+            color={color}
+            size="sm"
+          />
+        </Box>
       </VStack>
     </Flex>
   )

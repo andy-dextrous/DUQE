@@ -76,13 +76,6 @@ export const SocialFollows = ({
                 aria-label={`Follow on ${name}`}
                 py="2"
                 mx="1"
-                // sx={{
-                //   svg: {
-                //     fontSize: "2xl",
-                //     verticalAlign: "middle",
-                //     fill: "brandBlue.900",
-                //   },
-                // }}
               >
                 {button && (
                   <IconButton
