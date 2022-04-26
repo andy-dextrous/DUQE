@@ -30,8 +30,10 @@ function Sidebar() {
         end: `top ${height + 5},`,
         onEnter: () => {
           setColor(isLight ? "black" : "white")
+          console.log("enter")
         },
         onEnterBack: self => {
+          console.log("enterBack")
           setColor(
             self.trigger.previousElementSibling.classList.contains("light")
               ? "black"

@@ -12,6 +12,15 @@ const globalCSS = {
     fontWeight: "light",
     textTransform: "unset",
   },
+
+  ".thin-h3-caps.chakra-heading": {
+    color: "white",
+    textTransform: "uppercase",
+    fontWeight: "300",
+    fontSize: "56px",
+    lineHeight: "70px",
+    letterSpacing: "-0.04em",
+  },
   "#gatsby-focus-wrapper": {
     outline: "unset !important",
     transform: "unset !important",

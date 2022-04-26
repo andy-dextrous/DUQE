@@ -8,8 +8,8 @@ function Contact() {
   return (
     <SectionWrapper className="light" minH="120vh">
       <Stack direction="row" spacing={40}>
-        <VStack spacing={12} align="start" flex="1">
-          <Heading as="h1">Contact Us now</Heading>
+        <VStack spacing={7} align="start" flex="1">
+          <Heading className="jumbo">Contact Us now</Heading>
           <Heading as="h3" className="thin-h3">
             Make your mark in Dubai – the start-up capital of the world – and
             bring your venture to the forefront of the global market.

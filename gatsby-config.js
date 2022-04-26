@@ -91,7 +91,7 @@ module.exports = {
           placeholder: `none`,
           quality: 80,
           breakpoints: [391, 768, 960, 1440, 1660, 1800],
-          backgroundColor: `#000000`,
+          backgroundColor: `#0b0b0b`,
           tracedSVGOptions: {},
           blurredOptions: {},
           jpgOptions: {},

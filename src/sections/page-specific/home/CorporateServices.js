@@ -16,9 +16,9 @@ function CorporateServices() {
     <Box width="100%" maxW="container.xl" zIndex="2">
       <Box
         layerStyle="fillSpace"
-        minH="80vh"
+        h="850px"
         position="relative"
-        rounded="2xl"
+        rounded="30px"
         overflow="hidden"
       >
         <Grid

@@ -20,12 +20,12 @@ function Logo({ initialColor = "white", width = "60px", useContrast = true }) {
         start: `top ${halfHeight},`,
         end: `top ${halfHeight + 5},`,
         onEnter: () => {
-          setColor(isLight ? "black" : "white")
+          setColor(isLight ? "#0b0b0b" : "white")
         },
         onEnterBack: self => {
           setColor(
             self.trigger.previousElementSibling.classList.contains("light")
-              ? "black"
+              ? "#0b0b0b"
               : "white"
           )
         },

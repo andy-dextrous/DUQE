@@ -13,10 +13,10 @@ import SectionWrapper from "../../../components/SectionWrapper"
 
 function LatestBlogs() {
   return (
-    <SectionWrapper bg="black" containerSize="xl">
+    <SectionWrapper bg="dark.default" containerSize="xl">
       <Stack direction="row" spacing={40}>
         <VStack spacing={12} align="start" flex="1">
-          <Heading as="h1" color="white">
+          <Heading className="jumbo" color="white">
             Our Latest Blog and Articles
           </Heading>
           <Heading as="h3" className="thin-h3" color="white">

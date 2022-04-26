@@ -4,6 +4,7 @@ export const Button = {
     textTransform: "uppercase",
     color: "dark.default",
     letterSpacing: "0",
+    borderRadius: "10px",
   },
   variants: {
     primary: {

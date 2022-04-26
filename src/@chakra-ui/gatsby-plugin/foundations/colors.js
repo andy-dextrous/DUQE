@@ -49,6 +49,6 @@ export const colors = {
     "700": "#4d4d4d",
     "800": "#333333",
     "900": "#1a1a1a",
-    "default": "0b0b0b"
+    "default": "#0b0b0b"
   }
 }

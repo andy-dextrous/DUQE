@@ -8,8 +8,8 @@ import NewsletterFooter from "./NewsletterFooter"
 function Footer() {
   return (
     <SectionWrapper
-      bg="black"
-      minH="70vh"
+      bg="dark.default"
+      h="970px"
       pt={0}
       containerSize="xl"
       containerStyles={{ position: "relative" }}

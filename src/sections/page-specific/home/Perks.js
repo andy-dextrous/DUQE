@@ -4,7 +4,7 @@ import SectionWrapper from "../../../components/SectionWrapper"
 
 const Perks = () => {
   return (
-    <SectionWrapper withContainer={false} bg="black">
+    <SectionWrapper withContainer={false} bg="dark.default" px="50px">
       <Center
         position="absolute"
         zIndex="2"
@@ -32,12 +32,12 @@ const Perks = () => {
             gradientTransform="matrix(0 -777.5 -1072.41 0 795615.84 1279)"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset={0} stopColor="#000000" stopOpacity={0} />
-            <stop offset={1} stopColor="#000000" />
+            <stop offset={0} stopColor="#0b0b0b" stopOpacity={0} />
+            <stop offset={1} stopColor="#0b0b0b" />
           </radialGradient>
           <style
             dangerouslySetInnerHTML={{
-              __html: ".g{fill:#fff}.h{fill:#dfdb2a}.i{fill:#000000}",
+              __html: ".g{fill:#fff}.h{fill:#dfdb2a}.i{fill:#0b0b0b}",
             }}
           />
         </defs>
@@ -52,7 +52,7 @@ const Perks = () => {
             <path
               className="i"
               d="M0 0h1920v1392H0z"
-              style={{ mixBlendMode: "overlay", opacity: ".85" }}
+              style={{ mixBlendMode: "overlay", opacity: ".9" }}
             />
             <path id="c" style={{ fill: "url(#b)" }} d="M0 0h1920v1392H0z" />
             <path

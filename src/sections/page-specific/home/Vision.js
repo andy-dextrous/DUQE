@@ -13,14 +13,7 @@ function Vision() {
       <Flex h="full" align="center">
         <Spacer />
         <VStack w="50%" spacing={4} align="start">
-          <Heading
-            as="h3"
-            fontSize="60px"
-            fontWeight="300"
-            letterSpacing="-0.02em"
-            color="white"
-            textTransform="uppercase"
-          >
+          <Heading as="h3" className="thin-h3-caps">
             Do you have a vision the world needs to see?
           </Heading>
           <Text fontSize="36px" color="brandYellow.default" fontWeight="300">

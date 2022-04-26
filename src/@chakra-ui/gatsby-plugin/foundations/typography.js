@@ -18,8 +18,8 @@ export const fontSizes = {
 }
 
 export const fonts = {
-  heading: `"Helvetica Neue", ${theme.fonts.heading}`,
-  body: `"Helvetica Neue", ${theme.fonts.body}`,
+  heading: `"Helvetica Neue ", ${theme.fonts.heading}`,
+  body: `"Helvetica Neue ", ${theme.fonts.body}`,
 }
 
 export const p = {
@@ -36,6 +36,7 @@ const heading = {
   fontFamily: fonts.heading,
   fontWeight: "800",
   textTransform: "uppercase",
+  fontStyle: "normal",
 }
 
 export const h1 = {
@@ -55,13 +56,12 @@ export const h2 = {
 export const h3 = {
   ...heading,
   fontSize: ["2xl", "3xl", "4xl"],
-  mb: 4,
 }
 
 export const h4 = {
   ...heading,
   fontSize: ["xl", "2xl", "3xl"],
-  mb: 4,
+  lineHeight: "133%",
 }
 
 export const h5 = {
@@ -92,10 +92,12 @@ export const base = {
   blockquote,
   "h1.chakra-heading": h1,
   "h2.chakra-heading": h2,
-  // "h3.chakra-heading": h3,
+  "h3.chakra-heading": h3,
   "h4.chakra-heading": h4,
   "h5.chakra-heading": h5,
   "h6.chakra-heading": h6,
   "p.chakra-text": p,
   "a.chakra-link": a,
+  "h2.chakra-heading.jumbo": h1,
+  "h1,h2,h3,h4,h5,h6,p": { color: "dark.default" },
 }

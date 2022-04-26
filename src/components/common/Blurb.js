@@ -1,16 +1,22 @@
-import { Heading, Image, Text, VStack } from "@chakra-ui/react"
+import { Box, Heading, Image, Text, VStack } from "@chakra-ui/react"
 import React from "react"
 
-function Blurb() {
+function Blurb({ img, title, text }) {
   return (
-    <VStack align="start" flex="1">
-      <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650943373/DUQE/easy_process.png" />
-      <Heading as="h4">Swift & Easy Process</Heading>
-      <Text>
-        DUQE is where you can get everything done for your business – from setup
-        and beyond. Having everything done in-house means you get to enjoy
-        significant savings in time and money.
-      </Text>
+    <VStack
+      align="start"
+      flex="1"
+      spacing={5}
+      justifyContent="flex-start"
+      sx={{ ".blurb-title": { textTransform: "unset" } }}
+    >
+      <Box h="80px">
+        <Image src={img} h="100%" />
+      </Box>
+      <Heading as="h4" class="blurb-title">
+        {title}
+      </Heading>
+      <Text fontSize="20px">{text}</Text>
     </VStack>
   )
 }

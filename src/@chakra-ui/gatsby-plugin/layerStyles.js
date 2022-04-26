@@ -35,7 +35,7 @@ export const layerStyles = {
     position: "absolute",
     top: "0",
     left: "0",
-    bg: "linear-gradient(180deg, rgba(11, 11, 11, 0) 32.43%, #000000 100%),radial-gradient(63.13% 139.73% at 36.87% 47.07%, rgba(11, 11, 11, 0) 0%, #0B0B0B 100%)",
+    bg: "linear-gradient(180deg, rgba(11, 11, 11, 0) 32.43%, #0b0b0b 100%),radial-gradient(63.13% 139.73% at 36.87% 47.07%, rgba(11, 11, 11, 0) 0%, #0B0B0B 100%)",
     opacity: 1,
   },
 

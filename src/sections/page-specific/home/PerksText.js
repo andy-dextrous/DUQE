@@ -4,9 +4,9 @@ import SectionWrapper from "../../../components/SectionWrapper"
 
 function PerksText() {
   return (
-    <SectionWrapper bg="black" containerSize="lg">
+    <SectionWrapper bg="dark.default" containerSize="lg">
       <VStack spacing={12}>
-        <Heading as="h1" color="white">
+        <Heading className="jumbo" color="white">
           The perks of Dubai's only free zone{" "}
           <Text as="span" color="brandYellow.default">
             on a ship

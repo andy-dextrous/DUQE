@@ -18,8 +18,8 @@ function Agent() {
           align="start"
           flex="1"
         >
-          <Heading as="h1">Become an agent</Heading>
-          <Heading as="h3" className="thin-h3" color="black">
+          <Heading className="jumbo">Become an agent</Heading>
+          <Heading as="h3" className="thin-h3">
             Be part of DUQE’s vibrant start-up community. Connect with aspiring
             founders, CEOs, freelancers and digital nomads and let them know why
             DUQE is the ideal launchpad for their business.

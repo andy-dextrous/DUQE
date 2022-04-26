@@ -20,12 +20,12 @@ function useContrastingColor(initialColor = "white", id) {
         markers: true,
         end: `top ${halfHeight + 5},`,
         onEnter: () => {
-          setColor(isWhite ? "black" : "white")
+          setColor(isWhite ? "#0b0b0b" : "white")
         },
         onEnterBack: self => {
           setColor(
             self.trigger.previousElementSibling.classList.contains("white")
-              ? "black"
+              ? "#0b0b0b"
               : "white"
           )
         },

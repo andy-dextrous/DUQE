@@ -39,7 +39,7 @@ const SectionWrapper = forwardRef((props, ref) => {
             maxW={`container.${containerSize}`}
             w={`container.${containerSize}`}
             h="full"
-            py={[2, 4, 6, 8, 60]}
+            py={[20, 20, 32, 48, 60]}
             {...containerStyles}
           >
             {children}

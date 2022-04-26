@@ -13,10 +13,10 @@ function HowMuchDoesItCost() {
       zIndex="1"
     >
       <VStack spacing={12}>
-        <Heading as="h1" textAlign="center" color="black">
+        <Heading className="jumbo" textAlign="center">
           How much does it cost?
         </Heading>
-        <Heading as="h3" className="thin-h3" color="black" textAlign="center">
+        <Heading as="h3" className="thin-h3" textAlign="center">
           Use the <strong>DUQE Cost Calculator</strong> to find out the cost of
           your business setup. It’s the number one question we get asked. <br />
           <strong>Find out in an instant.</strong>
