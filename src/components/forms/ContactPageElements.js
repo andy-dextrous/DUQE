@@ -12,8 +12,8 @@ import React from "react"
 function ContactPageElements() {
   const buttonSize = useBreakpointValue(["sm", "sm", "lg"])
   return (
-    <VStack spacing={8}>
-      <HStack spacing={4} w="full" mb={4}>
+    <VStack spacing={4} align="flex-start" flex="1">
+      <HStack spacing={4} w="full">
         <Input
           placeholder="Enter your first name"
           size="lg"
@@ -33,7 +33,7 @@ function ContactPageElements() {
           _focus={{ bg: "gray.100" }}
         />
       </HStack>
-      <HStack spacing={4} pb={4}>
+      <HStack spacing={4} w="full">
         <Input
           placeholder="Company name"
           size="lg"
@@ -62,26 +62,7 @@ function ContactPageElements() {
           <option value="Other">Other</option>
         </Select>
       </HStack>
-      <Input
-        placeholder="Your email address"
-        mb={4}
-        variant="filled"
-        isRequired
-        size="lg"
-        name="Email"
-        fontSize={["xs", "sm", "md"]}
-        _focus={{ bg: "gray.100" }}
-      />
-      <Input
-        placeholder="Preferred contact number"
-        isRequired
-        size="lg"
-        name="Phone"
-        mb={4}
-        variant="filled"
-        fontSize={["xs", "sm", "md"]}
-        _focus={{ bg: "gray.100" }}
-      />
+
       <Textarea
         placeholder="What are you looking for?"
         size="lg"
@@ -94,11 +75,11 @@ function ContactPageElements() {
       />
       <input type="hidden" id="page" name="Page" value="Contact Page"></input>
       <HStack justify="center" mt={4}>
-        <Button variant="green" size={buttonSize} type="submit">
+        <Button size={buttonSize} type="submit">
           Submit
         </Button>
       </HStack>
-    </>
+    </VStack>
   )
 }
 

@@ -6,7 +6,7 @@ import useStopScroll from "../hooks/useStopScroll"
 
 export const MenuContext = React.createContext()
 
-export function Layout({ children, smoothScroll = true }) {
+export function Layout({ children, smoothScroll = false }) {
   // App-level state
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   useStopScroll(isMenuOpen)

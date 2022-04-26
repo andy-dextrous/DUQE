@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react"
 import { useThemeOptions } from "../hooks/useThemeOptions"
-import { Center, Box } from "@chakra-ui/react"
+import { Center, Box, Flex } from "@chakra-ui/react"
 import { SmartImage } from "../components/SmartImage"
 import Video from "./video/Video"
 
@@ -16,33 +16,36 @@ const SectionWrapper = forwardRef((props, ref) => {
     overlayStyle,
     withContainer = true,
     containerSize = "xl",
-    ...containerStyles
+    containerStyles = {},
+    ...sectionStyles
   } = props
 
   const { sidebarMenuMargin, topBarHeight } = useThemeOptions()
 
   return (
     <>
-      <Center
+      <Flex
         as="section"
         width={["100%", "100%", `calc(100vw - ${sidebarMenuMargin}px)`]}
         position="relative"
         ml={[0, 0, sidebarMenuMargin + "px"]}
         pt={isFirstSection ? `${topBarHeight}px` : 0}
         px={["200px"]}
-        {...containerStyles}
+        justify="center"
+        {...sectionStyles}
       >
         {withContainer ? (
           <Box
             maxW={`container.${containerSize}`}
             w={`container.${containerSize}`}
             h="full"
-            py={[2, 4, 6, 8, 20]}
+            py={[2, 4, 6, 8, 60]}
+            {...containerStyles}
           >
             {children}
           </Box>
         ) : (
-          { children }
+          <>{children}</>
         )}
         {(bgImage || overlay || bgVideo) && (
           <Box layerStyle="bgImage" ref={ref}>
@@ -55,7 +58,7 @@ const SectionWrapper = forwardRef((props, ref) => {
             </Box>
           </Box>
         )}
-      </Center>
+      </Flex>
     </>
   )
 })

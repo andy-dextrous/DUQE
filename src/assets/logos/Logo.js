@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useEffect, useState, useRef } from "react"
 import { gsap, ScrollTrigger } from "../../gsap"
 
-function Logo({ initialColor = "white", useContrast = true }) {
+function Logo({ initialColor = "white", width = "60px", useContrast = true }) {
   const logo = useRef()
   const [color, setColor] = useState(initialColor)
 
@@ -51,7 +51,7 @@ function Logo({ initialColor = "white", useContrast = true }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="60px"
+      width={width}
       height="100%"
       viewBox="0 0 61 70.71"
       fill={color}

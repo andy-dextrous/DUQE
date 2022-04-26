@@ -3,7 +3,6 @@ export const Button = {
     fontWeight: "bold",
     textTransform: "uppercase",
     color: "dark.default",
-    lineHeight: "24",
     letterSpacing: "0",
   },
   variants: {

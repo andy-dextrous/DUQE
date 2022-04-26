@@ -47,8 +47,9 @@ export const h1 = {
 }
 export const h2 = {
   ...heading,
-  fontSize: ["3xl", "4xl", "5xl"],
-  mb: 4,
+  fontSize: ["3xl", "4xl", "6xl"],
+  fontWeight: "extrabold",
+  letterSpacing: "-0.02em",
 }
 
 export const h3 = {

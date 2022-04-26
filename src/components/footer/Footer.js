@@ -3,19 +3,22 @@ import React from "react"
 import Logo from "../../assets/logos/Logo"
 import SectionWrapper from "../../components/SectionWrapper"
 import { SocialFollows } from "../../components/social/SocialFollows"
+import NewsletterFooter from "./NewsletterFooter"
 
 function Footer() {
   return (
-    <SectionWrapper bg="black" minH="70vh">
-      <Stack w="full" direction="row" spacing={20} mb={20}>
+    <SectionWrapper bg="black" minH="70vh" pt={40}>
+      <NewsletterFooter />
+
+      <Stack w="full" direction="row" spacing={36} mb={20}>
         <Box>
-          <Logo useContrast={false} />
+          <Logo useContrast={false} width="120px" />
         </Box>
-        <Heading as="h3" color="white">
-          Reach for your dreams
+        <Heading as="h2" color="white">
+          Reach for your dreams.
           <br />
           <Text as="span" color="brandYellow.default">
-            Create your legacy
+            Create your legacy.
           </Text>
         </Heading>
       </Stack>
