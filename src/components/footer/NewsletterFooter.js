@@ -13,13 +13,14 @@ import React from "react"
 function NewsletterFooter() {
   return (
     <Center
-      w="container.xl"
+      w="100%"
       bg="brandConcrete.default"
-      minH="30vh"
+      h="40vh"
       rounded="2xl"
       position="absolute"
-      top="-200px"
-      p={20}
+      top="-20vh"
+      left="0"
+      py={20}
     >
       <VStack w="full" spacing={8}>
         <Heading>Subscribe to our newsletter</Heading>

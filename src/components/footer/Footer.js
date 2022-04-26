@@ -7,10 +7,16 @@ import NewsletterFooter from "./NewsletterFooter"
 
 function Footer() {
   return (
-    <SectionWrapper bg="black" minH="70vh" pt={40}>
+    <SectionWrapper
+      bg="black"
+      minH="70vh"
+      pt={0}
+      containerSize="xl"
+      containerStyles={{ position: "relative" }}
+    >
       <NewsletterFooter />
 
-      <Stack w="full" direction="row" spacing={36} mb={20}>
+      <Stack w="full" direction="row" spacing={36} my={20}>
         <Box>
           <Logo useContrast={false} width="120px" />
         </Box>

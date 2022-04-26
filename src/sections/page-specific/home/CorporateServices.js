@@ -16,7 +16,7 @@ function CorporateServices() {
     <Box width="100%" maxW="container.xl" zIndex="2">
       <Box
         layerStyle="fillSpace"
-        minH="70vh"
+        minH="80vh"
         position="relative"
         rounded="2xl"
         overflow="hidden"
@@ -92,7 +92,10 @@ function CorporateServices() {
               <Heading as="h4" textTransform="unset">
                 Accounting
               </Heading>
-              <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg" />
+              <Image
+                h="60px"
+                src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg"
+              />
             </HStack>
             <Text mt={8} fontSize="20">
               Our accountants will sort out your invoices, receipts, payments,

@@ -6,7 +6,7 @@ import { Heading, Stack, VStack } from "@chakra-ui/react"
 
 function Contact() {
   return (
-    <SectionWrapper className="light" minH="100vh">
+    <SectionWrapper className="light" minH="120vh">
       <Stack direction="row" spacing={40}>
         <VStack spacing={12} align="start" flex="1">
           <Heading as="h1">Contact Us now</Heading>

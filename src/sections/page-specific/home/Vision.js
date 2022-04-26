@@ -31,8 +31,9 @@ function Vision() {
       <Image
         src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650945063/DUQE/Q.svg"
         position="absolute"
-        left="200px"
+        left="120px"
         top="20%"
+        width={["50%", "50%", "50%", "50%", "40%", "45%"]}
       />
     </SectionWrapper>
   )
