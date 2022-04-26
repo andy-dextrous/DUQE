@@ -5,7 +5,7 @@ import { Seo } from "../components/seo/components/index"
 function Archive(props) {
   return (
     <Layout noFooterCTA startDark>
-      <Seo props={props} />
+      {/* <Seo props={props} /> */}
       <div>Category</div>
     </Layout>
   )

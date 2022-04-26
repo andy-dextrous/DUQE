@@ -5,7 +5,7 @@ import { Seo } from "../components/seo/components/index"
 function Contact(props) {
   return (
     <Layout noFooterCTA isDark>
-      <Seo props={props} />
+      {/* <Seo props={props} /> */}
       <div>contact</div>
     </Layout>
   )

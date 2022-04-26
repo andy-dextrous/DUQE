@@ -5,7 +5,7 @@ import { Seo } from "../components/seo/components/index"
 function Post(props) {
   return (
     <Layout>
-      <Seo props={props} />
+      {/* <Seo props={props} /> */}
       <div>Post template</div>
     </Layout>
   )

@@ -5,7 +5,7 @@ import { Seo } from "../components/seo/components/index"
 function About(props) {
   return (
     <Layout startDark noFooterCTA darkButton>
-      <Seo props={props} />
+      {/* <Seo props={props} /> */}
       <div>About page</div>
     </Layout>
   )

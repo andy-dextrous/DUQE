@@ -5,7 +5,7 @@ import { Seo } from "../components/seo/components/index"
 function AuthorArchive(props) {
   return (
     <Layout>
-      <Seo props={props} />
+      {/* <Seo props={props} /> */}
       <div>category page</div>
     </Layout>
   )
