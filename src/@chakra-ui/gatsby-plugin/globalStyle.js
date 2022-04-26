@@ -12,7 +12,11 @@ const globalCSS = {
     fontWeight: "light",
     textTransform: "unset",
   },
-
+  "#gatsby-focus-wrapper": {
+    outline: "unset !important",
+    transform: "unset !important",
+  },
+  li: { listStyle: "none" },
   ...base,
 }
 

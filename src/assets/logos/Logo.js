@@ -1,11 +1,12 @@
 import React, { useLayoutEffect, useEffect, useState, useRef } from "react"
 import { gsap, ScrollTrigger } from "../../gsap"
 
-function Logo() {
+function Logo({ initialColor = "white", useContrast = true }) {
   const logo = useRef()
-  const [color, setColor] = useState("white")
+  const [color, setColor] = useState(initialColor)
 
   useLayoutEffect(() => {
+    if (!useContrast) return
     const sections = document.querySelectorAll("main section")
     const scrollTriggers = []
 
@@ -39,6 +40,7 @@ function Logo() {
   }, [])
 
   useEffect(() => {
+    if (!useContrast) return
     gsap.to(logo.current, {
       fill: color,
       duration: 0.4,

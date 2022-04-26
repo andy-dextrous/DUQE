@@ -35,6 +35,7 @@ const SectionWrapper = forwardRef((props, ref) => {
         {withContainer ? (
           <Box
             maxW={`container.${containerSize}`}
+            w={`container.${containerSize}`}
             h="full"
             py={[2, 4, 6, 8, 20]}
           >

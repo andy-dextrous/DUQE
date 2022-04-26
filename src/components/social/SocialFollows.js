@@ -22,7 +22,7 @@ export const SocialFollows = ({
   size = "sm",
   button = false,
   variant = "gray",
-  color,
+  color = "white",
   ...styles
 }) => {
   const supportedIcons = [
