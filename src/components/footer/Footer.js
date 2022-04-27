@@ -5,7 +5,7 @@ import SectionWrapper from "../../components/SectionWrapper"
 import { SocialFollows } from "../../components/social/SocialFollows"
 import NewsletterFooter from "./NewsletterFooter"
 
-function Footer() {
+function Footer({ withSignup = true }) {
   return (
     <SectionWrapper
       bg="dark.default"
@@ -14,9 +14,14 @@ function Footer() {
       containerSize="xl"
       containerStyles={{ position: "relative" }}
     >
-      <NewsletterFooter />
+      {withSignup && <NewsletterFooter />}
 
-      <Stack w="full" direction="row" spacing={36} my={20}>
+      <Stack
+        w="full"
+        direction="row"
+        spacing={36}
+        my={withSignup ? 20 : "unset"}
+      >
         <Box>
           <Logo useContrast={false} width="120px" />
         </Box>

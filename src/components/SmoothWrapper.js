@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react"
-import React, { useEffect, useLayoutEffect, useRef } from "react"
-import { ScrollSmoother, ScrollTrigger } from "../gsap"
+import React, { useEffect, useRef } from "react"
+import { ScrollSmoother } from "../gsap"
 
 function SmoothWrapper({ smoothScroll, children }) {
   const wrapper = useRef()
@@ -17,7 +17,7 @@ function SmoothWrapper({ smoothScroll, children }) {
     return () => {
       smoother.kill()
     }
-  }, [])
+  }, [smoothScroll])
 
   return smoothScroll ? (
     <Box ref={wrapper}>

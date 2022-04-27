@@ -6,7 +6,7 @@ import { Seo } from "../components/seo/components/index"
 function Default(props) {
   return (
     <Layout>
-      {/* <Seo props={props} /> */}
+      <Seo props={props} />
       <div>Default</div>
     </Layout>
   )

@@ -2,7 +2,6 @@ import {
   Button,
   Heading,
   Image,
-  Square,
   Stack,
   StackDivider,
   Text,

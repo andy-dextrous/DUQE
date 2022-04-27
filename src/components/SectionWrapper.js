@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react"
 import { useThemeOptions } from "../hooks/useThemeOptions"
-import { Center, Box, Flex } from "@chakra-ui/react"
+import { Box, Flex } from "@chakra-ui/react"
 import { SmartImage } from "../components/SmartImage"
 import Video from "./video/Video"
 

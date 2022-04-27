@@ -37,7 +37,7 @@ function Logo({ initialColor = "white", width = "60px", useContrast = true }) {
     return () => {
       scrollTriggers.forEach(trigger => trigger.kill())
     }
-  }, [])
+  }, [useContrast])
 
   useEffect(() => {
     if (!useContrast) return
@@ -46,7 +46,7 @@ function Logo({ initialColor = "white", width = "60px", useContrast = true }) {
       duration: 0.4,
       ease: "Power3.out",
     })
-  }, [color])
+  }, [color, useContrast])
 
   return (
     <svg

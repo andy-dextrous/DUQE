@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import axios from "axios"
-import { Box, FormControl, Heading, Text, VStack } from "@chakra-ui/react"
+import { Box, FormControl, Heading, Text } from "@chakra-ui/react"
 
 function GetForm({ formElements, ...props }) {
   const [submitted, setSubmitted] = useState(false)

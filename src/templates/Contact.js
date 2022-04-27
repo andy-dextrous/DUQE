@@ -1,11 +1,12 @@
 import React from "react"
 import { Layout } from "../components/Layout"
+import { graphql } from "gatsby"
 import { Seo } from "../components/seo/components/index"
 
 function Contact(props) {
   return (
     <Layout noFooterCTA isDark>
-      {/* <Seo props={props} /> */}
+      <Seo props={props} />
       <div>contact</div>
     </Layout>
   )
@@ -13,10 +14,10 @@ function Contact(props) {
 
 export default Contact
 
-// export const pageQuery = graphql`
-//   query GET_CONTACT_PAGE($id: String!) {
-//     wpPage(id: { eq: $id }) {
-//       ...HERO_SMALL_QUERY
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query GET_CONTACT_PAGE($id: String!) {
+    wpPage(id: { eq: $id }) {
+      title
+    }
+  }
+`
