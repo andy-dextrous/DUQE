@@ -25,6 +25,18 @@ const globalCSS = {
     outline: "unset !important",
     transform: "unset !important",
   },
+  ".stop-scroll": {
+    overflow: "hidden",
+  },
+  ".subMenuLink": {
+    fontSize: ["24px"],
+    fontWeight: "bold",
+    textTransform: "unset",
+    lineHeight: "32px",
+    _hover: {
+      color: "white",
+    },
+  },
   li: { listStyle: "none" },
   ...base,
 }

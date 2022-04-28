@@ -1,7 +1,7 @@
 import React from "react"
-import SectionWrapper from "../../../components/SectionWrapper"
+import SectionWrapper from "../../components/SectionWrapper"
 import { Button, Center, Heading, HStack, Text, VStack } from "@chakra-ui/react"
-import { SmartLink } from "../../../components/SmartLink"
+import { SmartLink } from "../../components/SmartLink"
 
 function Hero() {
   return (

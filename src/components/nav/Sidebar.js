@@ -1,19 +1,31 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react"
+import React, {
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react"
+import { gsap, ScrollTrigger } from "../../gsap"
 import { Link } from "gatsby"
-import Logo from "../../assets/logos/Logo"
-import { Box, Center, Flex, VStack } from "@chakra-ui/react"
-import { useThemeOptions } from "../../hooks/useThemeOptions"
+import { MenuContext } from "../Layout"
 import { useRgba } from "../../hooks/useRgba"
+import { useThemeOptions } from "../../hooks/useThemeOptions"
+
 import { SocialFollows } from "../social/SocialFollows"
 import Hamburger from "./Hamburger"
-import { gsap, ScrollTrigger } from "../../gsap"
+import Logo from "../../assets/logos/Logo"
+import { Box, Center, Flex, VStack } from "@chakra-ui/react"
 
 function Sidebar() {
   const sidebarRef = useRef()
-  const { sidebarMenuWidth } = useThemeOptions()
   const ref = React.useRef()
-
+  const { sidebarMenuWidth } = useThemeOptions()
+  const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
   const [color, setColor] = useState("white")
+
+  useEffect(() => {
+    console.log(isMenuOpen)
+  }, [isMenuOpen])
 
   useLayoutEffect(() => {
     const sections = document.querySelectorAll("main section")
@@ -30,10 +42,8 @@ function Sidebar() {
         end: `top ${height + 5},`,
         onEnter: () => {
           setColor(isLight ? "black" : "white")
-          console.log("enter")
         },
         onEnterBack: self => {
-          console.log("enterBack")
           setColor(
             self.trigger.previousElementSibling.classList.contains("light")
               ? "black"
@@ -70,26 +80,30 @@ function Sidebar() {
       align="center"
       justify="center"
       borderRight={["none", "none", `1px solid ${useRgba("#bbbbbb", 0.3)}`]}
-      zIndex="sticky"
+      zIndex="popover"
       display={["none", "none", "flex"]}
       ref={sidebarRef}
     >
       <VStack justify="space-between" h="100%" w="100%" py={8}>
         <Hamburger color="white" />
-        <Link to="/">
-          <Center w="100%">
-            <Logo color="white" />
-          </Center>
-        </Link>
-        <Box ref={ref}>
-          <SocialFollows
-            direction="column"
-            spacing={8}
-            align="center"
-            color={color}
-            size="sm"
-          />
-        </Box>
+        {!isMenuOpen && (
+          <Link to="/">
+            <Center w="100%">
+              <Logo color="white" />
+            </Center>
+          </Link>
+        )}
+        {!isMenuOpen && (
+          <Box ref={ref}>
+            <SocialFollows
+              direction="column"
+              spacing={8}
+              align="center"
+              color={color}
+              size="sm"
+            />
+          </Box>
+        )}
       </VStack>
     </Flex>
   )

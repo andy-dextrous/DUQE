@@ -1,44 +1,37 @@
 import React from "react"
 import { Layout } from "../components/Layout"
+import SectionWrapper from "../components/SectionWrapper"
 import { Seo } from "../components/seo/components/index"
+import { graphql } from "gatsby"
+import Hero from "../sections/shared/Hero"
 
 function Blog(props) {
   return (
     <Layout noFooterCTA startDark>
-      {/* <Seo props={props} /> */}
-      <div>Blog</div>
+      <Seo props={props} />
+      <Hero />
+      <SectionWrapper h="100vh" className="light" />
     </Layout>
   )
 }
 
 export default Blog
 
-// const pageQuery = graphql`
-//   query BLOG_PAGE_QUERY($skip: Int!, $limit: Int!) {
-//     wpPage(isPostsPage: { eq: true }) {
-//       title
-//     }
-//     allWpPost(limit: $limit, skip: $skip, sort: { order: DESC, fields: date }) {
-//       ...POSTS_QUERY
-//     }
-//     featuredPosts: allWpPost(
-//       limit: 4
-//       sort: { order: DESC, fields: date }
-//       filter: {
-//         categories: { nodes: { elemMatch: { name: { eq: "Featured" } } } }
-//       }
-//     ) {
-//       ...POSTS_QUERY
-//     }
-//     allWpCategory(filter: { count: { gt: 0 } }) {
-//       edges {
-//         node {
-//           name
-//           databaseId
-//           uri
-//           slug
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query BLOG_PAGE_QUERY {
+    wpPage(isPostsPage: { eq: true }) {
+      title
+    }
+
+    allWpCategory(filter: { count: { gt: 0 } }) {
+      edges {
+        node {
+          name
+          databaseId
+          uri
+          slug
+        }
+      }
+    }
+  }
+`
