@@ -17,11 +17,10 @@ function ContactPageElements() {
         <Input
           placeholder="Enter your first name"
           size="lg"
-          variant="filled"
           w="50%"
           name="first name"
           fontSize={["xs", "sm", "md"]}
-          _focus={{ bg: "gray.100" }}
+          variant="filled"
         />
         <Input
           placeholder="Enter your last name"

@@ -20,7 +20,7 @@ function Sidebar() {
   const sidebarRef = useRef()
   const ref = React.useRef()
   const { sidebarMenuWidth } = useThemeOptions()
-  const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
+  const { isMenuOpen } = useContext(MenuContext)
   const [color, setColor] = useState("white")
 
   useEffect(() => {
@@ -101,6 +101,7 @@ function Sidebar() {
               align="center"
               color={color}
               size="sm"
+              h="176px"
             />
           </Box>
         )}

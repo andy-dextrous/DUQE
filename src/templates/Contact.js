@@ -2,12 +2,15 @@ import React from "react"
 import { Layout } from "../components/Layout"
 import { graphql } from "gatsby"
 import { Seo } from "../components/seo/components/index"
+import ContactUs from "../sections/page-specific/contact/ContactUs"
+import Hero from "../sections/page-specific/contact/Hero"
 
 function Contact(props) {
   return (
     <Layout noFooterCTA isDark>
       <Seo props={props} />
-      <div>contact</div>
+      <Hero />
+      <ContactUs />
     </Layout>
   )
 }

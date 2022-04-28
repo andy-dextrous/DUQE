@@ -6,14 +6,15 @@ export const Input = {
     borderRadius: "10px",
   },
   variants: {
-    primary: {
-      bg: "brandConcrete.default",
+    filled: {
+      bg: "#f6f6f6",
+      color: "red",
     },
   },
   sizes: {},
 
   defaultProps: {
-    variant: "filled",
+    variant: "primary",
     size: "lg",
   },
 }

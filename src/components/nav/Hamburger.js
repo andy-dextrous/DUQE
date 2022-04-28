@@ -1,4 +1,4 @@
-import { Button, Center, Icon } from "@chakra-ui/react"
+import { Button, Flex, Icon } from "@chakra-ui/react"
 import React, { useContext, useEffect, useLayoutEffect, useState } from "react"
 import { MenuContext } from "../Layout"
 import ToggleIcon from "../../assets/icons/MenuToggleIcon"
@@ -54,7 +54,7 @@ function Hamburger() {
   }, [color])
 
   return (
-    <Center zIndex="popover">
+    <Flex zIndex="popover" h="176px">
       <Button
         className={isMenuOpen ? "active" : ""}
         variant="menuToggle"
@@ -70,7 +70,7 @@ function Hamburger() {
           <Icon as={IoMdClose} color={color} />
         )}
       </Button>
-    </Center>
+    </Flex>
   )
 }
 
