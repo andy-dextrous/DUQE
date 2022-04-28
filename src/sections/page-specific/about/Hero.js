@@ -32,6 +32,7 @@ function Hero() {
         top="100px"
         right="50px"
         opacity="50%"
+        zIndex="-1"
       />
     </SectionWrapper>
   )

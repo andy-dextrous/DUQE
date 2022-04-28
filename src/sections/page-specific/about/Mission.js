@@ -30,7 +30,7 @@ function Mission() {
               "url('https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651112830/DUQE/Union.svg')",
             position: "absolute",
             top: "-15%",
-            left: "-50%",
+            left: "-30%",
             width: "100%",
             height: "100%",
             opacity: "50%",
@@ -77,7 +77,7 @@ function Mission() {
               "url('https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651113641/DUQE/chevron_blue.svg')",
             position: "absolute",
             top: "-15%",
-            left: "-50%",
+            left: "-30%",
             width: "180px",
             height: "180px",
 
