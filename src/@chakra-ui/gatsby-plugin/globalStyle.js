@@ -12,6 +12,10 @@ const globalCSS = {
     fontWeight: "light",
     textTransform: "unset",
   },
+  ".thin.chakra-heading": {
+    fontWeight: "normal",
+    textTransform: "unset",
+  },
 
   ".thin-h3-caps.chakra-heading": {
     color: "white",
