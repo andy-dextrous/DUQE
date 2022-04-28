@@ -46,6 +46,7 @@ function Sidebar() {
               : "white"
           )
         },
+        invalidateOnRefresh: true,
       })
 
       scrollTriggers.push(trigger)

@@ -35,6 +35,7 @@ function Hamburger() {
               : "white"
           )
         },
+        invalidateOnRefresh: true,
       })
 
       scrollTriggers.push(trigger)

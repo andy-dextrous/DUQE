@@ -29,6 +29,7 @@ function Logo({ initialColor = "white", width = "60px", useContrast = true }) {
               : "white"
           )
         },
+        invalidateOnRefresh: true,
       })
 
       scrollTriggers.push(trigger)
