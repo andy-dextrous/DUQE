@@ -17,7 +17,6 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react"
 import { AddIcon } from "@chakra-ui/icons"
-import { gsap } from "../../../gsap"
 
 const data = [
   "Manufacturing",

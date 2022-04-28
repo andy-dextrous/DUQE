@@ -41,6 +41,7 @@ const globalCSS = {
       color: "white",
     },
   },
+  ".chakra-heading.lower-case": { textTransform: "unset" },
   li: { listStyle: "none" },
   ...base,
 }

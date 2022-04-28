@@ -19,7 +19,7 @@ function Hamburger() {
     sections.forEach(section => {
       const dimensions = ref.current.getBoundingClientRect()
       const halfHeight = dimensions.top + dimensions.height / 2
-      const isLight = section.classList.contains("light")
+      const isLight = section?.classList?.contains("light")
 
       const trigger = ScrollTrigger.create({
         trigger: section,
@@ -30,7 +30,7 @@ function Hamburger() {
         },
         onEnterBack: self => {
           setColor(
-            self.trigger.previousElementSibling.classList.contains("light")
+            self.trigger.previousElementSibling?.classList?.contains("light")
               ? "#0b0b0b"
               : "white"
           )

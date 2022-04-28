@@ -23,10 +23,6 @@ function Sidebar() {
   const { isMenuOpen } = useContext(MenuContext)
   const [color, setColor] = useState("white")
 
-  useEffect(() => {
-    console.log(isMenuOpen)
-  }, [isMenuOpen])
-
   useLayoutEffect(() => {
     const sections = document.querySelectorAll("main section")
     const scrollTriggers = []
@@ -34,7 +30,7 @@ function Sidebar() {
     sections.forEach(section => {
       const dimensions = ref.current.getBoundingClientRect()
       const height = dimensions.top
-      const isLight = section.classList.contains("light")
+      const isLight = section?.classList?.contains("light")
 
       const trigger = ScrollTrigger.create({
         trigger: section,
@@ -45,7 +41,7 @@ function Sidebar() {
         },
         onEnterBack: self => {
           setColor(
-            self.trigger.previousElementSibling.classList.contains("light")
+            self.trigger.previousElementSibling?.classList?.contains("light")
               ? "black"
               : "white"
           )
