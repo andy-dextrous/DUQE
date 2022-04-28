@@ -2,15 +2,21 @@ import React from "react"
 import { Layout } from "../components/Layout"
 import { Seo } from "../components/seo/components/index"
 import { graphql } from "gatsby"
-import SectionWrapper from "../components/SectionWrapper"
-import Hero from "../sections/shared/Hero"
+import Hero from "../sections/page-specific/about/Hero"
+import IgnitingIdeas from "../sections/page-specific/about/IgnitingIdeas.js"
+import Mission from "../sections/page-specific/about/Mission"
+import WhyDuqe from "../sections/page-specific/about/WhyDuqe"
+import Perks from "../sections/page-specific/about/Perks"
 
 function About(props) {
   return (
     <Layout>
       <Seo props={props} />
       <Hero />
-      <SectionWrapper h="100vh" className="light" />
+      <IgnitingIdeas />
+      <Mission />
+      <WhyDuqe />
+      <Perks />
     </Layout>
   )
 }
