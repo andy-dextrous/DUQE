@@ -14,6 +14,7 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
+  AccordionIcon,
 } from "@chakra-ui/react"
 import { AddIcon } from "@chakra-ui/icons"
 import { gsap } from "../../../gsap"
@@ -57,6 +58,7 @@ function Activities() {
       minH="100vh"
       containerSize="xl"
       containerStyles={{ py: 0 }}
+      className="light"
       mb={40}
       _before={{
         content: "''",
@@ -87,7 +89,7 @@ function Activities() {
                   key={i}
                   h="80px"
                   px={8}
-                  _hover={{ bg: "dark.200" }}
+                  _hover={{ bg: "dark.100" }}
                 >
                   <HStack w="full" justify="flex-start">
                     <Image
@@ -113,7 +115,7 @@ function Activities() {
                             <Box flex="1" textAlign="left">
                               {item}
                             </Box>
-                            <AddIcon fontSize="12px" />
+                            <AccordionIcon icon={<AddIcon fontSize="12px" />} />
                           </AccordionButton>
 
                           <AccordionPanel pb={4}>
