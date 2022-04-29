@@ -38,8 +38,9 @@ const globalCSS = {
     fontWeight: "bold",
     textTransform: "unset",
     lineHeight: "32px",
+    color: "white",
     _hover: {
-      color: "white",
+      color: "brandYellow.default",
     },
   },
   ".chakra-heading.lower-case": { textTransform: "unset" },

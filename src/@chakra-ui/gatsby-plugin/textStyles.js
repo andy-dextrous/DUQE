@@ -4,6 +4,7 @@ export const textStyles = {
     fontWeight: "extrabold",
     textTransform: "uppercase",
     lineHeight: "60px",
+    color: "white",
     _hover: {
       color: "white",
     },

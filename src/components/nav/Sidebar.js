@@ -16,6 +16,7 @@ function Sidebar() {
   const { sidebarMenuWidth } = useThemeOptions()
   const { isMenuOpen } = useContext(MenuContext)
   const [color, setColor] = useState("white")
+  const borderColor = useRgba("#bbbbbb", 0.3)
 
   useEffect(() => {
     const sections = document.querySelectorAll("main section")
@@ -72,7 +73,11 @@ function Sidebar() {
       top="0"
       align="center"
       justify="center"
-      borderRight={["none", "none", `1px solid ${useRgba("#bbbbbb", 0.3)}`]}
+      borderRight={[
+        "none",
+        "none",
+        `1px solid ${isMenuOpen ? "transparent" : borderColor}`,
+      ]}
       zIndex="popover"
       display={["none", "none", "flex"]}
       ref={sidebarRef}

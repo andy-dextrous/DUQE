@@ -10,7 +10,15 @@ import { gsap, SplitText } from "../../gsap"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
 import { MenuContext } from "../Layout"
 import SectionWrapper from "../SectionWrapper"
-import { VStack, Text, Heading, Stack, Box, Center } from "@chakra-ui/react"
+import {
+  VStack,
+  Text,
+  Heading,
+  Stack,
+  Box,
+  Center,
+  Image,
+} from "@chakra-ui/react"
 import { SocialFollows } from "../social/SocialFollows"
 
 function Modal() {
@@ -150,7 +158,7 @@ function Modal() {
       w="100vw"
       h="100vh"
       visibility={isMenuOpen ? "visible" : "hidden"}
-      bg="brandConcrete.default"
+      bg="dark.default"
       containerSize="xl"
       containerStyles={{ py: 0 }}
       ref={menuSection}
@@ -224,13 +232,20 @@ function Modal() {
             justify={["start", "start", "center"]}
             flex="1"
             h="full"
-            bg="brandConcrete.300"
             spacing={[4, 8, 8, 12]}
             px={[8, 8, 12, 16, 20]}
             py={[0, 8, 12, 16, 20]}
           ></VStack>
         </Stack>
       </Center>
+      <Image
+        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651118245/DUQE/Corp_Q.svg"
+        position="absolute"
+        top="0"
+        left="0"
+        zIndex="-1"
+        opacity="30%"
+      />
     </SectionWrapper>
   )
 }
