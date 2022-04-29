@@ -25,7 +25,7 @@ function Hamburger() {
         trigger: section,
         start: `top ${halfHeight},`,
         end: `top ${halfHeight + 5},`,
-        markers: true,
+
         onEnter: () => {
           setColor(isLight ? "#0b0b0b" : "white")
         },

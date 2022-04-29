@@ -30,7 +30,7 @@ function Sidebar() {
         trigger: section,
         start: `top ${height},`,
         end: `top ${height + 5},`,
-        markers: true,
+
         onEnter: self => {
           console.log(self)
           setColor(isLight ? "black" : "white")
