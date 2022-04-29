@@ -7,7 +7,12 @@ function Why() {
     <SectionWrapper
       bg="dark.default"
       containerSize="xl"
-      containerStyles={{ position: "relative" }}
+      containerStyles={{
+        position: "relative",
+        py: 0,
+        pt: [20, 20, 32, 48, 60],
+        pb: ["176px"],
+      }}
     >
       <VStack spacing={12} mb={24} maxW="container.lg" mx="auto">
         <Heading className="jumbo" color="white">
