@@ -20,6 +20,7 @@ import {
   Image,
 } from "@chakra-ui/react"
 import { SocialFollows } from "../social/SocialFollows"
+import useRgba from "../../hooks/useRgba"
 
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
@@ -157,8 +158,9 @@ function Modal() {
       ml="0"
       w="100vw"
       h="100vh"
+      bg="rgba(11,11,11,0.95)"
+      backdropFilter="blur(10px)"
       visibility={isMenuOpen ? "visible" : "hidden"}
-      bg="dark.default"
       containerSize="xl"
       containerStyles={{ py: 0 }}
       ref={menuSection}
