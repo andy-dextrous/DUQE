@@ -158,7 +158,7 @@ function Modal() {
       ml="0"
       w="100vw"
       h="100vh"
-      bg="rgba(11,11,11,0.95)"
+      bg="rgba(11,11,11,0.85)"
       backdropFilter="blur(10px)"
       visibility={isMenuOpen ? "visible" : "hidden"}
       containerSize="xl"
