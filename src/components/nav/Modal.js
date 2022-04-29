@@ -226,7 +226,7 @@ function Modal() {
               })}
             </VStack>
           </VStack>
-          <VStack
+          {/* <VStack
             as="nav"
             align="start"
             justify={["start", "start", "center"]}
@@ -235,7 +235,7 @@ function Modal() {
             spacing={[4, 8, 8, 12]}
             px={[8, 8, 12, 16, 20]}
             py={[0, 8, 12, 16, 20]}
-          ></VStack>
+          ></VStack> */}
         </Stack>
       </Center>
       <Image
