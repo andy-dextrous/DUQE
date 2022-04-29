@@ -10,7 +10,6 @@ import {
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import YellowHeading from "../../../components/common/YellowHeading"
-import { useToken } from "@chakra-ui/react"
 
 function Requirements() {
   return (

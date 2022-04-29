@@ -25,7 +25,10 @@ function HowMuchDoesItCost() {
       </VStack>
       <Center mt={20}>
         {" "}
-        <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944008/DUQE/Calculator.png" />
+        <Image
+          h="908px"
+          src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944008/DUQE/Calculator.png"
+        />
       </Center>
 
       <Image
@@ -33,6 +36,7 @@ function HowMuchDoesItCost() {
         position="absolute"
         top="-210px"
         right="0"
+        zIndex="1"
       />
     </SectionWrapper>
   )

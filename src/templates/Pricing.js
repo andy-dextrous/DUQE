@@ -4,7 +4,6 @@ import { Seo } from "../components/seo/components/index"
 import { graphql } from "gatsby"
 import Hero from "../sections/page-specific/pricing/Hero"
 import Cards from "../sections/page-specific/pricing/Cards"
-import SectionWrapper from "../components/SectionWrapper"
 import Calculate from "../sections/page-specific/pricing/Calculate"
 
 function Pricing(props) {

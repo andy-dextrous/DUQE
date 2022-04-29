@@ -1,5 +1,5 @@
 import { Button, Flex, Icon } from "@chakra-ui/react"
-import React, { useContext, useEffect, useLayoutEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { MenuContext } from "../Layout"
 import ToggleIcon from "../../assets/icons/MenuToggleIcon"
 import { IoMdClose } from "react-icons/io"
@@ -12,7 +12,7 @@ function Hamburger() {
 
   const [color, setColor] = useState("white")
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const sections = document.querySelectorAll("main section")
     const scrollTriggers = []
 
@@ -25,6 +25,7 @@ function Hamburger() {
         trigger: section,
         start: `top ${halfHeight},`,
         end: `top ${halfHeight + 5},`,
+        markers: true,
         onEnter: () => {
           setColor(isLight ? "#0b0b0b" : "white")
         },

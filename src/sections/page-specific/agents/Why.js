@@ -4,8 +4,12 @@ import SectionWrapper from "../../../components/SectionWrapper"
 
 function Why() {
   return (
-    <SectionWrapper bg="dark.default" containerSize="lg">
-      <VStack spacing={12} mb={24}>
+    <SectionWrapper
+      bg="dark.default"
+      containerSize="xl"
+      containerStyles={{ position: "relative" }}
+    >
+      <VStack spacing={12} mb={24} maxW="container.lg" mx="auto">
         <Heading className="jumbo" color="white">
           Why be a DUQE agent?
         </Heading>
@@ -17,9 +21,10 @@ function Why() {
       <Stack
         direction="row"
         height="352px"
-        w="container.xl"
+        w="100%"
+        maxW="container.xl"
         position="absolute"
-        transform="translateX(-200px)"
+        left="0"
         spacing="0"
         rounded="30px"
         overflow="hidden"

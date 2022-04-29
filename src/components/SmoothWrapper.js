@@ -1,17 +1,22 @@
 import { Box } from "@chakra-ui/react"
-import React, { useEffect, useRef } from "react"
+import React, { useLayoutEffect, useRef } from "react"
 import { ScrollSmoother } from "../gsap"
 
 function SmoothWrapper({ smoothScroll, children }) {
   const wrapper = useRef()
   const content = useRef()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!smoothScroll) return
+
     const smoother = ScrollSmoother.create({
       wrapper: wrapper.current,
       content: content.current,
       smooth: 1,
+      normalizeScroll: true,
+      ignoreMobileResize: true,
+      effects: true,
+      preventDefault: true,
     })
 
     return () => {

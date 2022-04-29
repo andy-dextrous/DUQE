@@ -22,7 +22,7 @@ function Vision() {
         </VStack>
       </Flex>
       <Image
-        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650945063/DUQE/Q.svg"
+        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651188880/DUQE/Vision.svg"
         position="absolute"
         left="120px"
         top="20%"

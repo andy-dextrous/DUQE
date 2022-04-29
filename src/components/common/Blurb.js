@@ -13,7 +13,7 @@ function Blurb({ img, title, text }) {
       <Box h="80px">
         <Image src={img} h="100%" />
       </Box>
-      <Heading as="h4" class="blurb-title">
+      <Heading as="h4" className="blurb-title">
         {title}
       </Heading>
       <Text fontSize="20px">{text}</Text>

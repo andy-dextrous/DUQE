@@ -1,10 +1,4 @@
-import React, {
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import { gsap, ScrollTrigger } from "../../gsap"
 import { Link } from "gatsby"
 import { MenuContext } from "../Layout"
@@ -23,7 +17,7 @@ function Sidebar() {
   const { isMenuOpen } = useContext(MenuContext)
   const [color, setColor] = useState("white")
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const sections = document.querySelectorAll("main section")
     const scrollTriggers = []
 
@@ -36,7 +30,9 @@ function Sidebar() {
         trigger: section,
         start: `top ${height},`,
         end: `top ${height + 5},`,
-        onEnter: () => {
+        markers: true,
+        onEnter: self => {
+          console.log(self)
           setColor(isLight ? "black" : "white")
         },
         onEnterBack: self => {

@@ -1,11 +1,11 @@
-import React, { useLayoutEffect, useEffect, useState, useRef } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { gsap, ScrollTrigger } from "../../gsap"
 
 function Logo({ initialColor = "white", width = "60px", useContrast = true }) {
   const logo = useRef()
   const [color, setColor] = useState(initialColor)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!useContrast) return
     const sections = document.querySelectorAll("main section")
     const scrollTriggers = []
@@ -19,6 +19,7 @@ function Logo({ initialColor = "white", width = "60px", useContrast = true }) {
         trigger: section,
         start: `top ${halfHeight},`,
         end: `top ${halfHeight + 5},`,
+        markers: true,
         onEnter: () => {
           setColor(isLight ? "#0b0b0b" : "white")
         },
