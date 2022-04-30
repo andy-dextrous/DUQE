@@ -13,14 +13,17 @@ import Access from "../sections/page-specific/home/Access"
 import Agent from "../sections/page-specific/home/Agent"
 import LatestBlogs from "../sections/page-specific/home/LatestBlogs"
 import Contact from "../sections/page-specific/home/Contact"
+import { Box } from "@chakra-ui/react"
 
 function Homepage(props) {
   return (
     <Layout>
       <Seo props={props} />
-      <Hero />
-      <PerksText />
-      <Perks />
+      <Box bg="dark.default" zIndex="-10">
+        <Hero />
+        <PerksText />
+        <Perks />
+      </Box>
       <YourLegacy />
       <HowMuchDoesItCost />
       <Vision />

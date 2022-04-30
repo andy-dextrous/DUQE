@@ -11,7 +11,8 @@ const useContrastingColor = (
     const sections = document.querySelectorAll("main section")
     const scrollTriggers = []
 
-    sections.forEach(section => {
+    sections.forEach((section, i) => {
+      section.setAttribute("data-index", i)
       const dimensions = ref.current.getBoundingClientRect()
       const halfHeight = dimensions.top + dimensions.height / 2
       const isLight = section?.classList?.contains("light")
@@ -24,11 +25,10 @@ const useContrastingColor = (
           setColor(isLight ? "#0b0b0b" : "white")
         },
         onEnterBack: self => {
-          setColor(
-            self.trigger.previousElementSibling?.classList?.contains("light")
-              ? "#0b0b0b"
-              : "white"
-          )
+          const triggerIndex = self.trigger.getAttribute("data-index")
+          const trigger = sections[parseInt(triggerIndex) - 1]
+
+          setColor(trigger.classList?.contains("light") ? "#0b0b0b" : "white")
         },
         invalidateOnRefresh: true,
       })

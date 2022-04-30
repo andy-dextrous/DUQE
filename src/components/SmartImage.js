@@ -1,7 +1,7 @@
 import React from "react"
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
-import { Image as ChakraImage } from "@chakra-ui/react"
+import { Box, Image as ChakraImage } from "@chakra-ui/react"
 
 export const query = graphql`
   fragment IMAGE_DATA on WpMediaItem {
@@ -20,6 +20,7 @@ export const SmartImage = ({
   loading = "lazy",
   data,
   parallax,
+  imgStyle = { width: "100%", height: parallax ? "180%" : "100%" },
   ...props
 }) => {
   const breakPoints = [
@@ -72,11 +73,26 @@ export const SmartImage = ({
           Array.isArray(img) ? imageRef.current : getImage(imageRef.current)
         }
         alt={img.altText}
-        imgStyle={{ width: "100%", height: parallax ? "180%" : "100%" }}
+        imgStyle={imgStyle}
         {...props}
       />
+    ) : parallax ? (
+      <Box {...props} overflow="hidden">
+        <ChakraImage
+          src={imageRef.current}
+          alt={alt}
+          objectFit="cover"
+          data-speed="auto"
+          {...imgStyle}
+        />
+      </Box>
     ) : (
-      <ChakraImage src={imageRef.current} alt={alt} {...props} />
+      <ChakraImage
+        src={imageRef.current}
+        alt={alt}
+        {...props}
+        objectFit="cover"
+      />
     )
   ) : (
     <></>
