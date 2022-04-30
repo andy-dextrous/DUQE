@@ -10,11 +10,13 @@ function Blog(props) {
   const { allWpPost } = props.data
   const categories = props.data.allWpCategory.edges
 
+  console.clear()
+  console.log(props)
+
   return (
     <Layout noFooterCTA startDark>
       <Seo props={props} />
       <Hero />
-
       <PostGrid
         posts={allWpPost.nodes}
         ctx={props.pageContext}

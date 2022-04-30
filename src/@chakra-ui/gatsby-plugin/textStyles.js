@@ -6,7 +6,7 @@ export const textStyles = {
     lineHeight: "60px",
     color: "white",
     _hover: {
-      color: "white",
+      color: "brandYellow.default",
     },
   },
 }

@@ -8,6 +8,7 @@ function Hero() {
       bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651121618/DUQE/Business_activities.png"
       h="100vh"
       overlay
+      zIndex="1"
       overlayStyle={{
         bg: "linear-gradient(179.45deg, rgba(11, 11, 11, 0) 32.43%, #0B0B0B 99.75%),radial-gradient(84.77% 84.77% at 73.88% 44.21%, rgba(11, 11, 11, 0) 0%, #0B0B0B 100%)",
       }}

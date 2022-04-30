@@ -7,14 +7,17 @@ import IgnitingIdeas from "../sections/page-specific/about/IgnitingIdeas.js"
 import Mission from "../sections/page-specific/about/Mission"
 import WhyDuqe from "../sections/page-specific/about/WhyDuqe"
 import Perks from "../sections/page-specific/about/Perks"
+import DarkGroup from "../components/common/DarkGroup"
 
 function About(props) {
   return (
     <Layout>
       <Seo props={props} />
-      <Hero />
-      <IgnitingIdeas />
-      <Mission />
+      <DarkGroup>
+        <Hero />
+        <IgnitingIdeas />
+        <Mission />
+      </DarkGroup>
       <WhyDuqe />
       <Perks />
     </Layout>

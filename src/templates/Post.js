@@ -3,6 +3,7 @@ import PostContent from "../sections/page-specific/post/PostContent"
 import { Layout } from "../components/Layout"
 import { graphql } from "gatsby"
 import { Seo } from "../components/seo/components/index"
+import PostHeader from "../components/post/PostHeader"
 
 function Post(props) {
   const {
@@ -10,9 +11,13 @@ function Post(props) {
     pageContext,
   } = props
 
+  console.clear()
+  console.log(props)
+
   return (
     <Layout>
       <Seo props={props} />
+      <PostHeader data={wpPost} ctx={pageContext} />
       <PostContent data={wpPost} ctx={pageContext} />
     </Layout>
   )

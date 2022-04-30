@@ -19,12 +19,16 @@ function WhyDuqe() {
       containerStyles={{ py: 0, pt: [20, 20, 32, 48, 60] }}
     >
       <Stack direction="row" spacing={40}>
-        <Box flex="1" position="relative" h="100%">
+        <Box flex="1" position="relative" h="768px">
           <Heading className="jumbo" position="absolute" right="5%" top="-3%">
             <YellowHeading>Why</YellowHeading>
             <br /> Duqe?
           </Heading>
-          <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651114618/DUQE/QImage.png" />
+          <Image
+            src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651114618/DUQE/QImage.png"
+            h="100%"
+            objectFit="cover"
+          />
         </Box>
         <VStack spacing={12} align="start" flex="1">
           <Heading>

@@ -20,39 +20,27 @@ function PostContent({ data, ctx }) {
   const { seo } = ctx
 
   return (
-    <SectionWrapper className="light">
-      <Container h="full" maxW={["container.lg", "container.lg", "100%"]}>
-        <Stack
-          direction={["column", "column", "row"]}
-          wrap="nowrap"
-          spacing={28}
-          p={0}
-          pt={[16, 16, "115px"]}
-        >
-          <VStack flex="2" align="start" spacing={8} as="article">
-            <VStack align="start" spacing={2} as="header">
-              <Breadcrumbs data={seo.page.breadcrumbs} />
-              <PostEntryTitle data={data.title} />
-              <PostEntryExcerpt data={data.excerpt} />
-              <PublicationDate
-                data={{ date: data.date, readingTime: seo.readingTime }}
-              />
-            </VStack>
-            <SocialShare url={data.uri} />
-            <SmartImage
-              img={data.featuredImage?.node}
-              style={{ borderRadius: "0.75rem" }}
-              loading="eager"
-            />
-            <PostEntryContent data={data.content} />
-            <PrevNextPostNavigation prev={prev} next={next} />
-          </VStack>
-          <VStack layerStyle="blogSidebar" ref={containerRef}>
-            <WidgetsList />
-            <Author ref={authorRef} data={data} />
-          </VStack>
-        </Stack>
-      </Container>
+    <SectionWrapper
+      className="light"
+      containerSize="xl"
+      containerStyles={{ py: 0, pb: [20, 20, 32, 48, 60] }}
+    >
+      <Stack
+        direction={["column", "column", "row"]}
+        wrap="nowrap"
+        spacing={28}
+        p={0}
+        pt={[16, 16, "115px"]}
+      >
+        <VStack layerStyle="blogSidebar" ref={containerRef}>
+          <WidgetsList />
+          <Author ref={authorRef} data={data} />
+        </VStack>
+        <VStack flex="2" align="start" spacing={8} as="article">
+          <PostEntryContent data={data.content} />
+          <PrevNextPostNavigation prev={prev} next={next} />
+        </VStack>
+      </Stack>
     </SectionWrapper>
   )
 }

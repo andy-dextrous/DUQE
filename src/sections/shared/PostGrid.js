@@ -2,6 +2,8 @@ import React from "react"
 import SectionWrapper from "../../components/SectionWrapper"
 import { graphql, Link } from "gatsby"
 import VerticalCard from "../../components/common/VerticalCard"
+import SearchToggle from "../../components/search/SearchToggle"
+import { Pagination } from "../../components/archive/Pagination"
 import {
   Button,
   Container,
@@ -10,8 +12,6 @@ import {
   VStack,
   Wrap,
 } from "@chakra-ui/react"
-import SearchToggle from "../../components/search/SearchToggle"
-import { Pagination } from "../../components/archive/Pagination"
 
 function PostGrid({
   posts,
@@ -63,14 +63,10 @@ function PostGrid({
             <SearchToggle />
           </Wrap>
         </VStack>
-        <SimpleGrid
-          as="ul"
-          columns={{ base: 1, lg: 2, xl: posts.length > 2 ? 3 : 2 }}
-          spacing={[16, 16, 10]}
-        >
+        <SimpleGrid as="ul" columns={{ base: 1, lg: 2 }} spacing={[40]}>
           {posts.map(post => {
             return (
-              <Link to={post.uri}>
+              <Link to={post.uri} key={post.id}>
                 <VerticalCard
                   image={
                     post.featuredImage?.node.localFile.childImageSharp
