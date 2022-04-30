@@ -1,53 +1,10 @@
-import React, { useEffect, useState, useRef } from "react"
-import { gsap, ScrollTrigger } from "../../gsap"
+import React, { useState, useRef } from "react"
+import useContrastingColor from "../../hooks/useContrastingColor"
 
 function Logo({ initialColor = "white", width = "60px", useContrast = true }) {
   const logo = useRef()
   const [color, setColor] = useState(initialColor)
-
-  useEffect(() => {
-    if (!useContrast) return
-    const sections = document.querySelectorAll("main section")
-    const scrollTriggers = []
-
-    sections.forEach(section => {
-      const dimensions = logo.current.getBoundingClientRect()
-      const halfHeight = dimensions.top + dimensions.height / 2
-      const isLight = section?.classList?.contains("light")
-
-      const trigger = ScrollTrigger.create({
-        trigger: section,
-        start: `top ${halfHeight},`,
-        end: `top ${halfHeight + 5},`,
-        onEnter: () => {
-          setColor(isLight ? "#0b0b0b" : "white")
-        },
-        onEnterBack: self => {
-          setColor(
-            self.trigger.previousElementSibling?.classList?.contains("light")
-              ? "#0b0b0b"
-              : "white"
-          )
-        },
-        invalidateOnRefresh: true,
-      })
-
-      scrollTriggers.push(trigger)
-    })
-
-    return () => {
-      scrollTriggers.forEach(trigger => trigger.kill())
-    }
-  }, [useContrast])
-
-  useEffect(() => {
-    if (!useContrast) return
-    gsap.to(logo.current, {
-      fill: color,
-      duration: 0.4,
-      ease: "Power3.out",
-    })
-  }, [color, useContrast])
+  useContrastingColor({ color, setColor }, logo, { fill: color })
 
   return (
     <svg

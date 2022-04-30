@@ -1,17 +1,16 @@
-import { Box } from "@chakra-ui/react"
-import React, { useLayoutEffect, useRef } from "react"
+import React, { useLayoutEffect, useState } from "react"
 import { ScrollSmoother } from "../gsap"
+export const SmoothContext = React.createContext()
 
 function SmoothWrapper({ smoothScroll, children }) {
-  const wrapper = useRef()
-  const content = useRef()
+  const [smootherInstance, setSmootherInstance] = useState()
 
   useLayoutEffect(() => {
     if (!smoothScroll) return
 
     const smoother = ScrollSmoother.create({
-      wrapper: wrapper.current,
-      content: content.current,
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
       smooth: 1,
       normalizeScroll: true,
       ignoreMobileResize: true,
@@ -19,17 +18,17 @@ function SmoothWrapper({ smoothScroll, children }) {
       preventDefault: true,
     })
 
+    setSmootherInstance(smoother)
+
     return () => {
       smoother.kill()
     }
   }, [smoothScroll])
 
-  return smoothScroll ? (
-    <Box ref={wrapper}>
-      <Box ref={content}>{children}</Box>
-    </Box>
-  ) : (
-    <>{children}</>
+  return (
+    <SmoothContext.Provider value={smootherInstance}>
+      {children}
+    </SmoothContext.Provider>
   )
 }
 

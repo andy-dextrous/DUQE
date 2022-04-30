@@ -1,75 +1,37 @@
-import { Button, Flex, Icon } from "@chakra-ui/react"
 import React, { useContext, useEffect, useState } from "react"
 import { MenuContext } from "../Layout"
+import { SmoothContext } from "../SmoothWrapper"
+import useContrastingColor from "../../hooks/useContrastingColor"
+
 import ToggleIcon from "../../assets/icons/MenuToggleIcon"
 import { IoMdClose } from "react-icons/io"
-import { gsap, ScrollTrigger } from "../../gsap"
+import { Button, Flex, Icon } from "@chakra-ui/react"
 
 function Hamburger() {
-  const { setIsMenuOpen, isMenuOpen, isMenuButtonDisabled } =
-    useContext(MenuContext)
+  const { setIsMenuOpen, isMenuOpen } = useContext(MenuContext)
+  const smootherInstance = useContext(SmoothContext)
   const ref = React.useRef()
-
   const [color, setColor] = useState("white")
 
+  useContrastingColor({ color, setColor }, ref, { fill: color })
   useEffect(() => {
-    const sections = document.querySelectorAll("main section")
-    const scrollTriggers = []
-
-    sections.forEach(section => {
-      const dimensions = ref.current.getBoundingClientRect()
-      const halfHeight = dimensions.top + dimensions.height / 2
-      const isLight = section?.classList?.contains("light")
-
-      const trigger = ScrollTrigger.create({
-        trigger: section,
-        start: `top ${halfHeight},`,
-        end: `top ${halfHeight + 5},`,
-
-        onEnter: () => {
-          setColor(isLight ? "#0b0b0b" : "white")
-        },
-        onEnterBack: self => {
-          setColor(
-            self.trigger.previousElementSibling?.classList?.contains("light")
-              ? "#0b0b0b"
-              : "white"
-          )
-        },
-        invalidateOnRefresh: true,
-      })
-
-      scrollTriggers.push(trigger)
-    })
-
-    return () => {
-      scrollTriggers.forEach(trigger => trigger.kill())
-    }
-  }, [])
-
-  useEffect(() => {
-    gsap.to(ref.current, {
-      fill: color,
-      duration: 0.4,
-      ease: "Power3.out",
-    })
-  }, [color])
+    smootherInstance.paused(isMenuOpen ? true : false)
+  }, [isMenuOpen, smootherInstance])
 
   return (
-    <Flex zIndex="popover" h="176px">
+    <Flex zIndex="popover" h="176px" ref={ref}>
       <Button
         className={isMenuOpen ? "active" : ""}
         variant="menuToggle"
         aria-label="Toggle menu"
-        ref={ref}
         onClick={() => {
-          !isMenuButtonDisabled && setIsMenuOpen(!isMenuOpen)
+          setIsMenuOpen(!isMenuOpen)
         }}
       >
         {!isMenuOpen ? (
           <ToggleIcon color={color} />
         ) : (
-          <Icon as={IoMdClose} color={color} />
+          <Icon as={IoMdClose} color="dark.default" />
         )}
       </Button>
     </Flex>
