@@ -9,7 +9,6 @@ function TradeLicenses() {
       bg="dark.default"
       containerSize="xl"
       containerStyles={{ py: 0, pt: 60 }}
-      className="light"
     >
       <Stack direction="row" spacing={24}>
         <VStack spacing={12} mb={24} flex="1">

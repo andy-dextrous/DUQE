@@ -5,13 +5,16 @@ import { graphql } from "gatsby"
 import Hero from "../sections/page-specific/licenses/Hero"
 import TradeLicenses from "../sections/page-specific/licenses/TradeLicenses"
 import Requirements from "../sections/page-specific/licenses/Requirements"
+import DarkGroup from "../components/common/DarkGroup"
 
 function Licenses(props) {
   return (
     <Layout>
       <Seo props={props} />
-      <Hero />
-      <TradeLicenses />
+      <DarkGroup>
+        <Hero />
+        <TradeLicenses />
+      </DarkGroup>
       <Requirements />
     </Layout>
   )

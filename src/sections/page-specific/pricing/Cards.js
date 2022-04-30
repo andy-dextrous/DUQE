@@ -18,7 +18,7 @@ function Cards() {
   const scrollSection = useRef()
   const pinSection = useRef()
   const scrollAnimation = useRef(null)
-  const { sidebarMenuMargin, topBarHeight } = useThemeOptions()
+  const { sidebarMenuMargin } = useThemeOptions()
   const data = [1, 2, 3, 4, 5, 6, 7]
 
   useEffect(() => {

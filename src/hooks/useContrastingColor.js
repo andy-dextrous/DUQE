@@ -52,7 +52,7 @@ const useContrastingColor = (
       duration: 0.4,
       ease: "Power3.out",
     })
-  }, [color, propertyToModify, ref])
+  }, [color, propertyToModify, ref, childSelector])
 }
 
 export default useContrastingColor

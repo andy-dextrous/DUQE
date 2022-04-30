@@ -13,17 +13,17 @@ import Access from "../sections/page-specific/home/Access"
 import Agent from "../sections/page-specific/home/Agent"
 import LatestBlogs from "../sections/page-specific/home/LatestBlogs"
 import Contact from "../sections/page-specific/home/Contact"
-import { Box } from "@chakra-ui/react"
+import DarkGroup from "../components/common/DarkGroup"
 
 function Homepage(props) {
   return (
     <Layout>
       <Seo props={props} />
-      <Box bg="dark.default" zIndex="-10">
+      <DarkGroup>
         <Hero />
         <PerksText />
         <Perks />
-      </Box>
+      </DarkGroup>
       <YourLegacy />
       <HowMuchDoesItCost />
       <Vision />

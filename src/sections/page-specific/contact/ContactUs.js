@@ -1,7 +1,7 @@
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import Form from "../../../components/forms/Form"
-import { Container, Heading, Text, VStack } from "@chakra-ui/react"
+import { Container, Heading, VStack } from "@chakra-ui/react"
 import ContactPageElements from "../../../components/forms/ContactPageElements"
 
 function ContactUs() {

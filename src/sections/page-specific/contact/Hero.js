@@ -1,16 +1,6 @@
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
-import {
-  Button,
-  Center,
-  Heading,
-  HStack,
-  Image,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react"
-import { SmartLink } from "../../../components/SmartLink"
+import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
 
 function Hero() {
   return (

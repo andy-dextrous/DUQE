@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { useThemeOptions } from "../../hooks/useThemeOptions"
-import { Image } from "../images/Image"
+// import { SmartImage } from "../SmartImage"
 import { Categories } from "./Categories"
 import { Box, Heading, Text, Tooltip, VStack } from "@chakra-ui/react"
 
@@ -35,10 +35,10 @@ const Author = React.forwardRef(({ data, ...props }, ref) => {
           },
         }}
       >
-        <Image
+        {/* <SmartImage
           img={data.author.node.ACF_UserFields.avatar}
           className="author-image"
-        />
+        /> */}
       </VStack>
       <Box>
         <Text>Author</Text>

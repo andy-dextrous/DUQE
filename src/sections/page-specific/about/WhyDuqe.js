@@ -2,14 +2,12 @@ import {
   Box,
   Button,
   Heading,
-  HStack,
   Image,
   Stack,
   Text,
   VStack,
 } from "@chakra-ui/react"
 import React from "react"
-import Blurb from "../../../components/common/Blurb"
 import SectionWrapper from "../../../components/SectionWrapper"
 import YellowHeading from "../../../components/common/YellowHeading"
 

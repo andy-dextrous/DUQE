@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react"
-import { gsap, ScrollTrigger } from "../../gsap"
+import React, { useContext, useRef, useState } from "react"
 import { Link } from "gatsby"
 import { MenuContext } from "../Layout"
 import { useRgba } from "../../hooks/useRgba"

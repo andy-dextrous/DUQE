@@ -76,8 +76,8 @@ const DEFAULT_OPTIONS = {
 
   // Build commands
   createPages: true,
-  createPosts: false,
-  createCategories: false,
+  createPosts: true,
+  createCategories: true,
   createTags: false,
   createUsers: false,
   useWpRedirects: true,

@@ -5,7 +5,6 @@ import { Seo } from "../components/seo/components/index"
 import SectionWrapper from "../components/SectionWrapper"
 import Hero from "../sections/shared/Hero"
 import { SmartImage } from "../components/SmartImage"
-import { Box, Image } from "@chakra-ui/react"
 
 function Default(props) {
   return (
