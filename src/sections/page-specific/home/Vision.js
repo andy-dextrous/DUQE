@@ -9,6 +9,7 @@ function Vision() {
       h="100vh"
       overlay
       containerSize="xl"
+      sx={{ ".custom-font-size-1.chakra-text": { fontSize: "36px" } }}
     >
       <Flex h="full" align="center">
         <Spacer />
@@ -16,7 +17,11 @@ function Vision() {
           <Heading as="h3" className="thin-h3-caps">
             Do you have a vision the world needs to see?
           </Heading>
-          <Text fontSize="36px" color="brandYellow.default" fontWeight="300">
+          <Text
+            className="custom-font-size-1"
+            color="brandYellow.default"
+            fontWeight="300"
+          >
             It starts with Duqe
           </Text>
         </VStack>

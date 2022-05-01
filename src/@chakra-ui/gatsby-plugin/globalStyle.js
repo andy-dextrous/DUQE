@@ -5,8 +5,8 @@
 import { base } from "./foundations/typography"
 
 const globalCSS = {
-  main: { overflowX: "hidden", maxW: "100vw" },
-  body: { overflowX: "hidden", maxW: "100vw" },
+  // main: { overflowX: "hidden", maxW: "100vw" },
+  // body: { overflowX: "hidden", maxW: "100vw" },
 
   "#gatsby-focus-wrapper": {
     outline: "unset !important",
@@ -24,6 +24,9 @@ const globalCSS = {
     _hover: {
       color: "brandYellow.default",
     },
+  },
+  ".post img": {
+    mt: 8,
   },
 
   ...base,

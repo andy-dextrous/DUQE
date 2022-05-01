@@ -11,7 +11,7 @@ const Author = React.forwardRef(({ data, ...props }, ref) => {
   return (
     <VStack
       spacing={6}
-      bg="brandYellow.600"
+      bg="brandConcrete.default"
       align="start"
       py={12}
       px={16}
@@ -34,12 +34,7 @@ const Author = React.forwardRef(({ data, ...props }, ref) => {
             height: ["200px", "200px", "100px"],
           },
         }}
-      >
-        {/* <SmartImage
-          img={data.author.node.ACF_UserFields.avatar}
-          className="author-image"
-        /> */}
-      </VStack>
+      ></VStack>
       <Box>
         <Text>Author</Text>
         {createUsers ? (

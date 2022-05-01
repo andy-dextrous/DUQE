@@ -24,9 +24,13 @@ export const fonts = {
 
 export const p = {
   fontFamily: fonts.body,
+  fontSize: "18px",
+  color: "dark.700",
+  lineHeight: 1.7,
 }
 export const a = {
-  color: "inherit",
+  color: "brandBlue.default",
+  fontWeight: 700,
   textDecoration: "none",
   _hover: {
     textDecoration: "none",
@@ -78,12 +82,16 @@ export const h6 = {
 export const blockquote = {
   fontStyle: "italic",
   mx: 4,
-  mb: 6,
+  my: 12,
+  bg: "brandYellow.100",
+  p: 6,
+  borderLeft: "4px solid",
+  borderLeftColor: "brandYellow.default",
 }
 
 export const globalTextStyles = {
   ".thin-h3.chakra-heading": {
-    fontSize: "36px",
+    fontSize: "30px",
     fontWeight: "light",
     textTransform: "unset",
   },

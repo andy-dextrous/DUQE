@@ -1,15 +1,9 @@
-import React, { useRef } from "react"
-import { SmartImage } from "../../../components/SmartImage"
-import Breadcrumbs from "../../../components/archive/Breadcrumbs"
+import React, { useEffect, useRef } from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import { WidgetsList } from "../../../components/widgets/WidgetsList"
-import { SocialShare } from "../../../components/social/SocialShare"
 import Author from "../../../components/post/Author"
-import { PostEntryTitle } from "../../../components/post/PostEntryTitle"
-import { PostEntryExcerpt } from "../../../components/post/PostEntryExcerpt"
-import { PublicationDate } from "../../../components/post/PublicationDate"
 import { PostEntryContent } from "../../../components/post/PostEntryContent"
-import { Stack, VStack, Container } from "@chakra-ui/react"
+import { Stack, VStack, Container, Box } from "@chakra-ui/react"
 import { PrevNextPostNavigation } from "../../../components/post/PrevNextPostNavigation"
 import { graphql } from "gatsby"
 
@@ -23,19 +17,21 @@ function PostContent({ data, ctx }) {
     <SectionWrapper
       className="light"
       containerSize="xl"
-      containerStyles={{ py: 0, pb: [20, 20, 32, 48, 60] }}
+      containerStyles={{ py: 0, pb: [20, 20, 32, 48, 60], mb: ["224px"] }}
+      overflowX="unset"
     >
       <Stack
         direction={["column", "column", "row"]}
-        wrap="nowrap"
         spacing={28}
         p={0}
         pt={[16, 16, "115px"]}
+        position="relative"
+        h="100%"
       >
-        <VStack layerStyle="blogSidebar" ref={containerRef}>
+        <Box ref={containerRef} top="0" left="0">
           <WidgetsList />
           <Author ref={authorRef} data={data} />
-        </VStack>
+        </Box>
         <VStack flex="2" align="start" spacing={8} as="article">
           <PostEntryContent data={data.content} />
           <PrevNextPostNavigation prev={prev} next={next} />

@@ -16,7 +16,7 @@ function Blurb({ img, title, text }) {
       <Heading as="h4" className="blurb-title">
         {title}
       </Heading>
-      <Text fontSize="20px">{text}</Text>
+      <Text>{text}</Text>
     </VStack>
   )
 }

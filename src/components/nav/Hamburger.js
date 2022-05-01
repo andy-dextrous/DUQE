@@ -15,6 +15,7 @@ function Hamburger() {
 
   useContrastingColor({ color, setColor }, ref, { fill: color })
   useEffect(() => {
+    if (!smootherInstance) return
     smootherInstance.paused(isMenuOpen ? true : false)
   }, [isMenuOpen, smootherInstance])
 

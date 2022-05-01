@@ -7,7 +7,7 @@ function Access() {
   return (
     <SectionWrapper className="light" containerSize="xl">
       <Stack direction="row" spacing={40}>
-        <Heading flex="1">
+        <Heading flex="1" className="upper-case">
           Get access to over <YellowHeading>2,500 Activities</YellowHeading>{" "}
         </Heading>
         <VStack spacing={12} align="start" flex="1">

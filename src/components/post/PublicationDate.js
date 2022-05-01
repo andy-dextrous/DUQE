@@ -3,8 +3,8 @@ import React from "react"
 
 export const PublicationDate = ({ data }) => {
   return data ? (
-    <Text as="time" textStyle="metaTextSmall">
-      {data.date}. {data.readingTime + " minute read"}
+    <Text as="time" fontWeight="bold">
+      {data.date}
     </Text>
   ) : (
     <></>
