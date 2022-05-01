@@ -113,6 +113,16 @@ export const globalTextStyles = {
     mt: "3rem",
     mb: "1rem",
   },
+  ".chakra-text.primaryMenuLink": {
+    fontSize: ["55px"],
+    fontWeight: "extrabold",
+    textTransform: "uppercase",
+    lineHeight: "60px",
+    color: "white",
+    _hover: {
+      color: "brandYellow.default",
+    },
+  },
 }
 
 export const base = {

@@ -159,7 +159,6 @@ function Modal() {
       w="100vw"
       h="100vh"
       bg="dark.default"
-      // backdropFilter="blur(20px)"
       visibility={isMenuOpen ? "visible" : "hidden"}
       containerSize="xl"
       containerStyles={{ py: 0 }}
@@ -197,7 +196,7 @@ function Modal() {
                     to={item.path}
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <Text textStyle="primaryMenuLink">{item.label}</Text>
+                    <Text className="primaryMenuLink">{item.label}</Text>
                   </Link>
                 )
               })}
