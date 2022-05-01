@@ -9,7 +9,6 @@ function Footer({ withSignup = true }) {
   return (
     <SectionWrapper
       bg="dark.default"
-      h="970px"
       pt={0}
       containerSize="xl"
       containerStyles={{ position: "relative" }}
@@ -20,7 +19,8 @@ function Footer({ withSignup = true }) {
         w="full"
         direction="row"
         spacing={36}
-        my={withSignup ? 20 : "unset"}
+        mt={withSignup ? "200px" : "unset"}
+        mb={12}
       >
         <Box>
           <Logo useContrast={false} width="120px" />

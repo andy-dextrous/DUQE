@@ -28,6 +28,9 @@ const globalCSS = {
   ".post img": {
     mt: 8,
   },
+  ul: {
+    my: 6,
+  },
 
   ...base,
 }

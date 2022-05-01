@@ -9,7 +9,7 @@ function Agent() {
       containerSize="xl"
       className="light"
     >
-      <Stack direction="row" spacing={40}>
+      <Stack direction="row" spacing={20}>
         <VStack
           spacing={12}
           mb={20}

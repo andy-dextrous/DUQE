@@ -3,15 +3,41 @@ import SectionWrapper from "../../../components/SectionWrapper"
 import { WidgetsList } from "../../../components/widgets/WidgetsList"
 import Author from "../../../components/post/Author"
 import { PostEntryContent } from "../../../components/post/PostEntryContent"
-import { Stack, VStack, Container, Box } from "@chakra-ui/react"
+import { Stack, VStack, Box, Progress } from "@chakra-ui/react"
 import { PrevNextPostNavigation } from "../../../components/post/PrevNextPostNavigation"
 import { graphql } from "gatsby"
+import { gsap, ScrollTrigger } from "../../../gsap"
 
 function PostContent({ data, ctx }) {
   const { prev, next } = ctx
   const authorRef = useRef()
   const containerRef = useRef()
   const { seo } = ctx
+  const [progress, setProgress] = React.useState(0)
+
+  React.useLayoutEffect(() => {
+    if (!ScrollTrigger) return
+
+    const scrollProgress = gsap.to(authorRef.current, {
+      opacity: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: authorRef.current,
+        start: "top 15%",
+        endTrigger: containerRef.current,
+        end: "bottom 70%",
+        scrub: true,
+        pin: true,
+        onUpdate: self => {
+          setProgress(self.progress * 100)
+        },
+      },
+    })
+
+    return () => {
+      scrollProgress.kill()
+    }
+  }, [])
 
   return (
     <SectionWrapper
@@ -27,10 +53,11 @@ function PostContent({ data, ctx }) {
         pt={[16, 16, "115px"]}
         position="relative"
         h="100%"
+        ref={containerRef}
       >
-        <Box ref={containerRef} top="0" left="0">
+        <Box position="relative">
           <WidgetsList />
-          <Author ref={authorRef} data={data} />
+          <Author ref={authorRef} data={data} progress={progress} />
         </Box>
         <VStack flex="2" align="start" spacing={8} as="article">
           <PostEntryContent data={data.content} />

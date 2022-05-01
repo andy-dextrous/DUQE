@@ -69,7 +69,7 @@ const DEFAULT_OPTIONS = {
   },
   // Site Variables
   sidebarMenuWidth: 100,
-  sidebarMenuMargin: 0,
+  sidebarMenuMargin: 100,
   topBarHeight: 115,
   cssVarPrefix: "duqe",
   createColorPallete: true,

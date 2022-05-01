@@ -4,17 +4,7 @@ import SectionWrapper from "../../../components/SectionWrapper"
 
 const Perks = () => {
   return (
-    <SectionWrapper withContainer={false} bg="dark.default" px="50px">
-      <Center
-        position="absolute"
-        zIndex="2"
-        bottom="0"
-        left="0"
-        height="30%"
-        w="full"
-      >
-        <Button>Start Your Business</Button>
-      </Center>
+    <SectionWrapper bg="dark.default" px="50px">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -74,6 +64,9 @@ const Perks = () => {
           </g>
         </g>
       </svg>
+      <Center zIndex="2" bottom="0" height="30%" w="full">
+        <Button>Start Your Business</Button>
+      </Center>
     </SectionWrapper>
   )
 }

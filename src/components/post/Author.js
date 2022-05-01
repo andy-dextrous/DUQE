@@ -3,39 +3,32 @@ import { Link } from "gatsby"
 import { useThemeOptions } from "../../hooks/useThemeOptions"
 // import { SmartImage } from "../SmartImage"
 import { Categories } from "./Categories"
-import { Box, Heading, Text, Tooltip, VStack } from "@chakra-ui/react"
+import { Box, Heading, Progress, Text, Tooltip, VStack } from "@chakra-ui/react"
 
-const Author = React.forwardRef(({ data, ...props }, ref) => {
+const Author = React.forwardRef(({ data, progress, ...props }, ref) => {
   const { createUsers } = useThemeOptions()
 
   return (
     <VStack
       spacing={6}
-      bg="brandConcrete.default"
       align="start"
-      py={12}
+      pb={12}
       px={16}
-      rounded="2xl"
-      position="sticky"
-      top={40}
-      left="0"
       ref={ref}
       width={["100%", "100%", "auto"]}
       {...props}
     >
-      <VStack
-        justify="center"
-        w="full"
-        sx={{
-          ".author-image": {
-            borderRadius: "50%",
-            overflow: "hidden",
-            width: ["200px", "200px", "100px"],
-            height: ["200px", "200px", "100px"],
-          },
-        }}
-      ></VStack>
       <Box>
+        <Progress
+          value={progress}
+          h="5px"
+          mb="12"
+          sx={{
+            "div[role=progressbar]": {
+              bg: "brandYellow.default",
+            },
+          }}
+        />
         <Text>Author</Text>
         {createUsers ? (
           <Link to={data.author.node.uri} color="unset">

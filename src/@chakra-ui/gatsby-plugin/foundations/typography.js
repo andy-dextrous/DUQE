@@ -108,7 +108,6 @@ export const globalTextStyles = {
     lineHeight: "70px",
     letterSpacing: "-0.04em",
   },
-  li: { listStyle: "none" },
   ".wsywyg h2, .wsywyg h3,.wsywyg h4, .wsywyg h5,.wsywyg h6": {
     mt: "3rem",
     mb: "1rem",
@@ -143,8 +142,8 @@ export const base = {
   "h6.chakra-heading": h6,
   "*.jumbo.chakra-heading": h1,
   "*.upper-case.chakra-heading": { textTransform: "uppercase" },
-  "p.chakra-text": p,
   "a.chakra-link": a,
   "h1,h2,h3,h4,h5,h6,p": { color: "dark.default" },
+  li: p,
   ...globalTextStyles,
 }

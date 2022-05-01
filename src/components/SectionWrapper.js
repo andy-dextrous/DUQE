@@ -26,11 +26,10 @@ const SectionWrapper = forwardRef((props, ref) => {
     <>
       <Flex
         as="section"
-        width={["100%", "100%", `calc(100vw - ${sidebarMenuMargin}px)`]}
+        width={["100%"]}
         position="relative"
-        ml={[0, 0, sidebarMenuMargin + "px"]}
         pt={isFirstSection ? `${topBarHeight}px` : 0}
-        px={["200px"]}
+        px={[12, 12, 12, 12, 12, "200px"]}
         justify="center"
         {...sectionStyles}
       >
@@ -40,6 +39,7 @@ const SectionWrapper = forwardRef((props, ref) => {
             w={`container.${containerSize}`}
             h="full"
             py={[20, 20, 32, 48, 60]}
+            ml={[0, 0, sidebarMenuMargin + "px"]}
             {...containerStyles}
           >
             {children}

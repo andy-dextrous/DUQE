@@ -12,7 +12,7 @@ function Post(props) {
   } = props
 
   return (
-    <Layout className="post" smoothScroll={false}>
+    <Layout className="post">
       <Seo props={props} />
       <PostHeader data={wpPost} ctx={pageContext} />
       <PostContent data={wpPost} ctx={pageContext} />

@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
+import { SmartLink } from "../../../components/SmartLink"
 
 function LatestBlogs() {
   return (
@@ -16,14 +17,16 @@ function LatestBlogs() {
       <Stack direction="row" spacing={40}>
         <VStack spacing={12} align="start" flex="1">
           <Heading className="jumbo" color="white">
-            Our Latest Blog and Articles
+            From the blog
           </Heading>
           <Heading as="h3" className="thin-h3" color="white">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. Exercitation
             veniam consequat sunt nostrud amet.
           </Heading>
-          <Button>View All</Button>
+          <SmartLink url="/blog">
+            <Button>View All</Button>
+          </SmartLink>
         </VStack>
         <VStack
           flex="1"
