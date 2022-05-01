@@ -35,32 +35,33 @@ export const a = {
 const heading = {
   fontFamily: fonts.heading,
   fontWeight: "800",
-  textTransform: "uppercase",
   fontStyle: "normal",
 }
 
 export const h1 = {
   ...heading,
   fontSize: ["4xl", "5xl", "9xl"],
-  lineHeight: "120px",
+  lineHeight: "1",
   letterSpacing: "-0.01em",
   fontWeight: "extrabold",
+  textTransform: "uppercase",
 }
 export const h2 = {
   ...heading,
-  fontSize: ["3xl", "4xl", "6xl"],
+  fontSize: ["3xl", "4xl", "45px"],
+  lineHeight: "1.1",
   fontWeight: "extrabold",
-  letterSpacing: "-0.02em",
+  letterSpacing: "-2px",
 }
 
 export const h3 = {
   ...heading,
-  fontSize: ["2xl", "3xl", "4xl"],
+  fontSize: ["2xl", "3xl", "30px"],
 }
 
 export const h4 = {
   ...heading,
-  fontSize: ["xl", "2xl", "3xl"],
+  fontSize: ["xl", "2xl", "24px"],
   lineHeight: "133%",
 }
 
@@ -80,6 +81,32 @@ export const blockquote = {
   mb: 6,
 }
 
+export const globalTextStyles = {
+  ".thin-h3.chakra-heading": {
+    fontSize: "36px",
+    fontWeight: "light",
+    textTransform: "unset",
+  },
+  ".thin.chakra-heading": {
+    fontWeight: "normal",
+    textTransform: "unset",
+  },
+  ".chakra-heading.lower-case": { textTransform: "unset" },
+  ".thin-h3-caps.chakra-heading": {
+    color: "white",
+    textTransform: "uppercase",
+    fontWeight: "300",
+    fontSize: "56px",
+    lineHeight: "70px",
+    letterSpacing: "-0.04em",
+  },
+  li: { listStyle: "none" },
+  ".wsywyg h2, .wsywyg h3,.wsywyg h4, .wsywyg h5,.wsywyg h6": {
+    mt: "3rem",
+    mb: "1rem",
+  },
+}
+
 export const base = {
   a,
   p,
@@ -96,8 +123,10 @@ export const base = {
   "h4.chakra-heading": h4,
   "h5.chakra-heading": h5,
   "h6.chakra-heading": h6,
+  "*.jumbo.chakra-heading": h1,
+  "*.upper-case.chakra-heading": { textTransform: "uppercase" },
   "p.chakra-text": p,
   "a.chakra-link": a,
-  "h2.chakra-heading.jumbo": h1,
   "h1,h2,h3,h4,h5,h6,p": { color: "dark.default" },
+  ...globalTextStyles,
 }

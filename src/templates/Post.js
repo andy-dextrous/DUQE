@@ -11,11 +11,8 @@ function Post(props) {
     pageContext,
   } = props
 
-  console.clear()
-  console.log(props)
-
   return (
-    <Layout>
+    <Layout className="post">
       <Seo props={props} />
       <PostHeader data={wpPost} ctx={pageContext} />
       <PostContent data={wpPost} ctx={pageContext} />

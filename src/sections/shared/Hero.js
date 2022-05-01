@@ -11,6 +11,7 @@ function Hero() {
     gsap.from(img.current, { opacity: 0, duration: 0.3, ease: "Power3.in" })
     gsap.to(img.current, {
       scale: 1.4,
+      ease: "linear",
       scrollTrigger: {
         trigger: img.current,
         toggleActions: "play none reverse none",

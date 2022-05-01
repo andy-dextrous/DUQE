@@ -22,7 +22,7 @@ function NewsletterFooter() {
       py={20}
     >
       <VStack w="full" spacing={8}>
-        <Heading>Subscribe to our newsletter</Heading>
+        <Heading className="upper-case">Subscribe to our newsletter</Heading>
         <Heading as="h3" className="thin-h3">
           Make sure to subscribe to our latest news and events.
         </Heading>

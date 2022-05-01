@@ -50,7 +50,13 @@ const SectionWrapper = forwardRef((props, ref) => {
         {(bgImage || overlay || bgVideo) && (
           <Box layerStyle="bgImage" ref={ref}>
             <Box layerStyle="fillSpace" position="relative">
-              {overlay && <Box layerStyle="overlay" {...overlayStyle} />}
+              {overlay && (
+                <Box
+                  className="overlay"
+                  layerStyle="overlay"
+                  {...overlayStyle}
+                />
+              )}
               {bgImage && (
                 <SmartImage img={bgImage} layerStyle="bgImage" alt={alt} />
               )}

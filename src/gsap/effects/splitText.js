@@ -8,8 +8,8 @@ export function splitText() {
     effect: target => {
       const split = new SplitText(target, {
         type: "chars,lines",
-        linesClass: "titleReveal",
-        charsClass: "fadeTextCenter",
+        linesClass: "split-lines",
+        charsClass: "split-chars",
       })
       return split
     },

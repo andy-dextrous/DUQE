@@ -4,7 +4,8 @@ import useContrastingColor from "../../hooks/useContrastingColor"
 function Logo({ initialColor = "white", width = "60px", useContrast = true }) {
   const logo = useRef()
   const [color, setColor] = useState(initialColor)
-  useContrastingColor({ color, setColor }, logo, { fill: color })
+
+  useContrastingColor({ color, setColor }, logo, { fill: color }, useContrast)
 
   return (
     <svg

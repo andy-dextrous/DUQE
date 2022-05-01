@@ -25,7 +25,7 @@ function Footer({ withSignup = true }) {
         <Box>
           <Logo useContrast={false} width="120px" />
         </Box>
-        <Heading as="h2" color="white">
+        <Heading as="h2" color="white" className="upper-case">
           Reach for your dreams.
           <br />
           <Text as="span" color="brandYellow.default">

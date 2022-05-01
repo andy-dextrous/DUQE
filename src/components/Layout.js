@@ -7,8 +7,7 @@ import { Portal } from "@chakra-ui/react"
 
 export const MenuContext = React.createContext()
 
-export function Layout({ children, smoothScroll = true }) {
-  // App-level state
+export function Layout({ children, smoothScroll = true, ...props }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   useStopScroll(isMenuOpen)
 
@@ -18,7 +17,7 @@ export function Layout({ children, smoothScroll = true }) {
         <Portal>
           <Nav />
         </Portal>
-        <main>
+        <main {...props}>
           {children}
           <Footer />
         </main>

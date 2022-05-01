@@ -5,9 +5,11 @@ const useContrastingColor = (
   { color, setColor },
   ref,
   propertyToModify = { fill: color },
-  childSelector = null
+  childSelector = null,
+  useContrast = true
 ) => {
   useEffect(() => {
+    if (!useContrast) return
     const sections = document.querySelectorAll("main section")
     const scrollTriggers = []
 
@@ -42,7 +44,7 @@ const useContrastingColor = (
   }, [ref, setColor])
 
   useEffect(() => {
-    if (!ref.current) return
+    if (!ref.current || !useContrast) return
     const target = childSelector
       ? ref.current.querySelectorAll(childSelector)
       : ref.current
