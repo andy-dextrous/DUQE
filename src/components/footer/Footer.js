@@ -1,7 +1,9 @@
 import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/react"
+import { Link } from "gatsby"
 import React from "react"
 import Logo from "../../assets/logos/Logo"
 import SectionWrapper from "../../components/SectionWrapper"
+import SmartLink from "../../components/SmartLink"
 import { SocialFollows } from "../../components/social/SocialFollows"
 import NewsletterFooter from "./NewsletterFooter"
 
@@ -39,18 +41,18 @@ function Footer({ withSignup = true }) {
             Duqe
           </Text>
           <VStack as="ul" flex="1" align="flex-start">
-            <Text as="li" color="white">
-              About Us
-            </Text>
-            <Text as="li" color="white">
-              Management Team
-            </Text>
-            <Text as="li" color="white">
-              News
-            </Text>
-            <Text as="li" color="white">
-              Careers
-            </Text>
+            <Link to="/" as="li">
+              <Text color="white">About Us</Text>
+            </Link>
+            <Link to="/" as="li">
+              <Text color="white">Management Team</Text>
+            </Link>
+            <Link to="/" as="li">
+              <Text color="white">News</Text>
+            </Link>
+            <Link to="/" as="li">
+              <Text color="white">Careers</Text>
+            </Link>
           </VStack>
         </VStack>
         <VStack align="flex-start">
@@ -58,18 +60,18 @@ function Footer({ withSignup = true }) {
             Duqe
           </Text>
           <VStack as="ul" flex="1" align="flex-start">
-            <Text as="li" color="white">
-              About Us
-            </Text>
-            <Text as="li" color="white">
-              Management Team
-            </Text>
-            <Text as="li" color="white">
-              News
-            </Text>
-            <Text as="li" color="white">
-              Careers
-            </Text>
+            <Link to="/" as="li">
+              <Text color="white">About Us</Text>
+            </Link>
+            <Link to="/" as="li">
+              <Text color="white">Management Team</Text>
+            </Link>
+            <Link to="/" as="li">
+              <Text color="white">News</Text>
+            </Link>
+            <Link to="/" as="li">
+              <Text color="white">Careers</Text>
+            </Link>
           </VStack>
         </VStack>
         <VStack align="flex-start">
@@ -77,18 +79,18 @@ function Footer({ withSignup = true }) {
             Duqe
           </Text>
           <VStack as="ul" flex="1" align="flex-start">
-            <Text as="li" color="white">
-              About Us
-            </Text>
-            <Text as="li" color="white">
-              Management Team
-            </Text>
-            <Text as="li" color="white">
-              News
-            </Text>
-            <Text as="li" color="white">
-              Careers
-            </Text>
+            <Link to="/" as="li">
+              <Text color="white">About Us</Text>
+            </Link>
+            <Link to="/" as="li">
+              <Text color="white">Management Team</Text>
+            </Link>
+            <Link to="/" as="li">
+              <Text color="white">News</Text>
+            </Link>
+            <Link to="/" as="li">
+              <Text color="white">Careers</Text>
+            </Link>
           </VStack>
         </VStack>
         <VStack align="flex-start">
@@ -99,7 +101,7 @@ function Footer({ withSignup = true }) {
         </VStack>
         <VStack align="flex-start">
           <Text color="dark.500">
-            Copyright © 2020 Duqe. <br />
+            Copyright © {new Date().getFullYear()} Duqe. <br />
             All rights reserved.
           </Text>
         </VStack>

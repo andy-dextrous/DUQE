@@ -16,6 +16,7 @@ const Author = React.forwardRef(({ data, progress, ...props }, ref) => {
       px={16}
       ref={ref}
       width={["100%", "100%", "auto"]}
+      bg="white"
       {...props}
     >
       <Box>

@@ -10,21 +10,25 @@ import { gsap, ScrollTrigger } from "../../../gsap"
 
 function PostContent({ data, ctx }) {
   const { prev, next } = ctx
-  const authorRef = useRef()
+  const sidebarRef = useRef()
   const containerRef = useRef()
   const [progress, setProgress] = React.useState(0)
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (!ScrollTrigger) return
 
-    const scrollProgress = gsap.to(authorRef.current, {
+    const sidebarHeight = sidebarRef.current.getBoundingClientRect().height
+    const remainder =
+      window.innerHeight - sidebarHeight - 0.15 * window.innerHeight
+
+    const scrollProgress = gsap.to(sidebarRef.current, {
       opacity: 1,
       ease: "none",
       scrollTrigger: {
-        trigger: authorRef.current,
+        trigger: sidebarRef.current,
         start: "top 15%",
         endTrigger: containerRef.current,
-        end: "bottom 70%",
+        end: `bottom ${remainder}px`,
         scrub: true,
         pin: true,
         onUpdate: self => {
@@ -49,14 +53,13 @@ function PostContent({ data, ctx }) {
         direction={["column", "column", "row"]}
         spacing={28}
         p={0}
-        pt={[16, 16, "115px"]}
+        mt={[16, 16, "115px"]}
         position="relative"
         h="100%"
-        ref={containerRef}
       >
-        <Box position="relative">
+        <Box position="relative" ref={containerRef}>
           <WidgetsList />
-          <Author ref={authorRef} data={data} progress={progress} />
+          <Author ref={sidebarRef} data={data} progress={progress} />
         </Box>
         <VStack flex="2" align="start" spacing={8} as="article">
           <PostEntryContent data={data.content} />
