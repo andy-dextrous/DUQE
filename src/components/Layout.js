@@ -6,21 +6,26 @@ import useStopScroll from "../hooks/useStopScroll"
 import { Portal } from "@chakra-ui/react"
 
 export const MenuContext = React.createContext()
+export const DarkContext = React.createContext()
 
 export function Layout({ children, smoothScroll = true, ...props }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isDarkBackground, setIsDarkBackground] = useState(false)
+
   useStopScroll(isMenuOpen)
 
   return (
     <MenuContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
       <SmoothWrapper smoothScroll={smoothScroll}>
-        <Portal>
-          <Nav />
-        </Portal>
-        <main {...props}>
-          {children}
-          <Footer />
-        </main>
+        <DarkContext.Provider value={{ isDarkBackground, setIsDarkBackground }}>
+          <Portal>
+            <Nav />
+          </Portal>
+          <main {...props}>
+            {children}
+            <Footer />
+          </main>
+        </DarkContext.Provider>
       </SmoothWrapper>
     </MenuContext.Provider>
   )

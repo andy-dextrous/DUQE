@@ -2,12 +2,12 @@ import { Heading, Text, VStack } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 
-function PerksText() {
+function CostCalculator() {
   return (
     <SectionWrapper
       bg="dark.default"
       containerSize="lg"
-      containerStyles={{ py: 0, pt: [20, 20, 32, 48, 60] }}
+      id="cost-calculator-start"
     >
       <VStack spacing={12}>
         <Heading className="jumbo" color="white">
@@ -28,4 +28,4 @@ function PerksText() {
   )
 }
 
-export default PerksText
+export default CostCalculator

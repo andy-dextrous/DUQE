@@ -1,11 +1,15 @@
 import { Button, Center, Heading, Image, VStack } from "@chakra-ui/react"
-import React, { useEffect, useRef } from "react"
+import React, { useContext, useEffect, useRef } from "react"
 import CrossIcon from "../../../assets/icons/CrossIcon"
 import SectionWrapper from "../../../components/SectionWrapper"
 import { gsap, ScrollTrigger } from "../../../gsap"
+import { DarkContext } from "../../../components/Layout"
 
-function HowMuchDoesItCost() {
+function HowMuchDoesItCost({ darkActive, setDarkActive }) {
   const cross = useRef()
+  const img = useRef()
+  const { isDarkBackground, setIsDarkBackground } = useContext(DarkContext)
+
   useEffect(() => {
     if (!ScrollTrigger) return
     gsap.to(cross.current, {
@@ -18,10 +22,46 @@ function HowMuchDoesItCost() {
         scrub: true,
       },
     })
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#how-much-does-it-cost",
+        start: "bottom bottom",
+        pin: true,
+        end: "+=100%",
+        scrub: true,
+        onStart: () => {
+          gsap.set("#how-much-does-it-cost", {
+            css: { overflow: "hidden" },
+          })
+        },
+        onEnterBack: () => {
+          gsap.set("#how-much-does-it-cost", {
+            css: { overflow: "visibility" },
+            css: { backgroundColor: "#e0db29" },
+          })
+        },
+      },
+    })
+    tl.to(img.current, {
+      scale: 4,
+      ease: "linear",
+      duration: 20,
+      onComplete: () => {
+        setDarkActive(true)
+        setIsDarkBackground(true)
+        gsap.set("#how-much-does-it-cost", {
+          css: { backgroundColor: "#0b0b0b" },
+        })
+      },
+    })
+    tl.set(img.current, { autoAlpha: 0 })
   }, [])
+
   return (
     <SectionWrapper
       bg="brandYellow.default"
+      id="how-much-does-it-cost"
       className="light"
       containerSize="lg"
       pb={0}
@@ -44,6 +84,8 @@ function HowMuchDoesItCost() {
         <Image
           h="908px"
           src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944008/DUQE/Calculator.png"
+          ref={img}
+          transformOrigin="center 30%"
         />
       </Center>
 

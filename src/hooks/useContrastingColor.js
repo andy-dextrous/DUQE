@@ -1,5 +1,6 @@
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 import { gsap, ScrollTrigger } from "../gsap"
+import { DarkContext } from "../components/Layout"
 
 const useContrastingColor = (
   { color, setColor },
@@ -8,6 +9,8 @@ const useContrastingColor = (
   childSelector = null,
   useContrast = true
 ) => {
+  const { isDarkBackground, setIsDarkBackground } = useContext(DarkContext)
+
   useEffect(() => {
     if (!useContrast) return
     const sections = document.querySelectorAll("main section")
@@ -55,6 +58,19 @@ const useContrastingColor = (
       ease: "Power3.out",
     })
   }, [color, propertyToModify, ref, childSelector, useContrast])
+
+  useEffect(() => {
+    if (!isDarkBackground) return
+    console.log(isDarkBackground)
+    const target = childSelector
+      ? ref.current.querySelectorAll(childSelector)
+      : ref.current
+    gsap.to(target, {
+      fill: "white",
+      duration: 0.4,
+      ease: "Power3.out",
+    })
+  }, [isDarkBackground])
 }
 
 export default useContrastingColor
