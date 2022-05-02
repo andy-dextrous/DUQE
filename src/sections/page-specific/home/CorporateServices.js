@@ -81,26 +81,25 @@ function CorporateServices() {
     const selectedImage = images[selected]
     const hiddenImages = Array.from(images).filter(img => img !== selectedImage)
     const trackHeight = track.current.offsetHeight
-    gsap.set([title.current, text.current], { opacity: 0 })
+    // gsap.set([title.current, text.current], { opacity: 0 })
     title.current.innerHTML = data[selected].title
     text.current.innerHTML = data[selected].text
     gsap.fromTo(
       [card.current],
       { x: -30 },
-      { x: 0, duration: 0.8, delay: 0.1, ease: "Power3.out" }
+      { x: 0, duration: 0.3, delay: 0, ease: "Power3.out" }
     )
-    gsap.fromTo(
-      [title.current, text.current],
-      { y: 20, opacity: 0 },
-      {
-        y: 0,
-        duration: 0.5,
-        opacity: 1,
-        delay: 0.2,
-        stagger: 0.1,
-        ease: "Power3.out",
-      }
-    )
+    // gsap.fromTo(
+    //   [title.current, text.current],
+    //   { x: -40, opacity: 0 },
+    //   {
+    //     y: 0,
+    //     duration: 0.5,
+    //     opacity: 1,
+    //     stagger: 0.05,
+    //     ease: "Power3.out",
+    //   }
+    // )
     gsap.fromTo(
       handle.current,
       { y: handlePosition },
@@ -190,6 +189,11 @@ function CorporateServices() {
                       listStyleType="none"
                       onClick={() => handleClick(index)}
                       cursor="pointer"
+                      transition="transform 0.2s ease-in-out"
+                      _hover={{
+                        color: "whiteAlpha.800",
+                        transform: "translateX(5px)",
+                      }}
                     >
                       {item.title}
                     </Box>
