@@ -1,8 +1,24 @@
 import { Button, Center, Heading, Image, VStack } from "@chakra-ui/react"
-import React from "react"
+import React, { useEffect, useRef } from "react"
+import CrossIcon from "../../../assets/icons/CrossIcon"
 import SectionWrapper from "../../../components/SectionWrapper"
+import { gsap, ScrollTrigger } from "../../../gsap"
 
 function HowMuchDoesItCost() {
+  const cross = useRef()
+  useEffect(() => {
+    if (!ScrollTrigger) return
+    gsap.to(cross.current, {
+      rotation: -50,
+      ease: "linear",
+      scrollTrigger: {
+        trigger: cross.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    })
+  }, [])
   return (
     <SectionWrapper
       bg="brandYellow.default"
@@ -31,12 +47,12 @@ function HowMuchDoesItCost() {
         />
       </Center>
 
-      <Image
-        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944885/DUQE/cross.svg"
+      <CrossIcon
         position="absolute"
-        top="-210px"
-        right="0"
+        top="-200"
+        right="-200"
         zIndex="1"
+        ref={cross}
       />
     </SectionWrapper>
   )

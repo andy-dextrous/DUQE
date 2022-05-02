@@ -41,7 +41,7 @@ const useContrastingColor = (
     return () => {
       scrollTriggers.forEach(trigger => trigger.kill())
     }
-  }, [ref, setColor])
+  }, [ref, setColor, useContrast])
 
   useEffect(() => {
     if (!ref.current || !useContrast) return
@@ -54,7 +54,7 @@ const useContrastingColor = (
       duration: 0.4,
       ease: "Power3.out",
     })
-  }, [color, propertyToModify, ref, childSelector])
+  }, [color, propertyToModify, ref, childSelector, useContrast])
 }
 
 export default useContrastingColor

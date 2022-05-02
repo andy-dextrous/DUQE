@@ -39,7 +39,6 @@ const SectionWrapper = forwardRef((props, ref) => {
             w={`container.${containerSize}`}
             h="full"
             py={[20, 20, 32, 48, 60]}
-            ml={[0, 0, sidebarMenuMargin + "px"]}
             {...containerStyles}
           >
             {children}

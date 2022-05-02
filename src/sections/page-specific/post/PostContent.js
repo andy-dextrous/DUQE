@@ -12,7 +12,6 @@ function PostContent({ data, ctx }) {
   const { prev, next } = ctx
   const authorRef = useRef()
   const containerRef = useRef()
-  const { seo } = ctx
   const [progress, setProgress] = React.useState(0)
 
   React.useLayoutEffect(() => {

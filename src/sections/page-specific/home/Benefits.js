@@ -1,10 +1,29 @@
-import { Heading, Image, VStack } from "@chakra-ui/react"
-import React from "react"
+import { Heading, VStack } from "@chakra-ui/react"
+import React, { useEffect, useRef } from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import YellowHeading from "../../../components/common/YellowHeading"
 import CorporateServices from "./CorporateServices"
+import CrossIcon from "../../../assets/icons/CrossIcon"
+import { gsap, ScrollTrigger } from "../../../gsap"
 
 function Benefits() {
+  const cross = useRef()
+  useEffect(() => {
+    if (!ScrollTrigger) return
+    gsap.to(cross.current, {
+      x: -10,
+      y: 20,
+      rotation: 30,
+      ease: "linear",
+      scrollTrigger: {
+        trigger: cross.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    })
+  }, [])
+
   return (
     <SectionWrapper
       className="light"
@@ -35,11 +54,14 @@ function Benefits() {
           services that make sure you focus on what matters.
         </Heading>
       </VStack>
-      <Image
-        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650946954/DUQE/white_cross.svg"
-        position="absolute"
-        left="0"
+      <CrossIcon
         top="28%"
+        left="-10%"
+        outline
+        color="white"
+        position="absolute"
+        zIndex="-1"
+        ref={cross}
       />
       <CorporateServices />
     </SectionWrapper>
