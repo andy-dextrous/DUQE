@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import { Seo } from "../components/seo/components/index"
 import SectionWrapper from "../components/SectionWrapper"
 import Hero from "../sections/shared/Hero"
-import { SmartImage } from "../components/SmartImage"
+import QIcon from "../assets/icons/QIcon"
 
 function Default(props) {
   return (
@@ -12,12 +12,7 @@ function Default(props) {
       <Seo props={props} />
       <Hero />
       <SectionWrapper h="100vh" className="light">
-        <SmartImage
-          img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651107901/Rectangle_4.png"
-          parallax
-          width="400px"
-          height="500px"
-        />
+        <QIcon color="red" width="600px" height="600px" />
       </SectionWrapper>
     </Layout>
   )

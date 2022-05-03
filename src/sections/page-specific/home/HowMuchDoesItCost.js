@@ -91,9 +91,13 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
 
       <CrossIcon
         position="absolute"
-        top="-200"
-        right="-200"
+        width="500px"
+        height="500px"
+        top="-250px"
+        right="-250px"
         zIndex="1"
+        color="dark.default"
+        data-speed="1.1"
         ref={cross}
       />
     </SectionWrapper>

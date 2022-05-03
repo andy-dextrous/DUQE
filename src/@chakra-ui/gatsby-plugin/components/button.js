@@ -148,8 +148,8 @@ export const Button = {
       fontSize: "16",
     },
     sm: {
-      px: 12,
-      py: 6,
+      px: 6,
+      py: 5,
       fontSize: "14",
     },
   },

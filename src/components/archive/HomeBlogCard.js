@@ -1,4 +1,4 @@
-import { Heading, Image, Text, VStack } from "@chakra-ui/react"
+import { Button, Heading, Image, Text, VStack } from "@chakra-ui/react"
 import React, { useRef } from "react"
 import { gsap } from "../../gsap"
 
@@ -41,7 +41,7 @@ function HomeBlogCard({ startVisible = false }) {
   }
   return (
     <VStack
-      spacing={8}
+      spacing={4}
       align="start"
       width="100%"
       position="relative"
@@ -65,6 +65,9 @@ function HomeBlogCard({ startVisible = false }) {
         sint. Velit officia consequat duis enim velit mollit. Exercitation
         veniam consequat sunt nostrud amet.
       </Text>
+      <Button variant="secondary" size="sm">
+        Read more
+      </Button>
       <Image
         src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,h_300,q_auto/v1650858611/DUQE/DUQE_Hero.jpg"
         position="absolute"

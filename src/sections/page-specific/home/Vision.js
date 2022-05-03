@@ -1,6 +1,15 @@
-import { Flex, Heading, Image, Spacer, Text, VStack } from "@chakra-ui/react"
+import {
+  Flex,
+  Heading,
+  Image,
+  Spacer,
+  Text,
+  useToken,
+  VStack,
+} from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
+import QIcon from "../../../assets/icons/QIcon"
 
 function Vision() {
   return (
@@ -26,12 +35,15 @@ function Vision() {
           <Text className="custom-font-size-1">It starts with Duqe</Text>
         </VStack>
       </Flex>
-      <Image
-        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651188880/DUQE/Vision.svg"
+      <QIcon
+        width="44vw"
+        height="44vw"
         position="absolute"
-        left="120px"
-        top="20%"
-        width={["50%", "50%", "50%", "50%", "40%", "45%"]}
+        left="100px"
+        top="calc(50vh - 22vw)"
+        color="#e0db2a"
+        outline
+        data-speed="1.1"
       />
     </SectionWrapper>
   )

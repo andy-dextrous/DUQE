@@ -3,6 +3,7 @@ import SectionWrapper from "../../components/SectionWrapper"
 import { Button, Center, Heading, HStack, Text, VStack } from "@chakra-ui/react"
 import { SmartLink } from "../../components/SmartLink"
 import { gsap, ScrollTrigger } from "../../gsap"
+import ScrollDown from "../../assets/icons/ScrollDown"
 
 function Hero() {
   const img = useRef()
@@ -53,6 +54,15 @@ function Hero() {
           </HStack>
         </VStack>
       </Center>
+
+      <ScrollDown
+        position="absolute"
+        width="100px"
+        height="100px"
+        right="100px"
+        bottom="100px"
+        zIndex="10"
+      />
     </SectionWrapper>
   )
 }

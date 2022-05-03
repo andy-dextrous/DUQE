@@ -1,12 +1,12 @@
 import { Box } from "@chakra-ui/react"
 import React from "react"
 
-const CrossIcon = React.forwardRef(
+const ArrowDown = React.forwardRef(
   (
     {
-      width = 500,
-      height = 500,
-      color = "dark.default",
+      width = 18,
+      height = 25,
+      color = "white",
       outline = false,
       strokeSize = 1,
       ...styles
@@ -20,19 +20,18 @@ const CrossIcon = React.forwardRef(
         height={height}
         xmlns="http://www.w3.org/2000/svg"
         ref={ref}
-        viewBox="0 0 500 500"
+        viewBox="0 0 609 609"
         {...styles}
       >
-        <path style={{ fill: "none" }} d="M.71.71H499.3V499.3H.71z" />
         <path
+          d="M8.943.333c.736 0 1.333.597 1.333 1.334v18.53l5.333-4.78a1.333 1.333 0 1 1 1.886 1.885l-7.61 7.057c-.52.521-1.364.521-1.885 0l-6.943-7.057a1.333 1.333 0 1 1 1.886-1.885l4.666 4.78V1.668C7.61.93 8.206.333 8.943.333Z"
           vectorEffect="non-scaling-stroke"
           style={{ stroke: color, fill: outline ? "none" : color }}
           strokeWidth={strokeSize}
-          d="m499.293 147.396-102.27 102.27-.353.354.353.353 102.27 102.231-146.689 146.689-102.27-102.231-.353-.353-.354.353-102.231 102.231L.707 352.604l102.231-102.231.353-.353-.353-.354L.707 147.396 147.396.707l102.231 102.27.354.353.353-.353L352.604.707l146.689 146.689Z"
         />
       </Box>
     )
   }
 )
 
-export default CrossIcon
+export default ArrowDown

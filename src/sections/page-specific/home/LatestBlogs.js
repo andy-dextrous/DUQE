@@ -1,10 +1,29 @@
 import { Button, Heading, Stack, StackDivider, VStack } from "@chakra-ui/react"
-import React from "react"
+import React, { useEffect, useRef } from "react"
+import DIcon from "../../../assets/icons/DIcon"
 import HomeBlogCard from "../../../components/archive/HomeBlogCard"
 import SectionWrapper from "../../../components/SectionWrapper"
 import { SmartLink } from "../../../components/SmartLink"
+import { gsap, ScrollTrigger } from "../../../gsap"
 
 function LatestBlogs() {
+  const dShape = useRef()
+  useEffect(() => {
+    if (!ScrollTrigger) return
+    gsap.to(dShape.current, {
+      x: 100,
+      y: -40,
+      rotation: -40,
+      ease: "linear",
+      scrollTrigger: {
+        trigger: dShape.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    })
+  }, [])
+
   return (
     <SectionWrapper bg="dark.default" containerSize="xl">
       <Stack direction="row" spacing={40}>
@@ -31,6 +50,17 @@ function LatestBlogs() {
           <HomeBlogCard />
         </VStack>
       </Stack>
+      <DIcon
+        color="#e0db2a"
+        height="50vw"
+        width="50vw"
+        opacity="0.5"
+        outline
+        position="absolute"
+        left="-10%"
+        top="5%"
+        ref={dShape}
+      />
     </SectionWrapper>
   )
 }

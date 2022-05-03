@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react"
 import React from "react"
 
-const CrossIcon = React.forwardRef(
+const DIcon = React.forwardRef(
   (
     {
       width = 500,
@@ -20,19 +20,19 @@ const CrossIcon = React.forwardRef(
         height={height}
         xmlns="http://www.w3.org/2000/svg"
         ref={ref}
-        viewBox="0 0 500 500"
+        viewBox="0 0 958.54 1039"
         {...styles}
       >
-        <path style={{ fill: "none" }} d="M.71.71H499.3V499.3H.71z" />
+        <path style={{ fill: "none" }} d="M0 0h958.54v1039H0z" />
         <path
           vectorEffect="non-scaling-stroke"
           style={{ stroke: color, fill: outline ? "none" : color }}
           strokeWidth={strokeSize}
-          d="m499.293 147.396-102.27 102.27-.353.354.353.353 102.27 102.231-146.689 146.689-102.27-102.231-.353-.353-.354.353-102.231 102.231L.707 352.604l102.231-102.231.353-.353-.353-.354L.707 147.396 147.396.707l102.231 102.27.354.353.353-.353L352.604.707l146.689 146.689Z"
+          d="M928.17 700.67c-85.28 220.69-333.3 330.4-553.95 245.05L0 800.97 308.83 1.8l374.22 144.74c220.66 85.35 330.4 333.44 245.13 554.12Z"
         />
       </Box>
     )
   }
 )
 
-export default CrossIcon
+export default DIcon

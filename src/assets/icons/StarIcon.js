@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react"
 import React from "react"
 
-const CrossIcon = React.forwardRef(
+const StarIcon = React.forwardRef(
   (
     {
       width = 500,
@@ -20,19 +20,20 @@ const CrossIcon = React.forwardRef(
         height={height}
         xmlns="http://www.w3.org/2000/svg"
         ref={ref}
-        viewBox="0 0 500 500"
+        viewBox="0 0 853.34 862"
         {...styles}
       >
-        <path style={{ fill: "none" }} d="M.71.71H499.3V499.3H.71z" />
         <path
           vectorEffect="non-scaling-stroke"
-          style={{ stroke: color, fill: outline ? "none" : color }}
           strokeWidth={strokeSize}
-          d="m499.293 147.396-102.27 102.27-.353.354.353.353 102.27 102.231-146.689 146.689-102.27-102.231-.353-.353-.354.353-102.231 102.231L.707 352.604l102.231-102.231.353-.353-.353-.354L.707 147.396 147.396.707l102.231 102.27.354.353.353-.353L352.604.707l146.689 146.689Z"
+          d="M326.57 12.17h204.02v246.14l218.03-123.07 102.01 172.75-218.02 123.07 218.03 123.07-102.01 172.75L530.6 603.81v246.14H326.58V603.81L108.55 726.88 6.53 554.12l218.03-123.07L6.54 307.98l102.01-172.74 218.02 123.07V12.17Z"
+          style={{ stroke: color, fill: outline ? "none" : color }}
         />
+
+        <path style={{ fill: "none" }} d="M0 0h852.96v862H0z" />
       </Box>
     )
   }
 )
 
-export default CrossIcon
+export default StarIcon
