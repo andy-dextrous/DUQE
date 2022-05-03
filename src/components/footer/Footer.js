@@ -14,6 +14,12 @@ function Footer({ withSignup = true }) {
       pt={0}
       containerSize="xl"
       containerStyles={{ position: "relative" }}
+      sx={{
+        "& a": {
+          fontWeight: "400",
+          _hover: { color: "brandBlue.default" },
+        },
+      }}
     >
       {withSignup && <NewsletterFooter />}
 
@@ -23,6 +29,7 @@ function Footer({ withSignup = true }) {
         spacing={36}
         mt={withSignup ? "200px" : "unset"}
         mb={12}
+        as="footer"
       >
         <Box>
           <Logo useContrast={false} width="120px" />

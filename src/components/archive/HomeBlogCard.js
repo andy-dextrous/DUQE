@@ -4,17 +4,20 @@ import { gsap } from "../../gsap"
 
 function HomeBlogCard({ startVisible = false }) {
   const image = useRef()
+  const container = useRef()
   const throttleX = 0.2
   const throttleY = 0.8
 
   const onEnter = () => {
     gsap.to(image.current, {
       opacity: 0.6,
+      duration: 0.2,
     })
   }
 
   const onMove = ({ clientX, clientY }) => {
     const { x, y, width, height } = image.current.getBoundingClientRect()
+
     gsap.to(image.current, {
       x: () => {
         return clientX - x - (width / 2) * throttleX
@@ -35,6 +38,7 @@ function HomeBlogCard({ startVisible = false }) {
       x: 0,
       y: 0,
       duration: 0.3,
+      delay: 0.2,
       rotate: 0,
       opacity: 0,
     })
@@ -48,6 +52,7 @@ function HomeBlogCard({ startVisible = false }) {
       onPointerMove={onMove}
       onPointerLeave={onLeave}
       onPointerEnter={onEnter}
+      ref={container}
     >
       <Text
         color="white"

@@ -24,7 +24,7 @@ function LatestBlogs() {
         <VStack
           flex="1"
           divider={<StackDivider borderColor="dark.800" />}
-          spacing={12}
+          spacing={16}
         >
           <HomeBlogCard startVisible />
           <HomeBlogCard />
