@@ -4,7 +4,11 @@ import SectionWrapper from "../../../components/SectionWrapper"
 
 function IgnitingIdeas() {
   return (
-    <SectionWrapper bg="dark.default" containerSize="lg" zIndex="2">
+    <SectionWrapper
+      bg="dark.default"
+      containerSize="lg"
+      zIndex={["2", "2", "unset"]}
+    >
       <VStack spacing={12}>
         <Heading className="jumbo" color="white" maxW="100%">
           Igniting Ideas. <br />

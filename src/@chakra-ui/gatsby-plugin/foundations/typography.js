@@ -9,7 +9,7 @@ export const fontSizes = {
   xl: rem(20),
   "2xl": rem(24),
   "3xl": rem(28),
-  "4xl": rem(36),
+  "4xl": rem(40),
   "5xl": rem(48),
   "6xl": rem(64),
   "7xl": rem(72),
@@ -91,7 +91,7 @@ export const blockquote = {
 
 export const globalTextStyles = {
   ".thin-h3.chakra-heading": {
-    fontSize: ["20px", "24px", "30px"],
+    fontSize: ["24px", "24px", "30px"],
     fontWeight: "light",
     textTransform: "unset",
   },

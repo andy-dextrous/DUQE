@@ -8,7 +8,12 @@ import { Portal } from "@chakra-ui/react"
 export const MenuContext = React.createContext()
 export const DarkContext = React.createContext()
 
-export function Layout({ children, smoothScroll = true, ...props }) {
+export function Layout({
+  children,
+  smoothScroll = true,
+  withSignup,
+  ...props
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDarkBackground, setIsDarkBackground] = useState(false)
 
@@ -23,7 +28,7 @@ export function Layout({ children, smoothScroll = true, ...props }) {
           </Portal>
           <main {...props}>
             {children}
-            <Footer />
+            <Footer withSignup={withSignup} />
           </main>
         </DarkContext.Provider>
       </SmoothWrapper>

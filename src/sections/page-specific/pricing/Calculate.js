@@ -9,7 +9,7 @@ function Calculate() {
       className="light"
       containerSize="xl"
       pb={0}
-      containerStyles={{ py: "224px" }}
+      containerStyles={{ pt: "224px", h: "full" }}
     >
       <Stack spacing={24} direction="row">
         <VStack spacing={12} align="flex-start" flex="1">

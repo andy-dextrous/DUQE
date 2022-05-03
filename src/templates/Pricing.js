@@ -8,7 +8,7 @@ import Calculate from "../sections/page-specific/pricing/Calculate"
 
 function Pricing(props) {
   return (
-    <Layout>
+    <Layout withSignup={false}>
       <Seo props={props} />
       <Hero />
       <Cards />

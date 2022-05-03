@@ -28,7 +28,7 @@ function Why() {
         height={["auto", "200vh", "352px"]}
         w="100%"
         maxW="container.xl"
-        position="absolute"
+        position={["relative", "relative", "absolute"]}
         left="0"
         spacing="0"
         rounded="30px"

@@ -14,7 +14,7 @@ import SectionWrapper from "../../../components/SectionWrapper"
 function Signup() {
   return (
     <SectionWrapper className="light" minH="100vh" my={40}>
-      <Stack direction="row" spacing={0}>
+      <Stack direction={["column", "column", "row"]} spacing={0}>
         <VStack spacing={24} flex="1">
           <VStack align="flex-start" spacing={12} w="full">
             <Heading flex="1" className="jumbo">
@@ -128,8 +128,8 @@ function Signup() {
         </VStack>
         <VStack spacing={12} align="flex-end" flex="1">
           <VStack
-            p="70px"
-            w="560px"
+            p={["70px"]}
+            w={["100%", "100%", "560px"]}
             bg="brandConcrete.default"
             align="flex-start"
             spacing={5}

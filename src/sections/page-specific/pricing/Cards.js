@@ -78,10 +78,14 @@ function Cards() {
             align="center"
             justify="flex-start"
             spacing={8}
-            px={["200px"]}
+            px={[8, 8, "200px"]}
           >
-            <VStack w="660px" mr={40} spacing={12}>
-              <Heading className="jumbo" color="white">
+            <VStack
+              w={["100vw", "100vw", "660px"]}
+              mr={[4, 4, 40]}
+              spacing={12}
+            >
+              <Heading className="jumbo" color="white" width="100%">
                 <Text as="span" color="brandYellow.default">
                   Freedom
                 </Text>{" "}
@@ -95,8 +99,8 @@ function Cards() {
             {data.map((person, i) => {
               return (
                 <VStack
-                  h="545px"
-                  w="660px"
+                  h={["100%", "100%", "500px"]}
+                  w={["100%", "100%", "500px"]}
                   rounded="30px"
                   bg="white"
                   key={i}
