@@ -29,14 +29,14 @@ const SectionWrapper = forwardRef((props, ref) => {
         width={["100%"]}
         position="relative"
         pt={isFirstSection ? `${topBarHeight}px` : 0}
-        px={[12, 12, 12, 12, 12, "200px"]}
+        px={[5, 5, 16, 20, 40, "200px"]}
         justify="center"
         {...sectionStyles}
       >
         {withContainer ? (
           <Box
             maxW={`container.${containerSize}`}
-            w={`container.${containerSize}`}
+            w={["100%", "100%", `container.${containerSize}`]}
             h="full"
             py={[20, 20, 32, 48, 60]}
             {...containerStyles}

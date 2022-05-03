@@ -24,8 +24,8 @@ function Why() {
         </Heading>
       </VStack>
       <Stack
-        direction="row"
-        height="352px"
+        direction={["column", "column", "row"]}
+        height={["auto", "200vh", "352px"]}
         w="100%"
         maxW="container.xl"
         position="absolute"

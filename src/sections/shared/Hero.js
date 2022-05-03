@@ -59,8 +59,8 @@ function Hero() {
         position="absolute"
         width="100px"
         height="100px"
-        right="100px"
-        bottom="100px"
+        right={[4, 4, "100px"]}
+        bottom={[4, 4, "100px"]}
         zIndex="10"
       />
     </SectionWrapper>

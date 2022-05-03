@@ -25,8 +25,8 @@ function Footer({ withSignup = true }) {
 
       <Stack
         w="full"
-        direction="row"
-        spacing={36}
+        direction={["column", "column", "row"]}
+        spacing={[8, 8, 36]}
         mt={withSignup ? "200px" : "unset"}
         mb={12}
         as="footer"
@@ -42,7 +42,12 @@ function Footer({ withSignup = true }) {
           </Text>
         </Heading>
       </Stack>
-      <Stack direction="row" justify="space-between" spacing={20} w="full">
+      <Stack
+        direction={["column", "column", "row"]}
+        justify="space-between"
+        spacing={20}
+        w="full"
+      >
         <VStack align="flex-start">
           <Text color="dark.500" fontWeight="bold">
             Duqe

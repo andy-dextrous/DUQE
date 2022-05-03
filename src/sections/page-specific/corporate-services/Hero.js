@@ -1,6 +1,7 @@
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
+import ScrollDown from "../../../assets/icons/ScrollDown"
 
 function Hero() {
   return (
@@ -33,6 +34,14 @@ function Hero() {
         top="0"
         right="50px"
         opacity="50%"
+      />
+      <ScrollDown
+        position="absolute"
+        width="100px"
+        height="100px"
+        right="100px"
+        bottom="100px"
+        zIndex="10"
       />
     </SectionWrapper>
   )

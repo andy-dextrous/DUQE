@@ -31,11 +31,16 @@ function ScrollDown({ ...styles }) {
           zIndex="12"
           ref={arrow}
         >
-          <Icon as={FiArrowDown} color="white" w="50px" h="50px" />
+          <Icon
+            as={FiArrowDown}
+            color="white"
+            w={["30px", "30px", "50px"]}
+            h={["30px", "30px", "50px"]}
+          />
         </Box>
         <DIcon
-          w="50px"
-          h="50px"
+          w={["30px", "30px", "50px"]}
+          h={["30px", "30px", "50px"]}
           position="absolute"
           right="25px"
           top="25px"

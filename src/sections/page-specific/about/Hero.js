@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
 import { gsap, ScrollTrigger } from "../../../gsap"
+import ScrollDown from "../../../assets/icons/ScrollDown"
 
 function Hero() {
   const img = useRef()
@@ -50,7 +51,7 @@ function Hero() {
       ref={img}
     >
       <Stack h="full" w="full" align="center" direction="row">
-        <VStack spacing={12} alignItems="start" w="full" width="50%">
+        <VStack spacing={12} alignItems="start" width={["100%", "100%", "50%"]}>
           <Heading as="h1" color="white">
             Got Questions?
             <Text as="span" color="brandYellow.default">
@@ -70,6 +71,14 @@ function Hero() {
         opacity="30%"
         zIndex="-1"
         ref={img2}
+      />
+      <ScrollDown
+        position="absolute"
+        width="100px"
+        height="100px"
+        right={[4, 4, "100px"]}
+        bottom={[4, 4, "100px"]}
+        zIndex="10"
       />
     </SectionWrapper>
   )

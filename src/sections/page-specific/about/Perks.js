@@ -1,4 +1,4 @@
-import { Heading, HStack, VStack } from "@chakra-ui/react"
+import { Heading, HStack, Stack, VStack } from "@chakra-ui/react"
 import React from "react"
 import Blurb from "../../../components/common/Blurb"
 import SectionWrapper from "../../../components/SectionWrapper"
@@ -22,7 +22,12 @@ function Perks() {
           budding entrepreneurs and seasoned business owners.
         </Heading>
       </VStack>
-      <HStack mt={24} spacing={24} align="flex-start">
+      <Stack
+        direction={["column", "column", "row"]}
+        mt={24}
+        spacing={24}
+        align="flex-start"
+      >
         <Blurb
           img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972190/DUQE/swift-easy.svg"
           title="Swift & Easy Process"
@@ -38,8 +43,13 @@ function Perks() {
           title="Entrepreneurs Hip Made More Accessible"
           text="With DUQE’s competitive and flexible company setup packages, realising your dreams doesn’t have to cost a fortune."
         />
-      </HStack>
-      <HStack mt={24} spacing={24} align="flex-start">
+      </Stack>
+      <Stack
+        direction={["column", "column", "row"]}
+        mt={24}
+        spacing={24}
+        align="flex-start"
+      >
         <Blurb
           img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/holistic.svg"
           title="Holistic Support"
@@ -55,7 +65,7 @@ function Perks() {
           title="Duqe Society"
           text="Join a thriving community of entrepreneurs and founders, grinders and hustlers, who share the same unyielding drive and passion for the things they do."
         />
-      </HStack>
+      </Stack>
     </SectionWrapper>
   )
 }

@@ -1,12 +1,4 @@
-import {
-  Flex,
-  Heading,
-  Image,
-  Spacer,
-  Text,
-  useToken,
-  VStack,
-} from "@chakra-ui/react"
+import { Flex, Heading, Spacer, Text, VStack } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import QIcon from "../../../assets/icons/QIcon"

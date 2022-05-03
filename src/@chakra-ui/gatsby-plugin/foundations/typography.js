@@ -44,7 +44,7 @@ const heading = {
 
 export const h1 = {
   ...heading,
-  fontSize: ["4xl", "5xl", "9xl"],
+  fontSize: ["4xl", "4xl", "9xl"],
   lineHeight: "1",
   letterSpacing: "-0.01em",
   fontWeight: "extrabold",
@@ -91,7 +91,7 @@ export const blockquote = {
 
 export const globalTextStyles = {
   ".thin-h3.chakra-heading": {
-    fontSize: "30px",
+    fontSize: ["20px", "24px", "30px"],
     fontWeight: "light",
     textTransform: "unset",
   },

@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useState } from "react"
 import { MenuContext } from "../Layout"
-
 import useContrastingColor from "../../hooks/useContrastingColor"
 
 import ToggleIcon from "../../assets/icons/MenuToggleIcon"

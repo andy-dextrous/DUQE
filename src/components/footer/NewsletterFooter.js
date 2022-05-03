@@ -14,14 +14,15 @@ function NewsletterFooter() {
     <Center
       w="100%"
       bg="brandConcrete.default"
-      h="448px"
+      h={["60vh", "60vh", "448px"]}
       rounded="30px"
       position="absolute"
-      top="-224px"
+      top={["-30vh", "-30vh", "-224px"]}
       left="0"
-      py={20}
+      py={[8, 8, 20]}
+      px={[8, 8, 0]}
     >
-      <VStack w="full" spacing={8}>
+      <VStack w="full" spacing={8} p>
         <Heading className="upper-case">Subscribe to our newsletter</Heading>
         <Heading as="h3" className="thin-h3">
           Make sure to subscribe to our latest news and events.

@@ -18,7 +18,7 @@ function WhyDuqe() {
       containerSize="xl"
       containerStyles={{ py: 0, pt: [20, 20, 32, 48, 60] }}
     >
-      <Stack direction="row" spacing={40}>
+      <Stack direction={["column", "column", "row"]} spacing={40}>
         <Box flex="1" position="relative" h="768px">
           <Heading className="jumbo" position="absolute" right="5%" top="-3%">
             <YellowHeading>Why</YellowHeading>

@@ -8,7 +8,7 @@ import { DarkContext } from "../../../components/Layout"
 function HowMuchDoesItCost({ darkActive, setDarkActive }) {
   const cross = useRef()
   const img = useRef()
-  const { isDarkBackground, setIsDarkBackground } = useContext(DarkContext)
+  const { setIsDarkBackground } = useContext(DarkContext)
 
   useEffect(() => {
     if (!ScrollTrigger) return
@@ -37,8 +37,7 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
         },
         onEnterBack: () => {
           gsap.set("#how-much-does-it-cost", {
-            css: { overflow: "visibility" },
-            css: { backgroundColor: "#e0db29" },
+            css: { overflow: "visibility", backgroundColor: "#e0db29" },
           })
         },
       },
@@ -56,7 +55,7 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
       },
     })
     tl.set(img.current, { autoAlpha: 0 })
-  }, [])
+  }, [setDarkActive, setIsDarkBackground])
 
   return (
     <SectionWrapper

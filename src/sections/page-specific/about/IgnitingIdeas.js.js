@@ -1,12 +1,12 @@
-import { Heading, HStack, Text, VStack } from "@chakra-ui/react"
+import { Heading, Stack, Text, VStack } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 
 function IgnitingIdeas() {
   return (
-    <SectionWrapper bg="dark.default" containerSize="lg">
+    <SectionWrapper bg="dark.default" containerSize="lg" zIndex="2">
       <VStack spacing={12}>
-        <Heading className="jumbo" color="white">
+        <Heading className="jumbo" color="white" maxW="100%">
           Igniting Ideas. <br />
           Championing Dreams.
           <br />
@@ -14,7 +14,11 @@ function IgnitingIdeas() {
             Empowering Entrepreneurs.
           </Text>
         </Heading>
-        <HStack spacing={20} align="flex-start">
+        <Stack
+          direction={["column", "column", "row"]}
+          spacing={[8, 8, 20]}
+          align="flex-start"
+        >
           <Heading as="h3" className="thin-h3" color="white" flex="1">
             DUQE is the free zone for the brave, the focused and the ambitious.
             For the ones to watch, the changemakers, the visionaries – the ones
@@ -31,7 +35,7 @@ function IgnitingIdeas() {
               This is where you get in the zone.
             </Heading>
           </VStack>
-        </HStack>
+        </Stack>
       </VStack>
     </SectionWrapper>
   )

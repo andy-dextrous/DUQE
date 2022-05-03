@@ -1,6 +1,7 @@
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
+import ScrollDown from "../../../assets/icons/ScrollDown"
 
 function Hero() {
   return (
@@ -14,7 +15,12 @@ function Hero() {
       containerSize="xl"
     >
       <Stack h="full" w="full" align="center" direction="row">
-        <VStack spacing={12} alignItems="start" w="full" width="50%">
+        <VStack
+          spacing={[6, 6, 12]}
+          alignItems="start"
+          w="full"
+          width={["full", "full", "50%"]}
+        >
           <Heading as="h1" color="white">
             Got Questions?
             <Text as="span" color="brandYellow.default">
@@ -30,8 +36,16 @@ function Hero() {
         src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651108536/DUQE/Q.svg"
         position="absolute"
         top="0"
-        right="50px"
+        right={[0, 0, "50px"]}
         opacity="50%"
+      />
+      <ScrollDown
+        position="absolute"
+        width="100px"
+        height="100px"
+        right={[4, 4, "100px"]}
+        bottom={[4, 4, "100px"]}
+        zIndex="10"
       />
     </SectionWrapper>
   )

@@ -15,7 +15,7 @@ function Mission() {
         h="full"
         w="full"
         align="center"
-        direction="row"
+        direction={["column", "column", "row"]}
         zIndex="1"
         position="relative"
         spacing={24}
@@ -63,10 +63,10 @@ function Mission() {
         h="full"
         w="full"
         align="center"
-        direction="row"
         zIndex="1"
         position="relative"
         spacing={24}
+        direction={["column", "column", "row"]}
       >
         <Heading
           color="white"
