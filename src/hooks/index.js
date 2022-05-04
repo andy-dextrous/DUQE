@@ -1,7 +1,6 @@
 export * from "./useContrastingColor"
 export * from "./useMenuQuery"
 export * from "./useRgba"
-export * from "./useSiteMetadata"
 export * from "./useSiteSettings"
 export * from "./useStopScroll"
 export * from "./useThemeOptions"
