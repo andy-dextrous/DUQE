@@ -6,7 +6,7 @@ import YellowHeading from "../../../components/common/YellowHeading"
 function Access() {
   return (
     <SectionWrapper className="light" containerSize="xl">
-      <Stack direction="row" spacing={40}>
+      <Stack direction={["column", "column", "row"]} spacing={[8, 8, 40]}>
         <Heading flex="1" className="upper-case">
           Get access to over <YellowHeading>2,500 Activities</YellowHeading>{" "}
         </Heading>

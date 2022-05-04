@@ -9,7 +9,7 @@ function PerksText() {
       containerSize="lg"
       containerStyles={{ py: 0, pt: [20, 20, 32, 48, 60] }}
     >
-      <VStack spacing={12}>
+      <VStack spacing={[8, 8, 12]}>
         <Heading className="jumbo" color="white">
           The perks of Dubai's only free zone{" "}
           <Text as="span" color="brandYellow.default">

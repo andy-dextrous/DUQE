@@ -13,9 +13,9 @@ import SectionWrapper from "../../../components/SectionWrapper"
 
 function Signup() {
   return (
-    <SectionWrapper className="light" minH="100vh" my={40}>
-      <Stack direction={["column", "column", "row"]} spacing={0}>
-        <VStack spacing={24} flex="1">
+    <SectionWrapper className="light" minH="100vh" my={[0, 0, 40]}>
+      <Stack direction={["column", "column", "row"]} spacing={(8, 8, 12)}>
+        <VStack spacing={[8, 8, 24]} flex="1">
           <VStack align="flex-start" spacing={12} w="full">
             <Heading flex="1" className="jumbo">
               <YellowHeading>Sign up</YellowHeading> to be a DUQE agent
@@ -26,11 +26,16 @@ function Signup() {
             </Heading>
           </VStack>
           <VStack spacing={24} w="full">
-            <HStack justify="flex-start" w="full" spacing={12}>
+            <Stack
+              direction={["column", "column", "row"]}
+              justify="flex-start"
+              w="full"
+              spacing={[8, 8, 12]}
+            >
               <Heading
                 className="jumbo light"
-                width="100px"
-                h="100px"
+                width={["60px", "60px", "100px"]}
+                h={["60px", "60px", "100px"]}
                 position="relative"
                 sx={{ "&.jumbo.light": { fontWeight: "light" } }}
                 _after={{
@@ -58,8 +63,13 @@ function Signup() {
                   <strong>info@duqe.ae</strong>
                 </Heading>
               </Box>
-            </HStack>
-            <HStack justify="flex-start" w="full" spacing={12}>
+            </Stack>
+            <Stack
+              direction={["column", "column", "row"]}
+              justify="flex-start"
+              w="full"
+              spacing={[8, 8, 12]}
+            >
               <Heading
                 className="jumbo light"
                 width="100px"
@@ -90,8 +100,13 @@ function Signup() {
                   <strong>Login an Agent Agreement</strong> with DUQE Free Zone.
                 </Heading>
               </Box>
-            </HStack>
-            <HStack justify="flex-start" w="full" spacing={12}>
+            </Stack>
+            <Stack
+              direction={["column", "column", "row"]}
+              justify="flex-start"
+              w="full"
+              spacing={[8, 8, 12]}
+            >
               <Heading
                 className="jumbo light"
                 width="100px"
@@ -123,7 +138,7 @@ function Signup() {
                   <strong>Trade Licence (Or Equivalent).</strong>
                 </Heading>
               </Box>
-            </HStack>
+            </Stack>
           </VStack>
         </VStack>
         <VStack spacing={12} align="flex-end" flex="1">

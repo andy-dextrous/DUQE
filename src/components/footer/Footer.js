@@ -12,8 +12,9 @@ function Footer({ withSignup = true }) {
     <SectionWrapper
       bg="dark.default"
       pt={0}
+      px={[0, 0, 16, 20, 40, "200px"]}
       containerSize="xl"
-      containerStyles={{ position: "relative" }}
+      containerStyles={{ position: "relative", pt: [0, 0, "unset"] }}
       sx={{
         "& a": {
           fontWeight: "400",
@@ -27,7 +28,8 @@ function Footer({ withSignup = true }) {
         w="full"
         direction={["column", "column", "row"]}
         spacing={[8, 8, 36]}
-        mt={withSignup ? "200px" : "unset"}
+        px={[5, 5, 0]}
+        mt={[20, 20, withSignup ? "200px" : "unset"]}
         mb={12}
         as="footer"
       >
@@ -45,8 +47,9 @@ function Footer({ withSignup = true }) {
       <Stack
         direction={["column", "column", "row"]}
         justify="space-between"
-        spacing={20}
+        spacing={[8, 8, 20]}
         w="full"
+        px={[5, 5, 0]}
       >
         <VStack align="flex-start">
           <Text color="dark.500" fontWeight="bold">

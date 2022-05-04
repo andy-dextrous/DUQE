@@ -81,7 +81,7 @@ function CorporateServices() {
     const selectedImage = images[selected]
     const hiddenImages = Array.from(images).filter(img => img !== selectedImage)
     const trackHeight = track.current.offsetHeight
-    // gsap.set([title.current, text.current], { opacity: 0 })
+
     title.current.innerHTML = data[selected].title
     text.current.innerHTML = data[selected].text
     gsap.fromTo(
@@ -89,17 +89,7 @@ function CorporateServices() {
       { x: -30 },
       { x: 0, duration: 0.3, delay: 0, ease: "Power3.out" }
     )
-    // gsap.fromTo(
-    //   [title.current, text.current],
-    //   { x: -40, opacity: 0 },
-    //   {
-    //     y: 0,
-    //     duration: 0.5,
-    //     opacity: 1,
-    //     stagger: 0.05,
-    //     ease: "Power3.out",
-    //   }
-    // )
+
     gsap.fromTo(
       handle.current,
       { y: handlePosition },
@@ -130,26 +120,19 @@ function CorporateServices() {
     <Box width="100%" maxW="container.xl" zIndex="2">
       <Box
         layerStyle="fillSpace"
-        h="850px"
+        h={["100vh", "100vh", "850px"]}
         position="relative"
         rounded="30px"
         overflow="hidden"
       >
         <Grid
-          w="100%"
-          h="100%"
           layerStyle="fillSpaceAbsolute"
           zIndex="2"
           templateColumns="repeat(12,1fr)"
           templateRows="repeat(12,1fr)"
         >
-          <GridItem
-            gridColumnStart="2"
-            gridColumnEnd="5"
-            gridRowStart="3"
-            gridRowEnd="11"
-          >
-            <HStack h="100%" spacing={12}>
+          <GridItem gridColumn="2/5" gridRow="3/11">
+            <HStack h="100%" spacing={[8, 8, 12]}>
               <Box
                 w="2px"
                 h="100%"
@@ -184,12 +167,11 @@ function CorporateServices() {
                       color={
                         selected === index ? "brandYellow.default" : "white"
                       }
-                      transition="color 0.2s ease-in-out"
                       fontWeight="extrabold"
                       listStyleType="none"
                       onClick={() => handleClick(index)}
                       cursor="pointer"
-                      transition="transform 0.2s ease-in-out"
+                      transition="all 0.2s ease-in-out"
                       _hover={{
                         color: "whiteAlpha.800",
                         transform: "translateX(5px)",

@@ -29,7 +29,7 @@ function Benefits() {
       className="light"
       withContainer={false}
       flexDirection="column"
-      pt={[2, 4, 6, 8, 60]}
+      pt={[20, 20, 24, 28, 60]}
       align="center"
       _before={{
         content: "''",
@@ -43,7 +43,7 @@ function Benefits() {
         bg: "brandConcrete.default",
       }}
     >
-      <VStack spacing={12} mb={20} w="full" maxW="container.lg">
+      <VStack spacing={[8, 8, 12]} mb={20} w="full" maxW="container.lg">
         <Heading className="jumbo">
           Business setup with <YellowHeading>Benefits</YellowHeading>
         </Heading>
@@ -55,11 +55,13 @@ function Benefits() {
         </Heading>
       </VStack>
       <CrossIcon
-        top="28%"
+        top={["20%", "20%", "28%"]}
         left="-10%"
+        width={[200, 200, 500]}
         outline
         color="white"
         position="absolute"
+        opacity={[0.6, 0.6, 1]}
         zIndex="-1"
         ref={cross}
       />

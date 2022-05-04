@@ -10,8 +10,8 @@ function TradeLicenses() {
       containerSize="xl"
       containerStyles={{ py: 0, pt: 60 }}
     >
-      <Stack direction="row" spacing={24}>
-        <VStack spacing={12} mb={24} flex="1">
+      <Stack direction={["column", "column", "row"]} spacing={24}>
+        <VStack spacing={[8, 8, 12]} mb={24} flex="1">
           <Heading className="jumbo" color="white">
             Trade License in <YellowHeading>DUQE.</YellowHeading>
           </Heading>

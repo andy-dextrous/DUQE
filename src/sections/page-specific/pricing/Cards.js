@@ -61,7 +61,7 @@ function Cards() {
         py={[20, 20, 32, 48, 60]}
       >
         <VStack
-          align="start"
+          align="flex-start"
           h="100%"
           position="absolute"
           left="0"
@@ -78,12 +78,13 @@ function Cards() {
             align="center"
             justify="flex-start"
             spacing={8}
-            px={[8, 8, "200px"]}
+            px={[0, 0, "200px"]}
           >
             <VStack
-              w={["100vw", "100vw", "660px"]}
+              width={["100vw", "100vw", "660px"]}
               mr={[4, 4, 40]}
-              spacing={12}
+              spacing={[8, 8, 12]}
+              px={[4, 4, 0]}
             >
               <Heading className="jumbo" color="white" width="100%">
                 <Text as="span" color="brandYellow.default">
@@ -99,8 +100,8 @@ function Cards() {
             {data.map((person, i) => {
               return (
                 <VStack
-                  h={["100%", "100%", "500px"]}
-                  w={["100%", "100%", "500px"]}
+                  h={["60vh", "60vh", "500px"]}
+                  w={["90vw", "90vw", "500px"]}
                   rounded="30px"
                   bg="white"
                   key={i}
@@ -156,7 +157,7 @@ function Cards() {
               spacing={8}
               align={["center", "center", "start"]}
               width={["100vw", "100vw", "50vw"]}
-              pl={[0, 0, "10vw"]}
+              px={[8, 8, "10vw"]}
             >
               <Heading
                 as="h4"

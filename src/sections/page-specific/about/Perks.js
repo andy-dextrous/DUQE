@@ -6,12 +6,8 @@ import YellowHeading from "../../../components/common/YellowHeading"
 
 function Perks() {
   return (
-    <SectionWrapper
-      containerSize="lg"
-      className="light"
-      containerStyles={{ mb: 40 }}
-    >
-      <VStack spacing={12} alignItems="start">
+    <SectionWrapper containerSize="lg" className="light">
+      <VStack spacing={[8, 8, 12]} alignItems="start">
         <Heading className="jumbo">
           Your <YellowHeading>Legacy </YellowHeading>Starts at Duqe
         </Heading>
@@ -24,8 +20,8 @@ function Perks() {
       </VStack>
       <Stack
         direction={["column", "column", "row"]}
-        mt={24}
-        spacing={24}
+        mt={[24]}
+        spacing={[8, 8, 24]}
         align="flex-start"
       >
         <Blurb
@@ -46,8 +42,8 @@ function Perks() {
       </Stack>
       <Stack
         direction={["column", "column", "row"]}
-        mt={24}
-        spacing={24}
+        mt={[8, 8, 24]}
+        spacing={[8, 8, 24]}
         align="flex-start"
       >
         <Blurb

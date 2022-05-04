@@ -9,9 +9,13 @@ function Apply() {
       bg="brandYellow.default"
       className="light"
       containerSize="xl"
-      pb={40}
+      pb={[0, 0, 40]}
     >
-      <Stack direction="row" spacing={40} align="center">
+      <Stack
+        direction={["column", "column", "row"]}
+        spacing={[12, 12, 40]}
+        align="center"
+      >
         <VStack spacing={5} flex="1">
           <Heading className="jumbo" flex="1">
             To Start, Apply Now!

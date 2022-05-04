@@ -11,10 +11,15 @@ function Why() {
         position: "relative",
         py: 0,
         pt: [20, 20, 32, 48, 60],
-        pb: ["176px"],
+        pb: [20, 20, "176px"],
       }}
     >
-      <VStack spacing={12} mb={24} maxW="container.lg" mx="auto">
+      <VStack
+        spacing={[8, 8, 12]}
+        mb={[20, 20, 24]}
+        maxW="container.lg"
+        mx="auto"
+      >
         <Heading className="jumbo" color="white">
           Why be a DUQE agent?
         </Heading>
@@ -25,7 +30,7 @@ function Why() {
       </VStack>
       <Stack
         direction={["column", "column", "row"]}
-        height={["auto", "200vh", "352px"]}
+        height={["auto", "auto", "352px"]}
         w="100%"
         maxW="container.xl"
         position={["relative", "relative", "absolute"]}

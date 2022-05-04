@@ -9,10 +9,10 @@ function Calculate() {
       className="light"
       containerSize="xl"
       pb={0}
-      containerStyles={{ pt: "224px", h: "full" }}
+      containerStyles={{ py: 0, pt: "224px", h: "full" }}
     >
-      <Stack spacing={24} direction="row">
-        <VStack spacing={12} align="flex-start" flex="1">
+      <Stack spacing={24} direction={["column", "column", "row"]}>
+        <VStack spacing={[8, 8, 12]} align="flex-start" flex="1">
           <Heading>
             Use the DUQE Cost Calculator to get tailored pricing
           </Heading>

@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import { Seo } from "../components/seo/components/index"
 
 import PostGrid from "../sections/shared/PostGrid"
-import Hero from "../sections/shared/Hero"
+import Hero from "../sections/page-specific/blog/Hero"
 
 function Blog(props) {
   const { allWpPost } = props.data

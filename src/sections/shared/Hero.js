@@ -1,6 +1,14 @@
 import React, { useEffect, useRef } from "react"
 import SectionWrapper from "../../components/SectionWrapper"
-import { Button, Center, Heading, HStack, Text, VStack } from "@chakra-ui/react"
+import {
+  Button,
+  Center,
+  Heading,
+  HStack,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react"
 import { SmartLink } from "../../components/SmartLink"
 import { gsap, ScrollTrigger } from "../../gsap"
 import ScrollDown from "../../assets/icons/ScrollDown"
@@ -34,8 +42,13 @@ function Hero() {
       ref={img}
     >
       <Center h="full" w="full">
-        <VStack spacing={12} alignItems="start">
-          <Heading as="h1" color="white">
+        <Stack
+          direction={["column", "column", "reverse"]}
+          spacing={[8, 8, 12]}
+          alignItems="start"
+          width="100%"
+        >
+          <Heading as="h1" color="white" maxW="100%">
             Duqe is for the{" "}
             <Text as="span" color="brandYellow.default">
               disrupters
@@ -44,25 +57,22 @@ function Hero() {
           <Heading as="h3" color="white" className="thin-h3">
             Set up your company in DUQE Free Zone, based on the prestigious QE2.
           </Heading>
-          <HStack w="full">
+          <Stack
+            direction={["column", "column", "row"]}
+            w="full"
+            spacing={[5, 5, 6]}
+          >
             <SmartLink url="/">
               <Button>Start your business</Button>
             </SmartLink>
             <SmartLink url="/">
               <Button variant="outlineWhite">How much does it cost?</Button>
             </SmartLink>
-          </HStack>
-        </VStack>
+          </Stack>
+        </Stack>
       </Center>
 
-      <ScrollDown
-        position="absolute"
-        width="100px"
-        height="100px"
-        right={[4, 4, "100px"]}
-        bottom={[4, 4, "100px"]}
-        zIndex="10"
-      />
+      <ScrollDown />
     </SectionWrapper>
   )
 }

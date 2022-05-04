@@ -12,12 +12,12 @@ import React from "react"
 function NewsletterFooter() {
   return (
     <Center
-      w="100%"
+      w={["100%", "100%"]}
       bg="brandConcrete.default"
       h={["60vh", "60vh", "448px"]}
-      rounded="30px"
-      position="absolute"
-      top={["-30vh", "-30vh", "-224px"]}
+      rounded={[0, 0, "30px"]}
+      position={["relative", "relative", "absolute"]}
+      top={["unset", "unset", "-224px"]}
       left="0"
       py={[8, 8, 20]}
       px={[8, 8, 0]}

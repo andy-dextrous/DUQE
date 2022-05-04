@@ -13,10 +13,10 @@ import YellowHeading from "../../../components/common/YellowHeading"
 
 function Requirements() {
   return (
-    <SectionWrapper containerSize="xl" className="light" mb={60}>
+    <SectionWrapper containerSize="xl" className="light" mb={[0, 0, 60]}>
       <VStack
-        spacing={12}
-        alignItems="start"
+        spacing={[8, 8, 12]}
+        alignItems="flex-start"
         maxWidth="container.lg"
         m="auto"
         mb={24}
@@ -29,12 +29,12 @@ function Requirements() {
           quia. Quae.
         </Heading>
       </VStack>
-      <Stack spacing={24} direction="row">
+      <Stack spacing={24} direction={["column", "column", "row"]}>
         <VStack
           bg="brandYellow.default"
-          spacing={12}
+          spacing={[8, 8, 12]}
           flex="1"
-          p={20}
+          p={[8, 8, 20]}
           align="flex-start"
           rounded="30px"
         >
@@ -67,9 +67,9 @@ function Requirements() {
         </VStack>
         <VStack
           bg="brandConcrete.default"
-          spacing={12}
+          spacing={[8, 8, 12]}
           flex="1"
-          p={20}
+          p={[8, 8, 20]}
           rounded="30px"
           align="flex-start"
         >
@@ -101,14 +101,14 @@ function Requirements() {
           </HStack>
         </VStack>
       </Stack>
-      <Container maxW="container.md" my={40}>
-        <Text borderLeft={"10px solid #e0db2a"} pl={12}>
+      <Container maxW="container.md" my={[20, 20, 40]}>
+        <Text borderLeft={"10px solid #e0db2a"} pl={[8, 8, 12]}>
           * Foreign Entity documents must be notarized and attested from the UAE
           Consulate/Embassy of origin and Ministry of Foreign Affairs in UAE
         </Text>
       </Container>
       <VStack
-        spacing={12}
+        spacing={[8, 8, 12]}
         alignItems="start"
         maxWidth="container.lg"
         m="auto"
@@ -122,7 +122,12 @@ function Requirements() {
           quia. Quae.
         </Heading>
       </VStack>
-      <Stack direction="row" spacing={12} position="relative" w="full">
+      <Stack
+        direction={["column", "column", "row"]}
+        spacing={[8, 8, 12]}
+        position="relative"
+        w="full"
+      >
         <VStack bg="brandBlue.100" flex="1" p={12} rounded="30px">
           <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/location.svg" />
           <Heading as="h4" className="lower-case" textAlign="center">
@@ -154,6 +159,7 @@ function Requirements() {
           w="80%"
           left="7%"
           top="-30%"
+          display={["none", "none", "block"]}
         />
       </Stack>
     </SectionWrapper>

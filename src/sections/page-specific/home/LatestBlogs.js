@@ -26,8 +26,8 @@ function LatestBlogs() {
 
   return (
     <SectionWrapper bg="dark.default" containerSize="xl">
-      <Stack direction="row" spacing={40}>
-        <VStack spacing={12} align="start" flex="1">
+      <Stack direction={["column", "column", "row"]} spacing={[20, 20, 40]}>
+        <VStack spacing={[8, 8, 12]} align="flex-start" flex="1">
           <Heading className="jumbo" color="white">
             From the blog
           </Heading>
@@ -43,7 +43,7 @@ function LatestBlogs() {
         <VStack
           flex="1"
           divider={<StackDivider borderColor="dark.800" />}
-          spacing={16}
+          spacing={[8, 8, 16]}
         >
           <HomeBlogCard startVisible />
           <HomeBlogCard />

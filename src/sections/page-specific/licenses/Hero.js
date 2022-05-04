@@ -16,7 +16,12 @@ function Hero() {
       containerSize="xl"
     >
       <Stack h="full" w="full" align="center" direction="row" zIndex="3">
-        <VStack spacing={12} alignItems="start" w="full" width="50%">
+        <VStack
+          spacing={[8, 8, 12]}
+          alignItems="start"
+          w="full"
+          width={["full", "full", "50%"]}
+        >
           <Heading as="h1" color="white">
             Got Questions?
             <Text as="span" color="brandYellow.default">
@@ -31,7 +36,7 @@ function Hero() {
       <Image
         src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651140758/DUQE/License_vector.svg"
         position="absolute"
-        top="0"
+        top={"0"}
         right="0"
         opacity="50%"
         zIndex="2"

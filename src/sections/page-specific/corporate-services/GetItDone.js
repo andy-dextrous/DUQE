@@ -14,7 +14,7 @@ function GetItDone() {
         h="full"
         w="full"
         align="center"
-        direction="row"
+        direction={["column", "column", "row"]}
         zIndex="1"
         spacing={6}
       >
@@ -35,7 +35,7 @@ function GetItDone() {
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651118246/DUQE/Corp_D.png"
             position="absolute"
             right="0"
-            bottom="-20%"
+            bottom={["-9%", "-9%", "-20%"]}
           />
         </Box>
       </Stack>

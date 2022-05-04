@@ -64,10 +64,10 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
       className="light"
       containerSize="lg"
       pb={0}
-      containerStyles={{ py: 0, pt: [2, 4, 6, 8, 60] }}
+      containerStyles={{ py: 0, pt: [20, 20, 6, 8, 60] }}
       zIndex="1"
     >
-      <VStack spacing={12}>
+      <VStack spacing={[8, 8, 12]}>
         <Heading className="jumbo" textAlign="center">
           How much does it cost?
         </Heading>
@@ -78,10 +78,10 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
         </Heading>
         <Button>Calculate Cost</Button>
       </VStack>
-      <Center mt={20}>
+      <Center mt={[12, 12, 20]}>
         {" "}
         <Image
-          h="908px"
+          h={["60vh", "60vh", "908px"]}
           src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944008/DUQE/Calculator.png"
           ref={img}
           transformOrigin="center 30%"
@@ -90,10 +90,10 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
 
       <CrossIcon
         position="absolute"
-        width="500px"
-        height="500px"
-        top="-250px"
-        right="-250px"
+        width={["40vw", "40vw", "500px"]}
+        height={["40vw", "40vw", "500px"]}
+        top={["-20vw", "-20vw", "-250px"]}
+        right={["-20vw", "-20vw", "-250px"]}
         zIndex="1"
         color="dark.default"
         data-speed="1.1"

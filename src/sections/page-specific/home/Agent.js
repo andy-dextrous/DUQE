@@ -9,9 +9,9 @@ function Agent() {
       containerSize="xl"
       className="light"
     >
-      <Stack direction="row" spacing={20}>
+      <Stack direction={["column", "column", "row"]} spacing={[8, 8, 20]}>
         <VStack
-          spacing={12}
+          spacing={[8]}
           mb={20}
           w="full"
           maxW="container.lg"
@@ -37,7 +37,9 @@ function Agent() {
         src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650951373/DUQE/Circle.svg"
         position="absolute"
         right="0"
-        top="25%"
+        height={["50vh", "50vh", "40vh"]}
+        top={["unset", "unset", "25%"]}
+        bottom={["10%", "10%", "unset"]}
         zIndex="0"
       />
     </SectionWrapper>

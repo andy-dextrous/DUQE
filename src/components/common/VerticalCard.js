@@ -1,4 +1,11 @@
-import { AspectRatio, Heading, Image, Text, VStack } from "@chakra-ui/react"
+import {
+  AspectRatio,
+  Button,
+  Heading,
+  Image,
+  Text,
+  VStack,
+} from "@chakra-ui/react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
 
@@ -30,6 +37,7 @@ function VerticalCard({
         rounded="xl"
         bg={image ? null : "brandGreen.600"}
         as="figure"
+        mb={4}
       >
         {useGatsbyImage ? (
           <GatsbyImage
@@ -47,7 +55,7 @@ function VerticalCard({
           />
         )}
       </AspectRatio>
-      <VStack align="start" spacing={1}>
+      <VStack align="start" spacing={4}>
         <Heading as="h4" fontSize="lg" color="brandBlue.900">
           {title}
         </Heading>
@@ -57,6 +65,7 @@ function VerticalCard({
             {"Published " + published + ", " + readTime + " minute read."}
           </Text>
         )}
+        <Button variant="secondary">Read More</Button>
       </VStack>
     </VStack>
   )

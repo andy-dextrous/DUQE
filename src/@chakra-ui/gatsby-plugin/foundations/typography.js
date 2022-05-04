@@ -104,16 +104,25 @@ export const globalTextStyles = {
     color: "white",
     textTransform: "uppercase",
     fontWeight: "300",
-    fontSize: "56px",
-    lineHeight: "70px",
+    fontSize: ["3xl", "3xl", "56px"],
+    lineHeight: ["shortest"],
     letterSpacing: "-0.04em",
   },
   ".wsywyg h2, .wsywyg h3,.wsywyg h4, .wsywyg h5,.wsywyg h6": {
     mt: "3rem",
     mb: "1rem",
   },
+  ".post ul li": { listStylePosition: "inside", listStyleType: "disc" },
+  ".post h1.chakra-heading": {
+    ...heading,
+    fontSize: ["2xl", "4xl", "5xl"],
+    lineHeight: "1",
+    letterSpacing: "-0.01em",
+    fontWeight: "extrabold",
+    textTransform: "uppercase",
+  },
   ".chakra-text.primaryMenuLink": {
-    fontSize: ["55px"],
+    fontSize: ["2xl", "2xl", "55px"],
     fontWeight: "extrabold",
     textTransform: "uppercase",
     lineHeight: "60px",
@@ -121,6 +130,19 @@ export const globalTextStyles = {
     _hover: {
       color: "brandYellow.default",
     },
+  },
+  ".chakra-text.subMenuLink": {
+    fontSize: ["lg", "lg", "2xl"],
+    fontWeight: "normal",
+    color: "white",
+    _hover: {
+      color: "brandYellow.default",
+    },
+  },
+  ".custom-font-size-1.chakra-text": {
+    fontSize: ["20px", "20px", "36px"],
+    color: "brandYellow.default",
+    fontWeight: "300",
   },
 }
 

@@ -46,18 +46,22 @@ function PostContent({ data, ctx }) {
     <SectionWrapper
       className="light"
       containerSize="xl"
-      containerStyles={{ py: 0, pb: [20, 20, 32, 48, 60], mb: ["224px"] }}
+      containerStyles={{ py: 0, pb: [20, 20, 32, 48, 60], mb: [0, 0, "224px"] }}
       overflowX="unset"
     >
       <Stack
-        direction={["column", "column", "row"]}
-        spacing={28}
+        direction={["column-reverse", "column-reverse", "row"]}
+        spacing={[12, 12, 28]}
         p={0}
         mt={[16, 16, "115px"]}
         position="relative"
         h="100%"
       >
-        <Box position="relative" ref={containerRef}>
+        <Box
+          position="relative"
+          ref={containerRef}
+          display={["none", "none", "block"]}
+        >
           <WidgetsList />
           <Author ref={sidebarRef} data={data} progress={progress} />
         </Box>

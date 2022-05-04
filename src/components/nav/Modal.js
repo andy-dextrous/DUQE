@@ -170,23 +170,24 @@ function Modal() {
           justify={["center", "center", "space-between"]}
           align={["center", "center", "center"]}
           py={[16, 8, 24]}
-          px={[0]}
+          px={[8, 8, 0]}
           h="100%"
           w="100%"
           m="auto"
         >
           <VStack
             as="nav"
-            align="start"
+            w="full"
+            align="flex-start"
             spacing={[4, 8, 8, 12]}
-            p={[8, 8, 12, 8, 16, 0]}
+            p={[0, 0, 12, 8, 16, 0]}
             justify="center"
-            flex="4"
+            flex={[4]}
           >
             <VStack
-              spacing={[2, 20]}
+              spacing={[2, 2, 20]}
               align="start"
-              pl={[8, 8, 0]}
+              pl={[0, 0, 0]}
               ref={primaryMenuLinks}
             >
               {primaryMenu.menuItems.nodes.map(item => {
@@ -204,14 +205,20 @@ function Modal() {
           </VStack>
           <VStack
             as="nav"
-            align="start"
-            justify={["start", "start", "center"]}
-            flex="1"
-            spacing={[4, 8, 8, 12]}
-            px={[8, 8, 12, 16, 20]}
+            w="full"
+            align="flex-start"
+            justify={["flex-start", "flex-start", "flex-start"]}
+            flex={[3, 3, 1]}
+            spacing={[4, 4, 8, 12]}
+            px={[0, 0, 12, 16, 20]}
             py={[0, 8, 12, 16, 20]}
           >
-            <VStack pl={[8, 8, 0]} align="start" ref={subMenuRef} spacing={16}>
+            <VStack
+              pl={[0]}
+              align="flex-start"
+              ref={subMenuRef}
+              spacing={[4, 4, 16]}
+            >
               {subMenu.menuItems.nodes.map(item => {
                 return (
                   <Link
@@ -227,16 +234,6 @@ function Modal() {
               })}
             </VStack>
           </VStack>
-          {/* <VStack
-            as="nav"
-            align="start"
-            justify={["start", "start", "center"]}
-            flex="1"
-            h="full"
-            spacing={[4, 8, 8, 12]}
-            px={[8, 8, 12, 16, 20]}
-            py={[0, 8, 12, 16, 20]}
-          ></VStack> */}
         </Stack>
       </Center>
       <Image

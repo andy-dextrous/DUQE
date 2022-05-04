@@ -5,6 +5,7 @@ import VerticalCard from "../../components/common/VerticalCard"
 import SearchToggle from "../../components/search/SearchToggle"
 import { Pagination } from "../../components/archive/Pagination"
 import {
+  Box,
   Button,
   Container,
   Heading,
@@ -12,6 +13,7 @@ import {
   VStack,
   Wrap,
 } from "@chakra-ui/react"
+import StarIcon from "../../assets/icons/StarIcon"
 
 function PostGrid({
   posts,
@@ -21,7 +23,7 @@ function PostGrid({
   title = "Categories",
 }) {
   return (
-    <SectionWrapper minH="auto" id="post-grid" mb={40}>
+    <SectionWrapper minH="auto" id="post-grid" mb={[0, 0, 40]}>
       <Container h="100%" maxW={["container.lg", "container.lg", "100%"]}>
         <VStack spacing={3} mb={12} align="start">
           {title && (
@@ -63,22 +65,32 @@ function PostGrid({
             <SearchToggle />
           </Wrap>
         </VStack>
-        <SimpleGrid as="ul" columns={{ base: 1, lg: 2 }} spacing={[40]}>
+        <SimpleGrid as="ul" columns={{ base: 1, lg: 2 }} spacing={[24, 24, 40]}>
           {posts.map(post => {
             return (
               <Link to={post.uri} key={post.id}>
-                <VerticalCard
-                  image={
-                    post.featuredImage?.node.localFile.childImageSharp
-                      .gatsbyImageData
-                  }
-                  title={post.title}
-                  published={post.date}
-                  readTime={post.seo.readingTime}
-                  excerpt={post.excerpt}
-                  useGatsbyImage={true}
-                  as={"li"}
-                />
+                <Box position="relative">
+                  <VerticalCard
+                    image={
+                      post.featuredImage?.node.localFile.childImageSharp
+                        .gatsbyImageData
+                    }
+                    title={post.title}
+                    published={post.date}
+                    readTime={post.seo.readingTime}
+                    excerpt={post.excerpt}
+                    useGatsbyImage={true}
+                    as={"li"}
+                  />
+                  <StarIcon
+                    color="#62c6c1"
+                    position="absolute"
+                    right="-100px"
+                    top="10%"
+                    width="200px"
+                    height="200px"
+                  />
+                </Box>
               </Link>
             )
           })}

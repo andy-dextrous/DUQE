@@ -76,15 +76,15 @@ function HomeBlogCard({ startVisible = false }) {
       <Image
         src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,h_300,q_auto/v1650858611/DUQE/DUQE_Hero.jpg"
         position="absolute"
-        left="-5%"
-        top="-25%"
+        left={[0, 0, "-5%"]}
+        top={["-15%", "-15%", "-25%"]}
         bottom="0"
-        height="150%"
-        maxW="60%"
+        height={["80%", "80%", "150%"]}
+        maxW={["100%", "100%", "60%"]}
         objectFit="cover"
         py={2}
         zIndex="0"
-        opacity={startVisible ? "0.6" : "0"}
+        opacity={[0.6, 0.6, startVisible ? "0.6" : "0"]}
         mt={0}
         ref={image}
       />

@@ -22,7 +22,14 @@ function ScrollDown({ ...styles }) {
   }, [])
 
   return (
-    <Box {...styles}>
+    <Box
+      position="absolute"
+      width="100px"
+      height="100px"
+      right={[4, 4, "100px"]}
+      bottom={[4, 4, "100px"]}
+      zIndex="10"
+    >
       <Box w="full" h="full" position="relative">
         <Box
           position="absolute"
