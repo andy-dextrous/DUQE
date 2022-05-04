@@ -93,7 +93,7 @@ export const Button = {
         bottom: 0,
         left: 0,
         right: 0,
-        bg: "brandYellow.default",
+        bg: ["transparent", "transparent", "brandYellow.default"],
         opacity: [1, 1, 0],
         zIndex: -2,
         transform: ["scale(1)", "scale(1)", "scale(0)"],
@@ -109,7 +109,7 @@ export const Button = {
         bottom: 0,
         left: 0,
         right: 0,
-        bg: "brandYellow.default",
+        bg: ["transparent", "transparent", "brandYellow.default"],
         opacity: 0,
         zIndex: -1,
         transform: "scale(0)",
@@ -121,6 +121,10 @@ export const Button = {
         "&:before": {
           transform: "scale(1)",
           opacity: 1,
+          bg: "brandYellow.default",
+        },
+        "&:after": {
+          bg: "brandYellow.default",
         },
         svg: {
           transform: "scaleX(0.8)",

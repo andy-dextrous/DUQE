@@ -7,8 +7,8 @@ import { useThemeOptions } from "../../hooks/useThemeOptions"
 import { SocialFollows } from "../social/SocialFollows"
 import Hamburger from "./Hamburger"
 import Logo from "../../assets/logos/Logo"
-import { Box, Center, Flex, VStack } from "@chakra-ui/react"
 import useContrastingColor from "../../hooks/useContrastingColor"
+import { Box, Center, Flex, Grid, GridItem } from "@chakra-ui/react"
 
 function Sidebar() {
   const sidebarRef = useRef()
@@ -27,8 +27,9 @@ function Sidebar() {
       bg="transparent"
       position="fixed"
       left="0"
-      h={["70px", "70px", "100vh"]}
       top="0"
+      right="0"
+      h={["70px", "70px", "100vh"]}
       align="center"
       justify="center"
       borderRight={[
@@ -36,32 +37,68 @@ function Sidebar() {
         "none",
         `1px solid ${isMenuOpen ? "transparent" : borderColor}`,
       ]}
+      borderBottom={[
+        `1px solid ${isMenuOpen ? "transparent" : borderColor}`,
+        `1px solid ${isMenuOpen ? "transparent" : borderColor}`,
+        "none",
+      ]}
       zIndex="popover"
-      display={["none", "none", "flex"]}
       ref={sidebarRef}
     >
-      <VStack justify="space-between" h="100%" w="100%" py={8}>
-        <Hamburger color="white" />
-        {!isMenuOpen && (
-          <Link to="/">
+      <Grid
+        templateColumns={["repeat(3, 1fr)", "repeat(3, 1fr)", "1fr"]}
+        templateRows={["1fr", "1fr", "repeat(3, 1fr)"]}
+        flexDirection="column"
+        layerStyle="fillSpace"
+      >
+        <GridItem
+          gridRow={["1 / 2"]}
+          gridColumn={["1 / 2"]}
+          display="flex"
+          justifyContent={["flex-start", "flex-start", "center"]}
+          alignItems={["center", "center", "flex-start"]}
+          py={[2, 2, 8]}
+          px={[2, 2, 0]}
+        >
+          <Hamburger color="white" />
+        </GridItem>
+        <GridItem
+          gridRow={["1/2", "1/2", "2/3"]}
+          gridColumn={["2/3", "2/3", "1/2"]}
+          layerStyle="center"
+          py={[2, 2, 8]}
+          px={[2, 2, 0]}
+        >
+          {!isMenuOpen && (
             <Center w="100%">
-              <Logo color="white" />
+              <Link to="/">
+                <Logo color="white" height={["40px", "40px", "60px"]} />
+              </Link>
             </Center>
-          </Link>
-        )}
-        {!isMenuOpen && (
-          <Box ref={ref}>
-            <SocialFollows
-              direction="column"
-              spacing={8}
-              align="center"
-              color={color}
-              size="sm"
-              h="176px"
-            />
-          </Box>
-        )}
-      </VStack>
+          )}
+        </GridItem>
+        <GridItem
+          gridRow={["1/2", "1/2", "3/4"]}
+          display="flex"
+          justifyContent="center"
+          alignItems="flex-end"
+          py={[2, 2, 8]}
+          px={[2, 2, 0]}
+        >
+          {!isMenuOpen && (
+            <Box ref={ref} display={["none", "none", "block"]}>
+              <SocialFollows
+                direction="column"
+                spacing={8}
+                align="center"
+                color={color}
+                size="sm"
+                h="176px"
+              />
+            </Box>
+          )}
+        </GridItem>
+      </Grid>
     </Flex>
   )
 }

@@ -14,7 +14,12 @@ function Hamburger() {
   useContrastingColor({ color, setColor }, ref, { fill: color })
 
   return (
-    <Flex zIndex="popover" h="176px" ref={ref}>
+    <Flex
+      zIndex="popover"
+      h="100%"
+      ref={ref}
+      alignItems={["center", "center", "flex-start"]}
+    >
       <Button
         className={isMenuOpen ? "active" : ""}
         variant="menuToggle"

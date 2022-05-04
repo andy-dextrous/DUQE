@@ -8,9 +8,9 @@ export const fontSizes = {
   lg: rem(18),
   xl: rem(20),
   "2xl": rem(24),
-  "3xl": rem(28),
+  "3xl": rem(30),
   "4xl": rem(40),
-  "5xl": rem(48),
+  "5xl": rem(45),
   "6xl": rem(64),
   "7xl": rem(72),
   "8xl": rem(96),
@@ -52,7 +52,7 @@ export const h1 = {
 }
 export const h2 = {
   ...heading,
-  fontSize: ["3xl", "4xl", "45px"],
+  fontSize: ["3xl", "4xl", "5xl"],
   lineHeight: "1.1",
   fontWeight: "extrabold",
   letterSpacing: "-2px",
@@ -60,12 +60,12 @@ export const h2 = {
 
 export const h3 = {
   ...heading,
-  fontSize: ["2xl", "3xl", "30px"],
+  fontSize: ["2xl", "3xl", "3xl"],
 }
 
 export const h4 = {
   ...heading,
-  fontSize: ["xl", "2xl", "24px"],
+  fontSize: ["xl", "2xl", "2xl"],
   lineHeight: "133%",
 }
 
@@ -85,7 +85,7 @@ export const blockquote = {
   my: 12,
   bg: "brandYellow.100",
   p: 6,
-  borderLeft: "4px solid",
+  borderLeft: "10px solid",
   borderLeftColor: "brandYellow.default",
 }
 

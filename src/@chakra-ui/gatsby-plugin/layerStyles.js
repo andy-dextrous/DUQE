@@ -12,6 +12,7 @@ export const layerStyles = {
     width: "100%",
     height: "100%",
   },
+  center: { display: "flex", justifyContent: "center", alignItems: "center" },
   section: {
     w: "100vw",
     h: "100vh",
