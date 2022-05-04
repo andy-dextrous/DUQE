@@ -1,5 +1,6 @@
 const path = require("path")
 const PageSeoFromWP = require(`./seo/pageSeoFromWP.js`)
+const THEME_CONFIG = require("../../themeConfig")
 
 module.exports = async ({ actions, graphql }, options) => {
   const includeYoast = options.seoFromWP
@@ -54,6 +55,7 @@ module.exports = async ({ actions, graphql }, options) => {
             page: seo,
             general: options.generalSeoSettings,
           },
+          variables: THEME_CONFIG,
         },
       })
     })

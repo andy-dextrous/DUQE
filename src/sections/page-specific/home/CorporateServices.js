@@ -110,7 +110,7 @@ function CorporateServices() {
       { opacity: 0, scale: 1.1 },
       { opacity: 1, scale: 1, duration: 0.5, ease: "Power3.out" }
     )
-  }, [selected])
+  }, [selected, data, handlePosition, handleStops])
 
   function handleClick(index) {
     setSelected(index)

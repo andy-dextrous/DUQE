@@ -1,27 +1,29 @@
-import { Heading, Stack, Text, VStack } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
+import YellowHeading from "../../../components/common/YellowHeading"
+import { useVariable } from "../../../hooks"
+import { Heading, Stack, Text, VStack } from "@chakra-ui/react"
 
 function IgnitingIdeas() {
+  const { componentSpacing } = useVariable()
+
   return (
     <SectionWrapper
       bg="dark.default"
       containerSize="lg"
       zIndex={["2", "2", "unset"]}
     >
-      <VStack spacing={12}>
+      <VStack spacing={componentSpacing}>
         <Heading className="jumbo" color="white" maxW="100%">
           Igniting Ideas. <br />
           Championing Dreams.
           <br />
-          <Text as="span" color="brandYellow.default">
-            Empowering Entrepreneurs.
-          </Text>
+          <YellowHeading>Empowering Entrepreneurs.</YellowHeading>
         </Heading>
         <Stack
           direction={["column", "column", "row"]}
-          spacing={[8, 8, 20]}
           align="flex-start"
+          spacing={[8, 8, 20]}
         >
           <Heading as="h3" className="thin-h3" color="white" flex="1">
             DUQE is the free zone for the brave, the focused and the ambitious.

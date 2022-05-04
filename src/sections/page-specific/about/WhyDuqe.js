@@ -1,3 +1,7 @@
+import React from "react"
+import SectionWrapper from "../../../components/SectionWrapper"
+import YellowHeading from "../../../components/common/YellowHeading"
+import { useVariable } from "../../../hooks"
 import {
   Box,
   Button,
@@ -7,16 +11,14 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react"
-import React from "react"
-import SectionWrapper from "../../../components/SectionWrapper"
-import YellowHeading from "../../../components/common/YellowHeading"
 
 function WhyDuqe() {
+  const { containerPaddingY, componentSpacing } = useVariable()
   return (
     <SectionWrapper
       className="light"
       containerSize="xl"
-      containerStyles={{ py: 0, pt: [20, 20, 32, 48, 60] }}
+      containerStyles={{ py: 0, pt: containerPaddingY }}
     >
       <Stack direction={["column", "column", "row"]} spacing={[12, 12, 40]}>
         <Box flex="1" position="relative" h="768px">
@@ -30,9 +32,9 @@ function WhyDuqe() {
             objectFit="cover"
           />
         </Box>
-        <VStack spacing={[8, 8, 12]} align="flex-start" flex="1">
+        <VStack spacing={componentSpacing} align="flex-start" flex="1">
           <Heading>
-            REACH YOUR DREAMS.{" "}
+            REACH YOUR DREAMS. <br />
             <YellowHeading> CREATE YOUR LEGACY.</YellowHeading>
           </Heading>
           <Text>

@@ -1,11 +1,10 @@
-import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/react"
-import { Link } from "gatsby"
 import React from "react"
+import { Link } from "gatsby"
 import Logo from "../../assets/logos/Logo"
 import SectionWrapper from "../../components/SectionWrapper"
-import SmartLink from "../../components/SmartLink"
 import { SocialFollows } from "../../components/social/SocialFollows"
 import NewsletterFooter from "./NewsletterFooter"
+import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/react"
 
 function Footer({ withSignup = true }) {
   return (
@@ -13,7 +12,6 @@ function Footer({ withSignup = true }) {
       bg="dark.default"
       pt={0}
       px={[0, 0, 16, 20, 40, "200px"]}
-      containerSize="xl"
       containerStyles={{ position: "relative", pt: [0, 0, "unset"] }}
       sx={{
         "& a": {

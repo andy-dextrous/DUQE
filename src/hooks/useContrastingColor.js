@@ -9,7 +9,7 @@ const useContrastingColor = (
   childSelector = null,
   useContrast = true
 ) => {
-  const { isDarkBackground, setIsDarkBackground } = useContext(DarkContext)
+  const { isDarkBackground } = useContext(DarkContext)
 
   useEffect(() => {
     if (!useContrast) return
@@ -70,7 +70,7 @@ const useContrastingColor = (
       duration: 0.4,
       ease: "Power3.out",
     })
-  }, [isDarkBackground])
+  }, [isDarkBackground, childSelector, ref])
 }
 
 export default useContrastingColor

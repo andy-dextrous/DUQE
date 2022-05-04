@@ -41,9 +41,6 @@ export const layerStyles = {
     bg: "linear-gradient(180deg, rgba(11, 11, 11, 0) 32.43%, #0b0b0b 100%),radial-gradient(circle, rgba(11,11,11,0) 0%, rgba(11,11,11,0) 49%, rgba(11,11,11,1) 100%)",
     opacity: 1,
   },
-
-  // radial-gradient(63.13% 139.73% at 36.87% 47.07%, rgba(11, 11, 11, 0) 0%, #0B0B0B 100%);
-
   blogSidebar: {
     spacing: 3,
     p: 0,

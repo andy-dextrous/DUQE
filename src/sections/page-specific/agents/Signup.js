@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Heading,
-  HStack,
-  Input,
-  Stack,
-  VStack,
-} from "@chakra-ui/react"
+import { Box, Button, Heading, Input, Stack, VStack } from "@chakra-ui/react"
 import React from "react"
 import YellowHeading from "../../../components/common/YellowHeading"
 import SectionWrapper from "../../../components/SectionWrapper"

@@ -3,7 +3,7 @@
  */
 
 const DEFAULT_OPTIONS = {
-  //Site identity
+  /**** SITE IDENTITY ****/
   wordPressUrl: process.env.GATSBY_WORDPRESS_API_URL,
   siteUrl: "https://duqe.ae",
   wordPressBaseUrl: "https://duqe.me",
@@ -37,7 +37,7 @@ const DEFAULT_OPTIONS = {
     { name: "youtube", url: null },
   ],
 
-  //Theme options
+  /**** THEME OPTIONS ****/
   gatsbySourceWordPressOptions: { presets: [] },
   pathPrefix: "",
   paginationPrefix: "page",
@@ -67,14 +67,15 @@ const DEFAULT_OPTIONS = {
     ],
     sidebarWidgets: ["Categories", "RecentPosts"],
   },
-  // Site Variables
+
+  /**** THEME VARIABLES ****/
   sidebarMenuWidth: 100,
   sidebarMenuMargin: 100,
   topBarHeight: 115,
   cssVarPrefix: "duqe",
   createColorPallete: true,
 
-  // Build commands
+  /**** BUILD COMMANDS ****/
   createPages: true,
   createPosts: true,
   createCategories: true,

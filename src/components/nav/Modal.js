@@ -1,30 +1,30 @@
 import React, {
   useContext,
-  useEffect,
+  // useEffect,
   useRef,
-  useState,
-  useLayoutEffect,
+  // useState,
+  // useLayoutEffect,
 } from "react"
 import { Link } from "gatsby"
-import { gsap, SplitText } from "../../gsap"
+// import { gsap, SplitText } from "../../gsap"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
 import { MenuContext } from "../Layout"
 import SectionWrapper from "../SectionWrapper"
 import {
   VStack,
   Text,
-  Heading,
+  // Heading,
   Stack,
-  Box,
+  // Box,
   Center,
   Image,
 } from "@chakra-ui/react"
-import { SocialFollows } from "../social/SocialFollows"
-import useRgba from "../../hooks/useRgba"
+// import { SocialFollows } from "../social/SocialFollows"
+// import useRgba from "../../hooks/useRgba"
 
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
-  const [isActive, setIsActive] = useState(false)
+  // const [isActive, setIsActive] = useState(false)
   const primaryMenu = useMenuQuery("Primary")
   const subMenu = useMenuQuery("Secondary")
   const menuWrapper = useRef()
@@ -32,10 +32,10 @@ function Modal() {
   const primaryMenuLinks = useRef()
   const subMenuRef = useRef()
 
-  const headingRef1 = useRef()
-  const headingRef2 = useRef()
+  // const headingRef1 = useRef()
+  // const headingRef2 = useRef()
 
-  const openingTimeline = useRef(null)
+  // const openingTimeline = useRef(null)
 
   // useEffect(() => {
   //   const height = window.innerHeight

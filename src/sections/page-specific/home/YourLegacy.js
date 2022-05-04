@@ -1,4 +1,4 @@
-import { Heading, HStack, Stack, VStack } from "@chakra-ui/react"
+import { Heading, Stack, VStack } from "@chakra-ui/react"
 import React from "react"
 import Blurb from "../../../components/common/Blurb"
 import SectionWrapper from "../../../components/SectionWrapper"

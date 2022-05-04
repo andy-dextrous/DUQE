@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react"
 import { useThemeOptions } from "../hooks/useThemeOptions"
+import { useVariable } from "../hooks/useVariable"
 import { Box, Flex } from "@chakra-ui/react"
 import { SmartImage } from "../components/SmartImage"
 import Video from "./video/Video"
@@ -20,7 +21,8 @@ const SectionWrapper = forwardRef((props, ref) => {
     ...sectionStyles
   } = props
 
-  const { sidebarMenuMargin, topBarHeight } = useThemeOptions()
+  const { topBarHeight } = useThemeOptions()
+  const { containerPaddingY, sectionPaddingX } = useVariable()
 
   return (
     <>
@@ -29,16 +31,16 @@ const SectionWrapper = forwardRef((props, ref) => {
         width={["100%"]}
         position="relative"
         pt={isFirstSection ? `${topBarHeight}px` : 0}
-        px={[5, 5, 16, 20, 40, "200px"]}
+        px={sectionPaddingX}
         justify="center"
         {...sectionStyles}
       >
         {withContainer ? (
           <Box
-            maxW={`container.${containerSize}`}
+            layerStyle="fillSpace"
             w={["100%", "100%", `container.${containerSize}`]}
-            h="full"
-            py={[20, 20, 32, 48, 60]}
+            maxW={`container.${containerSize}`}
+            py={containerPaddingY}
             {...containerStyles}
           >
             {children}

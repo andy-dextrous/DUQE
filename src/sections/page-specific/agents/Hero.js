@@ -1,7 +1,8 @@
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
-import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
+import { Heading, Image, Stack, VStack } from "@chakra-ui/react"
 import ScrollDown from "../../../assets/icons/ScrollDown"
+import YellowHeading from "../../../components/common/YellowHeading"
 
 function Hero() {
   return (
@@ -14,18 +15,18 @@ function Hero() {
       }}
       containerSize="xl"
     >
-      <Stack h="full" w="full" align="center" direction="row">
+      <Stack layerStyle="fillSpace" align="center" direction="row">
         <VStack
           spacing={[6, 6, 12]}
           alignItems="start"
-          w="full"
           width={["full", "full", "50%"]}
         >
           <Heading as="h1" color="white">
             Got Questions?
-            <Text as="span" color="brandYellow.default">
-              <br></br>Need more info?
-            </Text>
+            <YellowHeading>
+              <br />
+              Need more info?
+            </YellowHeading>
           </Heading>
           <Heading as="h3" color="white" className="thin-h3">
             Set up your company in DUQE Free Zone, based on the prestigious QE2.
@@ -39,14 +40,7 @@ function Hero() {
         right={[0, 0, "50px"]}
         opacity="50%"
       />
-      <ScrollDown
-        position="absolute"
-        width="100px"
-        height="100px"
-        right={[4, 4, "100px"]}
-        bottom={[4, 4, "100px"]}
-        zIndex="10"
-      />
+      <ScrollDown />
     </SectionWrapper>
   )
 }

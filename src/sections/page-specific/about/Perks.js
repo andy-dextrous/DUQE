@@ -1,13 +1,15 @@
-import { Heading, HStack, Stack, VStack } from "@chakra-ui/react"
+import { Heading, Stack, VStack } from "@chakra-ui/react"
 import React from "react"
 import Blurb from "../../../components/common/Blurb"
 import SectionWrapper from "../../../components/SectionWrapper"
 import YellowHeading from "../../../components/common/YellowHeading"
+import { useVariable } from "../../../hooks"
 
 function Perks() {
+  const { componentSpacing, newsletterOffset } = useVariable()
   return (
-    <SectionWrapper containerSize="lg" className="light">
-      <VStack spacing={[8, 8, 12]} alignItems="start">
+    <SectionWrapper containerSize="lg" className="light" mb={newsletterOffset}>
+      <VStack spacing={componentSpacing} alignItems="start">
         <Heading className="jumbo">
           Your <YellowHeading>Legacy </YellowHeading>Starts at Duqe
         </Heading>

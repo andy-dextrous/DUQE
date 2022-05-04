@@ -1,14 +1,17 @@
-import React, { useEffect, useRef } from "react"
+import React, { useRef } from "react"
+import { graphql } from "gatsby"
+import { gsap, ScrollTrigger } from "../../../gsap"
+
 import SectionWrapper from "../../../components/SectionWrapper"
 import { WidgetsList } from "../../../components/widgets/WidgetsList"
 import Author from "../../../components/post/Author"
 import { PostEntryContent } from "../../../components/post/PostEntryContent"
-import { Stack, VStack, Box, Progress } from "@chakra-ui/react"
 import { PrevNextPostNavigation } from "../../../components/post/PrevNextPostNavigation"
-import { graphql } from "gatsby"
-import { gsap, ScrollTrigger } from "../../../gsap"
+import { Stack, VStack, Box } from "@chakra-ui/react"
+import { useVariable } from "../../../hooks"
 
 function PostContent({ data, ctx }) {
+  const { containerPaddingY, newsletterOffset, topBarHeight } = useVariable()
   const { prev, next } = ctx
   const sidebarRef = useRef()
   const containerRef = useRef()
@@ -45,15 +48,13 @@ function PostContent({ data, ctx }) {
   return (
     <SectionWrapper
       className="light"
-      containerSize="xl"
-      containerStyles={{ py: 0, pb: [20, 20, 32, 48, 60], mb: [0, 0, "224px"] }}
-      overflowX="unset"
+      containerStyles={{ py: 0, pb: containerPaddingY, mb: newsletterOffset }}
     >
       <Stack
         direction={["column-reverse", "column-reverse", "row"]}
         spacing={[12, 12, 28]}
         p={0}
-        mt={[16, 16, "115px"]}
+        mt={[16, 16, topBarHeight]}
         position="relative"
         h="100%"
       >

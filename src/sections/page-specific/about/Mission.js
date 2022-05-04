@@ -2,18 +2,19 @@ import { Heading, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import YellowHeading from "../../../components/common/YellowHeading"
+import { useVariable } from "../../../hooks"
 
 function Mission() {
+  const { containerPaddingY } = useVariable()
+
   return (
     <SectionWrapper
       bg="dark.default"
       containerSize="lg"
-      minH="100vh"
-      containerStyles={{ py: [0], pb: [20, 20, 32, 48, 60] }}
+      containerStyles={{ py: 0, pb: containerPaddingY }}
     >
       <Stack
-        h="full"
-        w="full"
+        layerStyle="fillSpace "
         align="center"
         direction={["column", "column", "row"]}
         zIndex="1"
@@ -47,12 +48,11 @@ function Mission() {
           Starting a business is exciting, but it can also be stressful. We know
           that just as well as you do.{" "}
           <YellowHeading>
-            {" "}
             <strong>
               It is our mission to streamline your business setup process to
               help you succeed in achieving your business goals.
             </strong>
-          </YellowHeading>{" "}
+          </YellowHeading>
           The good news is, we are fully equipped to meet your expectations with
           our services and in-house experts. We will guide you from the initial
           stage of trade name registration, all the way to business growth and
@@ -60,8 +60,7 @@ function Mission() {
         </Heading>
       </Stack>
       <Stack
-        h="full"
-        w="full"
+        layerStyle="fillSpace"
         align="center"
         zIndex="1"
         position="relative"
@@ -89,7 +88,7 @@ function Mission() {
           }}
         >
           Our
-          <br />{" "}
+          <br />
           <Text as="span" color="brandBlue.default">
             {" "}
             vision
