@@ -118,7 +118,7 @@ module.exports = {
         icon: `./static/favicon.svg`,
       },
     },
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {

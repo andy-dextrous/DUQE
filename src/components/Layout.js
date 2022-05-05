@@ -10,7 +10,7 @@ export const DarkContext = React.createContext()
 
 export function Layout({
   children,
-  smoothScroll = true,
+  smoothScroll = false,
   withSignup,
   ...props
 }) {
