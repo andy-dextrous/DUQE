@@ -172,7 +172,7 @@ function Modal() {
       overflow={["scroll", "scroll", "hidden"]}
       ref={menuSection}
     >
-      <Center p={0} h="100%" w="auto" ref={menuWrapper}>
+      <Center p={0} minH="100%" w="auto" ref={menuWrapper}>
         <Stack
           direction={["column", "column", "column", "row"]}
           justify={["center", "center", "space-between"]}
