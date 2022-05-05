@@ -90,6 +90,7 @@ export const Button = {
         transition: "all .3s ease",
         pointerEvents: "none",
       },
+
       "&:before": {
         content: '""',
         borderRadius: "50%",
@@ -128,9 +129,7 @@ export const Button = {
           opacity: 1,
           bg: "brandYellow.default",
         },
-        "&:after": {
-          bg: "brandYellow.default",
-        },
+
         svg: {
           transform: "scaleX(0.8)",
         },
@@ -139,6 +138,7 @@ export const Button = {
         borderColor: "transparent",
         "&:after": {
           transform: "scale(1)",
+          bg: "brandYellow.default",
           opacity: 1,
         },
         svg: {

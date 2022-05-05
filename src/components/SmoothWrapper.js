@@ -13,9 +13,7 @@ function SmoothWrapper({ smoothScroll, children }) {
       content: "#smooth-content",
       smooth: 1,
       normalizeScroll: true,
-      ignoreMobileResize: true,
       effects: true,
-      preventDefault: true,
     })
 
     setSmootherInstance(smoother)
