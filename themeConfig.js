@@ -17,6 +17,7 @@ const THEME_CONFIG = {
   /**** NAV ****/
   sidebarMenuWidth: "100px",
   topBarHeight: "115px",
+  mobileNavHeight: ["70px", "70px", 0],
 
   /**** FOOTER ****/
   newsletterOffset: [0, 0, "224px"],

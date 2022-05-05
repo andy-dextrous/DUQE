@@ -133,7 +133,7 @@ export const globalTextStyles = {
   },
   ".chakra-text.subMenuLink": {
     fontSize: ["lg", "lg", "2xl"],
-    fontWeight: "normal",
+    fontWeight: "bold",
     color: "white",
     _hover: {
       color: "brandYellow.default",

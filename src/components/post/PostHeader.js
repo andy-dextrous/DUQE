@@ -4,35 +4,47 @@ import Breadcrumbs from "../../components/archive/Breadcrumbs"
 import SectionWrapper from "../../components/SectionWrapper"
 import { PostEntryTitle } from "../../components/post/PostEntryTitle"
 import { PublicationDate } from "../../components/post/PublicationDate"
-import { Image, VStack } from "@chakra-ui/react"
+import { VStack } from "@chakra-ui/react"
+import { useVariable } from "../../hooks/useVariable"
+import QIcon from "../../assets/icons/QIcon"
 
 function PostHeader({ data, ctx }) {
   const { seo } = ctx
+  const { containerPaddingY } = useVariable()
 
   return (
     <SectionWrapper
       className="light"
       containerSize="lg"
-      containerStyles={{ py: 0, pt: [20, 20, 32, 48, 60] }}
+      containerStyles={{ py: 0, pt: containerPaddingY }}
     >
-      <VStack flex="1" align="start" spacing={8} as="header">
-        <VStack align="start" spacing={8} as="header">
+      <VStack flex="1" align="start" spacing={[8, 8, 24]} as="header">
+        <VStack align="start" spacing={5}>
           <Breadcrumbs data={seo.page.breadcrumbs} />
           <PostEntryTitle data={data.title} />
           <PublicationDate
             data={{ date: data.date, readingTime: seo.readingTime }}
           />
         </VStack>
-        <SmartImage img={data.featuredImage?.node} loading="eager" />
+        <SmartImage
+          img={data.featuredImage?.node}
+          loading="eager"
+          style={{
+            borderRadius: "30px",
+            overflow: "hidden",
+            "@media (max-width: 768px)": { borderRadius: "20px" },
+          }}
+        />
       </VStack>
-      <Image
-        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651108536/DUQE/Q.svg"
+      <QIcon
+        color="#e0db2a"
+        outline
+        width={["100vw", "100vw", "60vw"]}
+        h={["150vw", "150vw", "60vw"]}
         position="absolute"
-        top="0"
-        right="0px"
-        opacity="50%"
+        top={["20%", "20%", "-10%"]}
+        right="-10%"
         zIndex="-1"
-        data-speed="0.7"
       />
     </SectionWrapper>
   )

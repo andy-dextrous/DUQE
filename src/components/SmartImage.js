@@ -20,7 +20,13 @@ export const SmartImage = ({
   loading = "lazy",
   data,
   parallax,
-  imgStyle = { width: "100%", height: parallax ? "180%" : "100%" },
+  imgStyle = {
+    width: "100%",
+    height: parallax ? "180%" : "100%",
+    objectFit: "cover",
+    marginTop: 0,
+  },
+  style = {},
   ...props
 }) => {
   const breakPoints = [
@@ -74,6 +80,7 @@ export const SmartImage = ({
         }
         alt={img.altText}
         imgStyle={imgStyle}
+        style={style}
         {...props}
       />
     ) : parallax ? (

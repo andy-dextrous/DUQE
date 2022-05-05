@@ -3,7 +3,8 @@ import Nav from "./nav/Nav"
 import Footer from "./footer/Footer"
 import SmoothWrapper from "./SmoothWrapper"
 import useStopScroll from "../hooks/useStopScroll"
-import { Portal } from "@chakra-ui/react"
+import { Box, Portal } from "@chakra-ui/react"
+import { useVariable } from "../hooks"
 
 export const MenuContext = React.createContext()
 export const DarkContext = React.createContext()
@@ -16,6 +17,7 @@ export function Layout({
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDarkBackground, setIsDarkBackground] = useState(false)
+  const { mobileNavHeight } = useVariable()
 
   useStopScroll(isMenuOpen)
 
@@ -26,10 +28,10 @@ export function Layout({
           <Portal>
             <Nav />
           </Portal>
-          <main {...props}>
+          <Box as="main" pt={mobileNavHeight} {...props}>
             {children}
             <Footer withSignup={withSignup} />
-          </main>
+          </Box>
         </DarkContext.Provider>
       </SmoothWrapper>
     </MenuContext.Provider>

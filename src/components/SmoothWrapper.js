@@ -5,7 +5,6 @@ export const SmoothContext = React.createContext()
 
 function SmoothWrapper({ smoothScroll, children }) {
   const [smootherInstance, setSmootherInstance] = useState()
-  const useSmoothOnMobile = useBreakpointValue([false, false, true])
 
   useLayoutEffect(() => {
     if (!smoothScroll || window.innerWidth < 768) return

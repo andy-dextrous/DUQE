@@ -255,7 +255,7 @@ function Modal() {
                 _focus={{ bg: "white" }}
               />
             </InputGroup>
-            <VStack align="flex-start">
+            <VStack align="flex-start" pb={[20, 20, 0]}>
               <Text color="dark.400">Other links</Text>
               <Text color="white" fontWeight="bold">
                 Privacy policy
@@ -270,8 +270,13 @@ function Modal() {
                 Contact Us
               </Text>
               <Divider py={8} />
-              <SocialFollows direction="row" button variant="circle" />
-              <VStack bg="brandYellow.default" p={8}>
+              <SocialFollows direction="row" button variant="circle" py={12} />
+              <VStack
+                bg="brandYellow.default"
+                p={8}
+                rounded="2xl"
+                align="flex-start"
+              >
                 <Heading as="h4">Cost Calculator</Heading>
                 <Button>Cost calculator</Button>
               </VStack>
