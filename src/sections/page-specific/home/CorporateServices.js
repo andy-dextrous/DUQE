@@ -110,14 +110,14 @@ function CorporateServices() {
       { opacity: 0, scale: 1.1 },
       { opacity: 1, scale: 1, duration: 0.5, ease: "Power3.out" }
     )
-  }, [selected, data, handlePosition, handleStops])
+  }, [selected])
 
   function handleClick(index) {
     setSelected(index)
   }
 
   return (
-    <Box width="100%" maxW="container.xl" zIndex="2">
+    <Box width="full" maxW="container.xl" zIndex="2">
       <Box
         layerStyle="fillSpace"
         h={["100vh", "100vh", "850px"]}
@@ -131,11 +131,15 @@ function CorporateServices() {
           templateColumns="repeat(12,1fr)"
           templateRows="repeat(12,1fr)"
         >
-          <GridItem gridColumn="2/5" gridRow="3/11">
-            <HStack h="100%" spacing={[8, 8, 12]}>
+          <GridItem
+            gridColumn={["2/11", "2/11", "2/5"]}
+            gridRow={["3/7", "3/7", "3/11"]}
+            overflow="hidden"
+          >
+            <HStack h="full" spacing={[8, 8, 12]}>
               <Box
                 w="2px"
-                h="100%"
+                h="full"
                 bg="dark.500"
                 position="relative"
                 ref={track}
@@ -185,10 +189,8 @@ function CorporateServices() {
             </HStack>
           </GridItem>
           <GridItem
-            gridColumnStart="7"
-            gridColumnEnd="12"
-            gridRowStart="8"
-            gridRowEnd="13"
+            gridColumn={["2/12", "2/12", "7/12"]}
+            gridRow="8/13"
             bg="brandYellow.default"
             p={12}
             ref={card}
@@ -199,7 +201,7 @@ function CorporateServices() {
               </Heading>
               <Image h="60px" src={data[selected].iconUrl} />
             </HStack>
-            <Text mt={8} fontSize="20" ref={text}>
+            <Text mt={8} fontSize={["14", "14", "20"]} ref={text}>
               {data[0].text}
             </Text>
           </GridItem>

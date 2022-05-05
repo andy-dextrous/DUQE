@@ -9,17 +9,20 @@ import { gsap, ScrollTrigger } from "../../../gsap"
 function LatestBlogs() {
   const dShape = useRef()
   useEffect(() => {
-    if (!ScrollTrigger) return
-    gsap.to(dShape.current, {
-      x: 100,
-      y: -40,
-      rotation: -40,
-      ease: "linear",
-      scrollTrigger: {
-        trigger: dShape.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
+    ScrollTrigger.matchMedia({
+      "(min-width: 768px)": function () {
+        gsap.to(dShape.current, {
+          x: 100,
+          y: -40,
+          rotation: -40,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: dShape.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        })
       },
     })
   }, [])

@@ -4,7 +4,7 @@ import SectionWrapper from "../../../components/SectionWrapper"
 
 const Perks = () => {
   return (
-    <SectionWrapper bg="dark.default" px={[0, 0, "50px"]}>
+    <SectionWrapper bg="dark.default" px={[0, 0]}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"

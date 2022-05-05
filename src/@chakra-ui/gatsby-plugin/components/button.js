@@ -68,6 +68,11 @@ export const Button = {
       borderColor: "dark.default",
       color: "dark.default",
     },
+    circle: {
+      bg: "white",
+      svg: { fill: "dark.default" },
+      borderRadius: "full",
+    },
     menuToggle: {
       width: ["2.7rem", "2.7rem", "3.25rem"],
       height: ["2.7rem", "2.7rem", "3.25rem"],

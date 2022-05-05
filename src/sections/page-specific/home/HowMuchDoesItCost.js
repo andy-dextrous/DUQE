@@ -1,4 +1,11 @@
-import { Button, Center, Heading, Image, VStack } from "@chakra-ui/react"
+import {
+  Button,
+  Center,
+  Heading,
+  Image,
+  VStack,
+  useBreakpointValue,
+} from "@chakra-ui/react"
 import React, { useContext, useEffect, useRef } from "react"
 import CrossIcon from "../../../assets/icons/CrossIcon"
 import SectionWrapper from "../../../components/SectionWrapper"
@@ -9,7 +16,7 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
   const cross = useRef()
   const img = useRef()
   const { setIsDarkBackground } = useContext(DarkContext)
-
+  const addLag = useBreakpointValue([false, false, true])
   useEffect(() => {
     if (!ScrollTrigger) return
     gsap.to(cross.current, {
@@ -90,13 +97,13 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
 
       <CrossIcon
         position="absolute"
-        width={["40vw", "40vw", "500px"]}
-        height={["40vw", "40vw", "500px"]}
-        top={["-20vw", "-20vw", "-250px"]}
-        right={["-20vw", "-20vw", "-250px"]}
+        width={["100px", "100px", "500px"]}
+        height={["100px", "100px", "500px"]}
+        top={["-50px", "-50px", "-250px"]}
+        right={["-50px", "-50px", "-250px"]}
         zIndex="1"
         color="dark.default"
-        data-speed="1.1"
+        data-speed={addLag ? "1.1" : 1}
         ref={cross}
       />
     </SectionWrapper>

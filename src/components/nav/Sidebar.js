@@ -1,14 +1,22 @@
-import React, { useContext, useRef, useState } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 import { MenuContext } from "../Layout"
 import { useRgba } from "../../hooks/useRgba"
 import { useThemeOptions } from "../../hooks/useThemeOptions"
+import { gsap, ScrollTrigger } from "../../gsap"
 
 import { SocialFollows } from "../social/SocialFollows"
 import Hamburger from "./Hamburger"
 import Logo from "../../assets/logos/Logo"
 import useContrastingColor from "../../hooks/useContrastingColor"
-import { Box, Center, Flex, Grid, GridItem } from "@chakra-ui/react"
+import {
+  Box,
+  Center,
+  Flex,
+  Grid,
+  GridItem,
+  useBreakpointValue,
+} from "@chakra-ui/react"
 
 function Sidebar() {
   const sidebarRef = useRef()
@@ -17,14 +25,44 @@ function Sidebar() {
   const { isMenuOpen } = useContext(MenuContext)
   const [color, setColor] = useState("white")
   const borderColor = useRgba("#bbbbbb", 0.3)
+  const showLogoMobile = useBreakpointValue([true, true, false])
 
   useContrastingColor({ color, setColor }, ref, { fill: color }, ".chakra-icon")
+
+  // useEffect(() => {
+  //   if (showNavScrollUp.current) return
+  //   const tl = gsap.timeline({
+  //     paused: true,
+  //     duration: 0.2,
+  //   })
+  //   tl.from(sidebarRef.current, {
+  //     yPercent: -100,
+  //   })
+
+  //   ScrollTrigger.matchMedia({
+  //     "(max-width: 768px)": function () {
+  //       ScrollTrigger.create({
+  //         trigger: document.querySelector("main"),
+  //         start: "top 0",
+  //         end: "bottom 99%",
+  //         onUpdate: self => {
+  //           console.log(self.direction)
+  //           self.direction === -1 ? tl.play() : tl.reverse()
+  //         },
+  //       })
+  //     },
+  //   })
+
+  //   return () => {
+  //     tl.kill()
+  //   }
+  // }, [])
 
   return (
     <Flex
       as="aside"
       w={["100vw", "100vw", `${sidebarMenuWidth}px`]}
-      bg="transparent"
+      bg={["dark.default", "dark.default", "transparent"]}
       position="fixed"
       left="0"
       top="0"
@@ -69,13 +107,14 @@ function Sidebar() {
           py={[2, 2, 8]}
           px={[2, 2, 0]}
         >
-          {!isMenuOpen && (
-            <Center w="100%">
-              <Link to="/">
-                <Logo color="white" height={["40px", "40px", "60px"]} />
-              </Link>
-            </Center>
-          )}
+          <Center
+            w="100%"
+            className={showLogoMobile && !isMenuOpen ? "" : "hidden"}
+          >
+            <Link to="/">
+              <Logo color="white" height={["40px", "40px", "60px"]} />
+            </Link>
+          </Center>
         </GridItem>
         <GridItem
           gridRow={["1/2", "1/2", "3/4"]}

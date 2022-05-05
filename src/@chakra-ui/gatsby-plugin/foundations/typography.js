@@ -45,7 +45,7 @@ const heading = {
 export const h1 = {
   ...heading,
   fontSize: ["4xl", "4xl", "9xl"],
-  lineHeight: "1",
+  lineHeight: ["1.2", "1.2", "1.1"],
   letterSpacing: "-0.01em",
   fontWeight: "extrabold",
   textTransform: "uppercase",

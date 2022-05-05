@@ -15,7 +15,7 @@ const THEME_CONFIG = {
   componentSpacing: [8, 8, 12],
 
   /**** NAV ****/
-  sidebarMenuWidth: 100,
+  sidebarMenuWidth: "100px",
   topBarHeight: "115px",
 
   /**** FOOTER ****/

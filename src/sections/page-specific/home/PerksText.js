@@ -1,20 +1,21 @@
-import { Heading, Text, VStack } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
+import { useVariable } from "../../../hooks"
+import { Heading, VStack } from "@chakra-ui/react"
+import YellowHeading from "../../../components/common/YellowHeading"
 
 function PerksText() {
+  const { containerPaddingY, componentSpacing } = useVariable()
   return (
     <SectionWrapper
       bg="dark.default"
       containerSize="lg"
-      containerStyles={{ py: 0, pt: [20, 20, 32, 48, 60] }}
+      containerStyles={{ py: 0, pt: containerPaddingY }}
     >
-      <VStack spacing={[8, 8, 12]}>
+      <VStack spacing={componentSpacing}>
         <Heading className="jumbo" color="white">
           The perks of Dubai's only free zone{" "}
-          <Text as="span" color="brandYellow.default">
-            on a ship
-          </Text>
+          <YellowHeading>on a ship</YellowHeading>
         </Heading>
         <Heading as="h3" className="thin-h3" color="white">
           Make your mark in Dubai, the start-up capital of the world. and bring

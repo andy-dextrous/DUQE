@@ -18,7 +18,15 @@ import {
   // Box,
   Center,
   Image,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Divider,
+  Heading,
+  Button,
 } from "@chakra-ui/react"
+import { Search2Icon } from "@chakra-ui/icons"
+import { SocialFollows } from "../social/SocialFollows"
 // import { SocialFollows } from "../social/SocialFollows"
 // import useRgba from "../../hooks/useRgba"
 
@@ -156,15 +164,15 @@ function Modal() {
       left="0"
       top="0"
       ml="0"
-      w="100vw"
       h="100vh"
       bg="dark.default"
       visibility={isMenuOpen ? "visible" : "hidden"}
       containerSize="xl"
-      containerStyles={{ py: 0 }}
+      containerStyles={{ py: "100px" }}
+      overflow={["scroll", "scroll", "hidden"]}
       ref={menuSection}
     >
-      <Center p={0} h="full" w="full" ref={menuWrapper}>
+      <Center p={0} h="100%" w="auto" ref={menuWrapper}>
         <Stack
           direction={["column", "column", "column", "row"]}
           justify={["center", "center", "space-between"]}
@@ -208,7 +216,7 @@ function Modal() {
             w="full"
             align="flex-start"
             justify={["flex-start", "flex-start", "flex-start"]}
-            flex={[3, 3, 1]}
+            flex={[3, 3, 2]}
             spacing={[4, 4, 8, 12]}
             px={[0, 0, 12, 16, 20]}
             py={[0, 8, 12, 16, 20]}
@@ -232,6 +240,41 @@ function Modal() {
                   </Link>
                 )
               })}
+            </VStack>
+          </VStack>
+          <VStack flex="1" spacing={12} align="flex-start" w="full">
+            <InputGroup>
+              <InputLeftElement
+                pointerEvents="none"
+                children={<Search2Icon color="dark.400" />}
+              />
+              <Input
+                variant="flushed"
+                placeholder="Search site"
+                color="dark.400"
+                _focus={{ bg: "white" }}
+              />
+            </InputGroup>
+            <VStack align="flex-start">
+              <Text color="dark.400">Other links</Text>
+              <Text color="white" fontWeight="bold">
+                Privacy policy
+              </Text>
+              <Text color="white" fontWeight="bold">
+                Terms & conditions
+              </Text>
+              <Text color="white" fontWeight="bold">
+                Support
+              </Text>
+              <Text color="white" fontWeight="bold">
+                Contact Us
+              </Text>
+              <Divider py={8} />
+              <SocialFollows direction="row" button variant="circle" />
+              <VStack bg="brandYellow.default" p={8}>
+                <Heading as="h4">Cost Calculator</Heading>
+                <Button>Cost calculator</Button>
+              </VStack>
             </VStack>
           </VStack>
         </Stack>

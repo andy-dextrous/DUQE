@@ -1,14 +1,23 @@
-import { Button, Heading, Image, Text, VStack } from "@chakra-ui/react"
+import {
+  Button,
+  Heading,
+  Image,
+  Text,
+  useBreakpointValue,
+  VStack,
+} from "@chakra-ui/react"
 import React, { useRef } from "react"
 import { gsap } from "../../gsap"
 
 function HomeBlogCard({ startVisible = false }) {
+  const animateOnMobile = useBreakpointValue([false, false, true])
   const image = useRef()
   const container = useRef()
   const throttleX = 0.2
   const throttleY = 0.8
 
   const onEnter = () => {
+    if (!animateOnMobile) return
     gsap.to(image.current, {
       opacity: 0.6,
       duration: 0.2,
@@ -16,6 +25,7 @@ function HomeBlogCard({ startVisible = false }) {
   }
 
   const onMove = ({ clientX, clientY }) => {
+    if (!animateOnMobile) return
     const { x, y, width, height } = image.current.getBoundingClientRect()
 
     gsap.to(image.current, {
@@ -34,6 +44,7 @@ function HomeBlogCard({ startVisible = false }) {
   }
 
   const onLeave = () => {
+    if (!animateOnMobile) return
     gsap.to(image.current, {
       x: 0,
       y: 0,

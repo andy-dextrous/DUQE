@@ -1,25 +1,44 @@
-import { Heading, VStack } from "@chakra-ui/react"
 import React, { useEffect, useRef } from "react"
+import { gsap, ScrollTrigger } from "../../../gsap"
+import { useVariable } from "../../../hooks"
+
 import SectionWrapper from "../../../components/SectionWrapper"
 import YellowHeading from "../../../components/common/YellowHeading"
 import CorporateServices from "./CorporateServices"
 import CrossIcon from "../../../assets/icons/CrossIcon"
-import { gsap, ScrollTrigger } from "../../../gsap"
+import { Heading, VStack } from "@chakra-ui/react"
 
 function Benefits() {
   const cross = useRef()
+  const { containerPaddingY } = useVariable()
+
   useEffect(() => {
-    if (!ScrollTrigger) return
-    gsap.to(cross.current, {
-      x: -10,
-      y: 20,
-      rotation: 30,
-      ease: "linear",
-      scrollTrigger: {
-        trigger: cross.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
+    ScrollTrigger.matchMedia({
+      "(min-width: 768px)": function () {
+        gsap.to(cross.current, {
+          x: -10,
+          y: 20,
+          rotation: 30,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: cross.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        })
+      },
+      "(max-width: 767px)": function () {
+        gsap.to(cross.current, {
+          rotation: 30,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: cross.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        })
       },
     })
   }, [])
@@ -29,7 +48,7 @@ function Benefits() {
       className="light"
       withContainer={false}
       flexDirection="column"
-      pt={[20, 20, 24, 28, 60]}
+      pt={containerPaddingY}
       align="center"
       _before={{
         content: "''",

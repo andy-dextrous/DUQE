@@ -22,13 +22,13 @@ const SectionWrapper = forwardRef((props, ref) => {
   } = props
 
   const { topBarHeight } = useThemeOptions()
-  const { containerPaddingY, sectionPaddingX } = useVariable()
+  const { containerPaddingY, sectionPaddingX, sidebarMenuWidth } = useVariable()
 
   return (
     <>
       <Flex
         as="section"
-        width={["100%"]}
+        width="100%"
         position="relative"
         pt={isFirstSection ? `${topBarHeight}px` : 0}
         px={sectionPaddingX}
@@ -41,6 +41,7 @@ const SectionWrapper = forwardRef((props, ref) => {
             w={["100%", "100%", `container.${containerSize}`]}
             maxW={`container.${containerSize}`}
             py={containerPaddingY}
+            ml={[0, 0, sidebarMenuWidth]}
             {...containerStyles}
           >
             {children}

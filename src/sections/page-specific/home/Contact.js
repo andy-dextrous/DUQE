@@ -3,10 +3,12 @@ import SectionWrapper from "../../../components/SectionWrapper"
 import Form from "../../../components/forms/Form"
 import ContactPageElements from "../../../components/forms/ContactPageElements"
 import { Heading, Stack, VStack } from "@chakra-ui/react"
+import { useVariable } from "../../../hooks"
 
 function Contact() {
+  const { newsletterOffset } = useVariable()
   return (
-    <SectionWrapper className="light" minH="100vh" mb={["unset", "unset", 40]}>
+    <SectionWrapper className="light" mb={newsletterOffset}>
       <Stack direction={["column", "column", "row"]} spacing={[20, 20, 40]}>
         <VStack spacing={7} align="start" flex="1">
           <Heading className="jumbo">Contact Us now</Heading>
