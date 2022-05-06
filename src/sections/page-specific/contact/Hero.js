@@ -13,7 +13,12 @@ function Hero() {
       containerSize="xl"
     >
       <Stack h="full" w="full" align="center" direction="row">
-        <VStack spacing={12} alignItems="start" w="full" width="50%">
+        <VStack
+          spacing={12}
+          alignItems="start"
+          w="full"
+          width={["full", "full", "50%"]}
+        >
           <Heading as="h1" color="white">
             Got Questions?
             <Text as="span" color="brandYellow.default">
