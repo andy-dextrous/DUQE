@@ -7,6 +7,7 @@ import { base } from "./foundations/typography"
 const globalCSS = {
   main: { overflowX: "hidden", maxW: "100vw" },
   body: { overflowX: "hidden", maxW: "100vw" },
+  "*:focus": { outline: "none", boxShadow: "none" },
 
   "#gatsby-focus-wrapper": {
     outline: "unset !important",
@@ -27,6 +28,7 @@ const globalCSS = {
   },
   ".post img": {
     mt: 8,
+    rounded: "2xl",
   },
   ul: {
     my: 6,

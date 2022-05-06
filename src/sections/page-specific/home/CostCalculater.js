@@ -24,7 +24,7 @@ function CostCalculator() {
           How long do you want to license your business?
         </Heading>
         <Stack direction={["column", "column", "row"]} w="full">
-          <VStack align="flex-start">
+          <VStack align={["flex-start", "flex-start", "center"]} w="full">
             <Heading color="white" as="h6">
               Select the duration of your license
             </Heading>

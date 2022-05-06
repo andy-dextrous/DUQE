@@ -1,18 +1,29 @@
 import { Button, Center, Heading, Image, Stack, VStack } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
+import { useVariable } from "../../../hooks/useVariable"
 
 function Calculate() {
+  const { containerPaddingY, newsletterOffset } = useVariable()
   return (
     <SectionWrapper
       bg="brandYellow.default"
       className="light"
-      containerSize="xl"
       pb={0}
-      containerStyles={{ py: 0, pt: "224px", h: "full" }}
+      containerStyles={{
+        py: 0,
+        pt: containerPaddingY,
+        pb: newsletterOffset,
+        h: "full",
+      }}
     >
       <Stack spacing={24} direction={["column", "column", "row"]}>
-        <VStack spacing={[8, 8, 12]} align="flex-start" flex="1">
+        <VStack
+          spacing={[8, 8, 12]}
+          align="flex-start"
+          flex="1"
+          justify="center"
+        >
           <Heading>
             Use the DUQE Cost Calculator to get tailored pricing
           </Heading>
@@ -22,8 +33,11 @@ function Calculate() {
           </Heading>
           <Button>Calculate Cost</Button>
         </VStack>
-        <Center mt={20} flex="1">
-          <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944008/DUQE/Calculator.png" />
+        <Center mt={20} flex="1" h="full">
+          <Image
+            height={["60vh", "60vh", "800px"]}
+            src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944008/DUQE/Calculator.png"
+          />
         </Center>
       </Stack>
     </SectionWrapper>

@@ -1,3 +1,8 @@
+import React from "react"
+
+import SectionWrapper from "../../../components/SectionWrapper"
+import YellowHeading from "../../../components/common/YellowHeading"
+import CrossIcon from "../../../assets/icons/CrossIcon"
 import {
   Container,
   Heading,
@@ -7,9 +12,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react"
-import React from "react"
-import SectionWrapper from "../../../components/SectionWrapper"
-import YellowHeading from "../../../components/common/YellowHeading"
 
 function Requirements() {
   return (
@@ -29,7 +31,7 @@ function Requirements() {
           quia. Quae.
         </Heading>
       </VStack>
-      <Stack spacing={24} direction={["column", "column", "row"]}>
+      <Stack spacing={[12, 12, 24]} direction={["column", "column", "row"]}>
         <VStack
           bg="brandYellow.default"
           spacing={[8, 8, 12]}
@@ -38,30 +40,45 @@ function Requirements() {
           align="flex-start"
           rounded="30px"
         >
-          <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141452/DUQE/Vector-1.svg" />
+          <Image
+            src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141452/DUQE/Vector-1.svg"
+            h={["66px", "66px", "110px"]}
+          />
           <Heading as="h3">Individual</Heading>
           <HStack spacing={4}>
-            <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg" />
+            <Image
+              src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
+              h={["24px", "24px", "34px"]}
+            />
             <Heading as="h3" className="thin-h3">
               Clear Passport Copy
             </Heading>
           </HStack>
           <HStack spacing={4}>
-            <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg" />
+            <Image
+              src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
+              h={["24px", "24px", "34px"]}
+            />
             <Heading as="h3" className="thin-h3">
-              Clear Passport Copy
+              Entry Stamp/cancellation paper/UID number
             </Heading>
           </HStack>
           <HStack spacing={4}>
-            <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg" />
+            <Image
+              src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
+              h={["24px", "24px", "34px"]}
+            />
             <Heading as="h3" className="thin-h3">
-              Clear Passport Copy
+              Personal details
             </Heading>
           </HStack>
           <HStack spacing={4}>
-            <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg" />
+            <Image
+              src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
+              h={["24px", "24px", "34px"]}
+            />
             <Heading as="h3" className="thin-h3">
-              Clear Passport Copy
+              NOC (applicable for appointed Managers with residence visa)
             </Heading>
           </HStack>
         </VStack>
@@ -70,39 +87,72 @@ function Requirements() {
           spacing={[8, 8, 12]}
           flex="1"
           p={[8, 8, 20]}
-          rounded="30px"
           align="flex-start"
+          rounded="30px"
         >
-          <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141452/DUQE/Vector-1.svg" />
-          <Heading as="h3">Individual</Heading>
+          <Image
+            src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141452/DUQE/Vector.svg"
+            h={["66px", "66px", "110px"]}
+          />
+          <Heading as="h3">Corporate Entity</Heading>
           <HStack spacing={4}>
-            <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg" />
+            <Image
+              src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
+              h={["24px", "24px", "34px"]}
+            />
             <Heading as="h3" className="thin-h3">
-              Clear Passport Copy
+              License
             </Heading>
           </HStack>
           <HStack spacing={4}>
-            <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg" />
+            <Image
+              src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
+              h={["24px", "24px", "34px"]}
+            />
             <Heading as="h3" className="thin-h3">
-              Clear Passport Copy
+              Certificate of Incorporation
             </Heading>
           </HStack>
           <HStack spacing={4}>
-            <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg" />
+            <Image
+              src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
+              h={["24px", "24px", "34px"]}
+            />
             <Heading as="h3" className="thin-h3">
-              Clear Passport Copy
+              Certificate of Incumbency or Good standing
             </Heading>
           </HStack>
           <HStack spacing={4}>
-            <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg" />
+            <Image
+              src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
+              h={["24px", "24px", "34px"]}
+            />
             <Heading as="h3" className="thin-h3">
-              Clear Passport Copy
+              Memorandum of Association
+            </Heading>
+          </HStack>
+          <HStack spacing={4}>
+            <Image
+              src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
+              h={["24px", "24px", "34px"]}
+            />
+            <Heading as="h3" className="thin-h3">
+              Share registry/certificate
+            </Heading>
+          </HStack>
+          <HStack spacing={4}>
+            <Image
+              src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
+              h={["24px", "24px", "34px"]}
+            />
+            <Heading as="h3" className="thin-h3">
+              Board Resolution
             </Heading>
           </HStack>
         </VStack>
       </Stack>
-      <Container maxW="container.md" my={[20, 20, 40]}>
-        <Text borderLeft={"10px solid #e0db2a"} pl={[8, 8, 12]}>
+      <Container maxW="container.md" my={[20, 20, 40]} w="100%" px="0">
+        <Text borderLeft={"10px solid #e0db2a"} pl={[8, 8, 12]} w="100%">
           * Foreign Entity documents must be notarized and attested from the UAE
           Consulate/Embassy of origin and Ministry of Foreign Affairs in UAE
         </Text>
@@ -112,9 +162,9 @@ function Requirements() {
         alignItems="start"
         maxWidth="container.lg"
         m="auto"
-        mb={24}
+        mb={[12, 12, 24]}
       >
-        <Heading className="jumbo">
+        <Heading as="h3" className="jumbo">
           The trade license <YellowHeading>Application Process </YellowHeading>
         </Heading>
         <Heading as="h3" className="thin-h3">
@@ -124,24 +174,106 @@ function Requirements() {
       </VStack>
       <Stack
         direction={["column", "column", "row"]}
-        spacing={[8, 8, 12]}
+        spacing={[20, 20, 12]}
+        pt={[0, 0, 20]}
         position="relative"
         w="full"
       >
-        <VStack bg="brandBlue.100" flex="1" p={12} rounded="30px">
+        <Image
+          src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651801919/DUQE/Horizontal_Arrows_Upper.png"
+          position="absolute"
+          height="auto"
+          width="25%"
+          zIndex="-1"
+          top="0"
+          left={["12%"]}
+          display={["none", "none", "block"]}
+        />
+        <Image
+          src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651801919/DUQE/Horizontal_Arrows_Lower.png"
+          position="absolute"
+          height="auto"
+          width="25%"
+          zIndex="-1"
+          bottom="-25%"
+          left={["37%"]}
+          display={["none", "none", "block"]}
+        />
+        <Image
+          src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651801919/DUQE/Horizontal_Arrows_Upper.png"
+          position="absolute"
+          height="auto"
+          width="25%"
+          zIndex="-1"
+          top="0"
+          left={["63%"]}
+          display={["none", "none", "block"]}
+        />
+        <VStack
+          bg="brandBlue.100"
+          flex="1"
+          p={12}
+          rounded="30px"
+          position={["relative", "relative", "unset"]}
+          zIndex="1"
+        >
           <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/location.svg" />
+          <Image
+            src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651801942/DUQE/Arrows_Down.png"
+            position="absolute"
+            bottom="-5rem"
+            height="5rem"
+            left="0"
+            width="100%"
+            zindex="-2"
+            display={["block", "block", "none"]}
+          />
           <Heading as="h4" className="lower-case" textAlign="center">
             Trade name reservation
           </Heading>
         </VStack>
-        <VStack bg="brandBlue.200" flex="1" p={12} rounded="30px">
+        <VStack
+          bg="brandBlue.200"
+          flex="1"
+          p={12}
+          rounded="30px"
+          position={["relative", "relative", "unset"]}
+          zIndex="1"
+        >
           <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/location.svg" />
+          <Image
+            src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651801942/DUQE/Arrows_Down.png"
+            position="absolute"
+            bottom="-5rem"
+            height="5rem"
+            left="0"
+            width="100%"
+            zindex="-2"
+            display={["block", "block", "none"]}
+          />
           <Heading as="h4" className="lower-case" textAlign="center">
             Trade name reservation
           </Heading>
         </VStack>
-        <VStack bg="brandBlue.300" flex="1" p={12} rounded="30px">
+        <VStack
+          bg="brandBlue.300"
+          flex="1"
+          p={12}
+          rounded="30px"
+          position={["relative", "relative", "unset"]}
+          zIndex="1"
+        >
           <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/location.svg" />
+          <Image
+            src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651801942/DUQE/Arrows_Down.png"
+            position="absolute"
+            bottom="-5rem"
+            height="5rem"
+            left="0"
+            width="100%"
+            zindex="-2"
+            display={["block", "block", "none"]}
+          />
           <Heading as="h4" className="lower-case" textAlign="center">
             Trade name reservation
           </Heading>
@@ -152,16 +284,17 @@ function Requirements() {
             Trade name reservation
           </Heading>
         </VStack>
-        <Image
-          src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651142527/DUQE/Arrows.svg"
-          position="absolute"
-          zIndex="-2"
-          w="80%"
-          left="7%"
-          top="-30%"
-          display={["none", "none", "block"]}
-        />
       </Stack>
+      <CrossIcon
+        color="#e0db2a"
+        position="absolute"
+        right="-20%"
+        bottom="60vh"
+        width="50vw"
+        height="50vw"
+        zIndex="-1"
+        outline
+      />
     </SectionWrapper>
   )
 }

@@ -1,4 +1,12 @@
-import { Box, Button, Heading, Input, Stack, VStack } from "@chakra-ui/react"
+import {
+  Box,
+  Button,
+  Heading,
+  Image,
+  Input,
+  Stack,
+  VStack,
+} from "@chakra-ui/react"
 import React from "react"
 import YellowHeading from "../../../components/common/YellowHeading"
 import SectionWrapper from "../../../components/SectionWrapper"
@@ -24,28 +32,37 @@ function Signup() {
               w="full"
               spacing={[8, 8, 12]}
             >
-              <Heading
-                className="jumbo light"
+              <Box
                 width={["60px", "60px", "100px"]}
                 h={["60px", "60px", "100px"]}
                 position="relative"
-                sx={{ "&.jumbo.light": { fontWeight: "light" } }}
-                _after={{
-                  content:
-                    "url('https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651111192/DUQE/Motifs_05.svg')",
-                  position: "absolute",
-                  bottom: "-20%",
-                  right: "0",
-                  width: "100%",
-                  height: "100%",
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  zIndex: "-1",
-                }}
               >
-                1
-              </Heading>
+                <Heading
+                  className="jumbo light"
+                  sx={{ "&.jumbo.light": { fontWeight: "light" } }}
+                  position="absolute"
+                  top="0"
+                  w="full"
+                  h="full"
+                  zIndex="1"
+                >
+                  1
+                </Heading>
+                <Image
+                  src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651111192/DUQE/Motifs_05.svg"
+                  positon="absolute"
+                  left="0"
+                  bottom="0"
+                  transform={[
+                    "translateY(10px)",
+                    "translateY(10px)",
+                    "translateY(30px)",
+                  ]}
+                  h="100%"
+                  w="100%"
+                  zIndex="-1"
+                />
+              </Box>
               <Box flexGrow="1" h="full">
                 <Heading as="h6" color="brandBlue.default">
                   Step 1 - Register Yourself
@@ -62,28 +79,37 @@ function Signup() {
               w="full"
               spacing={[8, 8, 12]}
             >
-              <Heading
-                className="jumbo light"
-                width="100px"
-                h="100px"
+              <Box
+                width={["60px", "60px", "100px"]}
+                h={["60px", "60px", "100px"]}
                 position="relative"
-                sx={{ "&.jumbo.light": { fontWeight: "light" } }}
-                _after={{
-                  content:
-                    "url('https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651111192/DUQE/Motifs_06.svg')",
-                  position: "absolute",
-                  bottom: "-20%",
-                  right: "0",
-                  width: "100%",
-                  height: "100%",
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  zIndex: "-1",
-                }}
               >
-                2
-              </Heading>
+                <Heading
+                  className="jumbo light"
+                  sx={{ "&.jumbo.light": { fontWeight: "light" } }}
+                  position="absolute"
+                  top="0"
+                  w="full"
+                  h="full"
+                  zIndex="1"
+                >
+                  2
+                </Heading>
+                <Image
+                  src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651111192/DUQE/Motifs_06.svg"
+                  positon="absolute"
+                  left="0"
+                  bottom="0"
+                  transform={[
+                    "translateY(10px)",
+                    "translateY(10px)",
+                    "translateY(40px)",
+                  ]}
+                  h="100%"
+                  w="100%"
+                  zIndex="-1"
+                />
+              </Box>
               <Box flexGrow="1" h="full">
                 <Heading as="h6" color="brandBlue.default">
                   Step 2 - Login
@@ -99,28 +125,37 @@ function Signup() {
               w="full"
               spacing={[8, 8, 12]}
             >
-              <Heading
-                className="jumbo light"
-                width="100px"
-                h="100px"
+              <Box
+                width={["60px", "60px", "100px"]}
+                h={["60px", "60px", "100px"]}
                 position="relative"
-                sx={{ "&.jumbo.light": { fontWeight: "light" } }}
-                _after={{
-                  content:
-                    "url('https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651111192/DUQE/Motifs_04.svg')",
-                  position: "absolute",
-                  bottom: "-20%",
-                  right: "0",
-                  width: "100%",
-                  height: "100%",
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  zIndex: "-1",
-                }}
               >
-                3
-              </Heading>
+                <Heading
+                  className="jumbo light"
+                  sx={{ "&.jumbo.light": { fontWeight: "light" } }}
+                  position="absolute"
+                  top="0"
+                  w="full"
+                  h="full"
+                  zIndex="1"
+                >
+                  1
+                </Heading>
+                <Image
+                  src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651111192/DUQE/Motifs_04.svg"
+                  positon="absolute"
+                  left="0"
+                  bottom="0"
+                  transform={[
+                    "translateY(10px)",
+                    "translateY(10px)",
+                    "translateY(30px)",
+                  ]}
+                  h="100%"
+                  w="100%"
+                  zIndex="-1"
+                />
+              </Box>
               <Box flexGrow="1" h="full">
                 <Heading as="h6" color="brandBlue.default">
                   Step 3 - Send Trade Licence

@@ -11,7 +11,7 @@ export const fontSizes = {
   "3xl": rem(30),
   "4xl": rem(40),
   "5xl": rem(45),
-  "6xl": rem(64),
+  "6xl": rem(60),
   "7xl": rem(72),
   "8xl": rem(96),
   "9xl": rem(110),
