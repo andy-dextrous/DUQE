@@ -41,14 +41,7 @@ function Hero() {
         right="50px"
         opacity="50%"
       />
-      <ScrollDown
-        position="absolute"
-        width="100px"
-        height="100px"
-        right="100px"
-        bottom="100px"
-        zIndex="10"
-      />
+      <ScrollDown />
     </SectionWrapper>
   )
 }

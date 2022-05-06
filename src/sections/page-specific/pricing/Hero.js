@@ -78,14 +78,7 @@ function Hero() {
         opacity="50%"
         ref={img2}
       />
-      <ScrollDown
-        position="absolute"
-        width="100px"
-        height="100px"
-        right={[4, 4, "100px"]}
-        bottom={[4, 4, "100px"]}
-        zIndex="10"
-      />
+      <ScrollDown />
     </SectionWrapper>
   )
 }

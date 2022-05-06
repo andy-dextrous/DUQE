@@ -78,14 +78,7 @@ function Hero() {
         zIndex="2"
         ref={img2}
       />
-      <ScrollDown
-        position="absolute"
-        width="100px"
-        height="100px"
-        right="100px"
-        bottom="100px"
-        zIndex="10"
-      />
+      <ScrollDown />
     </SectionWrapper>
   )
 }
