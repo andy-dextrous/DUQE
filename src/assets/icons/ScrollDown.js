@@ -1,14 +1,17 @@
 import React, { useEffect, useRef } from "react"
+import { gsap } from "../../gsap"
+import { useVariable } from "../../hooks/useVariable"
+
 import DIcon from "./DIcon"
 import { FiArrowDown } from "react-icons/fi"
 import { Icon } from "@chakra-ui/icons"
 import { Box } from "@chakra-ui/react"
-import { gsap } from "../../gsap"
 
 function ScrollDown({ ...styles }) {
   const animation = useRef()
   const arrow = useRef()
   const dShape = useRef()
+  const { sectionPaddingX } = useVariable()
 
   useEffect(() => {
     if (animation.current) return
@@ -26,7 +29,7 @@ function ScrollDown({ ...styles }) {
       position="absolute"
       width="100px"
       height="100px"
-      right={[4, 4, "100px"]}
+      right={sectionPaddingX}
       bottom={[4, 4, "100px"]}
       zIndex="10"
     >

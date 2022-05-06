@@ -31,10 +31,10 @@ import { useVariable } from "../../hooks"
 
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
+  const { sectionPaddingX, mobileNavHeight } = useVariable()
   const primaryMenu = useMenuQuery("Primary")
   const subMenu = useMenuQuery("Secondary")
   const menuWrapper = useRef()
-  const menuSection = useRef()
   const primaryMenuLinks = useRef()
   const subMenuRef = useRef()
   const navAnimation = useRef(null)
@@ -53,7 +53,6 @@ function Modal() {
         ease: "power3.out",
       }
     )
-    tl.progress(1)
     navAnimation.current = tl
   }, [])
 
@@ -66,18 +65,17 @@ function Modal() {
     }
   }, [isMenuOpen])
 
-  const { sectionPaddingX, mobileNavHeight } = useVariable()
-
   return (
     <Flex
-      id="navPopup"
       px={sectionPaddingX}
       pt={mobileNavHeight}
       as="nav"
+      id="navPopup"
       width="100vw"
       justify="center"
       zIndex="modal"
       position="fixed"
+      visibility="hidden"
       left="0"
       top="0"
       overflow={["scroll", "scroll", "hidden"]}
@@ -85,22 +83,15 @@ function Modal() {
       bg="dark.default"
       ref={menuWrapper}
     >
-      <Box
-        layerStyle="fillSpace"
-        w="container.xl"
-        maxW="container.xl"
-        // py={containerPaddingY}
-        // ml={[0, 0, sidebarMenuWidth]}
-      >
-        <Center p={0} minH="100%" w="full">
+      <Box layerStyle="fillSpace" maxW="container.xl">
+        <Center p={0} layerStyle="fillSpace">
           <Stack
+            layerStyle="fillSpace"
             direction={["column", "column", "column", "row"]}
             justify={["center", "center", "space-between"]}
             align={["center", "center", "center"]}
             py={[16, 8, 24]}
             px={[8, 8, 0]}
-            h="100%"
-            w="100%"
             m="auto"
           >
             <VStack
