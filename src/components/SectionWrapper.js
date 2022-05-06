@@ -1,5 +1,4 @@
 import React, { forwardRef } from "react"
-import { useThemeOptions } from "../hooks/useThemeOptions"
 import { useVariable } from "../hooks/useVariable"
 import { Box, Flex } from "@chakra-ui/react"
 import { SmartImage } from "../components/SmartImage"

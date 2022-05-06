@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useRef, useState } from "react"
+import React, { useContext, useRef, useState } from "react"
 import { Link } from "gatsby"
 import { MenuContext } from "../Layout"
 import { useRgba } from "../../hooks/useRgba"
 import { useThemeOptions } from "../../hooks/useThemeOptions"
-import { gsap, ScrollTrigger } from "../../gsap"
+// import { gsap, ScrollTrigger } from "../../gsap"
 
 import { SocialFollows } from "../social/SocialFollows"
 import Hamburger from "./Hamburger"

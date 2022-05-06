@@ -20,8 +20,8 @@ function Mission() {
         direction={["column", "column", "row"]}
         zIndex="1"
         position="relative"
-        spacing={24}
-        mb={[20, 20, 40]}
+        spacing={[24]}
+        mb={[32, 32, 40]}
       >
         <Heading
           color="white"

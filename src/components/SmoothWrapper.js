@@ -1,4 +1,3 @@
-import { useBreakpointValue } from "@chakra-ui/react"
 import React, { useLayoutEffect, useState } from "react"
 import { ScrollSmoother } from "../gsap"
 export const SmoothContext = React.createContext()

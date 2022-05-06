@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, HStack, IconButton } from "@chakra-ui/react"
+import { HStack, IconButton } from "@chakra-ui/react"
 import { Twitter, Facebook, Pinterest, Linkedin } from "./sharingIcons"
 
 export const SocialShare = ({ url, title, media }) => {
