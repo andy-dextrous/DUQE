@@ -31,7 +31,7 @@ function CorporateServices() {
       text: " Our accountants will sort out your invoices, receipts, payments,etc. and make sure your financial records are maintained per international standards, so you have one less thing to worry about.",
     },
     {
-      title: "Bank Account Opening Assistance",
+      title: "Bank Account Opening ",
       iconUrl:
         "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg",
       imgUrl:
@@ -39,7 +39,7 @@ function CorporateServices() {
       text: " Our accountants will sort out your invoices, receipts, payments,etc. and make sure your financial records are maintained per international standards, so you have one less thing to worry about.",
     },
     {
-      title: "Medical & Emirates ID Assistance",
+      title: "Medical & Emirates ID",
       iconUrl:
         "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg",
       imgUrl:
@@ -133,7 +133,7 @@ function CorporateServices() {
         >
           <GridItem
             gridColumn={["2/11", "2/11", "2/5"]}
-            gridRow={["3/7", "3/7", "3/11"]}
+            gridRow={["2/7", "2/7", "3/11"]}
             overflow="hidden"
           >
             <HStack h="full" spacing={[8, 8, 12]}>
@@ -161,7 +161,8 @@ function CorporateServices() {
                 align="start"
                 h="100%"
                 justify="space-between"
-                py={20}
+                spacing={[8, 8, 12]}
+                py={[0, 0, 20]}
               >
                 {data.map((item, index) => {
                   return (

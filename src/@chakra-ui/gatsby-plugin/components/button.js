@@ -77,6 +77,7 @@ export const Button = {
       width: ["2.7rem", "2.7rem", "3.25rem"],
       height: ["2.7rem", "2.7rem", "3.25rem"],
       lineHeight: ["2.7rem", "2.7rem", "3.25rem"],
+      minWidth: ["2.7rem", "2.7rem", "3.25rem"],
       borderRadius: "50%",
       p: 0,
       border: 0,

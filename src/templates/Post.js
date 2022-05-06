@@ -4,6 +4,7 @@ import { Layout } from "../components/Layout"
 import { graphql } from "gatsby"
 import { Seo } from "../components/seo/components/index"
 import PostHeader from "../components/post/PostHeader"
+import { useVariable } from "../hooks"
 
 function Post(props) {
   const {
@@ -11,8 +12,10 @@ function Post(props) {
     pageContext,
   } = props
 
+  const { mobileNavHeight } = useVariable()
+
   return (
-    <Layout className="post">
+    <Layout className="post" pt={[mobileNavHeight, mobileNavHeight, 0]}>
       <Seo props={props} />
       <PostHeader data={wpPost} ctx={pageContext} />
       <PostContent data={wpPost} ctx={pageContext} />

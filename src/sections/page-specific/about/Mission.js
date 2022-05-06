@@ -12,6 +12,7 @@ function Mission() {
       bg="dark.default"
       containerSize="lg"
       containerStyles={{ py: 0, pb: containerPaddingY }}
+      zIndex="3"
     >
       <Stack
         layerStyle="fillSpace "
@@ -20,7 +21,7 @@ function Mission() {
         zIndex="1"
         position="relative"
         spacing={24}
-        mb={40}
+        mb={[20, 20, 40]}
       >
         <Heading
           color="white"
@@ -30,7 +31,7 @@ function Mission() {
             content:
               "url('https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651112830/DUQE/Union.svg')",
             position: "absolute",
-            top: "-15%",
+            top: ["-50%", "-50%", "-15%"],
             left: "-30%",
             width: "100%",
             height: "100%",
@@ -75,7 +76,7 @@ function Mission() {
             content:
               "url('https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651113641/DUQE/chevron_blue.svg')",
             position: "absolute",
-            top: "-15%",
+            top: ["-70%", "-70%", "-15%"],
             left: "-30%",
             width: "180px",
             height: "180px",

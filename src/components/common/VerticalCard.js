@@ -56,7 +56,7 @@ function VerticalCard({
         )}
       </AspectRatio>
       <VStack align="start" spacing={4}>
-        <Heading as="h4" fontSize="lg" color="brandBlue.900">
+        <Heading as="h4" fontSize="lg" color="dark.default">
           {title}
         </Heading>
         <Text noOfLines={2} dangerouslySetInnerHTML={{ __html: excerpt }} />

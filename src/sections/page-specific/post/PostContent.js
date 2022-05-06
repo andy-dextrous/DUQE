@@ -18,31 +18,33 @@ function PostContent({ data, ctx }) {
   const [progress, setProgress] = React.useState(0)
 
   React.useEffect(() => {
-    if (!ScrollTrigger) return
+    ScrollTrigger.matchMedia({
+      "(min-width: 768px)": function () {
+        const sidebarHeight = sidebarRef.current.getBoundingClientRect().height
+        const remainder =
+          window.innerHeight - sidebarHeight - 0.15 * window.innerHeight
 
-    const sidebarHeight = sidebarRef.current.getBoundingClientRect().height
-    const remainder =
-      window.innerHeight - sidebarHeight - 0.15 * window.innerHeight
+        const scrollProgress = gsap.to(sidebarRef.current, {
+          opacity: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sidebarRef.current,
+            start: "top 15%",
+            endTrigger: containerRef.current,
+            end: `bottom ${remainder}px`,
+            scrub: true,
+            pin: true,
+            onUpdate: self => {
+              setProgress(self.progress * 100)
+            },
+          },
+        })
 
-    const scrollProgress = gsap.to(sidebarRef.current, {
-      opacity: 1,
-      ease: "none",
-      scrollTrigger: {
-        trigger: sidebarRef.current,
-        start: "top 15%",
-        endTrigger: containerRef.current,
-        end: `bottom ${remainder}px`,
-        scrub: true,
-        pin: true,
-        onUpdate: self => {
-          setProgress(self.progress * 100)
-        },
+        return () => {
+          scrollProgress.kill()
+        }
       },
     })
-
-    return () => {
-      scrollProgress.kill()
-    }
   }, [])
 
   return (
@@ -58,11 +60,7 @@ function PostContent({ data, ctx }) {
         position="relative"
         h="100%"
       >
-        <Box
-          position="relative"
-          ref={containerRef}
-          display={["none", "none", "block"]}
-        >
+        <Box position="relative" ref={containerRef}>
           <WidgetsList />
           <Author ref={sidebarRef} data={data} progress={progress} />
         </Box>

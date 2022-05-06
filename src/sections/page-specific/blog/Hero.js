@@ -42,6 +42,7 @@ function Hero() {
     <SectionWrapper
       bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651107901/Rectangle_4.png"
       h="100vh"
+      isFirstSection
       zIndex="1"
       overlay
       overlayStyle={{

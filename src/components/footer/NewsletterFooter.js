@@ -14,12 +14,12 @@ function NewsletterFooter() {
     <Center
       w={["100%", "100%"]}
       bg="brandConcrete.default"
-      h={["60vh", "60vh", "448px"]}
+      h={["auto", "auto", "448px"]}
       rounded={[0, 0, "30px"]}
       position={["relative", "relative", "absolute"]}
       top={["unset", "unset", "-224px"]}
       left="0"
-      py={[8, 8, 20]}
+      py={[20, 20, 20]}
       px={[8, 8, 0]}
     >
       <VStack w="full" spacing={8} p>

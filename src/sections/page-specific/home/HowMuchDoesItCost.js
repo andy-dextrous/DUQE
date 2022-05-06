@@ -92,6 +92,7 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
           src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944008/DUQE/Calculator.png"
           ref={img}
           transformOrigin="center 30%"
+          zIndex="2"
         />
       </Center>
 

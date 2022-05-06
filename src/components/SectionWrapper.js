@@ -21,8 +21,12 @@ const SectionWrapper = forwardRef((props, ref) => {
     ...sectionStyles
   } = props
 
-  const { topBarHeight } = useThemeOptions()
-  const { containerPaddingY, sectionPaddingX, sidebarMenuWidth } = useVariable()
+  const {
+    containerPaddingY,
+    sectionPaddingX,
+    sidebarMenuWidth,
+    mobileNavHeight,
+  } = useVariable()
 
   return (
     <>
@@ -30,7 +34,11 @@ const SectionWrapper = forwardRef((props, ref) => {
         as="section"
         width="100%"
         position="relative"
-        pt={isFirstSection ? `${topBarHeight}px` : 0}
+        pt={[
+          isFirstSection ? `${mobileNavHeight}px` : 0,
+          isFirstSection ? `${mobileNavHeight}px` : 0,
+          0,
+        ]}
         px={sectionPaddingX}
         justify="center"
         {...sectionStyles}

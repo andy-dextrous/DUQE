@@ -13,16 +13,18 @@ const Author = React.forwardRef(({ data, progress, ...props }, ref) => {
     <VStack
       spacing={6}
       align="start"
-      pb={12}
-      px={16}
+      p={[8, 8, 16]}
+      bg={["brandYellow.default", "brandYellow.default", "transparent"]}
       ref={ref}
       width={["100%", "100%", "auto"]}
-      bg="white"
+      rounded="2xl"
       {...props}
     >
-      <Box>
+      <Box width="full">
         <Progress
           value={progress}
+          width="full"
+          display={["none", "none", "block"]}
           h="5px"
           mb="12"
           sx={{

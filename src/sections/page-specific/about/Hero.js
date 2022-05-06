@@ -43,6 +43,7 @@ function Hero() {
 
   return (
     <SectionWrapper
+      isFirstSection
       bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651111950/DUQE/About_Us.png"
       h="100vh"
       zIndex="1"

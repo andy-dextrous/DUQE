@@ -5,7 +5,7 @@ import SectionWrapper from "../../../components/SectionWrapper"
 function Apply() {
   return (
     <SectionWrapper
-      mt={40}
+      mt={[20, 20, 40]}
       bg="brandYellow.default"
       className="light"
       containerSize="xl"

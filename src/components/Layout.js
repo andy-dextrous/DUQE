@@ -28,7 +28,7 @@ export function Layout({
           <Portal>
             <Nav />
           </Portal>
-          <Box as="main" pt={mobileNavHeight} {...props}>
+          <Box as="main" {...props}>
             {children}
             <Footer withSignup={withSignup} />
           </Box>

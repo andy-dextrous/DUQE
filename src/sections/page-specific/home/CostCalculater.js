@@ -17,13 +17,14 @@ function CostCalculator() {
       bg="dark.default"
       containerSize="lg"
       id="cost-calculator-start"
+      pb={[20, 20, 0]}
     >
-      <VStack spacing={12}>
+      <VStack spacing={12} w="full">
         <Heading color="white">
           How long do you want to license your business?
         </Heading>
-        <Stack direction={["column", "column", "row"]}>
-          <VStack>
+        <Stack direction={["column", "column", "row"]} w="full">
+          <VStack align="flex-start">
             <Heading color="white" as="h6">
               Select the duration of your license
             </Heading>

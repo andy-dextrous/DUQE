@@ -10,6 +10,7 @@ function Hero() {
       h="100vh"
       overlay
       containerSize="xl"
+      isFirstSection
     >
       <Center h="full" w="full">
         <VStack spacing={12} alignItems="start">

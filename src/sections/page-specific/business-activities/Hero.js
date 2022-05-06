@@ -8,6 +8,7 @@ function Hero() {
     <SectionWrapper
       bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651121618/DUQE/Business_activities.png"
       h="100vh"
+      isFirstSection
       overlay
       zIndex="1"
       overlayStyle={{

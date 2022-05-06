@@ -9,6 +9,7 @@ function Hero() {
       bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651107901/Rectangle_4.png"
       h="100vh"
       overlay
+      isFirstSection
       containerSize="xl"
     >
       <Stack h="full" w="full" align="center" direction="row">
