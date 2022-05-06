@@ -11,6 +11,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react"
+import { Link } from "gatsby"
 
 function WhyDuqe() {
   const { containerPaddingY, componentSpacing } = useVariable()
@@ -48,7 +49,9 @@ function WhyDuqe() {
             owners, for the freelancers and digital nomads, and for the hustlers
             and grinders. DUQE is where you make things happen.
           </Text>
-          <Button>See All Activities</Button>
+          <Link to="/business-activities">
+            <Button>See All Activities</Button>
+          </Link>
         </VStack>
       </Stack>
     </SectionWrapper>

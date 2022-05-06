@@ -12,11 +12,11 @@ const useContrastingColor = (
   const { isDarkBackground } = useContext(DarkContext)
 
   useEffect(() => {
-    if (!useContrast) return
+    if (!useContrast || !ref.current) return
     const sections = document.querySelectorAll("main section")
     const scrollTriggers = []
 
-    sections.forEach((section, i) => {
+    Array.from(sections).forEach((section, i) => {
       section.setAttribute("data-index", i)
       const dimensions = ref.current.getBoundingClientRect()
       const halfHeight = dimensions.top + dimensions.height / 2

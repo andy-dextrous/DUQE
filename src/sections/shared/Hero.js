@@ -57,10 +57,10 @@ function Hero() {
             w="full"
             spacing={[5, 5, 6]}
           >
-            <SmartLink url="/">
+            <SmartLink url="/contact-us">
               <Button>Start your business</Button>
             </SmartLink>
-            <SmartLink url="/">
+            <SmartLink url="/cost-calculator">
               <Button variant="outlineWhite">How much does it cost?</Button>
             </SmartLink>
           </Stack>

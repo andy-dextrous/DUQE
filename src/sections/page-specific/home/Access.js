@@ -2,6 +2,7 @@ import { Button, Heading, Stack, VStack } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import YellowHeading from "../../../components/common/YellowHeading"
+import { Link } from "gatsby"
 
 function Access() {
   return (
@@ -16,7 +17,9 @@ function Access() {
             Freedom to explore new opportunities. And freedom to choose from
             over 2,500 business activities.
           </Heading>
-          <Button>See All Activities</Button>
+          <Link to="/business-activities">
+            <Button>See All Activities</Button>
+          </Link>
         </VStack>
       </Stack>
     </SectionWrapper>

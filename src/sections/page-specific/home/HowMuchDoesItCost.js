@@ -11,6 +11,7 @@ import CrossIcon from "../../../assets/icons/CrossIcon"
 import SectionWrapper from "../../../components/SectionWrapper"
 import { gsap, ScrollTrigger } from "../../../gsap"
 import { DarkContext } from "../../../components/Layout"
+import { Link } from "gatsby"
 
 function HowMuchDoesItCost({ darkActive, setDarkActive }) {
   const cross = useRef()
@@ -86,7 +87,9 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
           your business setup. It’s the number one question we get asked. <br />
           <strong>Find out in an instant.</strong>
         </Heading>
-        <Button ref={button}>Calculate Cost</Button>
+        <Link to="/cost-calculator">
+          <Button ref={button}>Calculate Cost</Button>
+        </Link>
       </VStack>
       <Center mt={[12, 12, 20]}>
         {" "}

@@ -1,4 +1,5 @@
 import { Button, Center } from "@chakra-ui/react"
+import { Link } from "gatsby"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 
@@ -65,7 +66,9 @@ const Perks = () => {
         </g>
       </svg>
       <Center zIndex="2" bottom="0" height="30%" w="full">
-        <Button>Start Your Business</Button>
+        <Link to="/contact-us">
+          <Button>Start Your Business</Button>
+        </Link>
       </Center>
     </SectionWrapper>
   )

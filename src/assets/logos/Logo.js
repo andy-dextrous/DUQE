@@ -11,7 +11,13 @@ function Logo({
   const logo = useRef()
   const [color, setColor] = useState(initialColor)
 
-  useContrastingColor({ color, setColor }, logo, { fill: color }, useContrast)
+  useContrastingColor(
+    { color, setColor },
+    logo,
+    { fill: color },
+    null,
+    useContrast
+  )
 
   return (
     <Box

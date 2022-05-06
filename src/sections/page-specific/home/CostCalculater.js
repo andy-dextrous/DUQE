@@ -10,6 +10,7 @@ import {
   Stack,
   VStack,
 } from "@chakra-ui/react"
+import { Link } from "gatsby"
 
 function CostCalculator() {
   return (
@@ -34,9 +35,11 @@ function CostCalculator() {
                 <option value="2">2 years</option>
                 <option value="3">3 years</option>
               </Select>
-              <Button w="200px" h="100%" rightIcon={<ArrowForwardIcon />}>
-                Continue
-              </Button>
+              <Link to="/cost-calculator">
+                <Button w="200px" h="100%" rightIcon={<ArrowForwardIcon />}>
+                  Continue
+                </Button>
+              </Link>
             </HStack>
           </VStack>
         </Stack>

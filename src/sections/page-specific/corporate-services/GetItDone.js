@@ -2,14 +2,17 @@ import { Box, Heading, Image, Stack, VStack } from "@chakra-ui/react"
 import React from "react"
 import YellowHeading from "../../../components/common/YellowHeading"
 import SectionWrapper from "../../../components/SectionWrapper"
+import { useVariable } from "../../../hooks"
 
 function GetItDone() {
+  const { containerPaddingX } = useVariable()
+
   return (
     <SectionWrapper
       bg="dark.default"
       containerSize="xl"
       minH="100vh"
-      containerStyles={{ pt: [0], pb: [20, 20, 32, 48, 60] }}
+      containerStyles={{ pt: 0, pb: containerPaddingX }}
     >
       <Stack
         h="full"
@@ -32,14 +35,14 @@ function GetItDone() {
             consultants are on site and will get it all done.
           </Heading>
         </VStack>
-        <Box flex="1">
+        <Box flex="1" py={[40, 40, 0]}>
           <Image
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651118246/DUQE/Corp_D.png"
             position="absolute"
             maxW={["100%", "100%", "45vw"]}
             right="0"
             bottom={["-9%", "-9%", "-20%"]}
-            data-speed="1.1"
+            // data-speed={[1, 1, "1.1"]}
           />
         </Box>
       </Stack>

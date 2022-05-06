@@ -1,4 +1,5 @@
 import { Button, Heading, Image, Square, Stack, VStack } from "@chakra-ui/react"
+import { Link } from "gatsby"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 
@@ -27,7 +28,10 @@ function Agent() {
             <br /> Sign up to be a DUQE agent now and inspire other
             entrepreneurs to act on their dreams and business goals.
           </Heading>
-          <Button>Become an agent</Button>
+          <Link to="/agents">
+            {" "}
+            <Button>Become an agent</Button>
+          </Link>
         </VStack>
         <Square flex="1" zIndex="2">
           <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650951344/DUQE/Cross_man.png" />
