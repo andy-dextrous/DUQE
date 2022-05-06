@@ -17,6 +17,7 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react"
 import { AddIcon } from "@chakra-ui/icons"
+import { useVariable } from "../../../hooks/useVariable"
 
 const data = [
   "Manufacturing",
@@ -32,6 +33,7 @@ const data = [
 ]
 
 function Activities() {
+  const { containerPaddingY } = useVariable()
   function shuffle(array) {
     let currentIndex = array.length,
       randomIndex
@@ -56,14 +58,14 @@ function Activities() {
     <SectionWrapper
       minH="100vh"
       containerSize="xl"
-      containerStyles={{ py: 0 }}
+      containerStyles={{ py: 0, pb: containerPaddingY }}
+      mb={containerPaddingY}
       className="light"
-      mb={40}
       _before={{
         content: "''",
         bg: "dark.default",
         width: "100%",
-        height: "20%",
+        height: "200px",
         top: 0,
         left: 0,
         right: 0,
@@ -72,7 +74,7 @@ function Activities() {
       }}
     >
       <Box borderRadius="30px" overflow="hidden" w="full">
-        <Tabs w="full" display="flex" bg="#f6f6f6" py={8}>
+        <Tabs w="full" bg="#f6f6f6" py={8} display={["none", "none", "flex"]}>
           <TabList
             display="flex"
             flexDirection="column"
@@ -135,6 +137,32 @@ function Activities() {
             })}
           </TabPanels>
         </Tabs>
+        <Accordion
+          allowToggle
+          display={["block", "block", "none"]}
+          w="full"
+          bg="#f6f6f6"
+        >
+          {data.map((item, i) => {
+            return (
+              <AccordionItem key={i}>
+                <AccordionButton h="94px">
+                  <Box flex="1" textAlign="left">
+                    {item}
+                  </Box>
+                  <AccordionIcon icon={<AddIcon fontSize="12px" />} />
+                </AccordionButton>
+
+                <AccordionPanel pb={4} bg="white">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </AccordionPanel>
+              </AccordionItem>
+            )
+          })}
+        </Accordion>
       </Box>
     </SectionWrapper>
   )
