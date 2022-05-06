@@ -2,18 +2,19 @@ import React from "react"
 import SectionWrapper from "../../components/SectionWrapper"
 import { graphql, Link } from "gatsby"
 import VerticalCard from "../../components/common/VerticalCard"
-import SearchToggle from "../../components/search/SearchToggle"
 import { Pagination } from "../../components/archive/Pagination"
 import {
   Box,
-  Button,
   Container,
-  Heading,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Select,
   SimpleGrid,
-  VStack,
-  Wrap,
+  Stack,
 } from "@chakra-ui/react"
 import StarIcon from "../../assets/icons/StarIcon"
+import { Search2Icon } from "@chakra-ui/icons"
 
 function PostGrid({
   posts,
@@ -25,47 +26,43 @@ function PostGrid({
   return (
     <SectionWrapper minH="auto" id="post-grid" mb={[0, 0, 40]}>
       <Container h="100%" maxW={["container.lg", "container.lg", "100%"]}>
-        <VStack spacing={3} mb={12} align="start">
-          {title && (
-            <Heading
-              as="h3"
-              pb={4}
-              fontSize={["xl", "xl", "2xl", "3xl", "3xl"]}
-            >
-              {title}
-            </Heading>
-          )}
-          <Wrap>
-            <Link to="/insights/">
-              <Button
-                color="brandBlue.900"
-                fontSize={["10px", "10px", "sm"]}
-                variant="pill"
-                borderColor={!currentSlug ? "gray.500" : "none"}
-              >
-                All
-              </Button>
-            </Link>
+        <Stack spacing={3} mb={12} align="start" direction="row">
+          <InputGroup flex="3">
+            <InputLeftElement
+              pointerEvents="none"
+              children={<Search2Icon color="gray.300" />}
+            />
+            <Input
+              placeholder="Search Blogs"
+              bg="#F6F6F6"
+              border="1px solid #DEDEDE"
+              color="dark.700"
+            />
+          </InputGroup>
+
+          <Select
+            flex="1"
+            bg="#F6F6F6"
+            border="1px solid #DEDEDE"
+            size="lg"
+            placeholder="Select Category"
+            color="dark.700"
+          >
             {categories.map(cat => {
               return (
-                <Link to={cat.node.uri} key={cat.node.id}>
-                  <Button
-                    color="brandBlue.900"
-                    variant="pill"
-                    fontSize={["10px", "10px", "sm"]}
-                    borderColor={
-                      currentSlug === cat.node.slug ? "gray.500" : "none"
-                    }
-                  >
-                    {cat.node.name}
-                  </Button>
-                </Link>
+                <option key={cat.node.id} value={cat.node.slug}>
+                  {cat.node.name}
+                </option>
               )
             })}
-            <SearchToggle />
-          </Wrap>
-        </VStack>
-        <SimpleGrid as="ul" columns={{ base: 1, lg: 2 }} spacing={[24, 24, 40]}>
+          </Select>
+        </Stack>
+        <SimpleGrid
+          as="ul"
+          columns={{ base: 1, lg: 2 }}
+          spacingY={24}
+          spacingX={40}
+        >
           {posts.map(post => {
             return (
               <Link to={post.uri} key={post.id}>
@@ -95,6 +92,7 @@ function PostGrid({
             )
           })}
         </SimpleGrid>
+
         <Pagination ctx={ctx} anchor="#post-grid" />
       </Container>
     </SectionWrapper>
