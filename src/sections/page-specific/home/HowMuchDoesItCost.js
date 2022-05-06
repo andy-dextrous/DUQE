@@ -15,8 +15,10 @@ import { DarkContext } from "../../../components/Layout"
 function HowMuchDoesItCost({ darkActive, setDarkActive }) {
   const cross = useRef()
   const img = useRef()
+  const button = useRef()
   const { setIsDarkBackground } = useContext(DarkContext)
   const addLag = useBreakpointValue([false, false, true])
+
   useEffect(() => {
     if (!ScrollTrigger) return
     gsap.to(cross.current, {
@@ -61,6 +63,7 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
         })
       },
     })
+    tl.to(button.current, { autoAlpha: 0, delay: 10 })
     tl.set(img.current, { autoAlpha: 0 })
   }, [setDarkActive, setIsDarkBackground])
 
@@ -83,7 +86,7 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
           your business setup. It’s the number one question we get asked. <br />
           <strong>Find out in an instant.</strong>
         </Heading>
-        <Button>Calculate Cost</Button>
+        <Button ref={button}>Calculate Cost</Button>
       </VStack>
       <Center mt={[12, 12, 20]}>
         {" "}
