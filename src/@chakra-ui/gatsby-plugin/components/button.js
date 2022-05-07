@@ -73,6 +73,10 @@ export const Button = {
       svg: { fill: "dark.default" },
       borderRadius: "full",
     },
+    socialShare: {
+      bg: "dark.50",
+      borderRadius: "full",
+    },
     menuToggle: {
       width: ["2.7rem", "2.7rem", "3.25rem"],
       height: ["2.7rem", "2.7rem", "3.25rem"],

@@ -1,18 +1,9 @@
-import React from "react"
+import React, { useEffect } from "react"
 import SectionWrapper from "../../components/SectionWrapper"
 import { graphql, Link } from "gatsby"
 import VerticalCard from "../../components/common/VerticalCard"
 import { Pagination } from "../../components/archive/Pagination"
-import {
-  Box,
-  Container,
-  // Input,
-  // InputGroup,
-  // InputLeftElement,
-  Select,
-  SimpleGrid,
-  Stack,
-} from "@chakra-ui/react"
+import { Box, Container, Select, SimpleGrid, Stack } from "@chakra-ui/react"
 import StarIcon from "../../assets/icons/StarIcon"
 import SearchToggle from "../../components/search/SearchToggle"
 // import { Search2Icon } from "@chakra-ui/icons"
@@ -24,6 +15,23 @@ function PostGrid({
   currentSlug,
   title = "Categories",
 }) {
+  const [selectedPosts, setSelectedPosts] = React.useState(posts)
+
+  function filterCategories(e) {
+    const selection = Array.from(e.target).filter((option, i) => {
+      return option.selected
+    })
+    const category = selection[0].value
+    const filteredPosts = posts.filter(post => {
+      return post.categories.nodes.some(cat => {
+        return cat.slug === category
+      })
+    })
+    filteredPosts.length
+      ? setSelectedPosts(filteredPosts)
+      : setSelectedPosts(posts)
+  }
+
   return (
     <SectionWrapper
       minH="auto"
@@ -38,26 +46,17 @@ function PostGrid({
           align="start"
           direction={["column", "column", "column", "row"]}
         >
-          {/* <InputGroup flex={["1", "1", "1", "3"]}>
-            <InputLeftElement
-              pointerEvents="none"
-              children={<Search2Icon color="gray.300" />}
-            />
-            <Input
-              placeholder="Search Blogs"
-              bg="#F6F6F6"
-              border="1px solid #DEDEDE"
-              color="dark.700"
-            />
-          </InputGroup> */}
           <SearchToggle />
           <Select
             flex="1"
             bg="#F6F6F6"
             border="1px solid #DEDEDE"
             size="lg"
-            placeholder="Select Category"
+            placeholder="All categories"
             color="dark.700"
+            onChange={e => {
+              filterCategories(e)
+            }}
           >
             {categories.map(cat => {
               return (
@@ -74,7 +73,7 @@ function PostGrid({
           spacingY={24}
           spacingX={40}
         >
-          {posts.map(post => {
+          {selectedPosts.map(post => {
             return (
               <Link to={post.uri} key={post.id}>
                 <Box position="relative">
@@ -104,7 +103,7 @@ function PostGrid({
           })}
         </SimpleGrid>
 
-        <Pagination ctx={ctx} anchor="#post-grid" />
+        {selectedPosts && <Pagination ctx={ctx} anchor="#post-grid" />}
       </Container>
     </SectionWrapper>
   )

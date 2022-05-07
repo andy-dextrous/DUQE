@@ -7,7 +7,7 @@ import { Box, Heading, Progress, Text, Tooltip, VStack } from "@chakra-ui/react"
 import { SocialShare } from "../../components/social/SocialShare"
 
 const Author = React.forwardRef(({ data, progress, ...props }, ref) => {
-  const { createUsers } = useThemeOptions()
+  const { createUsers, createCategories } = useThemeOptions()
 
   return (
     <VStack
@@ -65,7 +65,7 @@ const Author = React.forwardRef(({ data, progress, ...props }, ref) => {
           {data.date}
         </Heading>
       </Box>
-      <Categories data={data.categories} />
+      {createCategories && <Categories data={data.categories} />}
       <SocialShare />
     </VStack>
   )

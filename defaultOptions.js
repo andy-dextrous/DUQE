@@ -79,7 +79,7 @@ const DEFAULT_OPTIONS = {
   /**** BUILD COMMANDS ****/
   createPages: true,
   createPosts: true,
-  createCategories: true,
+  createCategories: false,
   createTags: false,
   createUsers: false,
   useWpRedirects: true,
