@@ -3,7 +3,7 @@ import { gsap, ScrollTrigger } from "../../../gsap"
 
 import SectionWrapper from "../../../components/SectionWrapper"
 import ScrollDown from "../../../assets/icons/ScrollDown"
-import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
+import { Heading, Image, Stack, VStack } from "@chakra-ui/react"
 import YellowHeading from "../../../components/common/YellowHeading"
 
 function Hero() {

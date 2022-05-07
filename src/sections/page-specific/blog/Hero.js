@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
-import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
+import { Heading, Image, Stack, VStack } from "@chakra-ui/react"
 import { gsap, ScrollTrigger } from "../../../gsap"
 import ScrollDown from "../../../assets/icons/ScrollDown"
 import YellowHeading from "../../../components/common/YellowHeading"

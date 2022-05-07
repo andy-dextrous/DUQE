@@ -1,15 +1,11 @@
-import React, {
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-  useLayoutEffect,
-} from "react"
+import React, { useContext, useEffect, useRef, useLayoutEffect } from "react"
 import { Link } from "gatsby"
 import { gsap, ScrollTrigger } from "../../gsap"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
 import { MenuContext } from "../Layout"
-import SectionWrapper from "../SectionWrapper"
+import { Search2Icon } from "@chakra-ui/icons"
+import { SocialFollows } from "../social/SocialFollows"
+import { useVariable } from "../../hooks"
 import {
   VStack,
   Text,
@@ -25,9 +21,6 @@ import {
   Flex,
   Box,
 } from "@chakra-ui/react"
-import { Search2Icon } from "@chakra-ui/icons"
-import { SocialFollows } from "../social/SocialFollows"
-import { useVariable } from "../../hooks"
 
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
@@ -83,10 +76,10 @@ function Modal() {
       bg="dark.default"
       ref={menuWrapper}
     >
-      <Box layerStyle="fillSpace" maxW="container.xl">
-        <Center p={0} layerStyle="fillSpace">
+      <Box w="full" maxW="container.xl">
+        <Center p={0} w="full">
           <Stack
-            layerStyle="fillSpace"
+            w="full"
             direction={["column", "column", "column", "row"]}
             justify={["center", "center", "space-between"]}
             align={["center", "center", "center"]}

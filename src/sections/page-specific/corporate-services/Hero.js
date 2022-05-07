@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react"
 import { gsap, ScrollTrigger } from "../../../gsap"
-import { useVariable } from "../../../hooks/useVariable"
 
 import SectionWrapper from "../../../components/SectionWrapper"
 import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
@@ -10,7 +9,6 @@ function Hero() {
   const img = useRef()
   const img2 = useRef()
   const animation = useRef()
-  const { componentSpacing } = useVariable()
 
   useEffect(() => {
     gsap.from(img.current, {
