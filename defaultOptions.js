@@ -74,7 +74,7 @@ const DEFAULT_OPTIONS = {
   topBarHeight: 115,
   cssVarPrefix: "duqe",
   createColorPallete: true,
-  shouldShowBreakpoints: true,
+  shouldShowBreakpoints: false,
 
   /**** BUILD COMMANDS ****/
   createPages: true,

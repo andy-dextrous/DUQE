@@ -1,20 +1,64 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
+import { gsap, ScrollTrigger } from "../../../gsap"
+import { useVariable } from "../../../hooks/useVariable"
+
 import SectionWrapper from "../../../components/SectionWrapper"
-import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
 import ScrollDown from "../../../assets/icons/ScrollDown"
+import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
 
 function Hero() {
+  const img = useRef()
+  const img2 = useRef()
+  const animation = useRef()
+  const { componentSpacing } = useVariable()
+
+  useEffect(() => {
+    gsap.from(img.current, {
+      opacity: 0,
+      delay: 0.2,
+      duration: 0.35,
+      ease: "Power3.in",
+    })
+
+    if (!ScrollTrigger || animation.current) return
+    const tl = gsap.timeline({
+      paused: true,
+      scrollTrigger: {
+        trigger: img.current,
+        toggleActions: "play none reverse none",
+        start: "top top",
+        end: "bottom top",
+        scrub: 0.5,
+      },
+    })
+    tl.to(img.current, {
+      scale: 1.4,
+      ease: "linear",
+    })
+    tl.to(
+      img2.current,
+      {
+        rotate: 10,
+        x: 100,
+        y: 120,
+      },
+      0
+    )
+  }, [])
+
   return (
     <SectionWrapper
-      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651107901/Rectangle_4.png"
-      h="100vh"
       overlay
       isFirstSection
-      containerSize="xl"
+      darkBackground
+      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651107901/Rectangle_4.png"
+      h="100vh"
+      ref={img}
+      overflow="hidden"
     >
-      <Stack h="full" w="full" align="center" direction="row">
+      <Stack layerStyle="fillSpace" align="center" direction="row">
         <VStack
-          spacing={12}
+          spacing={componentSpacing}
           alignItems="start"
           w="full"
           width={["full", "full", "50%"]}
@@ -36,6 +80,7 @@ function Hero() {
         top="0"
         right="50px"
         opacity="50%"
+        ref={img2}
       />
       <ScrollDown />
     </SectionWrapper>

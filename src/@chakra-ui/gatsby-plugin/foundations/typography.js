@@ -12,7 +12,7 @@ export const fontSizes = {
   "4xl": rem(40),
   "5xl": rem(45),
   "6xl": rem(60),
-  "7xl": rem(72),
+  "7xl": rem(78),
   "8xl": rem(96),
   "9xl": rem(110),
 }
@@ -44,8 +44,8 @@ const heading = {
 
 export const h1 = {
   ...heading,
-  fontSize: ["4xl", "4xl", "9xl"],
-  lineHeight: ["1.2", "1.2", "1.1"],
+  fontSize: ["4xl", "4xl", "7xl", "7xl", "8xl", "8xl", "9xl"],
+  lineHeight: ["1.2", "1.1", "1.1", "1", "1", "1", "1"],
   letterSpacing: "-0.01em",
   fontWeight: "extrabold",
   textTransform: "uppercase",

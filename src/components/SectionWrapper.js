@@ -14,6 +14,7 @@ const SectionWrapper = forwardRef((props, ref) => {
     isFirstSection,
     overlay,
     overlayStyle,
+    darkBackground,
     withContainer = true,
     containerSize = "xl",
     containerStyles = {},
@@ -26,6 +27,19 @@ const SectionWrapper = forwardRef((props, ref) => {
     sidebarMenuWidth,
     mobileNavHeight,
   } = useVariable()
+
+  const beforeStyle = darkBackground
+    ? {
+        content: "''",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        bg: "dark.default",
+        zIndex: "-10",
+      }
+    : {}
 
   return (
     <>
@@ -40,6 +54,7 @@ const SectionWrapper = forwardRef((props, ref) => {
         ]}
         px={sectionPaddingX}
         justify="center"
+        _before={beforeStyle}
         {...sectionStyles}
       >
         {withContainer ? (

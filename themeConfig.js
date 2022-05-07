@@ -12,7 +12,7 @@ const THEME_CONFIG = {
   sectionPaddingX: [5, 5, 16, 20, 24, 40, "200px"],
   containerPaddingY: [20, 20, 32, 48, 60],
   containerPaddingX: [0],
-  componentSpacing: [8, 8, 12],
+  componentSpacing: [8, 8, 8, 8, 8, 10, 12],
 
   /**** NAV ****/
   sidebarMenuWidth: "100px",

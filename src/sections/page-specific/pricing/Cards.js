@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import React, { useEffect, useRef } from "react"
 import { gsap, ScrollTrigger } from "../../../gsap"
 import { useThemeOptions } from "../../../hooks/useThemeOptions"
+import { useVariable } from "../../../hooks"
 import {
   Box,
   Button,
@@ -20,6 +21,7 @@ function Cards() {
   const scrollAnimation = useRef(null)
   const { sidebarMenuMargin } = useThemeOptions()
   const data = [1, 2, 3, 4, 5, 6, 7]
+  const { containerPaddingY, sectionPaddingX, componentSpacing } = useVariable()
 
   useEffect(() => {
     if (scrollAnimation.current || !ScrollTrigger) return
@@ -58,7 +60,7 @@ function Cards() {
         maxW="container.xl"
         w="container.xl"
         h="full"
-        py={[20, 20, 32, 48, 60]}
+        py={containerPaddingY}
       >
         <VStack
           align="flex-start"
@@ -81,10 +83,9 @@ function Cards() {
             px={[0, 0, "200px"]}
           >
             <VStack
-              width={["100vw", "100vw", "660px"]}
-              mr={[4, 4, 40]}
-              spacing={[8, 8, 12]}
-              px={[4, 4, 0]}
+              width={["100vw", "100vw", "40vw"]}
+              spacing={componentSpacing}
+              mx={sectionPaddingX}
             >
               <Heading className="jumbo" color="white" width="100%">
                 <Text as="span" color="brandYellow.default">

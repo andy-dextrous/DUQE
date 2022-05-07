@@ -13,7 +13,7 @@ function Hero() {
       isFirstSection
     >
       <Center h="full" w="full">
-        <VStack spacing={12} alignItems="start">
+        <VStack spacing={[12]} alignItems="start">
           <Heading as="h1" color="white">
             Duqe is for the{" "}
             <Text as="span" color="brandYellow.default">

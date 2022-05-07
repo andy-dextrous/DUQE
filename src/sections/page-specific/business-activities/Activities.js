@@ -80,7 +80,16 @@ function Activities() {
             flexDirection="column"
             wrap="nowrap"
             border="none"
-            sx={{ "button[aria-selected='true']": { bg: "white !important" } }}
+            sx={{
+              "button[aria-selected='true']": {
+                bg: "white !important",
+                img: {
+                  filter: "grayscale(0)",
+                  opacity: 1,
+                  transform: "scale(1)",
+                },
+              },
+            }}
           >
             {data.map((item, i) => {
               return (
@@ -91,13 +100,18 @@ function Activities() {
                   h="80px"
                   px={8}
                   _hover={{ bg: "dark.100" }}
+                  _focus={{ dropShadow: "none", border: "none" }}
                 >
                   <HStack w="full" justify="flex-start">
                     <Image
                       h="50px"
                       src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/Society.svg"
-                    />{" "}
-                    <Text>{item}</Text>{" "}
+                      filter="grayscale(100%)"
+                      opacity={0.3}
+                      transform="scale(0.8)"
+                      transition="all 0.3s easeInOut"
+                    />
+                    <Text>{item}</Text>
                   </HStack>
                 </Tab>
               )

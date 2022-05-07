@@ -11,8 +11,10 @@ function SmoothWrapper({ smoothScroll, children }) {
     const smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 1,
-
+      smooth: 1.4,
+      onUpdate: self => {
+        console.log(self.scrollTrigger.direction)
+      },
       effects: true,
     })
 

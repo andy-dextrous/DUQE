@@ -9,13 +9,19 @@ import { useVariable } from "../../hooks"
 function Hero() {
   const { componentSpacing } = useVariable()
   const img = useRef()
+  const animation = useRef()
 
   useEffect(() => {
-    if (!ScrollTrigger) return
-    gsap.from(img.current, { opacity: 0, duration: 0.3, ease: "Power3.in" })
-    gsap.to(img.current, {
-      scale: 1.4,
-      ease: "linear",
+    gsap.from(img.current, {
+      opacity: 0,
+      delay: 0.2,
+      duration: 0.35,
+      ease: "Power3.in",
+    })
+
+    if (!ScrollTrigger || animation.current) return
+    const tl = gsap.timeline({
+      paused: true,
       scrollTrigger: {
         trigger: img.current,
         toggleActions: "play none reverse none",
@@ -24,12 +30,17 @@ function Hero() {
         scrub: 0.5,
       },
     })
+    tl.to(img.current, {
+      scale: 1.4,
+      ease: "linear",
+    })
   }, [])
 
   return (
     <SectionWrapper
       bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto,w_1920/v1650925763/Home-Hero.jpg"
       overlay
+      darkBackground
       h="100vh"
       overflow="hidden"
       containerSize="xl"

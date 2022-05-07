@@ -1,4 +1,4 @@
-import { Button, Center } from "@chakra-ui/react"
+import { Box, Button, Center } from "@chakra-ui/react"
 import { Link } from "gatsby"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
@@ -6,7 +6,18 @@ import SectionWrapper from "../../../components/SectionWrapper"
 const Perks = () => {
   return (
     <SectionWrapper bg="dark.default" px={[0, 0]}>
-      <svg
+      <Box
+        as="svg"
+        transformOrigin="50% 50%"
+        transform={[
+          "scale(1)",
+          "scale(1)",
+          "scale(1.1)",
+          "scale(1.1)",
+          "scale(1.1)",
+          "scale(1.2)",
+          "scale(1.2)",
+        ]}
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 1920 1392"
@@ -64,7 +75,7 @@ const Perks = () => {
             />
           </g>
         </g>
-      </svg>
+      </Box>
       <Center zIndex="2" bottom="0" height="30%" w="full">
         <Link to="/contact-us">
           <Button>Start Your Business</Button>
