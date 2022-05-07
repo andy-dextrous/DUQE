@@ -61,8 +61,7 @@ function Hero() {
       <Stack h="full" w="full" align="center" direction="row">
         <VStack spacing={12} alignItems="start" width={["100%", "100%", "50%"]}>
           <Heading as="h1" color="white">
-            Expert articles and
-            <YellowHeading> Insghts</YellowHeading>
+            Latest articles &<YellowHeading> Insights</YellowHeading>
           </Heading>
           <Heading as="h3" color="white" className="thin-h3">
             Stay up to date with the latest news and articles from our team of
