@@ -64,14 +64,16 @@ function Hero() {
           width={["full", "full", "50%"]}
         >
           <Heading as="h1" color="white">
-            Got Questions?
+            BECOME A
             <YellowHeading>
               <br />
-              Need more info?
+              DUQE AGENT
             </YellowHeading>
           </Heading>
           <Heading as="h3" color="white" className="thin-h3">
-            Set up your company in DUQE Free Zone, based on the prestigious QE2.
+            Be part of DUQE’s vibrant start-up community. Connect with aspiring
+            founders, CEOs, freelancers and digital nomads and let them know why
+            DUQE is the ideal launchpad for their business.
           </Heading>
         </VStack>
       </Stack>

@@ -66,12 +66,20 @@ function Hero() {
           width={["100%", "100%", "50%"]}
         >
           <Heading as="h1" color="white">
-            Got Questions?
-            <br />
-            <YellowHeading>Need more info?</YellowHeading>
+            About
+            <YellowHeading> Us</YellowHeading>
           </Heading>
           <Heading as="h3" color="white" className="thin-h3">
-            Set up your company in DUQE Free Zone, based on the prestigious QE2.
+            <strong>
+              Not just another free zone.{" "}
+              <YellowHeading>
+                DUQE is the ZONE for the Game Changers.
+              </YellowHeading>
+            </strong>{" "}
+            DUQE is the ZONE for innovators and the disruptors that want their
+            business setup done better. Based on the QE2, one of the most famous
+            cruise ships of all time, DUQE is not like any other free zone in
+            Dubai. It is anything but boring.
           </Heading>
         </VStack>
       </Stack>

@@ -36,7 +36,7 @@ const useContrastingColor = (
               const trigger = sections[parseInt(triggerIndex) - 1]
 
               setColor(
-                trigger.classList?.contains("light") ? "#0b0b0b" : "white"
+                trigger?.classList?.contains("light") ? "#0b0b0b" : "white"
               )
             },
             invalidateOnRefresh: true,

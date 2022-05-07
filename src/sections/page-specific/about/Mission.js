@@ -46,18 +46,8 @@ function Mission() {
           <br /> <YellowHeading> mission</YellowHeading>
         </Heading>
         <Heading as="h3" className="thin-h3" color="white" flex="2">
-          Starting a business is exciting, but it can also be stressful. We know
-          that just as well as you do.{" "}
-          <YellowHeading>
-            <strong>
-              It is our mission to streamline your business setup process to
-              help you succeed in achieving your business goals.
-            </strong>
-          </YellowHeading>
-          The good news is, we are fully equipped to meet your expectations with
-          our services and in-house experts. We will guide you from the initial
-          stage of trade name registration, all the way to business growth and
-          beyond, with our value-added services.
+          To make it easy to set up a business in Dubai and to provide
+          everything it needs to thrive.
         </Heading>
       </Stack>
       <Stack
@@ -96,16 +86,9 @@ function Mission() {
           </Text>
         </Heading>
         <Heading as="h3" className="thin-h3" color="white" flex="2">
-          <Text as="span" color="brandBlue.default">
-            {" "}
-            <strong>
-              We aim to be the go-to company for individuals who are passionate
-              and driven about their business ideas and ambitions.
-            </strong>
-          </Text>{" "}
-          We envision to make entrepreneurship easier, simpler and more
-          achievable for anyone who wants to embark on this new journey, while
-          we provide them everything they will need to make it a success.
+          We aim to be the go-to zone for individuals who are passionate and
+          driven about their business ideas and ambitions and who want to be the
+          next unicorn.
         </Heading>
       </Stack>
     </SectionWrapper>

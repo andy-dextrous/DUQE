@@ -11,13 +11,16 @@ function Perks() {
     <SectionWrapper containerSize="lg" className="light" mb={newsletterOffset}>
       <VStack spacing={componentSpacing} alignItems="start">
         <Heading className="jumbo">
-          Your <YellowHeading>Legacy </YellowHeading>Starts at Duqe
+          The perks of setting up your business
+          <YellowHeading> in DUQE </YellowHeading>
         </Heading>
         <Heading as="h3" className="thin-h3">
-          The only free zone found on the water, DUQE is based on the
-          prestigious QE2. Equipped with a modern business centre that offers
-          all-in-one support, DUQE Free Zone is the ideal launchpad for both the
-          budding entrepreneurs and seasoned business owners.
+          Our team consists of some of the brightest minds in the world, working
+          behind the scenes to lay the foundation of your success in the City of
+          Dreams. From international companies to SMEs, we support your
+          ambitions, no matter what they are. DUQE is where you make things
+          happen. DUQE gives you the freedom and power to transform your
+          business ideas into reality.
         </Heading>
       </VStack>
       <Stack

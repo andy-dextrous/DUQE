@@ -12,10 +12,13 @@ function YourLegacy() {
           Your <YellowHeading>Legacy </YellowHeading>Starts at Duqe
         </Heading>
         <Heading as="h3" className="thin-h3">
-          The only free zone found on the water, DUQE is based on the
-          prestigious QE2. Equipped with a modern business centre that offers
-          all-in-one support, DUQE Free Zone is the ideal launchpad for both the
-          budding entrepreneurs and seasoned business owners.
+          DUQE is not just another free zone. DUQE is <strong>THE ZONE</strong>{" "}
+          for innovators and disruptors that want their business setup done
+          better. Based on the QE2, one of the most famous cruise ships of all
+          time, DUQE is not like any other free zone in Dubai. It is anything
+          but boring. Equipped with a modern business centre that offers
+          all-in-one support, DUQE is the ideal launchpad for both the budding
+          entrepreneurs and seasoned business owners.
         </Heading>
       </VStack>
       <Stack

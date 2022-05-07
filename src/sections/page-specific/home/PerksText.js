@@ -18,11 +18,11 @@ function PerksText() {
           <YellowHeading>on a ship</YellowHeading>
         </Heading>
         <Heading as="h3" className="thin-h3" color="white">
-          Make your mark in Dubai, the start-up capital of the world. and bring
+          Make your mark in Dubai, the start-up capital of the world, and bring
           your venture to the forefront of the global market. Be in the hotspot
           for entrepreneurship & next-level ideas where quality of life is
-          second to none. Launch a free zone company in DUQE and enjoy all the
-          perks Dubai has to offer.
+          second to none. Launch your company in DUQE and enjoy all the perks
+          Dubai has to offer.
         </Heading>
       </VStack>
     </SectionWrapper>

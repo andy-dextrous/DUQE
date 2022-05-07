@@ -30,12 +30,11 @@ function IgnitingIdeas() {
             For the ones to watch, the changemakers, the visionaries – the ones
             who will make a world of difference.
           </Heading>
-          <VStack flex="1" spacing={5}>
+          <VStack flex="1" spacing={5} align="flex-start">
             <Text color="white">
               If you have single-minded determination and relentless drive, and
               you are searching for your tribe and someone to champion your
-              dreams, then this is where you belong. This is where you get in
-              the zone.
+              dreams, then this is where you belong.
             </Text>
             <Heading as="h4" color="brandYellow.default">
               This is where you get in the zone.

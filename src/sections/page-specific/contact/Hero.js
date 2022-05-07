@@ -70,7 +70,8 @@ function Hero() {
             </Text>
           </Heading>
           <Heading as="h3" color="white" className="thin-h3">
-            Set up your company in DUQE Free Zone, based on the prestigious QE2.
+            We’re here to listen to what you really need and give you the best
+            advice.
           </Heading>
         </VStack>
       </Stack>

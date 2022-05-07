@@ -27,8 +27,8 @@ function Requirements() {
           Trade License <YellowHeading>Requirements </YellowHeading>
         </Heading>
         <Heading as="h3" className="thin-h3">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, hic
-          quia. Quae.
+          Ready to start your business? You will need to prepare the following
+          documents to begin your trade licence application.
         </Heading>
       </VStack>
       <Stack spacing={[12, 12, 24]} direction={["column", "column", "row"]}>
@@ -94,7 +94,7 @@ function Requirements() {
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141452/DUQE/Vector.svg"
             h={["66px", "66px", "110px"]}
           />
-          <Heading as="h3">Corporate Entity</Heading>
+          <Heading as="h3">Corporate Entity/Branch</Heading>
           <HStack spacing={4}>
             <Image
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
@@ -168,8 +168,10 @@ function Requirements() {
           The trade license <YellowHeading>Application Process </YellowHeading>
         </Heading>
         <Heading as="h3" className="thin-h3">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, hic
-          quia. Quae.
+          We offer a quick 4-stage process for applying a trade licence for your
+          business. If you’re wondering how long the process will take, you can
+          refer to the steps below to know the milestones included in your trade
+          licence application.
         </Heading>
       </VStack>
       <Stack
@@ -252,7 +254,7 @@ function Requirements() {
             display={["block", "block", "none"]}
           />
           <Heading as="h4" className="lower-case" textAlign="center">
-            Trade name reservation
+            Initial Approval
           </Heading>
         </VStack>
         <VStack
@@ -275,13 +277,13 @@ function Requirements() {
             display={["block", "block", "none"]}
           />
           <Heading as="h4" className="lower-case" textAlign="center">
-            Trade name reservation
+            Registration Document signing
           </Heading>
         </VStack>
         <VStack bg="brandBlue.400" flex="1" p={12} rounded="30px">
           <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/location.svg" />
           <Heading as="h4" className="lower-case" textAlign="center">
-            Trade name reservation
+            Trade Licence Issuance
           </Heading>
         </VStack>
       </Stack>

@@ -3,7 +3,8 @@ import { gsap, ScrollTrigger } from "../../../gsap"
 
 import SectionWrapper from "../../../components/SectionWrapper"
 import ScrollDown from "../../../assets/icons/ScrollDown"
-import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
+import YellowHeading from "../../../components/common/YellowHeading"
+import { Heading, Image, Stack, VStack } from "@chakra-ui/react"
 
 function Hero() {
   const img = useRef()
@@ -66,13 +67,14 @@ function Hero() {
           width={["full", "full", "50%"]}
         >
           <Heading as="h1" color="white">
-            Got Questions?
-            <Text as="span" color="brandYellow.default">
-              <br></br>Need more info?
-            </Text>
+            DUQE BUSINESS
+            <br />
+            <YellowHeading>LICENCES</YellowHeading>
           </Heading>
           <Heading as="h3" color="white" className="thin-h3">
-            Set up your company in DUQE Free Zone, based on the prestigious QE2.
+            At DUQE, we make your path to entrepreneurship as easy as possible.
+            That is why we offer a simple and straightforward process for you to
+            get a trade licence in Dubai.
           </Heading>
         </VStack>
       </Stack>

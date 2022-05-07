@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react"
 import { gsap, ScrollTrigger } from "../../../gsap"
 import { useThemeOptions } from "../../../hooks/useThemeOptions"
 import { useVariable } from "../../../hooks"
+import { cardData } from "./cardData"
 import {
   Box,
   Button,
@@ -98,7 +99,7 @@ function Cards() {
                 it according to your needs.
               </Heading>
             </VStack>
-            {data.map((person, i) => {
+            {cardData.map((card, i) => {
               return (
                 <VStack
                   h={["60vh", "60vh", "500px"]}
@@ -110,7 +111,7 @@ function Cards() {
                   spacing={4}
                 >
                   <Heading as="h3" className="lower-case">
-                    {i} VISA Package
+                    {card.title}
                   </Heading>
                   <Heading
                     as="h4"
@@ -118,7 +119,7 @@ function Cards() {
                     sx={{ "&.lower-case": { textTransform: "unset" } }}
                     color="brandBlue.default"
                   >
-                    AED 12,500.00
+                    {card.price}
                   </Heading>
                   <Divider />
                   <Text
@@ -137,18 +138,13 @@ function Cards() {
                       },
                     }}
                   >
-                    <Heading as="li" className="thin-h3" textAlign="center">
-                      Free Zone Trade License
-                    </Heading>
-                    <Heading as="li" className="thin-h3" textAlign="center">
-                      0 Visa Quota
-                    </Heading>
-                    <Heading as="li" className="thin-h3" textAlign="center">
-                      XX Business Activities
-                    </Heading>
-                    <Heading as="li" className="thin-h3" textAlign="center">
-                      Flexi-desk
-                    </Heading>
+                    {card.contents.map((item, i) => {
+                      return (
+                        <Heading as="li" className="thin-h3" textAlign="center">
+                          {item}
+                        </Heading>
+                      )
+                    })}
                   </Box>
                   <Button>Buy Now</Button>
                 </VStack>

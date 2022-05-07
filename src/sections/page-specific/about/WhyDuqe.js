@@ -41,13 +41,10 @@ function WhyDuqe() {
             <YellowHeading> CREATE YOUR LEGACY.</YellowHeading>
           </Heading>
           <Text>
-            Situated on the prestigious QE2, DUQE is a free zone specially
-            designed to give you the freedom and power to transform your
-            business ideas into reality. Equipped with a modern business centre
-            that offers all-in-one support, DUQE Free Zone is the ideal
-            launchpad for both the budding entrepreneurs and seasoned business
-            owners, for the freelancers and digital nomads, and for the hustlers
-            and grinders. DUQE is where you make things happen.
+            Equipped with a modern business centre that offers all-in-one
+            support, DUQE is the ideal launchpad for both the budding
+            entrepreneurs and seasoned business owners, for the freelancers and
+            digital nomads, and for the hustlers and grinders.
           </Text>
           <Link to="/business-activities">
             <Button>See All Activities</Button>

@@ -16,8 +16,9 @@ function TradeLicenses() {
             Trade License in <YellowHeading>DUQE.</YellowHeading>
           </Heading>
           <Heading as="h3" className="thin-h3" color="white">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat
-            nisi dolor numquam?
+            We are excited to be a part of your success story. As such, we offer
+            these types of trade licences in Dubai to help you launch and
+            operate your business activities.
           </Heading>
         </VStack>
         <Stack
@@ -35,10 +36,12 @@ function TradeLicenses() {
             p="70px"
           >
             <Heading as="h3" className="thin-h3">
-              Competitive <strong>Commisions</strong>
+              Commercial <strong>License</strong>
             </Heading>
             <Text>
-              Get the best commission rates with our DUQE Agent Programme.
+              Planning to sell physical goods in Dubai? A commercial licence
+              allows you to engage in business activities that involve selling
+              or trading products.
             </Text>
           </VStack>
           <VStack
@@ -49,11 +52,12 @@ function TradeLicenses() {
             p="70px"
           >
             <Heading as="h3" className="thin-h3">
-              Quick <strong>Payouts</strong>
+              Professional <strong>License</strong>
             </Heading>
             <Text>
-              Receive your commission instantly every time you help an
-              entrepreneur successfully set up with us.
+              Are you an online business coach, artisan or craftsman? Then a
+              professional licence is what you need to freely and legally offer
+              your professional services to clients.
             </Text>
           </VStack>
           <VStack
@@ -64,11 +68,13 @@ function TradeLicenses() {
             p="70px"
           >
             <Heading as="h3" className="thin-h3">
-              Networking <strong>Opportunities</strong>
+              Industrial
+              <strong> License</strong>
             </Heading>
             <Text>
-              Get a VIP ticket to every DUQE networking event. Expand your
-              network and influence in Dubai’s start-up community.
+              If you’re interested in producing or manufacturing goods, then our
+              team can help you secure an industrial licence that permits you to
+              engage in industrial and manufacturing activities.
             </Text>
           </VStack>
         </Stack>

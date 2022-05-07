@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from "react"
 import { gsap, ScrollTrigger } from "../../../gsap"
 
 import SectionWrapper from "../../../components/SectionWrapper"
-import { Heading, Image, Stack, Text, VStack } from "@chakra-ui/react"
+import { Heading, Stack, Text, VStack } from "@chakra-ui/react"
 import ScrollDown from "../../../assets/icons/ScrollDown"
+import QIcon from "../../../assets/icons/QIcon"
 
 function Hero() {
   const img = useRef()
@@ -36,9 +37,9 @@ function Hero() {
     tl.to(
       img2.current,
       {
-        rotate: 10,
+        rotate: -10,
         x: 100,
-        y: 120,
+        y: -60,
       },
       0
     )
@@ -72,17 +73,23 @@ function Hero() {
             </Text>
           </Heading>
           <Heading as="h3" color="white" className="thin-h3">
-            Set up your company in DUQE Free Zone, based on the prestigious QE2.
+            Need to open a bank account? Manage your accounting? Or register for
+            VAT? No worries. We take care of the most difficult and tiring tasks
+            beyond the business setup stage to save you the headache.
           </Heading>
         </VStack>
       </Stack>
-      <Image
-        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651108536/DUQE/Q.svg"
-        position="absolute"
-        top="0"
-        right="50px"
-        opacity="50%"
+      <QIcon
         ref={img2}
+        position="absolute"
+        color="#e0db2a"
+        outline
+        opacity="0.6"
+        width={["100vw", "100vw", "80vw", "40vw", "40vw", "42vw", "47vw"]}
+        height="auto"
+        top={["10%", "10%", "-25%", "-25%", "-25%", "-25%", "-25%"]}
+        right={["-50%", "-50%", "-40%", "-5%", "-5%", "-5%", "-5%"]}
+        zIndex="3"
       />
       <ScrollDown />
     </SectionWrapper>
