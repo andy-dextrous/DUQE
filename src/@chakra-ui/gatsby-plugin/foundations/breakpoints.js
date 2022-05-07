@@ -13,5 +13,5 @@ export const breakpoints = createBreakpoints({
   // 16-inch laptop
   "2xl": "1660px",
   // iMac or WideScreen
-  "3xl": "1729px",
+  "3xl": "1800px",
 })
