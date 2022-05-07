@@ -6,15 +6,16 @@ import { Pagination } from "../../components/archive/Pagination"
 import {
   Box,
   Container,
-  Input,
-  InputGroup,
-  InputLeftElement,
+  // Input,
+  // InputGroup,
+  // InputLeftElement,
   Select,
   SimpleGrid,
   Stack,
 } from "@chakra-ui/react"
 import StarIcon from "../../assets/icons/StarIcon"
-import { Search2Icon } from "@chakra-ui/icons"
+import SearchToggle from "../../components/search/SearchToggle"
+// import { Search2Icon } from "@chakra-ui/icons"
 
 function PostGrid({
   posts,
@@ -37,7 +38,7 @@ function PostGrid({
           align="start"
           direction={["column", "column", "column", "row"]}
         >
-          <InputGroup flex={["1", "1", "1", "3"]}>
+          {/* <InputGroup flex={["1", "1", "1", "3"]}>
             <InputLeftElement
               pointerEvents="none"
               children={<Search2Icon color="gray.300" />}
@@ -48,8 +49,8 @@ function PostGrid({
               border="1px solid #DEDEDE"
               color="dark.700"
             />
-          </InputGroup>
-
+          </InputGroup> */}
+          <SearchToggle />
           <Select
             flex="1"
             bg="#F6F6F6"

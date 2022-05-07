@@ -46,7 +46,7 @@ function Hero() {
 
   return (
     <SectionWrapper
-      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651107901/Rectangle_4.png"
+      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,w_1920/v1651912116/DUQE/iStock/iStock-826130820.jpg"
       h="100vh"
       isFirstSection
       zIndex="1"
@@ -61,11 +61,12 @@ function Hero() {
       <Stack h="full" w="full" align="center" direction="row">
         <VStack spacing={12} alignItems="start" width={["100%", "100%", "50%"]}>
           <Heading as="h1" color="white">
-            Our Latest Blog and
-            <YellowHeading> Articles</YellowHeading>
+            Expert articles and
+            <YellowHeading> Insghts</YellowHeading>
           </Heading>
           <Heading as="h3" color="white" className="thin-h3">
-            Set up your company in DUQE Free Zone, based on the prestigious QE2.
+            Stay up to date with the latest news and articles from our team of
+            experts in all UAE business matters.
           </Heading>
         </VStack>
       </Stack>

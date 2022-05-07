@@ -3,7 +3,7 @@ import React from "react"
 
 export const SubmitButton = () => {
   return (
-    <Button size="lg" variant="green" type="submit">
+    <Button size="lg" variant="primary" type="submit">
       Search
     </Button>
   )

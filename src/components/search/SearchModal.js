@@ -26,16 +26,13 @@ function SearchModal({ isOpen, onClose }) {
         initialFocusRef={initialRef}
       >
         <ModalOverlay />
-        <ModalContent h="full">
+        <ModalContent h="full" bg="brandConcrete.default">
           <Center h="full" position="relative" m={[0, 0, 40]}>
             <Box w={["100%", "100%", "60vw"]}>
               <ModalHeader>
                 <Heading>Looking for something?</Heading>
               </ModalHeader>
-              <ModalCloseButton
-                bg="brandYellow.600"
-                _hover={{ bg: "brandGreen.500" }}
-              />
+              <ModalCloseButton bg="brandYellow.default" />
               <ModalBody>
                 <SearchForm ref={initialRef} />
               </ModalBody>

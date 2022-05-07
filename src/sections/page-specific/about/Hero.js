@@ -70,16 +70,8 @@ function Hero() {
             <YellowHeading> Us</YellowHeading>
           </Heading>
           <Heading as="h3" color="white" className="thin-h3">
-            <strong>
-              Not just another free zone.{" "}
-              <YellowHeading>
-                DUQE is the ZONE for the Game Changers.
-              </YellowHeading>
-            </strong>{" "}
-            DUQE is the ZONE for innovators and the disruptors that want their
-            business setup done better. Based on the QE2, one of the most famous
-            cruise ships of all time, DUQE is not like any other free zone in
-            Dubai. It is anything but boring.
+            Not just another free zone. DUQE is the ZONE for the Game Changers.
+            The innovators. The disruptors. This is business setup done better.
           </Heading>
         </VStack>
       </Stack>
