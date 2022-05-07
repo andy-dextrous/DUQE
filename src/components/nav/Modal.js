@@ -76,8 +76,8 @@ function Modal() {
       bg="dark.default"
       ref={menuWrapper}
     >
-      <Box w="full" maxW="container.xl">
-        <Center p={0} w="full">
+      <Box w="full" maxW="container.xl" h={["auto", "auto", "auto", "full"]}>
+        <Center p={0} w="full" h={["auto", "auto", "auto", "full"]}>
           <Stack
             w="full"
             direction={["column", "column", "column", "row"]}

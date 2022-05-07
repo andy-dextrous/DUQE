@@ -26,8 +26,13 @@ function PostGrid({
   return (
     <SectionWrapper minH="auto" id="post-grid" mb={[0, 0, 40]}>
       <Container h="100%" maxW={["container.lg", "container.lg", "100%"]}>
-        <Stack spacing={3} mb={12} align="start" direction="row">
-          <InputGroup flex="3">
+        <Stack
+          spacing={3}
+          mb={12}
+          align="start"
+          direction={["column", "column", "column", "row"]}
+        >
+          <InputGroup flex={["1", "1", "1", "3"]}>
             <InputLeftElement
               pointerEvents="none"
               children={<Search2Icon color="gray.300" />}

@@ -20,7 +20,7 @@ function PostContent({ data, ctx }) {
   React.useEffect(() => {
     ScrollTrigger.matchMedia({
       "(min-width: 768px)": function () {
-        const sidebarHeight = sidebarRef.current.getBoundingClientRect().height
+        const sidebarHeight = sidebarRef.current?.getBoundingClientRect().height
         const remainder =
           window.innerHeight - sidebarHeight - 0.15 * window.innerHeight
 
