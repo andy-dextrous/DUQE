@@ -24,7 +24,12 @@ function PostGrid({
   title = "Categories",
 }) {
   return (
-    <SectionWrapper minH="auto" id="post-grid" mb={[0, 0, 40]}>
+    <SectionWrapper
+      minH="auto"
+      id="post-grid"
+      mb={[0, 0, 40]}
+      className="light"
+    >
       <Container h="100%" maxW={["container.lg", "container.lg", "100%"]}>
         <Stack
           spacing={3}

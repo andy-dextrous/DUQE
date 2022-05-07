@@ -153,7 +153,7 @@ function Modal() {
                   children={<Search2Icon color="dark.400" />}
                 />
                 <Input
-                  variant="flushed"
+                  variant="filled"
                   placeholder="Search site"
                   color="dark.400"
                   _focus={{ bg: "white" }}
