@@ -18,7 +18,7 @@ function GetItDone() {
         h="full"
         w="full"
         align="center"
-        direction={["column", "column", "row"]}
+        direction={["column", "column", "column", "row"]}
         zIndex="1"
         spacing={6}
       >
@@ -35,14 +35,14 @@ function GetItDone() {
             consultants are on site and will get it all done.
           </Heading>
         </VStack>
-        <Box flex="1" py={[40, 40, 0]}>
+        <Box flex="1" py={[40, 40, 40, 0]}>
           <Image
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651118246/DUQE/Corp_D.png"
             position="absolute"
-            maxW={["100%", "100%", "45vw"]}
+            maxW={["100%", "100%", "60vw", "45vw", "40vw", "40vw", "45vw"]}
             right="0"
-            bottom={["-9%", "-9%", "-20%"]}
-            // data-speed={[1, 1, "1.1"]}
+            bottom={["-9%", "-9%", "-12%", "-20%", "-15%", "-15%", "-20%"]}
+            data-speed="1.1"
           />
         </Box>
       </Stack>

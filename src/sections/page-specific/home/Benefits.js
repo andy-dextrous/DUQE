@@ -10,7 +10,7 @@ import { Heading, VStack } from "@chakra-ui/react"
 
 function Benefits() {
   const cross = useRef()
-  const { containerPaddingY } = useVariable()
+  const { containerPaddingY, sidebarMenuWidth, sectionPaddingX } = useVariable()
 
   useEffect(() => {
     ScrollTrigger.matchMedia({
@@ -50,6 +50,7 @@ function Benefits() {
       flexDirection="column"
       pt={containerPaddingY}
       align="center"
+      px={sectionPaddingX}
       _before={{
         content: "''",
         position: "absolute",
@@ -62,7 +63,13 @@ function Benefits() {
         bg: "brandConcrete.default",
       }}
     >
-      <VStack spacing={[8, 8, 12]} mb={20} w="full" maxW="container.lg">
+      <VStack
+        spacing={[8, 8, 12]}
+        mb={20}
+        ml={[0, 0, sidebarMenuWidth]}
+        w="full"
+        maxW="container.lg"
+      >
         <Heading className="jumbo">
           Business setup with <YellowHeading>Benefits</YellowHeading>
         </Heading>

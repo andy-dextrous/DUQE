@@ -12,9 +12,6 @@ function SmoothWrapper({ smoothScroll, children }) {
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
       smooth: 1.4,
-      onUpdate: self => {
-        console.log(self.scrollTrigger.direction)
-      },
       effects: true,
     })
 
@@ -22,6 +19,7 @@ function SmoothWrapper({ smoothScroll, children }) {
 
     return () => {
       smoother.kill()
+      setSmootherInstance(null)
     }
   }, [smoothScroll])
 

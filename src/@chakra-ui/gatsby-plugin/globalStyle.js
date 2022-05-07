@@ -7,7 +7,7 @@ import { base } from "./foundations/typography"
 const globalCSS = {
   main: { overflowX: "hidden", maxW: "100vw" },
   body: { overflowX: "hidden", maxW: "100vw" },
-  "*:focus": { outline: "none", boxShadow: "none" },
+  "body.chakra-ui-light *:focus": { outline: "none", boxShadow: "none" },
 
   "#gatsby-focus-wrapper": {
     outline: "unset !important",

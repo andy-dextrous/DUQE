@@ -1,3 +1,5 @@
+/**** GLOBAL DESIGN VARIABLES ARE PULLED INTO CHAKRA FROM HERE ****/
+
 const THEME_CONFIG = {
   /**** COLORS ****/
   brandColors: {
@@ -9,7 +11,7 @@ const THEME_CONFIG = {
 
   /**** SPACING ****/
   sectionPaddingY: [0],
-  sectionPaddingX: [5, 5, 16, 20, 24, 40, "200px"],
+  sectionPaddingX: [5, 5, 12, 20, 24, 40, "200px"],
   containerPaddingY: [20, 20, 32, 48, 60],
   containerPaddingX: [0],
   componentSpacing: [8, 8, 8, 8, 8, 10, 12],

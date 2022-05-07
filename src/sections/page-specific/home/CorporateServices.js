@@ -86,8 +86,8 @@ function CorporateServices() {
     text.current.innerHTML = data[selected].text
     gsap.fromTo(
       [card.current],
-      { x: -30 },
-      { x: 0, duration: 0.3, delay: 0, ease: "Power3.out" }
+      { x: -30, delay: 0.2 },
+      { x: 0, duration: 0.5, ease: "Power3.in" }
     )
 
     gsap.fromTo(
@@ -95,8 +95,9 @@ function CorporateServices() {
       { y: handlePosition },
       {
         y: handleStops[selected] * trackHeight,
-        duration: 0.3,
-        ease: "Power3.out",
+        delay: 0.1,
+        duration: 0.35,
+        ease: "Power3.in",
         onComplete: () => {
           setHandlePosition(handleStops[selected] * trackHeight)
         },
@@ -108,7 +109,7 @@ function CorporateServices() {
     gsap.fromTo(
       selectedImage,
       { opacity: 0, scale: 1.1 },
-      { opacity: 1, scale: 1, duration: 0.5, ease: "Power3.out" }
+      { opacity: 1, delay: 0.1, duration: 0.35, scale: 1, ease: "Power3.in" }
     )
   }, [selected])
 

@@ -115,7 +115,7 @@ export const globalTextStyles = {
   ".post ul li": { listStylePosition: "inside", listStyleType: "disc" },
   ".post h1.chakra-heading": {
     ...heading,
-    fontSize: ["2xl", "4xl", "5xl"],
+    fontSize: ["2xl", "4xl", "6xl", "6xl", "6xl", "7xl", "7xl"],
     lineHeight: "1",
     letterSpacing: "-0.01em",
     fontWeight: "extrabold",
