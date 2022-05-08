@@ -33,39 +33,39 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
       },
     })
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#how-much-does-it-cost",
-        start: "bottom bottom",
-        pin: true,
-        end: "+=100%",
-        scrub: true,
-        onStart: () => {
-          gsap.set("#how-much-does-it-cost", {
-            css: { overflow: "hidden" },
-          })
-        },
-        onEnterBack: () => {
-          gsap.set("#how-much-does-it-cost", {
-            css: { overflow: "visibility", backgroundColor: "#e0db29" },
-          })
-        },
-      },
-    })
-    tl.to(img.current, {
-      scale: 4,
-      ease: "linear",
-      duration: 20,
-      onComplete: () => {
-        setDarkActive(true)
-        setIsDarkBackground(true)
-        gsap.set("#how-much-does-it-cost", {
-          css: { backgroundColor: "#0b0b0b" },
-        })
-      },
-    })
-    tl.to(button.current, { autoAlpha: 0, delay: 10 })
-    tl.set(img.current, { autoAlpha: 0 })
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: "#how-much-does-it-cost",
+    //     start: "bottom bottom",
+    //     pin: true,
+    //     end: "+=100%",
+    //     scrub: true,
+    //     onStart: () => {
+    //       gsap.set("#how-much-does-it-cost", {
+    //         css: { overflow: "hidden" },
+    //       })
+    //     },
+    //     onEnterBack: () => {
+    //       gsap.set("#how-much-does-it-cost", {
+    //         css: { overflow: "visibility", backgroundColor: "#e0db29" },
+    //       })
+    //     },
+    //   },
+    // })
+    // tl.to(img.current, {
+    //   scale: 4,
+    //   ease: "linear",
+    //   duration: 20,
+    //   onComplete: () => {
+    //     setDarkActive(true)
+    //     setIsDarkBackground(true)
+    //     gsap.set("#how-much-does-it-cost", {
+    //       css: { backgroundColor: "#0b0b0b" },
+    //     })
+    //   },
+    // })
+    // tl.to(button.current, { autoAlpha: 0, delay: 10 })
+    // tl.set(img.current, { autoAlpha: 0 })
   }, [setDarkActive, setIsDarkBackground])
 
   return (
@@ -92,13 +92,13 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
         </Link>
       </VStack>
       <Center mt={[12, 12, 20]}>
-        {" "}
         <Image
           h={["60vh", "60vh", "908px"]}
           src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944008/DUQE/Calculator.png"
           ref={img}
           transformOrigin="center 30%"
           zIndex="2"
+          transform="translateY(1px)"
         />
       </Center>
 
