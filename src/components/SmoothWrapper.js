@@ -13,6 +13,7 @@ function SmoothWrapper({ smoothScroll, children }) {
       content: "#smooth-content",
       smooth: 1.4,
       effects: true,
+      id: "smoother",
     })
 
     setSmootherInstance(smoother)

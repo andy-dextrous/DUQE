@@ -6,9 +6,7 @@ export const SearchWrapperPages = ({ children }) => {
   return (
     <Box flex="1" className="search-results-pages">
       <Box as="header">
-        <Heading as="h3" color="brandBlue.900">
-          Pages
-        </Heading>
+        <Heading as="h3">Pages</Heading>
         <SearchStats type="PAGE" />
       </Box>
       {children}

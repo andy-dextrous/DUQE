@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import { graphql } from "gatsby"
 import { gsap, ScrollTrigger } from "../../../gsap"
+import { useVariable } from "../../../hooks"
 
 import SectionWrapper from "../../../components/SectionWrapper"
 import { WidgetsList } from "../../../components/widgets/WidgetsList"
@@ -8,7 +9,6 @@ import Author from "../../../components/post/Author"
 import { PostEntryContent } from "../../../components/post/PostEntryContent"
 import { PrevNextPostNavigation } from "../../../components/post/PrevNextPostNavigation"
 import { Stack, VStack, Box } from "@chakra-ui/react"
-import { useVariable } from "../../../hooks"
 
 function PostContent({ data, ctx }) {
   const { containerPaddingY, newsletterOffset, topBarHeight } = useVariable()
@@ -24,7 +24,7 @@ function PostContent({ data, ctx }) {
         const remainder =
           window.innerHeight - sidebarHeight - 0.15 * window.innerHeight
 
-        const scrollProgress = gsap.to(sidebarRef.current, {
+        gsap.to(sidebarRef.current, {
           opacity: 1,
           ease: "none",
           scrollTrigger: {
@@ -39,12 +39,11 @@ function PostContent({ data, ctx }) {
             },
           },
         })
-
-        return () => {
-          scrollProgress.kill()
-        }
       },
     })
+    return () => {
+      ScrollTrigger.kill()
+    }
   }, [])
 
   return (
