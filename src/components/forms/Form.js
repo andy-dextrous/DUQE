@@ -29,7 +29,7 @@ function GetForm({ formElements, ...props }) {
     setServerState({ submitting: true })
     axios({
       method: "post",
-      url: process.env.GETFORM_ENDPOINT,
+      url: process.env.GATSBY_GETFORM_ENDPOINT,
       data: new FormData(form),
     })
       .then(r => {
@@ -57,7 +57,7 @@ function GetForm({ formElements, ...props }) {
       <FormControl>{formElements}</FormControl>
     </Box>
   ) : (
-    <Box height={formHeight}>
+    <Box height={formHeight} {...props}>
       <Heading>Success</Heading>
       <Text>Thank you for your enquiry, we'll be in touch soon.</Text>
     </Box>

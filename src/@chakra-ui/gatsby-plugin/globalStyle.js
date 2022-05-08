@@ -5,10 +5,10 @@
 import { base } from "./foundations/typography"
 
 const globalCSS = {
+  /********* UTILITY *********/
   main: { overflowX: "hidden", maxW: "100vw" },
   body: { overflowX: "hidden", maxW: "100vw" },
   "body.chakra-ui-light *:focus": { outline: "none", boxShadow: "none" },
-
   "#gatsby-focus-wrapper": {
     outline: "unset !important",
     transform: "unset !important",
@@ -16,6 +16,11 @@ const globalCSS = {
   ".stop-scroll": {
     overflow: "hidden",
   },
+  ".hidden": {
+    display: "none",
+  },
+
+  /********* SITE-SPECIFIC *********/
   ".subMenuLink": {
     fontSize: ["24px"],
     fontWeight: "bold",

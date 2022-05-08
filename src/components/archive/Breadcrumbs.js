@@ -15,8 +15,8 @@ function Breadcrumbs({ data: breadcrumbs = [] }) {
             <BreadcrumbItem key={i} isCurrentPage={lastCrumb ? true : false}>
               <BreadcrumbLink
                 as={Link}
-                color="brandBlue.default"
-                fontWeight={lastCrumb ? "normal" : "semibold"}
+                color={"brandBlue.default"}
+                fontWeight="semibold"
                 href={lastCrumb ? "#" : breadcrumb.url}
                 fontSize={["sm", "sm", "md"]}
               >

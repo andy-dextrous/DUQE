@@ -29,6 +29,7 @@ function PostContent({ data, ctx }) {
           ease: "none",
           scrollTrigger: {
             trigger: sidebarRef.current,
+            id: "sidebar",
             start: "top 15%",
             endTrigger: containerRef.current,
             end: `bottom ${remainder}px`,
@@ -41,8 +42,10 @@ function PostContent({ data, ctx }) {
         })
       },
     })
+
     return () => {
-      ScrollTrigger.kill()
+      const st = ScrollTrigger.getById("sidebar")
+      if (st) st.kill()
     }
   }, [])
 

@@ -111,9 +111,11 @@ function Sidebar() {
             w="100%"
             className={showLogoMobile && !isMenuOpen ? "" : "hidden"}
           >
-            <Link to="/">
-              <Logo color="white" height={["40px", "40px", "60px"]} />
-            </Link>
+            {!isMenuOpen && (
+              <Link to="/">
+                <Logo color="white" height={["40px", "40px", "60px"]} />
+              </Link>
+            )}
           </Center>
         </GridItem>
         <GridItem

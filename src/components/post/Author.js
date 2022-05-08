@@ -8,6 +8,7 @@ import { SocialShare } from "../../components/social/SocialShare"
 
 const Author = React.forwardRef(({ data, progress, ...props }, ref) => {
   const { createUsers, createCategories } = useThemeOptions()
+  console.log(data)
 
   return (
     <VStack
@@ -40,15 +41,10 @@ const Author = React.forwardRef(({ data, progress, ...props }, ref) => {
               label={`Read more articles by ${data.author.node.firstName}`}
               hasArrow
               placement="right"
-              bg="brandGreen.600"
+              bg="brandYellow.default"
               color="white"
             >
-              <Heading
-                as="h4"
-                fontSize="18px"
-                fontWeight="semibold"
-                color="brandCharcoal.500"
-              >
+              <Heading as="h4" fontSize="18px" fontWeight="semibold">
                 {data.author.node.name}
               </Heading>
             </Tooltip>
@@ -66,7 +62,8 @@ const Author = React.forwardRef(({ data, progress, ...props }, ref) => {
         </Heading>
       </Box>
       {createCategories && <Categories data={data.categories} />}
-      <SocialShare />
+
+      <SocialShare url={data.uri} />
     </VStack>
   )
 })

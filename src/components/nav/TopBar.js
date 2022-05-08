@@ -18,8 +18,8 @@ function TopBar({ startDark }) {
       justify="flex-end"
     >
       <HStack spacing="6" pr="50px">
-        <Link as={GatsbyLink} to="/contact-us">
-          <Button variant="secondary">Login/Sign up</Button>
+        <Link as={GatsbyLink} to="/cost-calculator">
+          <Button variant="secondary">Cost Calculator</Button>
         </Link>
       </HStack>
     </HStack>
