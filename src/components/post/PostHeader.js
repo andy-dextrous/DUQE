@@ -45,6 +45,7 @@ function PostHeader({ data, ctx }) {
         top={["20%", "20%", "-10%"]}
         right="-10%"
         zIndex="-1"
+        data-speed="0.5"
       />
     </SectionWrapper>
   )

@@ -1,12 +1,13 @@
 import React, { useEffect } from "react"
-import SectionWrapper from "../../components/SectionWrapper"
 import { graphql, Link } from "gatsby"
+import { Flip } from "../../gsap"
+
+import SectionWrapper from "../../components/SectionWrapper"
 import VerticalCard from "../../components/common/VerticalCard"
-import { Pagination } from "../../components/archive/Pagination"
-import { Box, Container, Select, SimpleGrid, Stack } from "@chakra-ui/react"
 import StarIcon from "../../assets/icons/StarIcon"
 import SearchToggle from "../../components/search/SearchToggle"
-// import { Search2Icon } from "@chakra-ui/icons"
+import { Pagination } from "../../components/archive/Pagination"
+import { Box, Container, Select, SimpleGrid, Stack } from "@chakra-ui/react"
 
 function PostGrid({
   posts,
@@ -18,6 +19,8 @@ function PostGrid({
   const [selectedPosts, setSelectedPosts] = React.useState(posts)
 
   function filterCategories(e) {
+    Flip.getState(".post-item")
+
     const selection = Array.from(e.target).filter((option, i) => {
       return option.selected
     })
@@ -30,6 +33,12 @@ function PostGrid({
     filteredPosts.length
       ? setSelectedPosts(filteredPosts)
       : setSelectedPosts(posts)
+
+    // Flip.from(state, {
+    //   duration: 0.1,
+    //   ease: "power1.inOut",
+    //   absolute: true,
+    // })
   }
 
   return (
@@ -76,7 +85,7 @@ function PostGrid({
           {selectedPosts.map(post => {
             return (
               <Link to={post.uri} key={post.id}>
-                <Box position="relative">
+                <Box position="relative" className="post-item">
                   <VerticalCard
                     image={
                       post.featuredImage?.node.localFile.childImageSharp
