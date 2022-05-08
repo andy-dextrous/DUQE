@@ -15,7 +15,7 @@ const Perks = () => {
           "scale(1.1)",
           "scale(1.1)",
           "scale(1.1)",
-          "scale(1.2)",
+          "scale(1.1)",
           "scale(1.2)",
         ]}
         xmlns="http://www.w3.org/2000/svg"
