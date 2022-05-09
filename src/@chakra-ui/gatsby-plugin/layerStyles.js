@@ -31,14 +31,13 @@ export const layerStyles = {
   },
   overlay: {
     w: "150%",
-    h: "100%",
+    h: "calc(100% + 5px)",
     zIndex: "1",
     position: "absolute",
     top: "0",
     left: "0",
-    bottom: "0",
     right: "0",
-    bg: "linear-gradient(180deg, rgba(11, 11, 11, 0) 32.43%, #0b0b0b 100%),radial-gradient(circle, rgba(11,11,11,0) 0%, rgba(11,11,11,0) 49%, rgba(11,11,11,1) 100%)",
+    bg: "linear-gradient(180deg, rgba(11, 11, 11, 0) 32.43%, #0b0b0b 90%),radial-gradient(circle, rgba(11,11,11,0) 0%, rgba(11,11,11,0) 49%, rgba(11,11,11,1) 100%)",
     opacity: 1,
   },
   blogSidebar: {

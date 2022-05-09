@@ -87,7 +87,7 @@ function CorporateServices() {
     gsap.fromTo(
       [card.current],
       { x: -30, delay: 0.2 },
-      { x: 0, duration: 0.5, ease: "Power3.in" }
+      { x: 0, duration: 0.8, ease: "Power3.out" }
     )
 
     gsap.fromTo(
@@ -195,7 +195,7 @@ function CorporateServices() {
             gridRow="8/13"
             bg="brandYellow.default"
             p={12}
-            roundedTop={["30px", "30px", "0px"]}
+            roundedTop="30px"
             ref={card}
           >
             <HStack w="full" justify="space-between" align="center">
@@ -215,7 +215,7 @@ function CorporateServices() {
           </GridItem>
         </Grid>
         <Box zIndex="-2" overflow="hidden" ref={imageContainer}>
-          <Box layerStyle="overlay" />
+          <Box layerStyle="overlay" opacity="0.8" />
           <Box layerStyle="overlay" zIndex="-3" bg="dark.default" opacity="1" />
           {data.map((item, index) => {
             return (

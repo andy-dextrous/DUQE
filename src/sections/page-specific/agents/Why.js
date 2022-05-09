@@ -44,6 +44,7 @@ function Why() {
           h="100%"
           flex="1"
           align="flex-start"
+          justify="center"
           p="70px"
         >
           <Heading as="h3" className="thin-h3">
@@ -58,6 +59,7 @@ function Why() {
           h="100%"
           flex="1"
           align="flex-start"
+          justify="center"
           p="70px"
         >
           <Heading as="h3" className="thin-h3">
@@ -73,6 +75,7 @@ function Why() {
           h="100%"
           flex="1"
           align="flex-start"
+          justify="center"
           p="70px"
         >
           <Heading as="h3" className="thin-h3">

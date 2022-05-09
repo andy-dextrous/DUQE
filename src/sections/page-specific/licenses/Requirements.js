@@ -39,6 +39,7 @@ function Requirements() {
           p={[8, 8, 20]}
           align="flex-start"
           rounded="30px"
+          data-speed="1.05"
         >
           <Image
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141452/DUQE/Vector-1.svg"
@@ -89,6 +90,7 @@ function Requirements() {
           p={[8, 8, 20]}
           align="flex-start"
           rounded="30px"
+          data-speed="1.08"
         >
           <Image
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141452/DUQE/Vector.svg"
@@ -296,6 +298,7 @@ function Requirements() {
         height="50vw"
         zIndex="-1"
         outline
+        data-speed="0.7"
       />
     </SectionWrapper>
   )

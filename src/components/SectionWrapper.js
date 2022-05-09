@@ -72,17 +72,18 @@ const SectionWrapper = forwardRef((props, ref) => {
           <>{children}</>
         )}
         {(bgImage || overlay || bgVideo) && (
-          <Box layerStyle="bgImage" ref={ref}>
-            <Box layerStyle="fillSpace" position="relative">
-              {overlay && (
-                <Box
-                  className="overlay"
-                  layerStyle="overlay"
-                  {...overlayStyle}
-                />
-              )}
+          <Box layerStyle="bgImage">
+            {overlay && (
+              <Box className="overlay" layerStyle="overlay" {...overlayStyle} />
+            )}
+            <Box layerStyle="fillSpace" position="relative" overflow="hidden">
               {bgImage && (
-                <SmartImage img={bgImage} layerStyle="bgImage" alt={alt} />
+                <SmartImage
+                  img={bgImage}
+                  layerStyle="bgImage"
+                  alt={alt}
+                  ref={ref}
+                />
               )}
               {bgVideo && <Video id="bgVideo" src={bgVideo} />}
             </Box>
