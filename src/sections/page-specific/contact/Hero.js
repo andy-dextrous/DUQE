@@ -54,7 +54,7 @@ function Hero() {
       bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651107901/Rectangle_4.png"
       h="100vh"
       ref={img}
-      overflow="hidden"
+      zIndex="1"
     >
       <Stack layerStyle="fillSpace" align="center" direction="row">
         <VStack

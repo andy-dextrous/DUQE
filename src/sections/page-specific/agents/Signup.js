@@ -14,7 +14,7 @@ import SectionWrapper from "../../../components/SectionWrapper"
 function Signup() {
   return (
     <SectionWrapper className="light" minH="100vh" my={[0, 0, 40]}>
-      <Stack direction={["column", "column", "row"]} spacing={(8, 8, 12)}>
+      <Stack direction={["column", "column", "row"]} spacing={(12, 12, 12)}>
         <VStack spacing={[8, 8, 24]} flex="1">
           <VStack align="flex-start" spacing={12} w="full">
             <Heading flex="1" className="jumbo">
@@ -25,16 +25,16 @@ function Signup() {
               soluta deleniti odit.
             </Heading>
           </VStack>
-          <VStack spacing={24} w="full">
+          <VStack spacing={[8, 8, 24]} w="full">
             <Stack
               direction={["column", "column", "row"]}
               justify="flex-start"
               w="full"
-              spacing={[8, 8, 12]}
+              spacing={[8, 12, 12]}
             >
               <Box
-                width={["60px", "60px", "100px"]}
-                h={["60px", "60px", "100px"]}
+                width={["40px", "40px", "100px"]}
+                h={["40px", "40px", "100px"]}
                 position="relative"
               >
                 <Heading
@@ -42,8 +42,7 @@ function Signup() {
                   sx={{ "&.jumbo.light": { fontWeight: "light" } }}
                   position="absolute"
                   top="0"
-                  w="full"
-                  h="full"
+                  width="100px"
                   zIndex="1"
                 >
                   1
@@ -80,8 +79,8 @@ function Signup() {
               spacing={[8, 8, 12]}
             >
               <Box
-                width={["60px", "60px", "100px"]}
-                h={["60px", "60px", "100px"]}
+                width={["40px", "40px", "100px"]}
+                h={["50px", "50px", "100px"]}
                 position="relative"
               >
                 <Heading
@@ -126,8 +125,8 @@ function Signup() {
               spacing={[8, 8, 12]}
             >
               <Box
-                width={["60px", "60px", "100px"]}
-                h={["60px", "60px", "100px"]}
+                width={["40px", "40px", "100px"]}
+                h={["50px", "50px", "100px"]}
                 position="relative"
               >
                 <Heading
@@ -139,7 +138,7 @@ function Signup() {
                   h="full"
                   zIndex="1"
                 >
-                  1
+                  3
                 </Heading>
                 <Image
                   src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651111192/DUQE/Motifs_04.svg"
@@ -170,7 +169,7 @@ function Signup() {
         </VStack>
         <VStack spacing={12} align="flex-end" flex="1">
           <VStack
-            p={["70px"]}
+            p={[12, 12, "70px"]}
             w={["100%", "100%", "560px"]}
             bg="brandConcrete.default"
             align="flex-start"

@@ -4,7 +4,8 @@ import { gsap, ScrollTrigger } from "../../../gsap"
 import SectionWrapper from "../../../components/SectionWrapper"
 import ScrollDown from "../../../assets/icons/ScrollDown"
 import YellowHeading from "../../../components/common/YellowHeading"
-import { Heading, Image, Stack, VStack } from "@chakra-ui/react"
+import QIcon from "../../../assets/icons/QIcon"
+import { Heading, Stack, VStack } from "@chakra-ui/react"
 
 function Hero() {
   const img = useRef()
@@ -34,6 +35,7 @@ function Hero() {
       scale: 1.4,
       ease: "linear",
     })
+
     tl.to(
       img2.current,
       {
@@ -56,6 +58,7 @@ function Hero() {
         bg: "linear-gradient(179.45deg, rgba(11, 11, 11, 0) 32.43%, #0B0B0B 95%),radial-gradient(84.77% 84.77% at 73.88% 44.21%, rgba(11, 11, 11, 0) 0%, #0B0B0B 100%)",
       }}
       ref={img}
+      zIndex="1"
     >
       <Stack layerStyle="fillSpace" align="center" direction="row">
         <VStack
@@ -77,12 +80,15 @@ function Hero() {
           </Heading>
         </VStack>
       </Stack>
-      <Image
-        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651108536/DUQE/Q.svg"
+      <QIcon
         position="absolute"
         top="0"
-        right={[0, 0, "50px"]}
+        outline
+        color="#e0db2a"
+        right={["-40vw", "-40vw", "-5%"]}
         opacity="50%"
+        width={["100vw", "100vw", "50vw"]}
+        height="auto"
         ref={img2}
       />
       <ScrollDown />
