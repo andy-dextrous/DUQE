@@ -1,6 +1,6 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import { Link } from "gatsby"
-import { gsap } from "../../gsap"
+import { gsap, ScrollTrigger } from "../../gsap"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import {
@@ -16,57 +16,84 @@ function HomeBlogCard({ post, startVisible = false }) {
   const animateOnMobile = useBreakpointValue([false, false, true])
   const container = useRef()
   const image = useRef()
+  const observer = useRef()
   const throttleX = 0.2
   const throttleY = 0.8
 
-  const onEnter = () => {
-    if (!animateOnMobile) return
+  useEffect(() => {
+    if (window && window.innerWidth < 768) return
+    const onEnter = () => {
+      if (!animateOnMobile) return
 
-    gsap.to(image.current, {
-      opacity: 0.6,
-      duration: 0.2,
-    })
-  }
+      gsap.to(image.current, {
+        opacity: 0.3,
+        duration: 0.2,
+        overwrite: true,
+      })
+    }
 
-  const onMove = ({ clientX, clientY }) => {
-    if (!animateOnMobile || !image.current) return
-    const { x, y, width, height } = image.current?.getBoundingClientRect()
+    const move = (clientX, clientY) => {
+      if (!animateOnMobile || !image.current) return
+      const { x, y, width, height } = image.current?.getBoundingClientRect()
 
-    gsap.to(image.current, {
-      x: () => {
-        return clientX - x - (width / 2) * throttleX
+      gsap.to(image.current, {
+        x: () => {
+          return clientX - x - (width / 2) * throttleX
+        },
+        y: () => {
+          return clientY - y - (height / 2) * throttleY
+        },
+        rotate: () => {
+          return (clientX - x - width / 2) / 100
+        },
+        ease: "Power3.in",
+        opacity: 0.3,
+        duration: 0.35,
+        overwrite: true,
+      })
+    }
+
+    const onLeave = () => {
+      if (!animateOnMobile) return
+      gsap.fromTo(
+        image.current,
+        { opacity: 0.3 },
+        {
+          x: 0,
+          y: 0,
+          duration: 0.3,
+          delay: 0.2,
+          rotate: 0,
+          opacity: 0,
+          overwrite: true,
+        }
+      )
+    }
+
+    observer.current = ScrollTrigger.observe({
+      target: container.current,
+      type: "pointer",
+      onHover: () => {
+        onEnter()
       },
-      y: () => {
-        return clientY - y - (height / 2) * throttleY
+      onHoverEnd: () => {
+        onLeave()
       },
-      rotate: () => {
-        return (clientX - x - width / 2) / 100
+      onMove: e => {
+        move(e.x, e.y)
       },
-      // onInterrupt: () => onLeave(),
-      duration: 0.7,
     })
-  }
+    return () => {
+      observer.current.kill()
+    }
+  }, [image.current])
 
-  const onLeave = () => {
-    if (!animateOnMobile) return
-    gsap.to(image.current, {
-      x: 0,
-      y: 0,
-      duration: 0.3,
-      delay: 0.2,
-      rotate: 0,
-      opacity: 0,
-    })
-  }
   return (
     <VStack
       spacing={4}
       align="start"
       width="100%"
       position="relative"
-      onPointerMove={onMove}
-      onMouseLeave={onLeave}
-      onMouseEnter={onEnter}
       ref={container}
     >
       <Text
@@ -100,16 +127,17 @@ function HomeBlogCard({ post, startVisible = false }) {
         </Button>
       </Link>
       <Box
-        sx={{
-          position: "absolute",
-          left: "-5%",
-          top: "0",
-          height: "100%",
-          maxWidth: "60%",
-          zIndex: "0",
-          opacity: !startVisible ? "0" : "0.3",
-          filter: "grayscale(100%)",
-        }}
+        position="absolute"
+        left={["unset", "unset", "-5%"]}
+        right={[0, 0, "unset"]}
+        top="0"
+        h="100%"
+        w={["100%", "50%", "60%"]}
+        maxW={["100%", "100%", "60%"]}
+        zIndex="0"
+        opacity={[0.3, 0.3, startVisible ? 0.3 : 0]}
+        pointerEvents="none"
+        filter="grayscale(100%)"
         ref={image}
       >
         <GatsbyImage
@@ -118,8 +146,7 @@ function HomeBlogCard({ post, startVisible = false }) {
           )}
           alt={post.featuredImage.node.altText}
           objectFit="cover"
-          width="100%"
-          height="100%"
+          imgStyle={{ width: "100%", height: "100%" }}
         />
       </Box>
     </VStack>
