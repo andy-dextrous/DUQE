@@ -20,5 +20,5 @@ export default function useStopScroll(bool) {
     } else {
       body.classList.remove("stop-scroll")
     }
-  }, [bool])
+  }, [bool, smootherInstance])
 }

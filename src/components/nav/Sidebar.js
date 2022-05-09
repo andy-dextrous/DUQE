@@ -1,31 +1,19 @@
-import React, { useContext, useRef, useState } from "react"
+import React, { useRef, useState } from "react"
 import { Link } from "gatsby"
-import { MenuContext } from "../Layout"
 import { useRgba } from "../../hooks/useRgba"
 import { useThemeOptions } from "../../hooks/useThemeOptions"
-// import { gsap, ScrollTrigger } from "../../gsap"
 
 import { SocialFollows } from "../social/SocialFollows"
-import Hamburger from "./Hamburger"
 import Logo from "../../assets/logos/Logo"
 import useContrastingColor from "../../hooks/useContrastingColor"
-import {
-  Box,
-  Center,
-  Flex,
-  Grid,
-  GridItem,
-  useBreakpointValue,
-} from "@chakra-ui/react"
+import { Box, Center, Flex, Grid, GridItem } from "@chakra-ui/react"
 
 function Sidebar() {
   const sidebarRef = useRef()
-  const ref = React.useRef()
+  const ref = useRef()
   const { sidebarMenuWidth } = useThemeOptions()
-  const { isMenuOpen } = useContext(MenuContext)
   const [color, setColor] = useState("white")
   const borderColor = useRgba("#bbbbbb", 0.3)
-  const showLogoMobile = useBreakpointValue([true, true, false])
 
   useContrastingColor({ color, setColor }, ref, { fill: color }, ".chakra-icon")
 
