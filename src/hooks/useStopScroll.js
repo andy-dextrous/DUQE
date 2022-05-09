@@ -10,9 +10,15 @@ export default function useStopScroll(bool) {
   }, [bool, smootherInstance])
 
   useEffect(() => {
+    if (smootherInstance) return
     const body = document.querySelector("body")
-    bool
-      ? body.classList.add("stop-scroll")
-      : body.classList.remove("stop-scroll")
+    if (bool) {
+      // timeout masks the visible layout shift from overflow hidden on body
+      setTimeout(() => {
+        body.classList.add("stop-scroll")
+      }, 270)
+    } else {
+      body.classList.remove("stop-scroll")
+    }
   }, [bool])
 }

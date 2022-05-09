@@ -42,8 +42,8 @@ function Modal() {
       },
       {
         autoAlpha: 1,
-        duration: 0.2,
-        ease: "power3.out",
+        duration: 0.5,
+        ease: "expo.inOut",
       }
     )
     navAnimation.current = tl
@@ -60,11 +60,11 @@ function Modal() {
 
   return (
     <Flex
+      as="nav"
       px={sectionPaddingX}
       pt={mobileNavHeight}
-      as="nav"
-      id="navPopup"
-      width="100vw"
+      h="100vh"
+      w="100vw"
       justify="center"
       zIndex="modal"
       position="fixed"
@@ -72,8 +72,9 @@ function Modal() {
       left="0"
       top="0"
       overflow={["scroll", "scroll", "hidden"]}
-      h="100vh"
-      bg="dark.default"
+      bg="rgba(11,11,11,.95)"
+      sx={{ "backdrop-filter": "blur(10px)" }}
+      id="navPopup"
       ref={menuWrapper}
     >
       <Box w="full" maxW="container.xl" h={["auto", "auto", "auto", "full"]}>

@@ -29,35 +29,6 @@ function Sidebar() {
 
   useContrastingColor({ color, setColor }, ref, { fill: color }, ".chakra-icon")
 
-  // useEffect(() => {
-  //   if (showNavScrollUp.current) return
-  //   const tl = gsap.timeline({
-  //     paused: true,
-  //     duration: 0.2,
-  //   })
-  //   tl.from(sidebarRef.current, {
-  //     yPercent: -100,
-  //   })
-
-  //   ScrollTrigger.matchMedia({
-  //     "(max-width: 768px)": function () {
-  //       ScrollTrigger.create({
-  //         trigger: document.querySelector("main"),
-  //         start: "top 0",
-  //         end: "bottom 99%",
-  //         onUpdate: self => {
-  //           console.log(self.direction)
-  //           self.direction === -1 ? tl.play() : tl.reverse()
-  //         },
-  //       })
-  //     },
-  //   })
-
-  //   return () => {
-  //     tl.kill()
-  //   }
-  // }, [])
-
   return (
     <Flex
       as="aside"
@@ -70,17 +41,13 @@ function Sidebar() {
       h={["70px", "70px", "100vh"]}
       align="center"
       justify="center"
-      borderRight={[
-        "none",
-        "none",
-        `1px solid ${isMenuOpen ? "transparent" : borderColor}`,
-      ]}
+      borderRight={["none", "none", `1px solid ${borderColor}`]}
       borderBottom={[
-        `1px solid ${isMenuOpen ? "transparent" : borderColor}`,
-        `1px solid ${isMenuOpen ? "transparent" : borderColor}`,
+        `1px solid ${borderColor}`,
+        `1px solid ${borderColor}`,
         "none",
       ]}
-      zIndex="popover"
+      zIndex="sticky"
       ref={sidebarRef}
     >
       <Grid
@@ -90,32 +57,16 @@ function Sidebar() {
         layerStyle="fillSpace"
       >
         <GridItem
-          gridRow={["1 / 2"]}
-          gridColumn={["1 / 2"]}
-          display="flex"
-          justifyContent={["flex-start", "flex-start", "center"]}
-          alignItems={["center", "center", "flex-start"]}
-          py={[2, 2, 8]}
-          px={[2, 2, 0]}
-        >
-          <Hamburger color="white" />
-        </GridItem>
-        <GridItem
           gridRow={["1/2", "1/2", "2/3"]}
           gridColumn={["2/3", "2/3", "1/2"]}
           layerStyle="center"
           py={[2, 2, 8]}
           px={[2, 2, 0]}
         >
-          <Center
-            w="100%"
-            className={showLogoMobile && !isMenuOpen ? "" : "hidden"}
-          >
-            {!isMenuOpen && (
-              <Link to="/">
-                <Logo color="white" height={["40px", "40px", "60px"]} />
-              </Link>
-            )}
+          <Center w="100%">
+            <Link to="/">
+              <Logo color="white" height={["40px", "40px", "60px"]} />
+            </Link>
           </Center>
         </GridItem>
         <GridItem
@@ -126,18 +77,16 @@ function Sidebar() {
           py={[2, 2, 8]}
           px={[2, 2, 0]}
         >
-          {!isMenuOpen && (
-            <Box ref={ref} display={["none", "none", "block"]}>
-              <SocialFollows
-                direction="column"
-                spacing={8}
-                align="center"
-                color={color}
-                size="sm"
-                h="176px"
-              />
-            </Box>
-          )}
+          <Box ref={ref} display={["none", "none", "block"]}>
+            <SocialFollows
+              direction="column"
+              spacing={8}
+              align="center"
+              color={color}
+              size="sm"
+              h="176px"
+            />
+          </Box>
         </GridItem>
       </Grid>
     </Flex>

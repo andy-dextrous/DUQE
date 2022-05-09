@@ -6,6 +6,7 @@ import { ScrollTrigger } from "../../gsap"
 import ToggleIcon from "../../assets/icons/MenuToggleIcon"
 import { IoMdClose } from "react-icons/io"
 import { Button, Flex, Icon } from "@chakra-ui/react"
+import { useVariable } from "../../hooks"
 
 function Hamburger() {
   const { setIsMenuOpen, isMenuOpen } = useContext(MenuContext)
@@ -13,6 +14,7 @@ function Hamburger() {
   const toggleMenu = useRef()
   const observer = useRef()
   const [color, setColor] = useState("white")
+  const { sidebarMenuWidth, mobileNavHeight } = useVariable()
 
   useContrastingColor({ color, setColor }, container, { fill: color })
 
@@ -31,10 +33,15 @@ function Hamburger() {
 
   return (
     <Flex
-      zIndex="popover"
-      h="100%"
+      zIndex="tooltip"
+      position="fixed"
+      w={["auto", "auto", sidebarMenuWidth]}
+      py={[2, 2, 8]}
+      px={[2, 2, 0]}
+      h={[mobileNavHeight, mobileNavHeight, "auto"]}
+      justify="center"
+      align="center"
       ref={container}
-      alignItems={["center", "center", "flex-start"]}
     >
       <Button
         className={isMenuOpen ? "active" : ""}

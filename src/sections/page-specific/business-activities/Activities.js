@@ -74,7 +74,7 @@ function Activities() {
       }}
     >
       <Box borderRadius="30px" overflow="hidden" w="full">
-        <Tabs w="full" bg="#f6f6f6" py={8} display={["none", "none", "flex"]}>
+        <Tabs w="full" bg="#f6f6f6" p={8} display={["none", "none", "flex"]}>
           <TabList
             display="flex"
             flexDirection="column"
