@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react"
 import axios from "axios"
 import { Box, FormControl, Heading, Text } from "@chakra-ui/react"
 
+export const SubmitContext = React.createContext()
+
 function GetForm({ formElements, ...props }) {
   const [submitted, setSubmitted] = useState(false)
   const [serverState, setServerState] = useState({
@@ -54,7 +56,9 @@ function GetForm({ formElements, ...props }) {
       {...props}
     >
       <input type="hidden" name="form-name" value="contact" />
-      <FormControl>{formElements}</FormControl>
+      <SubmitContext.Provider value={serverState}>
+        <FormControl>{formElements}</FormControl>
+      </SubmitContext.Provider>
     </Box>
   ) : (
     <Box height={formHeight} {...props}>

@@ -1,16 +1,20 @@
+import React, { useContext } from "react"
+import { SubmitContext } from "./Form"
 import {
   Button,
   HStack,
   Input,
   Select,
   SimpleGrid,
+  Spinner,
   Textarea,
   useBreakpointValue,
 } from "@chakra-ui/react"
-import React from "react"
 
 function ContactPageElements() {
   const buttonSize = useBreakpointValue(["sm", "sm", "lg"])
+  const serverState = useContext(SubmitContext)
+
   return (
     <SimpleGrid spacing={4} columns={[1, 1, 2]} flex="1">
       <Input
@@ -19,7 +23,6 @@ function ContactPageElements() {
         w="full"
         name="first name"
         fontSize={["xs", "sm", "md"]}
-        // variant="filled"
         bg="dark.50"
       />
       <Input
@@ -70,9 +73,13 @@ function ContactPageElements() {
       />
       <input type="hidden" id="page" name="Page" value="Contact Page"></input>
       <HStack justify="flex-start" mt={4}>
-        <Button size={buttonSize} type="submit">
-          Submit
-        </Button>
+        {!serverState.submitting ? (
+          <Button size={buttonSize} type="submit">
+            Submit
+          </Button>
+        ) : (
+          <Spinner color="brandBlue.default" />
+        )}
       </HStack>
     </SimpleGrid>
   )
