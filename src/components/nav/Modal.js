@@ -73,7 +73,7 @@ function Modal() {
       top="0"
       overflow={["scroll", "scroll", "hidden"]}
       bg="rgba(11,11,11,.95)"
-      sx={{ "backdrop-filter": "blur(10px)" }}
+      sx={{ backdropFilter: "blur(10px)" }}
       id="navPopup"
       ref={menuWrapper}
     >

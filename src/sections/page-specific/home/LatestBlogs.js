@@ -1,4 +1,5 @@
 import { Button, Heading, Stack, StackDivider, VStack } from "@chakra-ui/react"
+import { graphql, useStaticQuery } from "gatsby"
 import React, { useEffect, useRef } from "react"
 import DIcon from "../../../assets/icons/DIcon"
 import HomeBlogCard from "../../../components/archive/HomeBlogCard"
@@ -8,6 +9,25 @@ import { gsap, ScrollTrigger } from "../../../gsap"
 
 function LatestBlogs() {
   const dShape = useRef()
+
+  const data = useStaticQuery(graphql`
+    query Latest_Posts {
+      allWpPost(limit: 3, sort: { fields: date, order: DESC }) {
+        nodes {
+          title
+          date(formatString: "DD MM YYYY")
+          excerpt
+          uri
+          featuredImage {
+            node {
+              ...IMAGE_DATA
+            }
+          }
+        }
+      }
+    }
+  `)
+
   useEffect(() => {
     ScrollTrigger.matchMedia({
       "(min-width: 768px)": function () {
@@ -48,9 +68,15 @@ function LatestBlogs() {
           divider={<StackDivider borderColor="dark.800" />}
           spacing={[8, 8, 16]}
         >
-          <HomeBlogCard startVisible />
-          <HomeBlogCard />
-          <HomeBlogCard />
+          {data.allWpPost.nodes.map((post, index) => {
+            return (
+              <HomeBlogCard
+                key={post.uri}
+                startVisible={index === 0}
+                post={post}
+              />
+            )
+          })}
         </VStack>
       </Stack>
       <DIcon

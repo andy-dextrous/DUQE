@@ -6,6 +6,7 @@ import useStopScroll from "../hooks/useStopScroll"
 import { useThemeOptions } from "../hooks/useThemeOptions"
 import { Box, Portal } from "@chakra-ui/react"
 import { showBreakpoints } from "../utils/showBreakpoints"
+import "../assets/MyFontsWebfontsKit.css"
 
 export const MenuContext = React.createContext()
 export const DarkContext = React.createContext()

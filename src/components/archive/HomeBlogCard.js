@@ -1,23 +1,27 @@
+import React, { useRef } from "react"
+import { Link } from "gatsby"
+import { gsap } from "../../gsap"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import {
+  Box,
   Button,
   Heading,
-  Image,
   Text,
   useBreakpointValue,
   VStack,
 } from "@chakra-ui/react"
-import React, { useRef } from "react"
-import { gsap } from "../../gsap"
 
-function HomeBlogCard({ startVisible = false }) {
+function HomeBlogCard({ post, startVisible = false }) {
   const animateOnMobile = useBreakpointValue([false, false, true])
-  const image = useRef()
   const container = useRef()
+  const image = useRef()
   const throttleX = 0.2
   const throttleY = 0.8
 
   const onEnter = () => {
     if (!animateOnMobile) return
+
     gsap.to(image.current, {
       opacity: 0.6,
       duration: 0.2,
@@ -25,8 +29,8 @@ function HomeBlogCard({ startVisible = false }) {
   }
 
   const onMove = ({ clientX, clientY }) => {
-    if (!animateOnMobile) return
-    const { x, y, width, height } = image.current.getBoundingClientRect()
+    if (!animateOnMobile || !image.current) return
+    const { x, y, width, height } = image.current?.getBoundingClientRect()
 
     gsap.to(image.current, {
       x: () => {
@@ -38,7 +42,7 @@ function HomeBlogCard({ startVisible = false }) {
       rotate: () => {
         return (clientX - x - width / 2) / 100
       },
-      onInterrupt: () => onLeave(),
+      // onInterrupt: () => onLeave(),
       duration: 0.7,
     })
   }
@@ -61,8 +65,8 @@ function HomeBlogCard({ startVisible = false }) {
       width="100%"
       position="relative"
       onPointerMove={onMove}
-      onPointerLeave={onLeave}
-      onPointerEnter={onEnter}
+      onMouseLeave={onLeave}
+      onMouseEnter={onEnter}
       ref={container}
     >
       <Text
@@ -70,35 +74,54 @@ function HomeBlogCard({ startVisible = false }) {
         fontWeight="bold"
         textTransform="uppercase"
         zIndex="1"
+        pointerEvents="none"
       >
-        18 Apr,2022
+        {post.date}
       </Text>
-      <Heading as="h4" color="white" textTransform="unset" zIndex="1">
-        Can Brits do business in Dubai, UAE?
+      <Heading
+        as="h4"
+        color="white"
+        textTransform="unset"
+        zIndex="1"
+        pointerEvents="none"
+      >
+        {post.title}
       </Heading>
-      <Text color="white" zIndex="1">
-        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-        sint. Velit officia consequat duis enim velit mollit. Exercitation
-        veniam consequat sunt nostrud amet.
-      </Text>
-      <Button variant="secondary" size="sm">
-        Read more
-      </Button>
-      <Image
-        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,h_300,q_auto/v1650858611/DUQE/DUQE_Hero.jpg"
-        position="absolute"
-        left={[0, 0, "-5%"]}
-        top={["-15%", "-15%", "-25%"]}
-        bottom="0"
-        height={["80%", "80%", "150%"]}
-        maxW={["100%", "100%", "60%"]}
-        objectFit="cover"
-        py={2}
-        zIndex="0"
-        opacity={[0.6, 0.6, startVisible ? "0.6" : "0"]}
-        mt={0}
-        ref={image}
+      <Box
+        sx={{ p: { color: "white" } }}
+        zIndex="1"
+        noOfLines="2"
+        pointerEvents="none"
+        dangerouslySetInnerHTML={{ __html: post.excerpt }}
       />
+      <Link to={post.uri}>
+        <Button variant="secondary" size="sm">
+          Read more
+        </Button>
+      </Link>
+      <Box
+        sx={{
+          position: "absolute",
+          left: "-5%",
+          top: "0",
+          height: "100%",
+          maxWidth: "60%",
+          zIndex: "0",
+          opacity: !startVisible ? "0" : "0.3",
+          filter: "grayscale(100%)",
+        }}
+        ref={image}
+      >
+        <GatsbyImage
+          image={getImage(
+            post.featuredImage.node.localFile.childImageSharp.gatsbyImageData
+          )}
+          alt={post.featuredImage.node.altText}
+          objectFit="cover"
+          width="100%"
+          height="100%"
+        />
+      </Box>
     </VStack>
   )
 }

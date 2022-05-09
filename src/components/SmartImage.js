@@ -70,6 +70,7 @@ export const SmartImage = forwardRef(
       // If a single gatsby image is passed, use Gatsby Image
       if (typeof img === "object" && !Array.isArray(img)) {
         const image = img.localFile.childImageSharp?.gatsbyImageData
+
         return image
       }
     }
@@ -85,7 +86,7 @@ export const SmartImage = forwardRef(
           alt={img.altText}
           imgStyle={imgStyle}
           style={style}
-          ref={ref}
+          // ref={ref}
           {...props}
         />
       ) : parallax ? (

@@ -1,6 +1,7 @@
 export const Button = {
   baseStyle: {
     fontWeight: "bold",
+    fontFamily: "HelveticaNowDisplay-Bd",
     textTransform: "uppercase",
     transformOrigin: "center",
     letterSpacing: "0",

@@ -18,14 +18,15 @@ export const fontSizes = {
 }
 
 export const fonts = {
-  heading: `"Helvetica Neue ", ${theme.fonts.heading}`,
-  body: `"Helvetica Neue ", ${theme.fonts.body}`,
+  heading: `"HelveticaNowDisplay-Bd", ${theme.fonts.heading}`,
+  body: `"HelveticaNowText-Regular", ${theme.fonts.body}`,
 }
 
 export const p = {
   fontFamily: fonts.body,
   fontSize: "18px",
   color: "dark.700",
+  letterSpacing: "-0.003em",
   lineHeight: 1.7,
 }
 export const a = {
@@ -38,7 +39,7 @@ export const a = {
 }
 const heading = {
   fontFamily: fonts.heading,
-  fontWeight: "800",
+  fontWeight: "700",
   fontStyle: "normal",
 }
 
@@ -94,6 +95,8 @@ export const globalTextStyles = {
     fontSize: ["24px", "24px", "30px"],
     fontWeight: "light",
     textTransform: "unset",
+    fontFamily: "HelveticaNowText-Regular",
+    letterSpacing: "-0.02em",
   },
   ".thin.chakra-heading": {
     fontWeight: "normal",

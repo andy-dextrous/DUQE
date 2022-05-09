@@ -1,0 +1,45 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 4808978, 2022-05-09T01:33:25-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: HelveticaNowDisplay-Md by Monotype
+ * URL: https://www.myfonts.com/fonts/mti/helvetica-now/display-medium/
+ * Copyright: Copyright &amp;#x00A9; 2019 Monotype Imaging Inc. All rights reserved.
+ * 
+ * Webfont: HelveticaNowText-Regular by Monotype
+ * URL: https://www.myfonts.com/fonts/mti/helvetica-now/text-regular/
+ * Copyright: Copyright &amp;#x00A9; 2019 Monotype Imaging Inc. All rights reserved.
+ * 
+ * Webfont: HelveticaNowDisplay-Bd by Monotype
+ * URL: https://www.myfonts.com/fonts/mti/helvetica-now/display-bold/
+ * Copyright: Copyright &amp;#x00A9; 2019-2020 Monotype Imaging Inc. All rights reserved.
+ * 
+ * 
+ * 
+ * © 2022 MyFonts Inc
+*/
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/496112");
+
+@font-face {
+  font-family: "HelveticaNowText-Regular";
+  src: url("fonts/HelveticaNowTextRegular/font.woff2") format("woff2"),
+    url("fonts/HelveticaNowTextRegular/font.woff") format("woff");
+}
+@font-face {
+  font-family: "HelveticaNowDisplay-Bd";
+  src: url("fonts/HelveticaNowDisplayBd/font.woff2") format("woff2"),
+    url("fonts/HelveticaNowDisplayBd/font.woff") format("woff");
+}
+@font-face {
+  font-family: "HelveticaNowDisplay-Md";
+  src: url("/fonts/HelveticaNowDisplayMd/font.woff2") format("woff2"),
+    url("fonts/HelveticaNowDisplayMd/font.woff") format("woff");
+}
