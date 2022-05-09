@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql, Link } from "gatsby"
 import { Flip } from "../../gsap"
 
@@ -9,13 +9,7 @@ import SearchToggle from "../../components/search/SearchToggle"
 import { Pagination } from "../../components/archive/Pagination"
 import { Box, Container, Select, SimpleGrid, Stack } from "@chakra-ui/react"
 
-function PostGrid({
-  posts,
-  ctx,
-  categories,
-  currentSlug,
-  title = "Categories",
-}) {
+function PostGrid({ posts, ctx, categories }) {
   const [selectedPosts, setSelectedPosts] = React.useState(posts)
 
   function filterCategories(e) {
