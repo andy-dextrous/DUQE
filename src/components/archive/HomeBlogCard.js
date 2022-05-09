@@ -62,7 +62,7 @@ function HomeBlogCard({ post, startVisible = false }) {
           x: 0,
           y: 0,
           duration: 0.3,
-          delay: 0.2,
+          delay: 0.05,
           rotate: 0,
           opacity: 0,
           overwrite: true,
