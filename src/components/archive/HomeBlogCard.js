@@ -66,6 +66,7 @@ function HomeBlogCard({ post, startVisible = false }) {
           rotate: 0,
           opacity: 0,
           overwrite: true,
+          ease: "back.in",
         }
       )
     }
