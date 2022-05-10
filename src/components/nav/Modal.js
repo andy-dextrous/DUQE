@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import { gsap, ScrollTrigger } from "../../gsap"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
 import { MenuContext } from "../Layout"
-import { Search2Icon } from "@chakra-ui/icons"
 import { SocialFollows } from "../social/SocialFollows"
 import { useVariable } from "../../hooks"
 import {
@@ -13,15 +12,11 @@ import {
   Stack,
   Center,
   Image,
-  Input,
-  InputGroup,
-  InputLeftElement,
   Divider,
   Button,
   Flex,
   Box,
 } from "@chakra-ui/react"
-import { SearchForm } from "../search/SearchForm"
 
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
