@@ -7,6 +7,7 @@ import { SocialFollows } from "../social/SocialFollows"
 import Logo from "../../assets/logos/Logo"
 import useContrastingColor from "../../hooks/useContrastingColor"
 import { Box, Center, Flex, Grid, GridItem } from "@chakra-ui/react"
+import SearchToggle from "../search/SearchToggle"
 
 function Sidebar() {
   const sidebarRef = useRef()
@@ -59,12 +60,24 @@ function Sidebar() {
         </GridItem>
         <GridItem
           gridRow={["1/2", "1/2", "3/4"]}
+          gridColumn={["3/4", "3/4", "1/2"]}
           display="flex"
-          justifyContent="center"
-          alignItems="flex-end"
+          justifyContent={["flex-end", "flex-end", "center"]}
+          alignItems={["center", "center", "flex-end"]}
           py={[2, 2, 8]}
           px={[2, 2, 0]}
         >
+          <SearchToggle
+            bg="transparent"
+            color="white"
+            border="none"
+            transformOrigin="50% 50%"
+            _hover={{ transform: "scale(1.2)" }}
+            _focus={{ color: "dark.default" }}
+            _active={{ color: "dark.default" }}
+            rounded="full"
+            display={["flex", "noneflex", "none"]}
+          />
           <Box ref={ref} display={["none", "none", "block"]}>
             <SocialFollows
               direction="column"

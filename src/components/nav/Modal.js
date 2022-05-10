@@ -96,7 +96,7 @@ function Modal() {
               spacing={[4, 8, 8, 12]}
               p={[0, 0, 12, 8, 16, 0]}
               justify="center"
-              flex={[4]}
+              flex={[2]}
             >
               <VStack
                 spacing={[2, 2, 20]}
@@ -122,7 +122,7 @@ function Modal() {
               w="full"
               align="flex-start"
               justify={["flex-start", "flex-start", "flex-start"]}
-              flex={[3, 3, 2]}
+              flex={[3, 3, 1.5]}
               spacing={[4, 4, 8, 12]}
               px={[0, 0, 12, 16, 20]}
               py={[0, 8, 12, 16, 20]}
@@ -131,7 +131,7 @@ function Modal() {
                 pl={[0]}
                 align="flex-start"
                 ref={subMenuRef}
-                spacing={[4, 4, 16]}
+                spacing={[4, 4, 12]}
               >
                 {subMenu.menuItems.nodes.map(item => {
                   return (
@@ -149,19 +149,7 @@ function Modal() {
               </VStack>
             </VStack>
             <VStack flex="1" spacing={12} align="flex-start" w="full">
-              {/* <InputGroup>
-                <InputLeftElement
-                  pointerEvents="none"
-                  children={<Search2Icon color="dark.400" />}
-                />
-                <Input
-                  variant="filled"
-                  placeholder="Search site"
-                  color="dark.400"
-                  _focus={{ bg: "white" }}
-                />
-              </InputGroup> */}
-              <SearchForm />
+              {/* <SearchForm /> */}
               <VStack align="flex-start" pb={[20, 20, 0]}>
                 <Text color="dark.400">Other links</Text>
                 <Text color="white" fontWeight="bold">

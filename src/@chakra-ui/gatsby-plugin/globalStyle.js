@@ -38,6 +38,9 @@ const globalCSS = {
   ul: {
     my: 6,
   },
+  "::selection": {
+    backgroundColor: "brandBlue.100",
+  },
 
   ...base,
 }

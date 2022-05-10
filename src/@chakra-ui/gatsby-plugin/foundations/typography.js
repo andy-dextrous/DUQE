@@ -27,7 +27,7 @@ export const p = {
   fontSize: "18px",
   color: "dark.700",
   letterSpacing: "-0.003em",
-  lineHeight: 1.7,
+  lineHeight: 1.6,
 }
 export const a = {
   color: "brandBlue.default",
@@ -56,11 +56,12 @@ export const h2 = {
   fontSize: ["3xl", "4xl", "5xl"],
   lineHeight: "1.1",
   fontWeight: "extrabold",
-  letterSpacing: "-2px",
+  letterSpacing: "-1px",
 }
 
 export const h3 = {
   ...heading,
+  letterSpacing: "-1px",
   fontSize: ["2xl", "3xl", "3xl"],
 }
 
@@ -92,9 +93,10 @@ export const blockquote = {
 
 export const globalTextStyles = {
   ".thin-h3.chakra-heading": {
-    fontSize: ["24px", "24px", "30px"],
+    fontSize: ["24px", "24px", "28px"],
     fontWeight: "light",
     textTransform: "unset",
+    lineHeight: "1.3",
     fontFamily: "HelveticaNowText-Regular",
     letterSpacing: "-0.02em",
   },
@@ -125,11 +127,12 @@ export const globalTextStyles = {
     textTransform: "uppercase",
   },
   ".chakra-text.primaryMenuLink": {
-    fontSize: ["2xl", "2xl", "55px"],
+    fontSize: ["3xl", "3xl", "55px"],
     fontWeight: "extrabold",
     textTransform: "uppercase",
     lineHeight: "60px",
     color: "white",
+    fontFamily: "HelveticaNowDisplay-Bd",
     _hover: {
       color: "brandYellow.default",
     },
@@ -146,6 +149,7 @@ export const globalTextStyles = {
     fontSize: ["20px", "20px", "36px"],
     color: "brandYellow.default",
     fontWeight: "300",
+    letterSpacing: "-0.02em",
   },
 }
 

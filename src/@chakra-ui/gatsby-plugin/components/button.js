@@ -4,7 +4,7 @@ export const Button = {
     fontFamily: "HelveticaNowDisplay-Bd",
     textTransform: "uppercase",
     transformOrigin: "center",
-    letterSpacing: "0",
+    letterSpacing: "0.5px",
     borderRadius: "10px",
     zIndex: 1,
     position: "relative",
@@ -52,7 +52,7 @@ export const Button = {
       bg: "brandYellow.default",
       color: "dark.default",
       p: { color: "dark.default" },
-      _before: { bg: "white" },
+      _before: { bg: "brandYellow.200" },
       _after: { bg: "brandYellow.default" },
     },
     outlineWhite: {
@@ -75,8 +75,9 @@ export const Button = {
       borderRadius: "full",
     },
     socialShare: {
-      bg: "dark.50",
+      bg: "white",
       borderRadius: "full",
+      color: "dark.default",
     },
     menuToggle: {
       width: ["2.7rem", "2.7rem", "3.25rem"],

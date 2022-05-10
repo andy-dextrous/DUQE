@@ -18,7 +18,12 @@ export const SearchResults = ({ posts }) => {
       >
         {posts.map(post => {
           return (
-            <Box as="li" py={1} key={post.slug}>
+            <Box
+              as="li"
+              py={1}
+              key={post.slug}
+              sx={{ listStyle: "none !important" }}
+            >
               <Link
                 to={post.uri}
                 className="result"

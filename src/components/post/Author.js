@@ -15,7 +15,7 @@ const Author = React.forwardRef(({ data, progress, ...props }, ref) => {
       spacing={6}
       align="start"
       p={[8, 8, 16]}
-      bg={["brandYellow.default", "brandYellow.default", "transparent"]}
+      bg={["brandYellow.default", "brandYellow.default", "brandConcrete.100"]}
       ref={ref}
       width={["100%", "100%", "auto"]}
       rounded="2xl"
@@ -28,6 +28,7 @@ const Author = React.forwardRef(({ data, progress, ...props }, ref) => {
           display={["none", "none", "block"]}
           h="5px"
           mb="12"
+          bg="white"
           sx={{
             "div[role=progressbar]": {
               bg: "brandYellow.default",
