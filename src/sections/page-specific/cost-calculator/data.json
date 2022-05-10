@@ -1,0 +1,99 @@
+[
+  {
+    "id": 0,
+    "question": "",
+    "options": [],
+    "type": "",
+    "multi": false,
+    "answer": "",
+    "isFinalPage": false,
+    "isFirstPage": true
+  },
+  {
+    "id": 1,
+    "question": "How long do you want to license your business?",
+    "options": ["1 year", "2 years", "3 years", "4 years", "5 years"],
+    "type": "dropdown",
+    "multi": false,
+    "answer": "",
+    "isFinalPage": false,
+    "isFirstPage": false
+  },
+  {
+    "id": 2,
+    "question": "No. of Employees",
+    "options": ["1 employee", "2-5 employees", "6-10 employees"],
+    "type": "dropdown",
+    "multi": false,
+    "answer": "",
+    "isFinalPage": false,
+    "isFirstPage": false
+  },
+  {
+    "id": 3,
+    "question": "How many business activities do you need?",
+    "options": ["Activity 1", "Activity 2", "Activity 3", "Activity 4"],
+    "type": "radio",
+    "multi": true,
+    "answer": "",
+    "isFinalPage": false,
+    "isFirstPage": false
+  },
+  {
+    "id": 4,
+    "question": "Do you have a Business Plan?",
+    "options": ["Yes", "No"],
+    "type": "radio",
+    "multi": false,
+    "answer": "",
+    "isFinalPage": false,
+    "isFirstPage": false
+  },
+  {
+    "id": 5,
+    "question": "Are you currently living in the UAE?",
+    "options": ["Yes", "No"],
+    "type": "radio",
+    "multi": false,
+    "answer": "",
+    "isFinalPage": false,
+    "isFirstPage": false
+  },
+  {
+    "id": 6,
+    "question": "Annual Turnover",
+    "options": [
+      "AED 20,000 - 100,000",
+      "AED 100,000 - 250,000",
+      "AED 250,000 - 500,000",
+      "AED 500,000 - 1,000,000",
+      "AED 1,000,000 - 5,000,000",
+      "AED 5,000,000 +"
+    ],
+    "type": "radio",
+    "multi": false,
+    "answer": "",
+    "isFinalPage": false,
+    "isFirstPage": false
+  },
+  {
+    "id": 7,
+    "question": "When do you plan to start your business?",
+    "options": ["This Month", "Next Month", "3 Months"],
+    "type": "radio",
+    "multi": false,
+    "answer": "",
+    "isFinalPage": false,
+    "isFirstPage": false
+  },
+  {
+    "id": 8,
+    "question": "",
+    "options": [],
+    "type": "",
+    "multi": false,
+    "answer": "",
+    "isFinalPage": true,
+    "isFirstPage": false
+  }
+]

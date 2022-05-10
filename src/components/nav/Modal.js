@@ -21,6 +21,7 @@ import {
   Flex,
   Box,
 } from "@chakra-ui/react"
+import { SearchForm } from "../search/SearchForm"
 
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
@@ -148,7 +149,7 @@ function Modal() {
               </VStack>
             </VStack>
             <VStack flex="1" spacing={12} align="flex-start" w="full">
-              <InputGroup>
+              {/* <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
                   children={<Search2Icon color="dark.400" />}
@@ -159,7 +160,8 @@ function Modal() {
                   color="dark.400"
                   _focus={{ bg: "white" }}
                 />
-              </InputGroup>
+              </InputGroup> */}
+              <SearchForm />
               <VStack align="flex-start" pb={[20, 20, 0]}>
                 <Text color="dark.400">Other links</Text>
                 <Text color="white" fontWeight="bold">

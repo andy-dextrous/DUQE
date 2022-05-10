@@ -7,7 +7,7 @@ export const Form = props => {
   return (
     <Box>
       <form {...rest}>
-        <VStack alignItems="flex-start" spacing={4} w="100%" minH="200px">
+        <VStack alignItems="flex-start" spacing={4} w="100%">
           <Box w="full">{children}</Box>
           <SubmitButton />
         </VStack>
