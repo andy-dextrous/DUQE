@@ -15,6 +15,7 @@ export function Layout({
   children,
   smoothScroll = true,
   withSignup,
+  withTopBar = true,
   ...props
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,7 +32,7 @@ export function Layout({
       <SmoothWrapper smoothScroll={smoothScroll}>
         <DarkContext.Provider value={{ isDarkBackground, setIsDarkBackground }}>
           <Portal>
-            <Nav />
+            <Nav withTopBar={withTopBar} />
           </Portal>
           <Box as="main" {...props}>
             {children}

@@ -4,12 +4,12 @@ import TopBar from "./TopBar"
 import Modal from "./Modal"
 import Hamburger from "./Hamburger"
 
-function Nav() {
+function Nav({ withTopBar }) {
   return (
     <>
       <Sidebar />
       <Hamburger color="white" />
-      <TopBar />
+      {withTopBar && <TopBar />}
       <Modal />
     </>
   )

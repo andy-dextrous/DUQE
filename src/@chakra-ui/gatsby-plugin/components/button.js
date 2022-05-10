@@ -55,6 +55,13 @@ export const Button = {
       _before: { bg: "brandYellow.200" },
       _after: { bg: "brandYellow.default" },
     },
+    light: {
+      bg: "brandConcrete.default",
+      color: "dark.default",
+      p: { color: "dark.default" },
+      _before: { bg: "brandConcrete.300" },
+      _after: { bg: "brandConcrete.default" },
+    },
     outlineWhite: {
       bg: "transparent",
       border: "1px solid white",

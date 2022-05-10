@@ -6,7 +6,6 @@ import {
   Input,
   Select,
   SimpleGrid,
-  Spinner,
   Textarea,
   useBreakpointValue,
 } from "@chakra-ui/react"
@@ -73,13 +72,13 @@ function ContactPageElements() {
       />
       <input type="hidden" id="page" name="Page" value="Contact Page"></input>
       <HStack justify="flex-start" mt={4}>
-        {!serverState.submitting ? (
-          <Button size={buttonSize} type="submit">
-            Submit
-          </Button>
-        ) : (
-          <Spinner color="brandBlue.default" />
-        )}
+        <Button
+          size={buttonSize}
+          type="submit"
+          isLoading={serverState.submitting}
+        >
+          Submit
+        </Button>
       </HStack>
     </SimpleGrid>
   )

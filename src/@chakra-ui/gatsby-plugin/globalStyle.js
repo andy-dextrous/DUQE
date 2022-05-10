@@ -40,6 +40,7 @@ const globalCSS = {
   },
   "::selection": {
     backgroundColor: "brandBlue.100",
+    color: "dark.default",
   },
 
   ...base,
