@@ -185,7 +185,7 @@ function Modal() {
           top="0"
           left="0"
           zIndex="-1"
-          opacity="30%"
+          opacity="10%"
         />
       </Box>
     </Flex>
