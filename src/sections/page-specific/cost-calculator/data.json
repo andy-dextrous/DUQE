@@ -31,8 +31,29 @@
   },
   {
     "id": 3,
+    "question": "How many owners/shareholders will your company have?",
+    "options": ["1 Owner", "2 Owners", "3 Owners", "4 Owners", "5 Owners"],
+    "type": "dropdown",
+    "multi": false,
+    "answer": "",
+    "isFinalPage": false,
+    "isFirstPage": false
+  },
+  {
+    "id": 4,
     "question": "How many business activities do you need?",
-    "options": ["Activity 1", "Activity 2", "Activity 3", "Activity 4"],
+    "options": [
+      "Activity 1",
+      "Activity 2",
+      "Activity 3",
+      "Activity 4",
+      "Activity 5",
+      "Activity 6",
+      "Activity 7",
+      "Activity 8",
+      "Activity 9",
+      "Activity 10"
+    ],
     "type": "radio",
     "multi": true,
     "answer": "",
@@ -40,7 +61,7 @@
     "isFirstPage": false
   },
   {
-    "id": 4,
+    "id": 5,
     "question": "Do you have a Business Plan?",
     "options": ["Yes", "No"],
     "type": "radio",
@@ -50,7 +71,7 @@
     "isFirstPage": false
   },
   {
-    "id": 5,
+    "id": 6,
     "question": "Are you currently living in the UAE?",
     "options": ["Yes", "No"],
     "type": "radio",
@@ -60,7 +81,7 @@
     "isFirstPage": false
   },
   {
-    "id": 6,
+    "id": 7,
     "question": "Annual Turnover",
     "options": [
       "AED 20,000 - 100,000",
@@ -77,7 +98,7 @@
     "isFirstPage": false
   },
   {
-    "id": 7,
+    "id": 8,
     "question": "When do you plan to start your business?",
     "options": ["This Month", "Next Month", "3 Months"],
     "type": "radio",
@@ -87,7 +108,7 @@
     "isFirstPage": false
   },
   {
-    "id": 8,
+    "id": 9,
     "question": "",
     "options": [],
     "type": "",

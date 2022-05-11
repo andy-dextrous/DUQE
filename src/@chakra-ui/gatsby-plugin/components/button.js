@@ -62,6 +62,21 @@ export const Button = {
       _before: { bg: "brandConcrete.300" },
       _after: { bg: "brandConcrete.default" },
     },
+    formInactive: {
+      bg: "#F6F6F6;",
+      color: "dark.default",
+      p: { color: "dark.default" },
+      _before: { bg: "#F6F6F6;" },
+      _after: { bg: "#F6F6F6;" },
+    },
+    formActive: {
+      bg: "brandYellow.default",
+      color: "dark.default",
+      p: { color: "dark.default" },
+      _before: { bg: "brandYellow.default" },
+      _after: { bg: "brandYellow.default" },
+    },
+
     outlineWhite: {
       bg: "transparent",
       border: "1px solid white",
