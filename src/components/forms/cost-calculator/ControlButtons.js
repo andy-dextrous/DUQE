@@ -1,6 +1,6 @@
+import React from "react"
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons"
 import { Button, ButtonGroup } from "@chakra-ui/react"
-import React, { useEffect } from "react"
 
 function ControlButtons({
   currentQuestion,
@@ -9,10 +9,6 @@ function ControlButtons({
   direction,
   setDirection,
 }) {
-  useEffect(() => {
-    console.log(answers)
-  }, [currentQuestion])
-
   function handleBackButton() {
     setCurrentQuestion(currentQuestion - 1)
     setDirection("down")
@@ -34,16 +30,27 @@ function ControlButtons({
         Back
       </Button>
 
-      <Button
-        rightIcon={<ArrowForwardIcon />}
-        onClick={handleNextButton}
-        isDisabled={
-          answers[currentQuestion].answer === "" ||
-          currentQuestion === answers.length
-        }
-      >
-        Next
-      </Button>
+      {currentQuestion !== answers.length - 1 && (
+        <Button
+          rightIcon={<ArrowForwardIcon />}
+          onClick={handleNextButton}
+          isDisabled={
+            answers[currentQuestion].answer === "" ||
+            currentQuestion === answers.length - 1
+          }
+        >
+          Next
+        </Button>
+      )}
+      {currentQuestion === answers.length - 1 && (
+        <Button
+          type="submit"
+          // isDisabled={currentQuestion !== answers.length - 1}
+          isDisabled={true}
+        >
+          Submit
+        </Button>
+      )}
     </ButtonGroup>
   )
 }

@@ -1,7 +1,25 @@
+import React, { useEffect, useRef } from "react"
+import { gsap } from "../../../gsap"
+
 import { Box, Heading, Progress, Text, VStack } from "@chakra-ui/react"
-import React from "react"
 
 function Sidebar({ progress, currentQuestion }) {
+  const questionRef = useRef()
+  useEffect(() => {
+    gsap.fromTo(
+      questionRef.current,
+      {
+        x: -30,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 0.05,
+        ease: "Power2.in",
+      }
+    )
+  }, [currentQuestion])
+
   return (
     <Box
       flex="3"
@@ -11,7 +29,7 @@ function Sidebar({ progress, currentQuestion }) {
       position="relative"
     >
       <VStack w="full" align="flex-start" spacing={8}>
-        <Heading className="jumbo" opacity="0.05" w="full">
+        <Heading className="jumbo" opacity="0.05" w="full" ref={questionRef}>
           Q{currentQuestion}
         </Heading>
         <Progress

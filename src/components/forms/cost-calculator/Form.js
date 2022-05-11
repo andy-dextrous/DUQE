@@ -1,5 +1,6 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { gsap } from "../../../gsap"
+import axios from "axios"
 
 import SectionWrapper from "../../SectionWrapper"
 import { Center, Stack } from "@chakra-ui/react"
@@ -8,6 +9,10 @@ import Q2 from "./Q2"
 import Q3 from "./Q3"
 import Q4 from "./Q4"
 import Q5 from "./Q5"
+import Q6 from "./Q6"
+import Q7 from "./Q7"
+import Q8 from "./Q8"
+import Q9 from "./Q9"
 import Sidebar from "./Sidebar"
 import data from "../../../sections/page-specific/cost-calculator/data.json"
 import animateSlides from "./animateSlides"
@@ -20,6 +25,41 @@ function Form() {
   const [progress, setProgress] = useState(0)
   const formRef = useRef()
 
+  const [submitted, setSubmitted] = useState(false)
+  const [serverState, setServerState] = useState({
+    submitting: false,
+    status: null,
+  })
+
+  function handleServerResponse(ok, msg, form) {
+    setServerState({
+      submitting: false,
+      status: { ok, msg },
+    })
+    if (ok) {
+      form.reset()
+      setSubmitted(true)
+      console.log(serverState)
+    }
+  }
+
+  function handleOnSubmit(e) {
+    e.preventDefault()
+    const form = e.target
+    setServerState({ submitting: true })
+    axios({
+      method: "post",
+      url: process.env.GATSBY_COST_CALCULATOR_ENDPOINT,
+      data: new FormData(form),
+    })
+      .then(r => {
+        handleServerResponse(true, "Thanks!", form)
+      })
+      .catch(r => {
+        handleServerResponse(false, r.response.data.error, form)
+      })
+  }
+
   useEffect(() => {
     const q = gsap.utils.selector(formRef.current)
     gsap.set(q(`[data-slide-index]`), { autoAlpha: 0 })
@@ -27,7 +67,17 @@ function Form() {
   }, [])
 
   useEffect(() => {
-    setProgress(Math.round((currentQuestion / answers.length) * 100))
+    const prevProgress = { x: progress }
+    const newProgress = Math.round(
+      (currentQuestion / (answers.length - 1)) * 100
+    )
+    gsap.to(prevProgress, {
+      x: newProgress,
+      ease: "Power2.in",
+      onUpdate: () => {
+        setProgress(prevProgress.x)
+      },
+    })
   }, [answers, currentQuestion])
 
   useEffect(() => {
@@ -64,12 +114,24 @@ function Form() {
       px="0"
     >
       <Stack direction="row" w="full" spacing="0">
-        <Center as="form" flex="7" m="200px" ref={formRef} position="relative">
+        <Center
+          as="form"
+          name="cost-calculator"
+          flex="7"
+          m="200px"
+          ref={formRef}
+          position="relative"
+          onSubmit={handleOnSubmit}
+        >
           <Q1 data={logic} id={1} />
           <Q2 data={logic} id={2} />
           <Q3 data={logic} id={3} />
           <Q4 data={logic} id={4} />
           <Q5 data={logic} id={5} />
+          <Q6 data={logic} id={6} />
+          <Q7 data={logic} id={7} />
+          <Q8 data={logic} id={8} />
+          <Q9 data={logic} id={9} />
         </Center>
         <Sidebar progress={progress} currentQuestion={currentQuestion} />
       </Stack>
