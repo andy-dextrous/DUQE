@@ -30,7 +30,7 @@ function Q4({ data, id }) {
     } else {
       handleChange("", id)
     }
-  }, [selectedButtons])
+  }, [selectedButtons, id, handleChange])
 
   return (
     <VStack

@@ -28,6 +28,7 @@ function Q1({ data, id }) {
       </Text>
       <Select
         variant="filled"
+        size="lg"
         name={answers[id].question}
         w="50%"
         onChange={e => {

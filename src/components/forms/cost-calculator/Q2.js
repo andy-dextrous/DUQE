@@ -20,13 +20,13 @@ function Q2({ data, id }) {
       layerStyle="fillSpaceAbsolute"
     >
       <Heading textTransform="uppercase">{answers[id].question}</Heading>
-
       <Text>
         In addition to residence visas for your shareholders, you can apply for
         residence visas for your employees.
       </Text>
       <Select
         variant="filled"
+        size="lg"
         name={answers[id].question}
         w="50%"
         onChange={e => {
