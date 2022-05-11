@@ -45,8 +45,7 @@ function ControlButtons({
       {currentQuestion === answers.length - 1 && (
         <Button
           type="submit"
-          // isDisabled={currentQuestion !== answers.length - 1}
-          isDisabled={true}
+          isDisabled={currentQuestion !== answers.length - 1}
         >
           Submit
         </Button>

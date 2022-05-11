@@ -27,6 +27,7 @@ function Q3({ data, id }) {
       </Text>
       <Select
         variant="filled"
+        name={answers[id].question}
         w="50%"
         onChange={e => {
           handleChange(e.target.value, id)
