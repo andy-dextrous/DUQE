@@ -1,20 +1,72 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
-import { Button, Center, Heading, HStack, Text, VStack } from "@chakra-ui/react"
-import { SmartLink } from "../../components/SmartLink"
+import { Button, Center, Heading, Stack, Text } from "@chakra-ui/react"
+import { SmartLink } from "../../../components/SmartLink"
+import { gsap, ScrollTrigger } from "../../../gsap"
+import ScrollDown from "../../../assets/icons/ScrollDown"
+import { useVariable } from "../../../hooks"
 
-function Hero() {
+function Hero({ masterTimeline, index, animating }) {
+  const { componentSpacing } = useVariable()
+  const img = useRef()
+  const content = useRef()
+  const animation = useRef()
+
+  useEffect(() => {
+    if (animating) return
+    gsap.from(img.current, {
+      opacity: 0,
+      delay: 0.2,
+      duration: 0.35,
+      ease: "Power3.in",
+    })
+  }, [])
+
+  useEffect(() => {
+    if (!ScrollTrigger || animation.current) return
+    const tl = gsap.timeline({
+      paused: true,
+      scrollTrigger: {
+        trigger: img.current,
+        toggleActions: "play none reverse none",
+        start: "top top",
+        end: "bottom top",
+        scrub: 0.5,
+      },
+    })
+    tl.to(img.current, {
+      scale: 1.4,
+      ease: "linear",
+    })
+  }, [])
+
+  useEffect(() => {
+    const tl = gsap
+      .timeline({})
+      .from(content.current, { opacity: 0, id: "title" })
+    masterTimeline.add(tl, "heroContentStart")
+  }, [])
+
   return (
     <SectionWrapper
       bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto,w_1920/v1650925763/Home-Hero.jpg"
-      h="100vh"
       overlay
+      darkBackground
+      h="100vh"
+      overflow="hidden"
       containerSize="xl"
-      isFirstSection
+      zIndex="1"
+      ref={img}
     >
-      <Center h="full" w="full">
-        <VStack spacing={[12]} alignItems="start">
-          <Heading as="h1" color="white">
+      <Center layerStyle="fillSpace">
+        <Stack
+          direction={["column", "column", "reverse"]}
+          spacing={componentSpacing}
+          alignItems="start"
+          width="100%"
+          ref={content}
+        >
+          <Heading as="h1" color="white" maxW="100%">
             Duqe is for the{" "}
             <Text as="span" color="brandYellow.default">
               disrupters
@@ -23,16 +75,22 @@ function Hero() {
           <Heading as="h3" color="white" className="thin-h3">
             Set up your company in DUQE Free Zone, based on the prestigious QE2.
           </Heading>
-          <HStack w="full">
-            <SmartLink url="/">
+          <Stack
+            direction={["column", "column", "row"]}
+            w="full"
+            spacing={[5, 5, 6]}
+          >
+            <SmartLink url="/contact-us">
               <Button>Start your business</Button>
             </SmartLink>
-            <SmartLink url="/">
+            <SmartLink url="/cost-calculator">
               <Button variant="outlineWhite">How much does it cost?</Button>
             </SmartLink>
-          </HStack>
-        </VStack>
+          </Stack>
+        </Stack>
       </Center>
+
+      <ScrollDown />
     </SectionWrapper>
   )
 }

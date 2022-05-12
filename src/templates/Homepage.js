@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Seo } from "../components/seo/components/index"
 import { graphql } from "gatsby"
 import { Layout } from "./../components/Layout"
-import Hero from "../sections/shared/Hero"
+import { gsap } from "../gsap"
+import Hero from "../sections/page-specific/home/Hero"
 import Perks from "../sections/page-specific/home/Perks"
 import PerksText from "../sections/page-specific/home/PerksText"
 import YourLegacy from "../sections/page-specific/home/YourLegacy"
@@ -16,11 +17,35 @@ import DarkGroup from "../components/common/DarkGroup"
 import CostSections from "../sections/page-specific/home/CostSections"
 
 function Homepage(props) {
+  const [animating, setAnimating] = useState(true)
+  const [masterTimeline, setMasterTimeline] = useState(
+    gsap
+      .timeline({ onComplete: () => setAnimating(false) })
+      .addLabel("introStart", 0)
+      .addLabel("zoom", 2)
+      .addLabel("heroContentStart", 3)
+      .addLabel("hideOverlay", 4)
+  )
+
+  useEffect(() => {
+    console.log(masterTimeline)
+  })
+
   return (
-    <Layout>
+    <Layout
+      isHomePage
+      masterTimeline={masterTimeline}
+      animating={animating}
+      index={0}
+    >
       <Seo props={props} />
       <DarkGroup>
-        <Hero />
+        <Hero
+          masterTimeline={masterTimeline}
+          index={1}
+          animating={animating}
+          setMasterTimeline={setMasterTimeline}
+        />
         <PerksText />
         <Perks />
       </DarkGroup>

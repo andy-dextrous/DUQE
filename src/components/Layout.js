@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { gsap } from "../gsap"
 import Nav from "./nav/Nav"
 import Footer from "./footer/Footer"
 import SmoothWrapper from "./SmoothWrapper"
@@ -7,6 +8,7 @@ import { useThemeOptions } from "../hooks/useThemeOptions"
 import { Box, Portal } from "@chakra-ui/react"
 import { showBreakpoints } from "../utils/showBreakpoints"
 import "../assets/MyFontsWebfontsKit.css"
+import Overlay from "../sections/page-specific/home/Overlay"
 
 export const MenuContext = React.createContext()
 export const DarkContext = React.createContext()
@@ -16,6 +18,10 @@ export function Layout({
   smoothScroll = true,
   withSignup,
   withTopBar = true,
+  isHomePage = false,
+  masterTimeline,
+  animating,
+  index,
   ...props
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -32,6 +38,9 @@ export function Layout({
       <SmoothWrapper smoothScroll={smoothScroll}>
         <DarkContext.Provider value={{ isDarkBackground, setIsDarkBackground }}>
           <Portal>
+            {isHomePage && (
+              <Overlay timeline={{ animating, masterTimeline, index }} />
+            )}
             <Nav withTopBar={withTopBar} />
           </Portal>
           <Box as="main" {...props}>

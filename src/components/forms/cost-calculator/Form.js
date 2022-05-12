@@ -63,9 +63,11 @@ function Form() {
   }
 
   useEffect(() => {
-    const q = gsap.utils.selector(formRef.current)
-    gsap.set(q(`[data-slide-index]`), { autoAlpha: 0 })
-    gsap.set(q(`[data-slide-index="${currentQuestion}"]`), { autoAlpha: 1 })
+    if (formRef.current) {
+      const q = gsap.utils.selector(formRef.current)
+      gsap.set(q(`[data-slide-index]`), { autoAlpha: 0 })
+      gsap.set(q(`[data-slide-index="${currentQuestion}"]`), { autoAlpha: 1 })
+    }
   }, [])
 
   useEffect(() => {
