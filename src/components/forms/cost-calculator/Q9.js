@@ -23,66 +23,69 @@ function Q9({ data, id }) {
   return (
     <VStack
       align="flex-start"
+      justify="space-between"
       spacing={8}
       data-slide-index={id}
       layerStyle="fillSpaceAbsolute"
     >
-      <Heading textTransform="uppercase">{answers[id].question}</Heading>
-      <Text>
-        Please enter your details to get your business setup cost estimate on
-        the next screen. We will also send the quote via email:
-      </Text>
+      <VStack align="flex-start" spacing={8}>
+        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Text>
+          Please enter your details to get your business setup cost estimate on
+          the next screen. We will also send the quote via email:
+        </Text>
 
-      <FormControl>
-        <SimpleGrid spacing={4} columns={[1, 1, 2]} w="80%">
-          <Input
-            placeholder="Enter your first name"
-            size="lg"
-            w="full"
-            name="first name"
-            fontSize={["xs", "sm", "md"]}
-            bg="dark.50"
-            required
-          />
-          <Input
-            placeholder="Enter your last name"
-            w="full"
-            size="lg"
-            bg="dark.50"
-            name="last name"
-            fontSize={["xs", "sm", "md"]}
-            required
-          />
+        <FormControl>
+          <SimpleGrid spacing={4} columns={[1, 1, 2]} w="80%">
+            <Input
+              placeholder="Enter your first name"
+              size="lg"
+              w="full"
+              name="first name"
+              fontSize={["xs", "sm", "md"]}
+              bg="dark.50"
+              required
+            />
+            <Input
+              placeholder="Enter your last name"
+              w="full"
+              size="lg"
+              bg="dark.50"
+              name="last name"
+              fontSize={["xs", "sm", "md"]}
+              required
+            />
 
-          <Input
-            placeholder="Email address"
-            size="lg"
-            isRequired
-            w="full"
-            bg="dark.50"
-            name="Company Name"
-            fontSize={["xs", "sm", "md"]}
-            required
-          />
-          <Input
-            placeholder="Phone number"
-            size="lg"
-            isRequired
-            w="full"
-            bg="dark.50"
-            name="Company Name"
-            fontSize={["xs", "sm", "md"]}
-            required
-          />
+            <Input
+              placeholder="Email address"
+              size="lg"
+              isRequired
+              w="full"
+              bg="dark.50"
+              name="Company Name"
+              fontSize={["xs", "sm", "md"]}
+              required
+            />
+            <Input
+              placeholder="Phone number"
+              size="lg"
+              isRequired
+              w="full"
+              bg="dark.50"
+              name="Company Name"
+              fontSize={["xs", "sm", "md"]}
+              required
+            />
 
-          <input
-            type="hidden"
-            id="page"
-            name="Page"
-            value="Cost Calculator"
-          ></input>
-        </SimpleGrid>
-      </FormControl>
+            <input
+              type="hidden"
+              id="page"
+              name="Page"
+              value="Cost Calculator"
+            ></input>
+          </SimpleGrid>
+        </FormControl>
+      </VStack>
       <ControlButtons
         currentQuestion={currentQuestion}
         setCurrentQuestion={setCurrentQuestion}

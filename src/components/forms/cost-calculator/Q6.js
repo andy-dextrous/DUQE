@@ -17,34 +17,36 @@ function Q6({ data, id }) {
   return (
     <VStack
       align="flex-start"
+      justify="space-between"
       spacing={8}
       data-slide-index={id}
       layerStyle="fillSpaceAbsolute"
     >
-      <Heading textTransform="uppercase">{answers[id].question}</Heading>
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed laudantium
-        veritatis nulla!
-      </Text>
+      <VStack align="flex-start" spacing={8}>
+        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Text>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed
+          laudantium veritatis nulla!
+        </Text>
 
-      <Wrap>
-        {answers[id]?.options?.map((option, index) => {
-          return (
-            <Button
-              key={index}
-              data-value={option}
-              variant={liveUae === option ? "formActive" : "formInactive"}
-              onClick={e => {
-                setLiveUae(e.target.dataset.value)
-                handleChange(option, id)
-              }}
-            >
-              {option}
-            </Button>
-          )
-        })}
-      </Wrap>
-
+        <Wrap>
+          {answers[id]?.options?.map((option, index) => {
+            return (
+              <Button
+                key={index}
+                data-value={option}
+                variant={liveUae === option ? "formActive" : "formInactive"}
+                onClick={e => {
+                  setLiveUae(e.target.dataset.value)
+                  handleChange(option, id)
+                }}
+              >
+                {option}
+              </Button>
+            )
+          })}
+        </Wrap>
+      </VStack>
       <ControlButtons
         currentQuestion={currentQuestion}
         setCurrentQuestion={setCurrentQuestion}

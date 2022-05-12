@@ -2,8 +2,10 @@ import React, { useEffect, useRef } from "react"
 import { gsap } from "../../../gsap"
 
 import { Box, Heading, Progress, Text, VStack } from "@chakra-ui/react"
+import { useVariable } from "../../../hooks/useVariable"
 
 function Sidebar({ progress, currentQuestion }) {
+  const { sectionPaddingX } = useVariable()
   const questionRef = useRef()
   useEffect(() => {
     gsap.fromTo(
@@ -22,13 +24,13 @@ function Sidebar({ progress, currentQuestion }) {
 
   return (
     <Box
-      flex="3"
+      flex={[1, 1, "3"]}
       bg="brandYellow.default"
-      py="200px"
-      px="100px"
+      py={sectionPaddingX}
+      px={[4, 4, "100px"]}
       position="relative"
     >
-      <VStack w="full" align="flex-start" spacing={8}>
+      <VStack w="full" align="flex-start" spacing={[4, 4, 4, 8]}>
         <Heading className="jumbo" opacity="0.05" w="full" ref={questionRef}>
           Q{currentQuestion}
         </Heading>
@@ -42,10 +44,14 @@ function Sidebar({ progress, currentQuestion }) {
             },
           }}
         />
-        <Heading as="h3" textTransform="uppercase">
+        <Heading
+          as="h3"
+          textTransform="uppercase"
+          display={["none", "none", "block"]}
+        >
           Cost Calculator
         </Heading>
-        <Text>
+        <Text display={["none", "none", "block"]}>
           Our licences are designed to be scalable, so you can easily add or
           remove users as your business grows or changes
         </Text>

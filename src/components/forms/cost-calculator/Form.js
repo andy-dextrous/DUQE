@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react"
 import { gsap } from "../../../gsap"
 import axios from "axios"
+import { useVariable } from "../../../hooks/useVariable"
 
 import SectionWrapper from "../../SectionWrapper"
-import { Center, Stack } from "@chakra-ui/react"
 import Q1 from "./Q1"
 import Q2 from "./Q2"
 import Q3 from "./Q3"
@@ -16,6 +16,7 @@ import Q9 from "./Q9"
 import Sidebar from "./Sidebar"
 import data from "../../../sections/page-specific/cost-calculator/data.json"
 import animateSlides from "./animateSlides"
+import { Center, Stack } from "@chakra-ui/react"
 
 function Form() {
   const showFrontPage = false
@@ -24,6 +25,7 @@ function Form() {
   const [direction, setDirection] = useState("up")
   const [progress, setProgress] = useState(0)
   const formRef = useRef()
+  const { sectionPaddingX, sidebarMenuWidth, mobileNavHeight } = useVariable()
 
   const [submitted, setSubmitted] = useState(false)
   const [serverState, setServerState] = useState({
@@ -107,20 +109,31 @@ function Form() {
   return (
     <SectionWrapper
       h="100vh"
-      width="calc(100vw - 100px)"
+      width={["100vw", "100vw", "calc(100vw - 100px)"]}
       className="light"
       withContainer={false}
-      ml="100px"
+      ml={[0, 0, 0, sidebarMenuWidth]}
       px="0"
     >
-      <Stack direction="row" w="full" spacing="0">
+      <Stack
+        direction={[
+          "column-reverse",
+          "column-reverse",
+          "column-reverse",
+          "row",
+        ]}
+        mt={mobileNavHeight}
+        w="full"
+        spacing="0"
+      >
         <Center
           as="form"
           name="cost-calculator"
           flex="7"
-          m="200px"
+          m={sectionPaddingX}
           ref={formRef}
           position="relative"
+          maxH={["unset", "unset", "unset", "unset", "unset", "70vh", "60vh"]}
           onSubmit={handleOnSubmit}
         >
           <Q1 data={logic} id={1} />

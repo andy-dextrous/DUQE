@@ -30,7 +30,7 @@ function Q4({ data, id }) {
     } else {
       handleChange("", id)
     }
-  }, [selectedButtons, id, handleChange])
+  }, [selectedButtons])
 
   return (
     <VStack
@@ -38,33 +38,37 @@ function Q4({ data, id }) {
       spacing={8}
       data-slide-index={id}
       layerStyle="fillSpaceAbsolute"
+      justify="space-between"
     >
-      <Heading textTransform="uppercase">{answers[id].question}</Heading>
-      <Text>
-        Choose up to 2 business activity groups free of charge to provide your
-        business with the great flexibility. Additional activities will result
-        in a higher cost.
-      </Text>
+      <VStack align="flex-start" spacing={8}>
+        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Text>
+          Choose up to 2 business activity groups free of charge to provide your
+          business with the great flexibility. Additional activities will result
+          in a higher cost.
+        </Text>
 
-      <Wrap>
-        {answers[id]?.options?.map((option, index) => {
-          return (
-            <Button
-              key={index}
-              data-value={option}
-              variant={
-                selectedButtons.includes(option) ? "formActive" : "formInactive"
-              }
-              onClick={e => {
-                handleSelection(e.target.dataset.value)
-              }}
-            >
-              {option}
-            </Button>
-          )
-        })}
-      </Wrap>
-
+        <Wrap>
+          {answers[id]?.options?.map((option, index) => {
+            return (
+              <Button
+                key={index}
+                data-value={option}
+                variant={
+                  selectedButtons.includes(option)
+                    ? "formActive"
+                    : "formInactive"
+                }
+                onClick={e => {
+                  handleSelection(e.target.dataset.value)
+                }}
+              >
+                {option}
+              </Button>
+            )
+          })}
+        </Wrap>
+      </VStack>
       <ControlButtons
         currentQuestion={currentQuestion}
         setCurrentQuestion={setCurrentQuestion}

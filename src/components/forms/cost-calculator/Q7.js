@@ -35,35 +35,39 @@ function Q7({ data, id }) {
   return (
     <VStack
       align="flex-start"
+      justify="space-between"
       spacing={8}
       data-slide-index={id}
       layerStyle="fillSpaceAbsolute"
     >
-      <Heading textTransform="uppercase">{answers[id].question}</Heading>
-      <Text>
-        What is the current or forecasted annual turn-over for your business in
-        the next 12 months?
-      </Text>
+      <VStack align="flex-start" spacing={8}>
+        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Text>
+          What is the current or forecasted annual turn-over for your business
+          in the next 12 months?
+        </Text>
 
-      <Wrap>
-        {answers[id]?.options?.map((option, index) => {
-          return (
-            <Button
-              key={index}
-              data-value={option}
-              variant={
-                selectedButtons.includes(option) ? "formActive" : "formInactive"
-              }
-              onClick={e => {
-                handleSelection(e.target.dataset.value)
-              }}
-            >
-              {option}
-            </Button>
-          )
-        })}
-      </Wrap>
-
+        <Wrap>
+          {answers[id]?.options?.map((option, index) => {
+            return (
+              <Button
+                key={index}
+                data-value={option}
+                variant={
+                  selectedButtons.includes(option)
+                    ? "formActive"
+                    : "formInactive"
+                }
+                onClick={e => {
+                  handleSelection(e.target.dataset.value)
+                }}
+              >
+                {option}
+              </Button>
+            )
+          })}
+        </Wrap>
+      </VStack>
       <ControlButtons
         currentQuestion={currentQuestion}
         setCurrentQuestion={setCurrentQuestion}

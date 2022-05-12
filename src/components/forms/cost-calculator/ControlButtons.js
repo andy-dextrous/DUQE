@@ -20,7 +20,10 @@ function ControlButtons({
   }
 
   return (
-    <ButtonGroup pt={20}>
+    <ButtonGroup
+      w={["full", "full", "unset"]}
+      justifyContent={["space-between", "space-between", "flex-start"]}
+    >
       <Button
         variant="light"
         leftIcon={<ArrowBackIcon />}
