@@ -25,7 +25,7 @@ import {
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
   const primaryMenu = useMenuQuery("Primary")
-  const subMenu = useMenuQuery("Secondary")
+  // const subMenu = useMenuQuery("Secondary")
   const { mobileNavHeight } = useVariable()
   const menuWrapper = useRef()
   const overlay = useRef()
@@ -166,7 +166,7 @@ function Modal() {
                     })}
                 </Accordion>
               </VStack>
-              <VStack spacing={12} align="flex-start" w="full">
+              {/* <VStack spacing={12} align="flex-start" w="full">
                 <VStack
                   spacing={[2, 2, 2]}
                   align="start"
@@ -185,7 +185,7 @@ function Modal() {
                     )
                   })}
                 </VStack>
-              </VStack>
+              </VStack> */}
 
               <VStack spacing={12} align="flex-start" w="full">
                 <SocialFollows direction="row" button variant="circle" />
