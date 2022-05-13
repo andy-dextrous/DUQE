@@ -208,7 +208,7 @@ function Modal() {
                   <Button>Cost calculator</Button>
                   </Link>
                 </VStack> */}
-                <SocialFollows direction="row" button variant="circle" />
+                <SocialFollows direction="row" button variant="circleBlue" />
                 <Logo useContrast={false} width="60px" />
               </VStack>
             </Stack>

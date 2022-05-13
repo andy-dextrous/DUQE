@@ -96,6 +96,11 @@ export const Button = {
       svg: { fill: "dark.default" },
       borderRadius: "full",
     },
+    circleBlue: {
+      bg: "brandBlue.default",
+      svg: { fill: "dark.default" },
+      borderRadius: "full",
+    },
     socialShare: {
       bg: "white",
       borderRadius: "full",

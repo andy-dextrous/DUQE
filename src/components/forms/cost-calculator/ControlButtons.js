@@ -6,7 +6,6 @@ function ControlButtons({
   currentQuestion,
   setCurrentQuestion,
   answers,
-  direction,
   setDirection,
 }) {
   function handleBackButton() {
