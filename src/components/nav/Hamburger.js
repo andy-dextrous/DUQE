@@ -38,7 +38,7 @@ function Hamburger() {
       w={["auto", "auto", sidebarMenuWidth]}
       py={[2, 2, 8]}
       px={[2, 2, 0]}
-      h={mobileNavHeight}
+      h={[mobileNavHeight[0], mobileNavHeight[0], "auto"]}
       justify="center"
       align="center"
       ref={container}

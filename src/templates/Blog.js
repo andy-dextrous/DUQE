@@ -11,7 +11,7 @@ function Blog(props) {
   const categories = props.data.allWpCategory.edges
 
   return (
-    <Layout noFooterCTA startDark>
+    <Layout>
       <Seo props={props} />
       <Hero />
       <PostGrid

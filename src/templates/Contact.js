@@ -7,7 +7,7 @@ import Hero from "../sections/page-specific/contact/Hero"
 
 function Contact(props) {
   return (
-    <Layout noFooterCTA isDark>
+    <Layout>
       <Seo props={props} />
       <Hero />
       <ContactUs />

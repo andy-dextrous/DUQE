@@ -12,12 +12,18 @@ export const useMenuQuery = menu => {
               name
               menuItems {
                 nodes {
-                  databaseId
-                  title
-                  path
+                  parentId
                   label
-                  parent {
-                    id
+                  url
+                  path
+                  id
+                  childItems {
+                    nodes {
+                      parentId
+                      path
+                      id
+                      label
+                    }
                   }
                 }
               }
