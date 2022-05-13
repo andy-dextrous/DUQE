@@ -4,9 +4,16 @@ import Logo from "../../assets/logos/Logo"
 import SectionWrapper from "../../components/SectionWrapper"
 import { SocialFollows } from "../../components/social/SocialFollows"
 import NewsletterFooter from "./NewsletterFooter"
+import { useMenuQuery } from "../../hooks"
 import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/react"
 
 function Footer({ withSignup = true }) {
+  const footerMenu1 = useMenuQuery("Footer Menu 1")
+  const footerMenu2 = useMenuQuery("Footer Menu 2")
+  const footerMenu3 = useMenuQuery("Footer Menu 3")
+
+  console.log(footerMenu1)
+
   return (
     <SectionWrapper
       bg="dark.default"
@@ -54,56 +61,41 @@ function Footer({ withSignup = true }) {
             Duqe
           </Text>
           <VStack as="ul" flex="1" align="flex-start">
-            <Link to="/" as="li">
-              <Text color="white">About Us</Text>
-            </Link>
-            <Link to="/" as="li">
-              <Text color="white">Management Team</Text>
-            </Link>
-            <Link to="/" as="li">
-              <Text color="white">News</Text>
-            </Link>
-            <Link to="/" as="li">
-              <Text color="white">Careers</Text>
-            </Link>
+            {footerMenu1.menuItems.nodes.map(menuItem => {
+              return (
+                <Link to={menuItem.path} as="li">
+                  <Text color="white">{menuItem.label}</Text>
+                </Link>
+              )
+            })}
           </VStack>
         </VStack>
         <VStack align="flex-start">
           <Text color="dark.500" fontWeight="bold">
-            Duqe
+            Business Setup
           </Text>
           <VStack as="ul" flex="1" align="flex-start">
-            <Link to="/" as="li">
-              <Text color="white">About Us</Text>
-            </Link>
-            <Link to="/" as="li">
-              <Text color="white">Management Team</Text>
-            </Link>
-            <Link to="/" as="li">
-              <Text color="white">News</Text>
-            </Link>
-            <Link to="/" as="li">
-              <Text color="white">Careers</Text>
-            </Link>
+            {footerMenu2.menuItems.nodes.map(menuItem => {
+              return (
+                <Link to={menuItem.path} as="li">
+                  <Text color="white">{menuItem.label}</Text>
+                </Link>
+              )
+            })}
           </VStack>
         </VStack>
         <VStack align="flex-start">
           <Text color="dark.500" fontWeight="bold">
-            Duqe
+            Info
           </Text>
           <VStack as="ul" flex="1" align="flex-start">
-            <Link to="/" as="li">
-              <Text color="white">About Us</Text>
-            </Link>
-            <Link to="/" as="li">
-              <Text color="white">Management Team</Text>
-            </Link>
-            <Link to="/" as="li">
-              <Text color="white">News</Text>
-            </Link>
-            <Link to="/" as="li">
-              <Text color="white">Careers</Text>
-            </Link>
+            {footerMenu3.menuItems.nodes.map(menuItem => {
+              return (
+                <Link to={menuItem.path} as="li">
+                  <Text color="white">{menuItem.label}</Text>
+                </Link>
+              )
+            })}
           </VStack>
         </VStack>
         <VStack align="flex-start">
