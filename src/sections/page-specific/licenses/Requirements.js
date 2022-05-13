@@ -200,7 +200,7 @@ function Requirements() {
           width="25%"
           zIndex="-1"
           bottom="-25%"
-          left={["37%"]}
+          left={["33%"]}
           display={["none", "none", "block"]}
         />
         <Image
@@ -210,13 +210,14 @@ function Requirements() {
           width="25%"
           zIndex="-1"
           top="0"
-          left={["63%"]}
+          left={["60%"]}
           display={["none", "none", "block"]}
         />
         <VStack
           bg="brandBlue.100"
           flex="1"
           p={12}
+          sx={{ marginInlineStart: "0 !important" }}
           rounded="30px"
           position={["relative", "relative", "unset"]}
           zIndex="1"

@@ -12,20 +12,12 @@ function Footer({ withSignup = true }) {
   const footerMenu2 = useMenuQuery("Footer Menu 2")
   const footerMenu3 = useMenuQuery("Footer Menu 3")
 
-  console.log(footerMenu1)
-
   return (
     <SectionWrapper
       bg="dark.default"
       pt={0}
       px={[0, 0, 16, 20, 40, "200px"]}
       containerStyles={{ position: "relative", pt: [0, 0, "unset"] }}
-      sx={{
-        "& a": {
-          fontWeight: "400",
-          _hover: { color: "brandBlue.default" },
-        },
-      }}
     >
       {withSignup && <NewsletterFooter />}
 
@@ -63,8 +55,10 @@ function Footer({ withSignup = true }) {
           <VStack as="ul" flex="1" align="flex-start">
             {footerMenu1.menuItems.nodes.map(menuItem => {
               return (
-                <Link to={menuItem.path} as="li">
-                  <Text color="white">{menuItem.label}</Text>
+                <Link to={menuItem.path}>
+                  <Text as="li" color="white" className="footerLink">
+                    {menuItem.label}
+                  </Text>
                 </Link>
               )
             })}
@@ -77,8 +71,10 @@ function Footer({ withSignup = true }) {
           <VStack as="ul" flex="1" align="flex-start">
             {footerMenu2.menuItems.nodes.map(menuItem => {
               return (
-                <Link to={menuItem.path} as="li">
-                  <Text color="white">{menuItem.label}</Text>
+                <Link to={menuItem.path}>
+                  <Text as="li" color="white" className="footerLink">
+                    {menuItem.label}
+                  </Text>
                 </Link>
               )
             })}
@@ -91,8 +87,10 @@ function Footer({ withSignup = true }) {
           <VStack as="ul" flex="1" align="flex-start">
             {footerMenu3.menuItems.nodes.map(menuItem => {
               return (
-                <Link to={menuItem.path} as="li">
-                  <Text color="white">{menuItem.label}</Text>
+                <Link to={menuItem.path}>
+                  <Text as="li" color="white" className="footerLink">
+                    {menuItem.label}
+                  </Text>
                 </Link>
               )
             })}

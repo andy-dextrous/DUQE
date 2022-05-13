@@ -41,7 +41,7 @@ function Modal() {
         {
           visibility: "visible",
           opacity: 0.5,
-          duration: 0.2,
+          duration: 0.3,
           ease: "Power3.inOut",
         },
         0
@@ -53,7 +53,7 @@ function Modal() {
         },
         {
           xPercent: "0",
-          duration: 0.2,
+          duration: 0.3,
           ease: "Power3.inOut",
         },
         0
@@ -176,6 +176,7 @@ function Modal() {
                             <AccordionIcon
                               color="brandYellow.default"
                               className="accordion-icon"
+                              ml={1}
                             />
                           </AccordionButton>
 

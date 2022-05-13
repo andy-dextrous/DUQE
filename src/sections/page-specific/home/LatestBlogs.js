@@ -55,9 +55,8 @@ function LatestBlogs() {
             From the blog
           </Heading>
           <Heading as="h3" className="thin-h3" color="white">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. Exercitation
-            veniam consequat sunt nostrud amet.
+            Stay up to date on all Free Zone business matters with inisghts from
+            our specialist team.
           </Heading>
           <SmartLink url="/blog">
             <Button>View All</Button>

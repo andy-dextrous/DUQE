@@ -48,7 +48,7 @@ const SectionWrapperCustom = forwardRef(({ alt, children }, ref) => {
         <Box className="overlay" layerStyle="overlay" ref={overlay} />
         <Box layerStyle="fillSpace" position="relative" overflow="hidden">
           <SmartImage
-            img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1650858611/DUQE/DUQE_Hero.jpg"
+            img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto:best,w_1920/v1650925763/Home-Hero.jpg"
             layerStyle="bgImage"
             alt={alt}
             ref={img1}

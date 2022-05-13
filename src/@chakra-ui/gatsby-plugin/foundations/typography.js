@@ -130,9 +130,18 @@ export const globalTextStyles = {
     fontSize: ["xl", "xl", "2xl"],
     fontWeight: "extrabold",
     textTransform: "unset",
+    transition: "color 0.1s ease-out",
     lineHeight: 1.4,
     color: "white",
     fontFamily: "HelveticaNowDisplay-Bd",
+    _hover: {
+      color: "brandYellow.default",
+      transform: "translateX(5px)",
+    },
+  },
+  ".chakra-text.footerLink": {
+    transition: "0.1s ease-in-out",
+    listStyle: "none",
     _hover: {
       color: "brandYellow.default",
     },

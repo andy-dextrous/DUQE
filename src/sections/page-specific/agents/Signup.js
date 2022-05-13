@@ -21,8 +21,7 @@ function Signup() {
               <YellowHeading>Sign up</YellowHeading> to be a DUQE agent
             </Heading>
             <Heading as="h3" className="thin-h3" color="dark.default">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-              soluta deleniti odit.
+              Wanna become an exclusive DUQE agent? It's as easy as 1,2,3.
             </Heading>
           </VStack>
           <VStack spacing={[8, 8, 24]} w="full">
@@ -62,7 +61,17 @@ function Signup() {
                   zIndex="-1"
                 />
               </Box>
-              <Box flexGrow="1" h="full">
+              <Box
+                flexGrow="1"
+                h="full"
+                transform={[
+                  "unset",
+                  "unset",
+                  "translateX(10px)",
+                  "translateX(10px)",
+                  "translateX(23px)",
+                ]}
+              >
                 <Heading as="h6" color="brandBlue.default">
                   Step 1 - Register Yourself
                 </Heading>
