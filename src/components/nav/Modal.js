@@ -25,7 +25,6 @@ import {
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
   const primaryMenu = useMenuQuery("Primary")
-  // const subMenu = useMenuQuery("Secondary")
   const { mobileNavHeight } = useVariable()
   const menuWrapper = useRef()
   const overlay = useRef()
@@ -34,30 +33,56 @@ function Modal() {
 
   useLayoutEffect(() => {
     if (!ScrollTrigger) return
-    const tl = gsap.timeline({ paused: true })
-    tl.fromTo(
-      overlay.current,
-      { visibility: "hidden", opacity: 0 },
-      {
-        visibility: "visible",
-        opacity: 0.5,
-        duration: 0.3,
-        ease: "Power3.Out",
-      },
-      0
-    )
-    tl.fromTo(
-      menuWrapper.current,
-      {
-        xPercent: "-100",
-      },
-      {
-        xPercent: "0",
-        duration: 0.3,
-        ease: "Power3.Out",
-      },
-      0
-    )
+    const tl = gsap
+      .timeline({ paused: true })
+      .fromTo(
+        overlay.current,
+        { visibility: "hidden", opacity: 0 },
+        {
+          visibility: "visible",
+          opacity: 0.5,
+          duration: 0.2,
+          ease: "Power3.inOut",
+        },
+        0
+      )
+      .fromTo(
+        menuWrapper.current,
+        {
+          xPercent: "-100",
+        },
+        {
+          xPercent: "0",
+          duration: 0.2,
+          ease: "Power3.inOut",
+        },
+        0
+      )
+      .fromTo(
+        [".primaryMenuLink"],
+        {
+          opacity: 0,
+          x: -30,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          stagger: 0.05,
+          duration: 0.2,
+          ease: "Power3.Out",
+        },
+        0.1
+      )
+      .fromTo(
+        ".accordion-icon",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 0.2,
+        }
+      )
     navAnimation.current = tl
   }, [])
 
@@ -75,6 +100,7 @@ function Modal() {
       <Flex
         as="nav"
         pt={mobileNavHeight}
+        pb={[40, 40, 0]}
         h="100vh"
         w={["100vw", "100vw", "500px"]}
         justify="center"
@@ -86,8 +112,8 @@ function Modal() {
         bg="rgba(11,11,11,0.96)"
         sx={{ backdropFilter: "blur(10px)" }}
         id="navPopup"
-        ref={menuWrapper}
         borderRight="1px solid rgba(187,187,187,0.3)"
+        ref={menuWrapper}
       >
         <Box w="full" h={["auto", "auto", "auto", "full"]}>
           <Center
@@ -139,11 +165,18 @@ function Modal() {
                         </Link>
                       ) : (
                         <AccordionItem border="none">
-                          <AccordionButton px="0" py={2}>
+                          <AccordionButton
+                            px="0"
+                            py={2}
+                            className="link-wrapper"
+                          >
                             <Text className="primaryMenuLink">
                               {item.label}
                             </Text>
-                            <AccordionIcon color="brandYellow.default" />
+                            <AccordionIcon
+                              color="brandYellow.default"
+                              className="accordion-icon"
+                            />
                           </AccordionButton>
 
                           <AccordionPanel pb={4}>
@@ -166,27 +199,6 @@ function Modal() {
                     })}
                 </Accordion>
               </VStack>
-              {/* <VStack spacing={12} align="flex-start" w="full">
-                <VStack
-                  spacing={[2, 2, 2]}
-                  align="start"
-                  pl={[0, 0, 0]}
-                  ref={primaryMenuLinks}
-                >
-                  {subMenu.menuItems.nodes.map(item => {
-                    return (
-                      <Link
-                        key={item.databaseId}
-                        to={item.path}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        <Text className="subMenuLink">{item.label}</Text>
-                      </Link>
-                    )
-                  })}
-                </VStack>
-              </VStack> */}
-
               <VStack spacing={12} align="flex-start" w="full">
                 <SocialFollows direction="row" button variant="circle" />
                 <VStack bg="brandYellow.default" p={8} w="full" rounded="xl">
