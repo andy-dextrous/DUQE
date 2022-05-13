@@ -18,21 +18,22 @@ function WhyDuqe() {
   return (
     <SectionWrapper
       className="light"
-      containerSize="xl"
       containerStyles={{ py: 0, pt: containerPaddingY }}
     >
-      <Stack direction={["column", "column", "row"]} spacing={[12, 12, 40]}>
-        <Box flex="1" position="relative" h="768px">
+      <Stack
+        direction={["column", "column", "row"]}
+        spacing={[12, 12, 16, 20, 24, 32, 40]}
+      >
+        <Box flex="1" position="relative">
           <Heading className="jumbo" position="absolute" right="5%" top="-3%">
             <YellowHeading>Why</YellowHeading>
             <br /> Duqe?
           </Heading>
           <Image
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651114618/DUQE/QImage.png"
-            h="100%"
+            alt="Why Duqe"
             w="100%"
             maxW="100vw"
-            objectFit="cover"
           />
         </Box>
         <VStack spacing={componentSpacing} align="flex-start" flex="1">

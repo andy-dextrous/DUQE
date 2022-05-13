@@ -1,4 +1,5 @@
 import { Button, Center, Heading, Image, Stack, VStack } from "@chakra-ui/react"
+import { Link } from "gatsby"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import { useVariable } from "../../../hooks/useVariable"
@@ -31,11 +32,22 @@ function Calculate() {
             Do you need more visas? Looking for a more flexible package? Use our
             Cost Calculator to find out the cost of your business setup.
           </Heading>
-          <Button>Calculate Cost</Button>
+          <Link to="/cost-calculator">
+            {" "}
+            <Button>Calculate Cost</Button>
+          </Link>
         </VStack>
         <Center mt={20} flex="1" h="full">
           <Image
-            height={["60vh", "60vh", "800px"]}
+            height={[
+              "60vh",
+              "60vh",
+              "600px",
+              "600px",
+              "600px",
+              "600px",
+              "800px",
+            ]}
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944008/DUQE/Calculator.png"
           />
         </Center>
