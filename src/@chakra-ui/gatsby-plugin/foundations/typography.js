@@ -127,10 +127,10 @@ export const globalTextStyles = {
     textTransform: "uppercase",
   },
   ".chakra-text.primaryMenuLink": {
-    fontSize: ["3xl", "3xl", "55px"],
+    fontSize: ["xl", "xl", "2xl"],
     fontWeight: "extrabold",
-    textTransform: "uppercase",
-    lineHeight: "60px",
+    textTransform: "unset",
+    lineHeight: 1.4,
     color: "white",
     fontFamily: "HelveticaNowDisplay-Bd",
     _hover: {
@@ -138,8 +138,8 @@ export const globalTextStyles = {
     },
   },
   ".chakra-text.subMenuLink": {
-    fontSize: ["lg", "lg", "2xl"],
-    fontWeight: "bold",
+    fontSize: ["lg", "lg", "xl"],
+    fontWeight: "normal",
     color: "white",
     _hover: {
       color: "brandYellow.default",

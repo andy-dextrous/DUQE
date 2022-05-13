@@ -11,36 +11,52 @@ import {
   Heading,
   Stack,
   Center,
-  Image,
   Divider,
   Button,
   Flex,
   Box,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
 } from "@chakra-ui/react"
 
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
-  const { sectionPaddingX, mobileNavHeight } = useVariable()
   const primaryMenu = useMenuQuery("Primary")
   const subMenu = useMenuQuery("Secondary")
+  const { mobileNavHeight } = useVariable()
   const menuWrapper = useRef()
+  const overlay = useRef()
   const primaryMenuLinks = useRef()
-  const subMenuRef = useRef()
   const navAnimation = useRef(null)
 
   useLayoutEffect(() => {
     if (!ScrollTrigger) return
     const tl = gsap.timeline({ paused: true })
     tl.fromTo(
+      overlay.current,
+      { visibility: "hidden", opacity: 0 },
+      {
+        visibility: "visible",
+        opacity: 0.5,
+        duration: 0.3,
+        ease: "Power3.Out",
+      },
+      0
+    )
+    tl.fromTo(
       menuWrapper.current,
       {
-        autoAlpha: 0,
+        xPercent: "-100",
       },
       {
-        autoAlpha: 1,
-        duration: 0.5,
-        ease: "expo.inOut",
-      }
+        xPercent: "0",
+        duration: 0.3,
+        ease: "Power3.Out",
+      },
+      0
     )
     navAnimation.current = tl
   }, [])
@@ -55,140 +71,148 @@ function Modal() {
   }, [isMenuOpen])
 
   return (
-    <Flex
-      as="nav"
-      px={sectionPaddingX}
-      pt={mobileNavHeight}
-      h="100vh"
-      w="100vw"
-      justify="center"
-      zIndex="modal"
-      position="fixed"
-      visibility="hidden"
-      left="0"
-      top="0"
-      overflow={["scroll", "scroll", "hidden"]}
-      bg="rgba(11,11,11,.95)"
-      sx={{ backdropFilter: "blur(10px)" }}
-      id="navPopup"
-      ref={menuWrapper}
-    >
-      <Box w="full" maxW="container.xl" h={["auto", "auto", "auto", "full"]}>
-        <Center p={0} w="full" h={["auto", "auto", "auto", "full"]}>
-          <Stack
+    <>
+      <Flex
+        as="nav"
+        pt={mobileNavHeight}
+        h="100vh"
+        w={["100vw", "100vw", "500px"]}
+        justify="center"
+        zIndex="modal"
+        position="fixed"
+        left="0"
+        top="0"
+        overflowY={["scroll", "scroll", "hidden"]}
+        bg="rgba(11,11,11,0.96)"
+        sx={{ backdropFilter: "blur(10px)" }}
+        id="navPopup"
+        ref={menuWrapper}
+        borderRight="1px solid rgba(187,187,187,0.3)"
+      >
+        <Box w="full" h={["auto", "auto", "auto", "full"]}>
+          <Center
+            px={[12, 12, 16]}
             w="full"
-            direction={["column", "column", "column", "row"]}
-            justify={["center", "center", "space-between"]}
-            align={["center", "center", "center"]}
-            py={[16, 8, 24]}
-            px={[8, 8, 0]}
-            m="auto"
+            h={["auto", "auto", "auto", "full"]}
           >
-            <VStack
-              as="nav"
+            <Stack
               w="full"
-              align="flex-start"
-              spacing={[4, 8, 8, 12]}
-              p={[0, 0, 12, 8, 16, 0]}
-              justify="center"
-              flex={[2]}
+              direction={["column", "column", "column"]}
+              justify={["center", "center", "space-between"]}
+              align={["center", "center", "center"]}
+              py={[16, 8, 24]}
+              px="0"
+              spacing={[8, 8, 8]}
+              m="auto"
+              divider={<Divider opacity="0.2" />}
             >
               <VStack
-                spacing={[2, 2, 20]}
-                align="start"
-                pl={[0, 0, 0]}
-                ref={primaryMenuLinks}
-              >
-                {primaryMenu.menuItems.nodes.map(item => {
-                  return (
-                    <Link
-                      key={item.databaseId}
-                      to={item.path}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <Text className="primaryMenuLink">{item.label}</Text>
-                    </Link>
-                  )
-                })}
-              </VStack>
-            </VStack>
-            <VStack
-              as="nav"
-              w="full"
-              align="flex-start"
-              justify={["flex-start", "flex-start", "flex-start"]}
-              flex={[3, 3, 1.5]}
-              spacing={[4, 4, 8, 12]}
-              px={[0, 0, 12, 16, 20]}
-              py={[0, 8, 12, 16, 20]}
-            >
-              <VStack
-                pl={[0]}
+                as="nav"
+                w="full"
                 align="flex-start"
-                ref={subMenuRef}
-                spacing={[4, 4, 12]}
+                spacing={[4, 4, 4, 12]}
+                p={[0, 0, 12, 8, 16, 0]}
+                justify="center"
+                flex={[2]}
               >
-                {subMenu.menuItems.nodes.map(item => {
-                  return (
-                    <Link
-                      key={item.databaseId}
-                      to={item.path}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <Text textStyle="subMenuLink" className="subMenuLink">
-                        {item.label}
-                      </Text>
-                    </Link>
-                  )
-                })}
-              </VStack>
-            </VStack>
-            <VStack flex="1" spacing={12} align="flex-start" w="full">
-              {/* <SearchForm /> */}
-              <VStack align="flex-start" pb={[20, 20, 0]}>
-                <Text color="dark.400">Other links</Text>
-                <Text color="white" fontWeight="bold">
-                  Privacy policy
-                </Text>
-                <Text color="white" fontWeight="bold">
-                  Terms & conditions
-                </Text>
-                <Text color="white" fontWeight="bold">
-                  Support
-                </Text>
-                <Text color="white" fontWeight="bold">
-                  Contact Us
-                </Text>
-                <Divider py={8} />
-                <SocialFollows
-                  direction="row"
-                  button
-                  variant="circle"
-                  py={12}
-                />
-                <VStack
-                  bg="brandYellow.default"
-                  p={8}
-                  rounded="2xl"
-                  align="flex-start"
+                <Accordion
+                  allowToggle
+                  align="start"
+                  pl={[0, 0, 0]}
+                  ref={primaryMenuLinks}
+                  id="test"
                 >
-                  <Heading as="h4">Cost Calculator</Heading>
-                  <Button>Cost calculator</Button>
+                  {primaryMenu.menuItems.nodes
+                    .filter(item => {
+                      return !item.parentId
+                    })
+                    .map(item => {
+                      return !item.childItems.nodes.length ? (
+                        <Link
+                          key={item.databaseId}
+                          to={item.path}
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          <Text className="primaryMenuLink" py={2}>
+                            {item.label}
+                          </Text>
+                        </Link>
+                      ) : (
+                        <AccordionItem border="none">
+                          <AccordionButton px="0" py={2}>
+                            <Text className="primaryMenuLink">
+                              {item.label}
+                            </Text>
+                            <AccordionIcon color="brandYellow.default" />
+                          </AccordionButton>
+
+                          <AccordionPanel pb={4}>
+                            {item.childItems.nodes.map(child => {
+                              return (
+                                <Link
+                                  key={child.databaseId}
+                                  to={child.path}
+                                  onClick={() => setIsMenuOpen(false)}
+                                >
+                                  <Text className="subMenuLink">
+                                    {child.label}
+                                  </Text>
+                                </Link>
+                              )
+                            })}
+                          </AccordionPanel>
+                        </AccordionItem>
+                      )
+                    })}
+                </Accordion>
+              </VStack>
+              <VStack spacing={12} align="flex-start" w="full">
+                <VStack
+                  spacing={[2, 2, 2]}
+                  align="start"
+                  pl={[0, 0, 0]}
+                  ref={primaryMenuLinks}
+                >
+                  {subMenu.menuItems.nodes.map(item => {
+                    return (
+                      <Link
+                        key={item.databaseId}
+                        to={item.path}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <Text className="subMenuLink">{item.label}</Text>
+                      </Link>
+                    )
+                  })}
                 </VStack>
               </VStack>
-            </VStack>
-          </Stack>
-        </Center>
-        <Image
-          src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651118245/DUQE/Corp_Q.svg"
-          position="absolute"
-          top="0"
-          left="0"
-          zIndex="-1"
-          opacity="10%"
-        />
-      </Box>
-    </Flex>
+
+              <VStack spacing={12} align="flex-start" w="full">
+                <SocialFollows direction="row" button variant="circle" />
+                <VStack bg="brandYellow.default" p={8} w="full" rounded="xl">
+                  <Heading as="h4">Cost Calculator</Heading>
+                  <Link to="/cost-calculator">
+                    <Button>Cost calculator</Button>
+                  </Link>
+                </VStack>
+              </VStack>
+            </Stack>
+          </Center>
+        </Box>
+      </Flex>
+      <Box
+        layerStyle="overlay"
+        bg="dark.default"
+        opacity="0.5"
+        height="100vh"
+        w="100vw"
+        position="fixed"
+        ref={overlay}
+        onClick={() => {
+          setIsMenuOpen(false)
+        }}
+      />
+    </>
   )
 }
 

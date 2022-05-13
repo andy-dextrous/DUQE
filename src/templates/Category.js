@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 
 function Archive(props) {
   return (
-    <Layout noFooterCTA startDark>
+    <Layout>
       <Seo props={props} />
       <div>Category</div>
     </Layout>

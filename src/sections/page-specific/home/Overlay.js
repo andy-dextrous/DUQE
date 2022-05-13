@@ -1,38 +1,38 @@
-import React, { useEffect, useRef, useContext } from "react"
+import React, { useEffect, useRef } from "react"
 import { gsap } from "../../../gsap"
 
 import { Center } from "@chakra-ui/react"
-import useStopScroll from "../../../hooks/useStopScroll"
 
-function Overlay({ timeline }) {
+function Overlay({ timeline, isHomePage }) {
   const containerRef = useRef()
-  const { masterTimeline, animating, index } = timeline
-  useStopScroll(animating)
+  const { masterTimeline } = timeline
 
   useEffect(() => {
-    gsap.set(containerRef.current, { transformOrigin: "57% 50%" })
+    if (isHomePage) {
+      gsap.set(containerRef.current, { transformOrigin: "57% 50%" })
 
-    masterTimeline
-      .to(
-        containerRef.current,
-        {
-          scale: 10,
-          duration: 2,
-          ease: "Power3.in",
-        },
-        "zoom"
-      )
-      .to(
-        containerRef.current,
-        {
-          autoAlpha: 0,
-          display: "none",
-        },
-        "hideOverlay"
-      )
+      masterTimeline
+        .to(
+          containerRef.current,
+          {
+            scale: 10,
+            duration: 2,
+            ease: "Power3.in",
+          },
+          "zoom"
+        )
+        .to(
+          containerRef.current,
+          {
+            autoAlpha: 0,
+            display: "none",
+          },
+          "hideOverlay"
+        )
+    }
   }, [])
 
-  return (
+  return isHomePage ? (
     <Center
       w="100vw"
       h="100vh"
@@ -52,6 +52,8 @@ function Overlay({ timeline }) {
       }}
       ref={containerRef}
     ></Center>
+  ) : (
+    <></>
   )
 }
 
