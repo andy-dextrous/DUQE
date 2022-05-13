@@ -34,14 +34,18 @@ function Agent() {
           </Link>
         </VStack>
         <Square flex="1" zIndex="2">
-          <Image src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650951344/DUQE/Cross_man.png" />
+          <Image
+            data-speed="1.1"
+            src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650951344/DUQE/Cross_man.png"
+          />
         </Square>
       </Stack>
       <Image
         src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650951373/DUQE/Circle.svg"
         position="absolute"
+        data-speed="0.9"
         right="0"
-        height={["50vh", "50vh", "40vh"]}
+        height={["50vh", "50vh", "50vh"]}
         top={["unset", "unset", "25%"]}
         bottom={["10%", "10%", "unset"]}
         zIndex="0"
