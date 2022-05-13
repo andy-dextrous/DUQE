@@ -21,6 +21,7 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react"
+import Logo from "../../assets/logos/Logo"
 
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
@@ -109,8 +110,8 @@ function Modal() {
         left="0"
         top="0"
         overflowY={["scroll", "scroll", "hidden"]}
-        bg="rgba(11,11,11,0.96)"
-        sx={{ backdropFilter: "blur(10px)" }}
+        bg="rgba(11,11,11,1)"
+        // sx={{ backdropFilter: "blur(10px)" }}
         id="navPopup"
         borderRight="1px solid rgba(187,187,187,0.3)"
         ref={menuWrapper}
@@ -201,13 +202,14 @@ function Modal() {
                 </Accordion>
               </VStack>
               <VStack spacing={12} align="flex-start" w="full">
-                <SocialFollows direction="row" button variant="circle" />
-                <VStack bg="brandYellow.default" p={8} w="full" rounded="xl">
+                {/* <VStack bg="brandYellow.default" p={8} w="full" rounded="xl">
                   <Heading as="h4">Cost Calculator</Heading>
                   <Link to="/cost-calculator">
-                    <Button>Cost calculator</Button>
+                  <Button>Cost calculator</Button>
                   </Link>
-                </VStack>
+                </VStack> */}
+                <SocialFollows direction="row" button variant="circle" />
+                <Logo useContrast={false} width="60px" />
               </VStack>
             </Stack>
           </Center>

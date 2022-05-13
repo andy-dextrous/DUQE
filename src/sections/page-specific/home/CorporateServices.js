@@ -51,7 +51,7 @@ function CorporateServices() {
       iconUrl:
         "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg",
       imgUrl:
-        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1650947182/DUQE/Rectangle_21.png",
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto,w_1080/v1651912082/DUQE/Agency_7_GS.jpg",
       text: " Our accountants will sort out your invoices, receipts, payments,etc. and make sure your financial records are maintained per international standards, so you have one less thing to worry about.",
     },
     {
@@ -59,7 +59,7 @@ function CorporateServices() {
       iconUrl:
         "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg",
       imgUrl:
-        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1650947182/DUQE/Rectangle_21.png",
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto,w_1080/v1651912101/DUQE/Agency_charlesdeluvio-Lks7vei-eAg-unsplash.jpg",
       text: "Enjoy the flexibility to work and get things done in your own terms. We offer a variety of flexible workspaces and you’re free to choose and book the one that suits you best – from virtual offices and dedicated desks, to private offices and meeting rooms. ",
     },
   ]

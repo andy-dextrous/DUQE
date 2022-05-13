@@ -1,6 +1,8 @@
 import { Heading, Image, Stack, VStack } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
+import Form from "../../../components/forms/Form"
+import CorpServicesElements from "../../../components/forms/CorpServicesElements"
 
 function Apply() {
   return (
@@ -21,15 +23,12 @@ function Apply() {
             To Start, Apply Now!
           </Heading>
           <Heading as="h3" className="thin-h3" color="dark.default">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            magnam laudantium quisquam?
+            Want to focus on what you do best while we cross your t's and dot
+            your i's? Good plan. Simply fill out this form to get started.
           </Heading>
         </VStack>
-        <VStack spacing={12} align="start" flex="1">
-          <Image
-            w="100%"
-            src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651121125/DUQE/Screen_Shot_2022-04-28_at_2.45.08_pm.png"
-          />
+        <VStack spacing={12} align="start" flex="1" w="full">
+          <Form formElements={<CorpServicesElements />} w="full" />
         </VStack>
       </Stack>
     </SectionWrapper>
