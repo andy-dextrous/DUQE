@@ -10,7 +10,7 @@ function Blurb({ img, title, text }) {
       justifyContent="flex-start"
       sx={{ ".blurb-title": { textTransform: "unset" } }}
     >
-      <Box h="80px">
+      <Box h={["40px", "50px", "80px"]}>
         <Image src={img} h="100%" />
       </Box>
       <Heading as="h4" className="blurb-title">
