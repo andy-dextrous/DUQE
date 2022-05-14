@@ -42,7 +42,7 @@ function GetItDone() {
             maxW={["100%", "100%", "60vw", "45vw", "40vw", "40vw", "45vw"]}
             right="0"
             bottom={["-9%", "-9%", "-12%", "-20%", "-15%", "-15%", "-20%"]}
-            data-speed="1.1"
+            data-speed="0.9"
           />
         </Box>
       </Stack>

@@ -40,6 +40,7 @@ function Benefits() {
         position="absolute"
         left="0"
         top="28%"
+        data-speed="1.1"
       />
       <CorporateServices />
     </SectionWrapper>
