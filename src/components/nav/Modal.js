@@ -5,23 +5,21 @@ import { useMenuQuery } from "../../hooks/useMenuQuery"
 import { MenuContext } from "../Layout"
 import { SocialFollows } from "../social/SocialFollows"
 import { useVariable } from "../../hooks"
+import Logo from "../../assets/logos/Logo"
 import {
-  VStack,
-  Text,
-  Heading,
-  Stack,
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  Box,
   Center,
   Divider,
-  Button,
   Flex,
-  Box,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
+  Stack,
+  Text,
+  VStack,
 } from "@chakra-ui/react"
-import Logo from "../../assets/logos/Logo"
 
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)

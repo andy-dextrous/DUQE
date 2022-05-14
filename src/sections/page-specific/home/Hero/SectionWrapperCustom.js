@@ -4,7 +4,7 @@ import { Box, Flex } from "@chakra-ui/react"
 import { SmartImage } from "../../../../components/SmartImage"
 
 const SectionWrapperCustom = forwardRef(({ alt, children }, ref) => {
-  const { img1, img2, img3, overlay } = ref
+  const { img1, overlay } = ref
 
   const {
     containerPaddingY,

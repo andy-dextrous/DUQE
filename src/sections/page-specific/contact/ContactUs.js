@@ -5,9 +5,8 @@ import SectionWrapper from "../../../components/SectionWrapper"
 import YellowHeading from "../../../components/common/YellowHeading"
 import Form from "../../../components/forms/Form"
 import ContactPageElements from "../../../components/forms/ContactPageElements"
-import Blurb from "../../../components/common/Blurb"
-import { Box, Container, Heading, Stack, VStack } from "@chakra-ui/react"
 import BlurbInline from "../../../components/common/BlurbInline"
+import { Box, Container, Heading, Stack, VStack } from "@chakra-ui/react"
 
 function ContactUs() {
   const mapHtml = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462562.6509516108!2d54.94729613679833!3d25.07575945545691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sau!4v1651720481315!5m2!1sen!2sau" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`

@@ -12,6 +12,8 @@ import { Box, Container, Select, SimpleGrid, Stack } from "@chakra-ui/react"
 function PostGrid({ posts, ctx, categories }) {
   const [selectedPosts, setSelectedPosts] = React.useState(posts)
 
+  console.log(ctx)
+
   function filterCategories(e) {
     Flip.getState(".post-item")
 
@@ -106,7 +108,9 @@ function PostGrid({ posts, ctx, categories }) {
           })}
         </SimpleGrid>
 
-        {selectedPosts && <Pagination ctx={ctx} anchor="#post-grid" />}
+        {posts.length > ctx.limit && (
+          <Pagination ctx={ctx} anchor="#post-grid" />
+        )}
       </Container>
     </SectionWrapper>
   )

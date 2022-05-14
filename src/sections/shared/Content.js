@@ -1,6 +1,5 @@
 import React from "react"
-import SectionWrapper from "../../components/SectionWrapper"
-import { Container, VStack, Box } from "@chakra-ui/react"
+import { VStack, Box } from "@chakra-ui/react"
 import ParseWpContent from "../../components/post/ParseWpContent"
 
 function Content({ content, width = "lg" }) {
