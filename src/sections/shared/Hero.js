@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from "react"
 import SectionWrapper from "../../components/SectionWrapper"
-import { Button, Center, Heading, Stack, Text } from "@chakra-ui/react"
-import { SmartLink } from "../../components/SmartLink"
+import { Center, Heading, Stack } from "@chakra-ui/react"
 import { gsap, ScrollTrigger } from "../../gsap"
 import ScrollDown from "../../assets/icons/ScrollDown"
 import { useVariable } from "../../hooks"
 
-function Hero() {
+function Hero({ title = "", bgImage = "" }) {
   const { componentSpacing } = useVariable()
   const img = useRef()
   const animation = useRef()
@@ -38,7 +37,7 @@ function Hero() {
 
   return (
     <SectionWrapper
-      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto,w_1920/v1650925763/Home-Hero.jpg"
+      bgImage={bgImage}
       overlay
       darkBackground
       h="100vh"
@@ -55,26 +54,8 @@ function Hero() {
           width="100%"
         >
           <Heading as="h1" color="white" maxW="100%">
-            Duqe is for the{" "}
-            <Text as="span" color="brandYellow.default">
-              disrupters
-            </Text>
+            {title}
           </Heading>
-          <Heading as="h3" color="white" className="thin-h3">
-            Set up your company in DUQE Free Zone, based on the prestigious QE2.
-          </Heading>
-          <Stack
-            direction={["column", "column", "row"]}
-            w="full"
-            spacing={[5, 5, 6]}
-          >
-            <SmartLink url="/contact-us">
-              <Button>Start your business</Button>
-            </SmartLink>
-            <SmartLink url="/cost-calculator">
-              <Button variant="outlineWhite">How much does it cost?</Button>
-            </SmartLink>
-          </Stack>
         </Stack>
       </Center>
 
