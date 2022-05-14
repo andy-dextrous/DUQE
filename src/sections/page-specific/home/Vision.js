@@ -28,7 +28,7 @@ function Vision() {
         top={["calc(30vh - 40vw)", "30vh", "calc(50vh - 22vw)"]}
         color="#e0db2a"
         outline
-        data-speed="1.1"
+        data-speed="1.2"
       />
     </SectionWrapper>
   )
