@@ -1,8 +1,8 @@
 import { useEffect } from "react"
-import { gsap } from "../../../../gsap"
+import { gsap, ScrollTrigger } from "../../../../gsap"
 
-function useHeroAnimation(ref) {
-  const { img1 } = ref
+function useHeroAnimation(masterTimeline, animation, ref) {
+  const { img1, img2, img3, overlay, content } = ref
 
   /**** MASTER TIMELINE ANIMATIONS ****/
   // useEffect(() => {
@@ -36,7 +36,7 @@ function useHeroAnimation(ref) {
       scale: 1.4,
       ease: "linear",
     })
-  }, [img1])
+  }, [])
 }
 
 export default useHeroAnimation
