@@ -110,7 +110,7 @@ function Form() {
 
   return (
     <SectionWrapper
-      h="100vh"
+      h={["auto", "auto", "100vh"]}
       width={["100vw", "100vw", "calc(100vw - 100px)"]}
       className="light"
       withContainer={false}
