@@ -29,12 +29,12 @@ function Mission() {
           layerStyle="fillSpace"
           minH="300px"
         >
-          <Heading color="white" zIndex="1">
+          <Heading color="white" zIndex="1" textTransform="uppercase">
             Our
             <br /> <YellowHeading> mission</YellowHeading>
           </Heading>
           <Image
-            opacity="0.3"
+            opacity="0.4"
             layerStyle="fillSpaceAbsolute"
             objectFit="cover"
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto:eco,w_600/v1651912110/DUQE/iStock/iStock-1280046969.jpg"
@@ -65,7 +65,7 @@ function Mission() {
           layerStyle="fillSpace"
           minH="300px"
         >
-          <Heading color="white" zIndex="1">
+          <Heading color="white" zIndex="1" textTransform="uppercase">
             Our
             <br />{" "}
             <Text as="span" color="brandBlue.default">
@@ -74,7 +74,7 @@ function Mission() {
             </Text>
           </Heading>
           <Image
-            opacity="0.3"
+            opacity="0.4"
             layerStyle="fillSpaceAbsolute"
             objectFit="cover"
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto:best,w_600/v1651912116/DUQE/iStock/iStock-826130820.jpg"

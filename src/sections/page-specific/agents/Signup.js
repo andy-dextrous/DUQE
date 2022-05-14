@@ -4,6 +4,7 @@ import {
   Heading,
   Image,
   Input,
+  Link,
   Stack,
   VStack,
 } from "@chakra-ui/react"
@@ -77,7 +78,9 @@ function Signup() {
                 </Heading>
                 <Heading as="h4" className="thin">
                   Register by filling out our form or send us a message at{" "}
-                  <strong>info@duqe.ae</strong>
+                  <Link href="mailto:info@duqe.ae">
+                    <strong>info@duqe.ae</strong>
+                  </Link>
                 </Heading>
               </Box>
             </Stack>

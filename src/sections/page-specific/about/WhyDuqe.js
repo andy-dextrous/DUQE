@@ -25,7 +25,13 @@ function WhyDuqe() {
         spacing={[12, 12, 16, 20, 24, 32, 40]}
       >
         <Box flex="1" position="relative">
-          <Heading className="jumbo" position="absolute" right="5%" top="-3%">
+          <Heading
+            className="jumbo"
+            position="absolute"
+            right="5%"
+            top="-3%"
+            zIndex="1"
+          >
             <YellowHeading>Why</YellowHeading>
             <br /> Duqe?
           </Heading>
@@ -34,6 +40,8 @@ function WhyDuqe() {
             alt="Why Duqe"
             w="100%"
             maxW="100vw"
+            data-speed="0.9"
+            zIndex="-1"
           />
         </Box>
         <VStack spacing={componentSpacing} align="flex-start" flex="1">
