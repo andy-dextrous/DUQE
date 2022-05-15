@@ -40,7 +40,7 @@ function Modal() {
         {
           visibility: "visible",
           opacity: 0.5,
-          duration: 0.3,
+          duration: 0.2,
           ease: "Power3.inOut",
         },
         0
@@ -52,8 +52,8 @@ function Modal() {
         },
         {
           xPercent: "0",
-          duration: 0.3,
-          ease: "Power3.inOut",
+          duration: 0.2,
+          ease: "Power3.in",
         },
         0
       )
@@ -67,7 +67,7 @@ function Modal() {
           opacity: 1,
           x: 0,
           stagger: 0.05,
-          duration: 0.2,
+          duration: 0.15,
           ease: "Power3.Out",
         },
         0.1

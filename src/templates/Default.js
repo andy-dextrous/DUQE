@@ -9,23 +9,22 @@ import Content from "../sections/shared/Content"
 import { useVariable } from "../hooks"
 
 function Default(props) {
-  console.log(props)
   const { data } = props
   const { newsletterOffset } = useVariable()
   return (
     <Layout>
       <Seo props={props} />
       <Hero
-        title={data.wpPage.title}
-        bgImage={data.wpPage.featuredImage.node}
+        title={data.wpPage?.title}
+        bgImage={data.wpPage?.featuredImage?.node}
       />
-      <SectionWrapper
+      {/* <SectionWrapper
         className="light"
         containerSize="lg"
         mb={newsletterOffset}
       >
-        <Content content={data.wpPage.content} />
-      </SectionWrapper>
+        <Content content={data.wpPage?.content} />
+      </SectionWrapper> */}
     </Layout>
   )
 }
