@@ -145,7 +145,6 @@ function Modal() {
                   align="start"
                   pl={[0, 0, 0]}
                   ref={primaryMenuLinks}
-                  id="test"
                 >
                   {primaryMenu.menuItems.nodes
                     .filter(item => {
@@ -163,7 +162,7 @@ function Modal() {
                           </Text>
                         </Link>
                       ) : (
-                        <AccordionItem border="none">
+                        <AccordionItem border="none" key={item.id}>
                           <AccordionButton
                             px="0"
                             py={2}
@@ -183,7 +182,7 @@ function Modal() {
                             {item.childItems.nodes.map(child => {
                               return (
                                 <Link
-                                  key={child.databaseId}
+                                  key={"accordion" + child.id}
                                   to={child.path}
                                   onClick={() => setIsMenuOpen(false)}
                                 >

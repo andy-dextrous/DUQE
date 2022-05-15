@@ -20,6 +20,7 @@ function Q1({ data, id }) {
       data-slide-index={id}
       layerStyle="fillSpaceAbsolute"
       justify={["flex-start", "flex-start", "space-between"]}
+      visibility="hidden"
     >
       <VStack align="flex-start" spacing={8}>
         <Heading textTransform="uppercase">{answers[id].question}</Heading>

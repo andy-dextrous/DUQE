@@ -28,6 +28,7 @@ function Q9({ data, id }) {
       spacing={8}
       data-slide-index={id}
       layerStyle="fillSpaceAbsolute"
+      visibility="hidden"
     >
       <VStack align="flex-start" spacing={8}>
         <Heading textTransform="uppercase">{answers[id].question}</Heading>

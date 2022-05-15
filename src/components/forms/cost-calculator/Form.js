@@ -19,9 +19,8 @@ import animateSlides from "./animateSlides"
 import { Center, Stack } from "@chakra-ui/react"
 
 function Form() {
-  const showFrontPage = false
   const [answers, setAnswers] = useState(data)
-  const [currentQuestion, setCurrentQuestion] = useState(showFrontPage ? 0 : 1)
+  const [currentQuestion, setCurrentQuestion] = useState(1)
   const [direction, setDirection] = useState("up")
   const [progress, setProgress] = useState(0)
   const formRef = useRef()
@@ -102,7 +101,6 @@ function Form() {
     answers,
     currentQuestion,
     setCurrentQuestion,
-    showFrontPage,
     handleChange,
     direction,
     setDirection,
@@ -110,7 +108,7 @@ function Form() {
 
   return (
     <SectionWrapper
-      h={["130vh", "130vh", "100vh"]}
+      h={["150vh", "150vh", "130vh", "100vh"]}
       width={["100vw", "100vw", "calc(100vw - 100px)"]}
       className="light"
       withContainer={false}

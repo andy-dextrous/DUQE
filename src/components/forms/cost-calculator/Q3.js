@@ -20,6 +20,7 @@ function Q3({ data, id }) {
       layerStyle="fillSpaceAbsolute"
       pt={[8, 8, 0]}
       justify={["flex-start", "flex-start", "space-between"]}
+      visibility="hidden"
     >
       <VStack align="flex-start" spacing={8}>
         <Heading textTransform="uppercase">{answers[id].question}</Heading>

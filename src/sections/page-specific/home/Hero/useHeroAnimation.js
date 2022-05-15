@@ -14,7 +14,6 @@ function useHeroAnimation(masterTimeline, animation, ref) {
 
   /**** ANIMATIONS NOT IN MASTER TIMELINE ****/
   useEffect(() => {
-    console.log(img1.current)
     gsap.from(img1.current, {
       opacity: 0,
       delay: 0.2,
