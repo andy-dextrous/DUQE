@@ -18,13 +18,13 @@ function Default(props) {
         title={data.wpPage?.title}
         bgImage={data.wpPage?.featuredImage?.node}
       />
-      {/* <SectionWrapper
+      <SectionWrapper
         className="light"
         containerSize="lg"
         mb={newsletterOffset}
       >
         <Content content={data.wpPage?.content} />
-      </SectionWrapper> */}
+      </SectionWrapper>
     </Layout>
   )
 }

@@ -1,12 +1,9 @@
 import React from "react"
-import { VStack, Box } from "@chakra-ui/react"
-import ParseWpContent from "../../components/post/ParseWpContent"
+import { Box } from "@chakra-ui/react"
 
-function Content({ content, width = "lg" }) {
+function Content({ content }) {
   return (
-    <VStack align="start" justify="start" spacing={8}>
-      <Box className="wsywyg">{ParseWpContent(content)}</Box>
-    </VStack>
+    <Box className="wsywyg" dangerouslySetInnerHTML={{ __html: content }} />
   )
 }
 
