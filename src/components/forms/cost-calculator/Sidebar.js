@@ -1,12 +1,15 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { gsap } from "../../../gsap"
 
 import { Box, Heading, Progress, Text, VStack } from "@chakra-ui/react"
 import { useVariable } from "../../../hooks/useVariable"
 
-function Sidebar({ progress, currentQuestion }) {
+function Sidebar({ currentQuestion, answers }) {
+  const [progress, setProgress] = useState(0)
+
   const { sectionPaddingX } = useVariable()
   const questionRef = useRef()
+
   useEffect(() => {
     gsap.fromTo(
       questionRef.current,
@@ -21,6 +24,20 @@ function Sidebar({ progress, currentQuestion }) {
       }
     )
   }, [currentQuestion])
+
+  useEffect(() => {
+    const prevProgress = { x: progress }
+    const newProgress = Math.round(
+      (currentQuestion / (answers.length - 1)) * 100
+    )
+    gsap.to(prevProgress, {
+      x: newProgress,
+      ease: "Power2.in",
+      onUpdate: () => {
+        setProgress(prevProgress.x)
+      },
+    })
+  }, [answers, currentQuestion])
 
   return (
     <Box

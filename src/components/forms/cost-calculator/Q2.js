@@ -37,11 +37,17 @@ function Q2({ data, id }) {
             handleChange(e.target.value, id)
           }}
         >
-          <option value="">Select</option>
+          <option value="" selected={answers[id].answer === ""}>
+            Select
+          </option>
 
           {answers[id]?.options?.map((option, index) => {
             return (
-              <option key={index} value={option}>
+              <option
+                key={index}
+                value={option}
+                selected={option === answers[id].answer}
+              >
                 {option}
               </option>
             )

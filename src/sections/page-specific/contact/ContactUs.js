@@ -41,11 +41,13 @@ function ContactUs() {
           img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1652495013/DUQE/Address_Icon.png"
           title="Address"
           text="P.O. Box: 60085, Dubai, UAE"
+          link="https://goo.gl/maps/QQQQQQQQQQQQQQQQQ"
         />
         <BlurbInline
           img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1652495012/DUQE/Phone_Icon.png"
           title="Phone Number"
-          text="P.O. Box: 60085, Dubai, UAE"
+          text="971-04-3477236"
+          link="tel:+971-04-3477236"
         />
       </Stack>
     </SectionWrapper>

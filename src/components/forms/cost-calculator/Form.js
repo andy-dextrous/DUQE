@@ -22,7 +22,6 @@ function Form() {
   const [answers, setAnswers] = useState(data)
   const [currentQuestion, setCurrentQuestion] = useState(1)
   const [direction, setDirection] = useState("up")
-  const [progress, setProgress] = useState(0)
   const [submitted, setSubmitted] = useState(false)
   const [serverState, setServerState] = useState({
     submitting: false,
@@ -68,20 +67,6 @@ function Form() {
       gsap.set(q(`[data-slide-index="${currentQuestion}"]`), { autoAlpha: 1 })
     }
   }, [])
-
-  useEffect(() => {
-    const prevProgress = { x: progress }
-    const newProgress = Math.round(
-      (currentQuestion / (answers.length - 1)) * 100
-    )
-    gsap.to(prevProgress, {
-      x: newProgress,
-      ease: "Power2.in",
-      onUpdate: () => {
-        setProgress(prevProgress.x)
-      },
-    })
-  }, [answers, currentQuestion])
 
   useEffect(() => {
     animateSlides(
@@ -147,7 +132,7 @@ function Form() {
           <Q8 data={logic} id={8} />
           <Q9 data={logic} id={9} />
         </Center>
-        <Sidebar progress={progress} currentQuestion={currentQuestion} />
+        <Sidebar currentQuestion={currentQuestion} answers={answers} />
       </Stack>
     </SectionWrapper>
   )
