@@ -23,14 +23,14 @@ function Form() {
   const [currentQuestion, setCurrentQuestion] = useState(1)
   const [direction, setDirection] = useState("up")
   const [progress, setProgress] = useState(0)
-  const formRef = useRef()
-  const { sectionPaddingX, sidebarMenuWidth, mobileNavHeight } = useVariable()
-
   const [submitted, setSubmitted] = useState(false)
   const [serverState, setServerState] = useState({
     submitting: false,
     status: null,
   })
+
+  const formRef = useRef()
+  const { sectionPaddingX, sidebarMenuWidth, mobileNavHeight } = useVariable()
 
   function handleServerResponse(ok, msg, form) {
     setServerState({
@@ -134,6 +134,7 @@ function Form() {
           position="relative"
           maxH={["unset", "unset", "unset", "unset", "unset", "70vh", "60vh"]}
           onSubmit={handleOnSubmit}
+          id="cost-calculator"
           ref={formRef}
         >
           <Q1 data={logic} id={1} />

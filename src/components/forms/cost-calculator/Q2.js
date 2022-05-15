@@ -32,7 +32,7 @@ function Q2({ data, id }) {
           variant="filled"
           size="lg"
           name={answers[id].question}
-          w="50%"
+          w={["full", "full", "50%"]}
           onChange={e => {
             handleChange(e.target.value, id)
           }}

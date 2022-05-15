@@ -38,7 +38,11 @@ function Q9({ data, id }) {
         </Text>
 
         <FormControl>
-          <SimpleGrid spacing={4} columns={[1, 1, 2]} w="80%">
+          <SimpleGrid
+            spacing={4}
+            columns={[1, 1, 2]}
+            w={["100%", "100%", "80%"]}
+          >
             <Input
               placeholder="Enter your first name"
               size="lg"

@@ -160,6 +160,9 @@ export const globalTextStyles = {
     fontWeight: "300",
     letterSpacing: "-0.02em",
   },
+  "#cost-calculator h2": {
+    fontSize: ["2xl", "3xl", "5xl"],
+  },
 }
 
 export const base = {

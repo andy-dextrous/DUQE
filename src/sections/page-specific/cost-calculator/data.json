@@ -31,7 +31,7 @@
   },
   {
     "id": 3,
-    "question": "How many owners/shareholders will your company have?",
+    "question": "How many owners or shareholders will your company have?",
     "options": ["1 Owner", "2 Owners", "3 Owners", "4 Owners", "5 Owners"],
     "type": "dropdown",
     "multi": false,
