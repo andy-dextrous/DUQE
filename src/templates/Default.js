@@ -21,6 +21,7 @@ function Default(props) {
       <SectionWrapper
         className="light"
         containerSize="lg"
+        minH="60vh"
         mb={newsletterOffset}
       >
         <Content content={data.wpPage?.content} />

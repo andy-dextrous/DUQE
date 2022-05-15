@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { gsap } from "../../../gsap"
 import axios from "axios"
 import { useVariable } from "../../../hooks/useVariable"
@@ -62,7 +62,7 @@ function Form() {
       })
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (formRef.current) {
       const q = gsap.utils.selector(formRef.current)
       gsap.set(q(`[data-slide-index]`), { autoAlpha: 0 })
@@ -110,7 +110,7 @@ function Form() {
 
   return (
     <SectionWrapper
-      h={["auto", "auto", "100vh"]}
+      h={["130vh", "130vh", "100vh"]}
       width={["100vw", "100vw", "calc(100vw - 100px)"]}
       className="light"
       withContainer={false}
@@ -131,12 +131,12 @@ function Form() {
         <Center
           as="form"
           name="cost-calculator"
-          flex="7"
+          flex={[10, 10, "7"]}
           m={sectionPaddingX}
-          ref={formRef}
           position="relative"
           maxH={["unset", "unset", "unset", "unset", "unset", "70vh", "60vh"]}
           onSubmit={handleOnSubmit}
+          ref={formRef}
         >
           <Q1 data={logic} id={1} />
           <Q2 data={logic} id={2} />

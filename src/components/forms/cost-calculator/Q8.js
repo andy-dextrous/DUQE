@@ -15,7 +15,8 @@ function Q8({ data, id }) {
   return (
     <VStack
       align="flex-start"
-      justify="space-between"
+      pt={[8, 8, 0]}
+      justify={["flex-start", "flex-start", "space-between"]}
       spacing={8}
       data-slide-index={id}
       layerStyle="fillSpaceAbsolute"

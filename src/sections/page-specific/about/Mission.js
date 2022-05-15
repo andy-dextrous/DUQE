@@ -23,12 +23,7 @@ function Mission() {
         spacing={[24]}
         mb={[20, 20]}
       >
-        <Center
-          position="relative"
-          flex="1"
-          layerStyle="fillSpace"
-          minH="300px"
-        >
+        <Center position="relative" flex="1" layerStyle="fillSpace" h="300px">
           <Heading color="white" zIndex="1" textTransform="uppercase">
             Our
             <br /> <YellowHeading> mission</YellowHeading>
@@ -37,6 +32,7 @@ function Mission() {
             opacity="0.4"
             layerStyle="fillSpaceAbsolute"
             objectFit="cover"
+            height="100%"
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto:eco,w_600/v1651912110/DUQE/iStock/iStock-1280046969.jpg"
           />
         </Center>
@@ -59,12 +55,7 @@ function Mission() {
           driven about their business ideas and ambitions and who want to be the
           next unicorn.
         </Heading>
-        <Center
-          position="relative"
-          flex="1"
-          layerStyle="fillSpace"
-          minH="300px"
-        >
+        <Center position="relative" flex="1" layerStyle="fillSpace" h="300px">
           <Heading color="white" zIndex="1" textTransform="uppercase">
             Our
             <br />{" "}
@@ -77,6 +68,7 @@ function Mission() {
             opacity="0.4"
             layerStyle="fillSpaceAbsolute"
             objectFit="cover"
+            height="100%"
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto:best,w_600/v1651912116/DUQE/iStock/iStock-826130820.jpg"
           />
         </Center>
