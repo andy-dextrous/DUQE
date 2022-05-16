@@ -118,7 +118,14 @@ module.exports = {
         icon: `./static/favicon.svg`,
       },
     },
-    // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-hubspot",
+      options: {
+        trackingCode: "21692856",
+        respectDNT: false,
+        productionOnly: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
