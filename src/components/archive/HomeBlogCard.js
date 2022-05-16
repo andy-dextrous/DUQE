@@ -46,7 +46,7 @@ function HomeBlogCard({ post, startVisible = false }) {
         rotate: () => {
           return (clientX - x - width / 2) / 100
         },
-        ease: "Power3.in",
+        ease: "Power3.inOut",
         opacity: 0.3,
         duration: 0.35,
         overwrite: true,
@@ -54,7 +54,6 @@ function HomeBlogCard({ post, startVisible = false }) {
     }
 
     const onLeave = () => {
-      if (!animateOnMobile) return
       gsap.fromTo(
         image.current,
         { opacity: 0.3 },
@@ -74,10 +73,12 @@ function HomeBlogCard({ post, startVisible = false }) {
     observer.current = ScrollTrigger.observe({
       target: container.current,
       type: "pointer",
+      debounce: false,
       onHover: () => {
         onEnter()
       },
-      onHoverEnd: () => {
+      onHoverEnd: e => {
+        console.log(e)
         onLeave()
       },
       onMove: e => {

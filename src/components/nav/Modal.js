@@ -52,8 +52,8 @@ function Modal() {
         },
         {
           xPercent: "0",
-          duration: 0.2,
-          ease: "Power3.in",
+          duration: 0.3,
+          ease: "sine.out",
         },
         0
       )
@@ -61,14 +61,14 @@ function Modal() {
         [".primaryMenuLink"],
         {
           opacity: 0,
-          x: -30,
+          x: -50,
         },
         {
           opacity: 1,
           x: 0,
-          stagger: 0.05,
+          stagger: 0.07,
           duration: 0.15,
-          ease: "Power3.Out",
+          ease: "sine.out",
         },
         0.1
       )
