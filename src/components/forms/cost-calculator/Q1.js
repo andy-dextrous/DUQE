@@ -34,22 +34,16 @@ function Q1({ data, id }) {
           variant="filled"
           size="lg"
           name={answers[id].question}
+          value={answers[id].answer}
           w={["full", "full", "50%"]}
           onChange={e => {
             handleChange(e.target.value, id)
           }}
         >
-          <option value="" selected={answers[id].answer === ""}>
-            Select
-          </option>
-
+          <option value="">Select</option>
           {answers[id]?.options?.map((option, index) => {
             return (
-              <option
-                key={index}
-                value={option}
-                selected={option === answers[id].answer}
-              >
+              <option key={index} value={option}>
                 {option}
               </option>
             )

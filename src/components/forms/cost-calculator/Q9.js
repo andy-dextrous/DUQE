@@ -74,11 +74,11 @@ function Q9({ data, id }) {
             />
             <Input
               placeholder="Phone number"
+              name="Company Name"
               size="lg"
               isRequired
               w="full"
               bg="dark.50"
-              name="Company Name"
               fontSize={["xs", "sm", "md"]}
               required
             />

@@ -24,29 +24,24 @@ function Q8({ data, id }) {
     >
       <VStack align="flex-start" spacing={8}>
         <Heading textTransform="uppercase">{answers[id].question}</Heading>
-        <Text>
+        {/* <Text>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et minus nam
           numquam.
-        </Text>
+        </Text> */}
         <Select
           variant="filled"
           name={answers[id].question}
+          value={answers[id].answer}
           w={["full", "full", "50%"]}
           onChange={e => {
             handleChange(e.target.value, id)
           }}
         >
-          <option value="" selected={answers[id].answer === ""}>
-            Select
-          </option>
+          <option value="">Select</option>
 
           {answers[id]?.options?.map((option, index) => {
             return (
-              <option
-                key={index}
-                value={option}
-                selected={option === answers[id].answer}
-              >
+              <option key={index} value={option}>
                 {option}
               </option>
             )

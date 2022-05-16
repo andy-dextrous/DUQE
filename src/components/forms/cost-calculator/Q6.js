@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import ControlButtons from "./ControlButtons"
 import { Button, Heading, Text, VStack, Wrap } from "@chakra-ui/react"
+import ButtonCheckbox from "./ui/ButtonCheckbox"
 
 function Q6({ data, id }) {
   const {
@@ -12,7 +13,12 @@ function Q6({ data, id }) {
     direction,
     setDirection,
   } = data
-  const [liveUae, setLiveUae] = useState(null)
+  const [liveUae, setLiveUae] = useState([])
+
+  function handleClick(e, option) {
+    setLiveUae(e.target.dataset.value)
+    handleChange(option, id)
+  }
 
   return (
     <VStack
@@ -34,17 +40,12 @@ function Q6({ data, id }) {
         <Wrap>
           {answers[id]?.options?.map((option, index) => {
             return (
-              <Button
+              <ButtonCheckbox
                 key={index}
-                data-value={option}
-                variant={liveUae === option ? "formActive" : "formInactive"}
-                onClick={e => {
-                  setLiveUae(e.target.dataset.value)
-                  handleChange(option, id)
-                }}
-              >
-                {option}
-              </Button>
+                option={option}
+                selectedOptions={liveUae}
+                onClick={e => handleClick(e, option)}
+              />
             )
           })}
         </Wrap>

@@ -114,7 +114,7 @@ function Form() {
         <Center
           as="form"
           name="cost-calculator"
-          flex={[10, 10, "7"]}
+          flex={[14, 14, "7"]}
           m={sectionPaddingX}
           position="relative"
           maxH={["unset", "unset", "unset", "unset", "unset", "70vh", "60vh"]}

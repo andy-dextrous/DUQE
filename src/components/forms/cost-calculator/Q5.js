@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import ControlButtons from "./ControlButtons"
 import { Button, Heading, Text, VStack, Wrap } from "@chakra-ui/react"
+import ButtonCheckbox from "./ui/ButtonCheckbox"
 
 function Q5({ data, id }) {
   const {
@@ -12,7 +13,12 @@ function Q5({ data, id }) {
     direction,
     setDirection,
   } = data
-  const [hasPlan, setHasPlan] = useState(null)
+  const [hasPlan, setHasPlan] = useState([])
+
+  function handleClick(e, option) {
+    setHasPlan([e.target.dataset.value])
+    handleChange(option, id)
+  }
 
   return (
     <VStack
@@ -35,17 +41,12 @@ function Q5({ data, id }) {
         <Wrap>
           {answers[id]?.options?.map((option, index) => {
             return (
-              <Button
+              <ButtonCheckbox
                 key={index}
-                data-value={option}
-                variant={hasPlan === option ? "formActive" : "formInactive"}
-                onClick={e => {
-                  setHasPlan(e.target.dataset.value)
-                  handleChange(option, id)
-                }}
-              >
-                {option}
-              </Button>
+                option={option}
+                selectedOptions={hasPlan}
+                onClick={e => handleClick(e, option)}
+              />
             )
           })}
         </Wrap>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import ControlButtons from "./ControlButtons"
-import { Button, Heading, Text, VStack, Wrap } from "@chakra-ui/react"
+import { Heading, Text, VStack, Wrap } from "@chakra-ui/react"
+import ButtonCheckbox from "./ui/ButtonCheckbox"
 
 function Q7({ data, id }) {
   const {
@@ -12,25 +13,27 @@ function Q7({ data, id }) {
     direction,
     setDirection,
   } = data
-  const [selectedButtons, setSelectedButtons] = useState([])
 
-  function handleSelection(value) {
-    const updatedSelectedButtons = [...selectedButtons]
-    if (updatedSelectedButtons.indexOf(value) === -1) {
-      updatedSelectedButtons.push(value)
+  const [selectedOptions, setSelectedOptions] = useState([])
+
+  function handleSelection(e) {
+    const value = e.target.dataset.value
+    const updatedSelectedOptions = [...selectedOptions]
+    if (updatedSelectedOptions.indexOf(value) === -1) {
+      updatedSelectedOptions.push(value)
     } else {
-      updatedSelectedButtons.splice(updatedSelectedButtons.indexOf(value), 1)
+      updatedSelectedOptions.splice(updatedSelectedOptions.indexOf(value), 1)
     }
-    setSelectedButtons(updatedSelectedButtons)
+    setSelectedOptions(updatedSelectedOptions)
   }
 
   useEffect(() => {
-    if (selectedButtons.length > 0) {
-      handleChange(selectedButtons, id)
+    if (selectedOptions.length > 0) {
+      handleChange(selectedOptions, id)
     } else {
       handleChange("", id)
     }
-  }, [selectedButtons])
+  }, [selectedOptions])
 
   return (
     <VStack
@@ -52,20 +55,12 @@ function Q7({ data, id }) {
         <Wrap>
           {answers[id]?.options?.map((option, index) => {
             return (
-              <Button
+              <ButtonCheckbox
                 key={index}
-                data-value={option}
-                variant={
-                  selectedButtons.includes(option)
-                    ? "formActive"
-                    : "formInactive"
-                }
-                onClick={e => {
-                  handleSelection(e.target.dataset.value)
-                }}
-              >
-                {option}
-              </Button>
+                option={option}
+                selectedOptions={selectedOptions}
+                onClick={handleSelection}
+              />
             )
           })}
         </Wrap>

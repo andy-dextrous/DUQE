@@ -24,7 +24,7 @@ export const fonts = {
 
 export const p = {
   fontFamily: fonts.body,
-  fontSize: "18px",
+  fontSize: ["16px", "16px", "18px"],
   color: "dark.700",
   letterSpacing: "-0.003em",
   lineHeight: 1.6,
@@ -160,8 +160,14 @@ export const globalTextStyles = {
     fontWeight: "300",
     letterSpacing: "-0.02em",
   },
-  "#cost-calculator h2": {
-    fontSize: ["2xl", "3xl", "5xl"],
+  "#cost-calculator": {
+    h2: {
+      fontSize: ["2xl", "3xl", "5xl"],
+    },
+    p: {
+      lineHeight: "1.3",
+      fontSize: "16px",
+    },
   },
 }
 
