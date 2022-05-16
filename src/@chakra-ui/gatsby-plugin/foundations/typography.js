@@ -24,7 +24,7 @@ export const fonts = {
 
 export const p = {
   fontFamily: fonts.body,
-  fontSize: ["16px", "16px", "18px"],
+  fontSize: "18px",
   color: "dark.700",
   letterSpacing: "-0.003em",
   lineHeight: 1.6,
