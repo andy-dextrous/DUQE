@@ -20,13 +20,13 @@ function ControlButtons({
 
   return (
     <ButtonGroup
+      className="control"
       w={["full", "full", "unset"]}
       justifyContent={["space-between", "space-between", "flex-start"]}
       pt={[12, 12, 0]}
     >
       <Button
         variant="light"
-        className="control"
         leftIcon={<ArrowBackIcon />}
         onClick={handleBackButton}
         isDisabled={currentQuestion === 1}

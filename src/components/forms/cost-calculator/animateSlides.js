@@ -3,7 +3,11 @@ import { gsap } from "../../../gsap"
 function animateSlides(q, currentQuestion, direction) {
   if (direction === "up") {
     gsap.set(
-      q(`[data-slide-index="${currentQuestion - 1}"] .chakra-button.control`),
+      q(
+        `[data-slide-index="${
+          currentQuestion - 1
+        }"] .chakra-button__group.control`
+      ),
       {
         autoAlpha: 0,
       }
@@ -29,7 +33,9 @@ function animateSlides(q, currentQuestion, direction) {
       }
     )
     gsap.to(
-      q(`[data-slide-index="${currentQuestion}"] .chakra-button.control`),
+      q(
+        `[data-slide-index="${currentQuestion}"] .chakra-button__group.control`
+      ),
       {
         autoAlpha: 1,
         delay: 0.4,
@@ -40,7 +46,11 @@ function animateSlides(q, currentQuestion, direction) {
     gsap.set(q(`[data-slide-index="${currentQuestion}"]`), { autoAlpha: 1 })
   } else {
     gsap.set(
-      q(`[data-slide-index="${currentQuestion + 1}"] .chakra-button.control`),
+      q(
+        `[data-slide-index="${
+          currentQuestion + 1
+        }"] .chakra-button__group.control`
+      ),
       {
         autoAlpha: 0,
       }
@@ -48,7 +58,7 @@ function animateSlides(q, currentQuestion, direction) {
     gsap.to(q(`[data-slide-index="${currentQuestion + 1}"]`), {
       yPercent: 100,
       autoAlpha: 0,
-      ease: "sine.in",
+      ease: "sine.out",
     })
     gsap.fromTo(
       q(`[data-slide-index="${currentQuestion}"]`),
@@ -57,7 +67,7 @@ function animateSlides(q, currentQuestion, direction) {
         autoAlpha: 0,
       },
       {
-        ease: "sine.in",
+        ease: "sine.out",
         duration: 0.5,
         yPercent: 0,
         autoAlpha: 1,
@@ -67,7 +77,9 @@ function animateSlides(q, currentQuestion, direction) {
       }
     )
     gsap.to(
-      q(`[data-slide-index="${currentQuestion}"] .chakra-button.control`),
+      q(
+        `[data-slide-index="${currentQuestion}"] .chakra-button__group.control`
+      ),
       {
         autoAlpha: 1,
         delay: 0.4,
