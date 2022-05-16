@@ -46,6 +46,7 @@ function Q5({ data, id }) {
                 option={option}
                 selectedOptions={hasPlan}
                 onClick={e => handleClick(e, option)}
+                handle={answers[id].handle}
               />
             )
           })}

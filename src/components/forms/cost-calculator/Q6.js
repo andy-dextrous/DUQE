@@ -44,6 +44,7 @@ function Q6({ data, id }) {
                 key={index}
                 option={option}
                 selectedOptions={liveUae}
+                handle={answers[id].handle}
                 onClick={e => handleClick(e, option)}
               />
             )

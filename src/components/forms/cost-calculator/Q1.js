@@ -33,7 +33,7 @@ function Q1({ data, id }) {
         <Select
           variant="filled"
           size="lg"
-          name={answers[id].question}
+          name={answers[id].handle}
           value={answers[id].answer}
           w={["full", "full", "50%"]}
           onChange={e => {

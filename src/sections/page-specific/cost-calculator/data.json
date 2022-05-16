@@ -6,8 +6,7 @@
     "type": "",
     "multi": false,
     "answer": "",
-    "isFinalPage": false,
-    "isFirstPage": true
+    "isFinalPage": false
   },
   {
     "id": 1,
@@ -17,7 +16,7 @@
     "multi": false,
     "answer": "",
     "isFinalPage": false,
-    "isFirstPage": false
+    "handle": "license-duration"
   },
   {
     "id": 2,
@@ -27,7 +26,7 @@
     "multi": false,
     "answer": "",
     "isFinalPage": false,
-    "isFirstPage": false
+    "handle": "employees"
   },
   {
     "id": 3,
@@ -37,7 +36,7 @@
     "multi": false,
     "answer": "",
     "isFinalPage": false,
-    "isFirstPage": false
+    "handle": "owners/shareholders"
   },
   {
     "id": 4,
@@ -58,7 +57,7 @@
     "multi": true,
     "answer": "",
     "isFinalPage": false,
-    "isFirstPage": false
+    "handle": "activities[]"
   },
   {
     "id": 5,
@@ -68,7 +67,7 @@
     "multi": false,
     "answer": "",
     "isFinalPage": false,
-    "isFirstPage": false
+    "handle": "business-plan"
   },
   {
     "id": 6,
@@ -78,7 +77,7 @@
     "multi": false,
     "answer": "",
     "isFinalPage": false,
-    "isFirstPage": false
+    "handle": "living-in-uae"
   },
   {
     "id": 7,
@@ -95,7 +94,7 @@
     "multi": false,
     "answer": "",
     "isFinalPage": false,
-    "isFirstPage": false
+    "handle": "annual-turnover"
   },
   {
     "id": 8,
@@ -105,7 +104,7 @@
     "multi": false,
     "answer": "",
     "isFinalPage": false,
-    "isFirstPage": false
+    "handle": "start-business"
   },
   {
     "id": 9,
@@ -115,6 +114,6 @@
     "multi": false,
     "answer": "",
     "isFinalPage": true,
-    "isFirstPage": false
+    "handle": "contact-details"
   }
 ]

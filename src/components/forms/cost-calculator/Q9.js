@@ -4,6 +4,8 @@ import {
   FormControl,
   Heading,
   Input,
+  InputGroup,
+  InputLeftAddon,
   SimpleGrid,
   Text,
   VStack,
@@ -54,27 +56,30 @@ function Q9({ data, id }) {
             />
             <Input
               placeholder="Enter your last name"
+              name="last name"
               w="full"
               size="lg"
               bg="dark.50"
-              name="last name"
               fontSize={["xs", "sm", "md"]}
               required
             />
 
             <Input
               placeholder="Email address"
+              name="Email"
+              type="email"
               size="lg"
               isRequired
               w="full"
               bg="dark.50"
-              name="Company Name"
               fontSize={["xs", "sm", "md"]}
               required
             />
+
             <Input
               placeholder="Phone number"
-              name="Company Name"
+              name="Phone Number"
+              type="tel"
               size="lg"
               isRequired
               w="full"
@@ -88,7 +93,7 @@ function Q9({ data, id }) {
               id="page"
               name="Page"
               value="Cost Calculator"
-            ></input>
+            />
           </SimpleGrid>
         </FormControl>
       </VStack>

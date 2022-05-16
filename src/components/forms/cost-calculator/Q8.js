@@ -30,7 +30,7 @@ function Q8({ data, id }) {
         </Text> */}
         <Select
           variant="filled"
-          name={answers[id].question}
+          name={answers[id].handle}
           value={answers[id].answer}
           w={["full", "full", "50%"]}
           onChange={e => {

@@ -60,6 +60,7 @@ function Q7({ data, id }) {
                 option={option}
                 selectedOptions={selectedOptions}
                 onClick={handleSelection}
+                handle={answers[id].handle}
               />
             )
           })}

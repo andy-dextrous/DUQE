@@ -1,7 +1,13 @@
 import { Button, Checkbox } from "@chakra-ui/react"
 import React from "react"
 
-function ButtonCheckbox({ key, option, selectedOptions, onClick }) {
+function ButtonCheckbox({
+  key,
+  option,
+  selectedOptions,
+  onClick,
+  handle = "",
+}) {
   return (
     <>
       <Button
@@ -15,7 +21,8 @@ function ButtonCheckbox({ key, option, selectedOptions, onClick }) {
         {option}
       </Button>
       <Checkbox
-        name={option}
+        name={handle}
+        value={option}
         visibility="hidden"
         position="absolute"
         isChecked={selectedOptions.includes(option)}
