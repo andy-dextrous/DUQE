@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { gsap } from "../../../gsap"
-import axios from "axios"
 import { useVariable } from "../../../hooks/useVariable"
+import axios from "axios"
 
 import SectionWrapper from "../../SectionWrapper"
 import Q1 from "./Q1"
@@ -19,6 +19,7 @@ import animateSlides from "./animateSlides"
 import { Center, Stack } from "@chakra-ui/react"
 
 function Form() {
+  // FORM STATE
   const [answers, setAnswers] = useState(data)
   const [currentQuestion, setCurrentQuestion] = useState(1)
   const [direction, setDirection] = useState("up")
@@ -28,8 +29,20 @@ function Form() {
     status: null,
   })
 
+  // REFS
   const formRef = useRef()
+
+  // CONSTANTS
   const { sectionPaddingX, sidebarMenuWidth, mobileNavHeight } = useVariable()
+
+  // ANIMATION HOOK
+  useEffect(() => {
+    animateSlides(
+      gsap.utils.selector(formRef.current),
+      currentQuestion,
+      direction
+    )
+  }, [currentQuestion])
 
   function handleServerResponse(ok, msg, form) {
     setServerState({
@@ -67,14 +80,6 @@ function Form() {
       gsap.set(q(`[data-slide-index="${currentQuestion}"]`), { autoAlpha: 1 })
     }
   }, [])
-
-  useEffect(() => {
-    animateSlides(
-      gsap.utils.selector(formRef.current),
-      currentQuestion,
-      direction
-    )
-  }, [currentQuestion])
 
   const handleChange = (value, id) => {
     const updatedAnswers = [...answers]
