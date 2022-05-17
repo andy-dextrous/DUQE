@@ -27,9 +27,7 @@ function Sidebar({ currentQuestion, answers }) {
 
   useEffect(() => {
     const prevProgress = { x: progress }
-    const newProgress = Math.round(
-      (currentQuestion / (answers.length - 1)) * 100
-    )
+    const newProgress = Math.round(((currentQuestion + 1) / 9) * 100)
     gsap.to(prevProgress, {
       x: newProgress,
       ease: "Power2.in",
