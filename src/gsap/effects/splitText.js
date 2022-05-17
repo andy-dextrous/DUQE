@@ -1,4 +1,4 @@
-import { gsap, SplitText } from ".."
+import { gsap, SplitText } from "../index"
 
 export function splitText() {
   return gsap.registerEffect({

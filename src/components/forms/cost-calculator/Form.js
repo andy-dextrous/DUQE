@@ -30,8 +30,6 @@ function Form() {
 
   // CONSTANTS
   const { sectionPaddingX, sidebarMenuWidth, mobileNavHeight } = useVariable()
-  let formId = "",
-    portalId = ""
 
   // ANIMATION HOOK
   useEffect(() => {
@@ -130,8 +128,8 @@ function Form() {
       >
         <Center
           as="form"
-          data-form-id={formId}
-          data-portal-id={portalId}
+          data-form-id="52b8d112-c8e3-4d57-9199-f8fbb373e066"
+          data-portal-id="21692856"
           name="cost-calculator"
           flex={[14, 14, "7"]}
           m={sectionPaddingX}
