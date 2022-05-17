@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react"
+
 import ControlButtons from "./ControlButtons"
-import { Heading, Text, VStack, Wrap } from "@chakra-ui/react"
 import ButtonCheckbox from "./ui/ButtonCheckbox"
 import { FormContext } from "./Context"
 import Panel from "./ui/Panel"
 import Title from "./ui/Title"
+import { Text, VStack, Wrap } from "@chakra-ui/react"
 
 function Q4({ id }) {
   const { handleChange, answers } = React.useContext(FormContext)
@@ -38,7 +39,6 @@ function Q4({ id }) {
           business with the great flexibility. Additional activities will result
           in a higher cost.
         </Text>
-
         <Wrap>
           {answers[id]?.options?.map((option, index) => {
             return (

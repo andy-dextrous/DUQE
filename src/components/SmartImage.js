@@ -86,7 +86,9 @@ export const SmartImage = forwardRef(
           alt={img.altText}
           imgStyle={imgStyle}
           style={style}
-          // ref={ref}
+          className={
+            props.layerStyle && props.layerStyle === "bgImage" ? "bg-image" : ""
+          }
           {...props}
         />
       ) : parallax ? (

@@ -1,9 +1,10 @@
 import React from "react"
-import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons"
-import { Button, ButtonGroup } from "@chakra-ui/react"
-import { FormContext } from "./Context"
 
-function ControlButtons({}) {
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons"
+import { FormContext } from "./Context"
+import { Button, ButtonGroup } from "@chakra-ui/react"
+
+function ControlButtons() {
   const { currentQuestion, setCurrentQuestion, answers, setDirection } =
     React.useContext(FormContext)
 

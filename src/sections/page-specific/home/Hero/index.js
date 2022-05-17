@@ -5,7 +5,7 @@ import Content from "./Content"
 import { Center } from "@chakra-ui/react"
 import useHeroAnimation from "./useHeroAnimation"
 
-function Hero({ masterTimeline }) {
+function Hero({ masterTimeline, props }) {
   const img1 = useRef()
   const img2 = useRef()
   const img3 = useRef()
@@ -22,7 +22,7 @@ function Hero({ masterTimeline }) {
   })
 
   return (
-    <SectionWrapperCustom ref={{ img1, img2, img3, overlay }}>
+    <SectionWrapperCustom ref={{ img1, img2, img3, overlay }} props={props}>
       <Center layerStyle="fillSpace">
         <Content ref={content} />
       </Center>

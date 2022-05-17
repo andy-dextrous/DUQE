@@ -42,6 +42,15 @@ const globalCSS = {
     backgroundColor: "brandBlue.100",
     color: "dark.default",
   },
+  ".bg-image.gatsby-image-wrapper": {
+    w: "100%",
+    h: "100%",
+    position: "absolute",
+    zIndex: "-2",
+    left: "0",
+    top: "0",
+    objectFit: "cover",
+  },
 
   ...base,
 }

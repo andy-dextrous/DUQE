@@ -8,7 +8,6 @@ import { Box, Heading, Progress, Text, VStack } from "@chakra-ui/react"
 function Sidebar() {
   const { currentQuestion, answers } = React.useContext(FormContext)
   const [progress, setProgress] = useState(0)
-
   const { sectionPaddingX } = useVariable()
   const questionRef = useRef()
 

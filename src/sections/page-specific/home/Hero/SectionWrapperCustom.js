@@ -1,11 +1,23 @@
 import React, { forwardRef } from "react"
+import { graphql } from "gatsby"
 import { useVariable } from "../../../../hooks"
 import { Box, Flex } from "@chakra-ui/react"
 import { SmartImage } from "../../../../components/SmartImage"
 
+export const query = graphql`
+  fragment HERO_IMAGE on WpPage {
+    acf_homepage {
+      hero {
+        image {
+          ...IMAGE_DATA
+        }
+      }
+    }
+  }
+`
+
 const SectionWrapperCustom = forwardRef(({ alt, children }, ref) => {
   const { img1, overlay } = ref
-
   const {
     containerPaddingY,
     sectionPaddingX,

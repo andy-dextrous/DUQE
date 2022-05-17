@@ -33,13 +33,14 @@ function Homepage(props) {
         <Hero
           masterTimeline={masterTimeline}
           setMasterTimeline={setMasterTimeline}
+          props={props}
         />
         <PerksText />
         <Perks />
       </DarkGroup>
       <YourLegacy />
       <CostSections />
-      <Vision />
+      <Vision props={props} />
       <Benefits />
       <Access />
       <Agent />
@@ -55,6 +56,8 @@ export const pageQuery = graphql`
   query GET_PAGE($id: String!) {
     wpPage(id: { eq: $id }) {
       title
+      ...HERO_IMAGE
+      ...VISION_IMAGE
     }
   }
 `

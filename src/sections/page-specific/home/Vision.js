@@ -1,12 +1,27 @@
-import { Flex, Heading, Spacer, Text, VStack } from "@chakra-ui/react"
 import React from "react"
+import { graphql } from "gatsby"
+
 import SectionWrapper from "../../../components/SectionWrapper"
 import QIcon from "../../../assets/icons/QIcon"
+import { Flex, Heading, Spacer, Text, VStack } from "@chakra-ui/react"
 
-function Vision() {
+export const query = graphql`
+  fragment VISION_IMAGE on WpPage {
+    acf_homepage {
+      vision {
+        image {
+          ...IMAGE_DATA
+        }
+      }
+    }
+  }
+`
+
+function Vision({ props }) {
+  const image = props.data.wpPage.acf_homepage.vision.image
   return (
     <SectionWrapper
-      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944781/DUQE/iStock-92036092_1.png"
+      bgImage={image}
       h={["60vh", "60vh", "100vh"]}
       overlay
       containerSize="xl"
