@@ -1,11 +1,9 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import ControlButtons from "./ControlButtons"
 import {
   FormControl,
   Heading,
   Input,
-  InputGroup,
-  InputLeftAddon,
   SimpleGrid,
   Text,
   VStack,
@@ -13,14 +11,19 @@ import {
 
 function Q9({ data, id }) {
   const {
-    handleChange,
     answers,
     currentQuestion,
     setCurrentQuestion,
     showFrontPage,
     direction,
     setDirection,
+    handleChange,
   } = data
+
+  const [firstname, setFirstName] = useState("")
+  const [lastname, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
 
   return (
     <VStack
@@ -49,24 +52,34 @@ function Q9({ data, id }) {
               placeholder="Enter your first name"
               size="lg"
               w="full"
-              name="first name"
+              name="firstname"
               fontSize={["xs", "sm", "md"]}
               bg="dark.50"
               required
+              value={firstname}
+              onChange={e => {
+                setFirstName(e.target.value)
+                handleChange(e.target.value, 8)
+              }}
             />
             <Input
               placeholder="Enter your last name"
-              name="last name"
+              name="lastname"
               w="full"
               size="lg"
               bg="dark.50"
               fontSize={["xs", "sm", "md"]}
               required
+              value={lastname}
+              onChange={e => {
+                setLastName(e.target.value)
+                handleChange(e.target.value, 9)
+              }}
             />
 
             <Input
               placeholder="Email address"
-              name="Email"
+              name="email"
               type="email"
               size="lg"
               isRequired
@@ -74,11 +87,16 @@ function Q9({ data, id }) {
               bg="dark.50"
               fontSize={["xs", "sm", "md"]}
               required
+              value={email}
+              onChange={e => {
+                setEmail(e.target.value)
+                handleChange(e.target.value, 10)
+              }}
             />
 
             <Input
               placeholder="Phone number"
-              name="Phone Number"
+              name="phone"
               type="tel"
               size="lg"
               isRequired
@@ -86,6 +104,11 @@ function Q9({ data, id }) {
               bg="dark.50"
               fontSize={["xs", "sm", "md"]}
               required
+              value={phone}
+              onChange={e => {
+                setPhone(e.target.value)
+                handleChange(e.target.value, 11)
+              }}
             />
 
             <input

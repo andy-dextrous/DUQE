@@ -52,6 +52,7 @@
     "gatsby-transformer-sharp": "^4.4.0",
     "gsap": "npm:@gsap/shockingly@^3.10.0",
     "html-react-parser": "^1.4.8",
+    "js-cookie": "^3.0.1",
     "lodash.uniqby": "^4.7.0",
     "normalize-path": "^3.0.0",
     "react": "^17.0.1",

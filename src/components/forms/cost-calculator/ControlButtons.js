@@ -29,29 +29,28 @@ function ControlButtons({
         variant="light"
         leftIcon={<ArrowBackIcon />}
         onClick={handleBackButton}
-        isDisabled={currentQuestion === 1}
+        isDisabled={currentQuestion === 0}
       >
         Back
       </Button>
 
-      {currentQuestion !== answers.length - 1 && (
+      {currentQuestion !== 8 && (
         <Button
           rightIcon={<ArrowForwardIcon />}
           className="control"
           onClick={handleNextButton}
           isDisabled={
-            answers[currentQuestion].answer === "" ||
-            currentQuestion === answers.length - 1
+            answers[currentQuestion].answer === "" || currentQuestion === 8
           }
         >
           Next
         </Button>
       )}
-      {currentQuestion === answers.length - 1 && (
+      {currentQuestion === 8 && (
         <Button
           type="submit"
           className="control"
-          isDisabled={currentQuestion !== answers.length - 1}
+          isDisabled={currentQuestion !== 8}
         >
           Submit
         </Button>

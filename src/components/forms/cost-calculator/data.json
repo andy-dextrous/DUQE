@@ -1,0 +1,111 @@
+[
+  {
+    "id": 0,
+    "question": "How long do you want to license your business?",
+    "options": ["1 year", "2 years", "3 years", "4 years", "5 years"],
+    "answer": "",
+    "handle": "how_long__c"
+  },
+  {
+    "id": 1,
+    "question": "Number of employees",
+    "options": ["1-5", "5-25", "25-50", "50-100", "100-500"],
+    "answer": "",
+    "handle": "numemployees"
+  },
+  {
+    "id": 2,
+    "question": "How many owners or shareholders will your company have?",
+    "options": ["1", "2", "3", "4", "5"],
+    "answer": "",
+    "handle": "number_of_shareholders__c"
+  },
+  {
+    "id": 3,
+    "question": "How many business activities do you need?",
+    "options": [
+      "Activity 1",
+      "Activity 2",
+      "Activity 3",
+      "Activity 4",
+      "Activity 5",
+      "Activity 6",
+      "Activity 7",
+      "Activity 8"
+    ],
+    "answer": "",
+    "handle": "business_activities"
+  },
+  {
+    "id": 4,
+    "question": "Do you have a Business Plan?",
+    "options": ["Yes", "No"],
+    "answer": "",
+    "handle": "business_plan__c"
+  },
+  {
+    "id": 5,
+    "question": "Are you currently living in the UAE?",
+    "options": ["Yes", "No"],
+    "answer": "",
+    "handle": "currently_living_in_uae__c"
+  },
+  {
+    "id": 6,
+    "question": "Annual Turnover",
+    "options": [
+      "AED 20,000 - 100,000",
+      "AED 100,000 - 250,000",
+      "AED 250,000 - 500,000",
+      "AED 500,000 - 1,000,000",
+      "AED 1,000,000 - 5,000,000",
+      "AED 5,000,000 +"
+    ],
+
+    "answer": "",
+    "handle": "annualrevenue"
+  },
+  {
+    "id": 7,
+    "question": "When do you plan to start your business?",
+    "options": [
+      "Immediately",
+      "This Month",
+      "Next Month",
+      "2 Months",
+      "3 Months"
+    ],
+    "type": "radio",
+    "multi": false,
+    "answer": "",
+    "handle": "how_soon__c"
+  },
+  {
+    "id": 8,
+    "question": "First Name",
+    "options": "contact",
+    "answer": "",
+    "handle": "firstname"
+  },
+  {
+    "id": 9,
+    "question": "Last Name",
+    "options": "contact",
+    "answer": "",
+    "handle": "lastname"
+  },
+  {
+    "id": 10,
+    "question": "Email",
+    "options": "contact",
+    "answer": "",
+    "handle": "email"
+  },
+  {
+    "id": 11,
+    "question": "Phone",
+    "options": "contact",
+    "answer": "",
+    "handle": "phone"
+  }
+]

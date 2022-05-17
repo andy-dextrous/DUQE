@@ -49,7 +49,7 @@ function Sidebar({ currentQuestion, answers }) {
     >
       <VStack w="full" align="flex-start" spacing={[4, 4, 4, 8]}>
         <Heading className="jumbo" opacity="0.05" w="full" ref={questionRef}>
-          Q{currentQuestion}
+          Q{currentQuestion + 1}
         </Heading>
         <Progress
           w="full"
