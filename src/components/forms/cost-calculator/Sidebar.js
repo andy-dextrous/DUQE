@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react"
 import { gsap } from "../../../gsap"
 
-import { Box, Heading, Progress, Text, VStack } from "@chakra-ui/react"
 import { useVariable } from "../../../hooks/useVariable"
+import { FormContext } from "./Context"
+import { Box, Heading, Progress, Text, VStack } from "@chakra-ui/react"
 
-function Sidebar({ currentQuestion, answers }) {
+function Sidebar() {
+  const { currentQuestion, answers } = React.useContext(FormContext)
   const [progress, setProgress] = useState(0)
 
   const { sectionPaddingX } = useVariable()

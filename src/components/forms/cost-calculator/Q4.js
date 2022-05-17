@@ -2,17 +2,12 @@ import React, { useEffect, useState } from "react"
 import ControlButtons from "./ControlButtons"
 import { Heading, Text, VStack, Wrap } from "@chakra-ui/react"
 import ButtonCheckbox from "./ui/ButtonCheckbox"
+import { FormContext } from "./Context"
+import Panel from "./ui/Panel"
+import Title from "./ui/Title"
 
-function Q4({ data, id }) {
-  const {
-    handleChange,
-    answers,
-    currentQuestion,
-    setCurrentQuestion,
-    showFrontPage,
-    direction,
-    setDirection,
-  } = data
+function Q4({ id }) {
+  const { handleChange, answers } = React.useContext(FormContext)
   const [selectedOptions, setSelectedOptions] = useState([])
 
   function handleSelection(e) {
@@ -35,17 +30,9 @@ function Q4({ data, id }) {
   }, [selectedOptions])
 
   return (
-    <VStack
-      align="flex-start"
-      spacing={8}
-      data-slide-index={id}
-      layerStyle="fillSpaceAbsolute"
-      pt={[8, 8, 0]}
-      justify={["flex-start", "flex-start", "space-between"]}
-      visibility="hidden"
-    >
+    <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
-        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Title id={id} />
         <Text>
           Choose up to 2 business activity groups free of charge to provide your
           business with the great flexibility. Additional activities will result
@@ -66,15 +53,8 @@ function Q4({ data, id }) {
           })}
         </Wrap>
       </VStack>
-      <ControlButtons
-        currentQuestion={currentQuestion}
-        setCurrentQuestion={setCurrentQuestion}
-        answers={answers}
-        showFrontPage={showFrontPage}
-        direction={direction}
-        setDirection={setDirection}
-      />
-    </VStack>
+      <ControlButtons />
+    </Panel>
   )
 }
 

@@ -1,29 +1,16 @@
 import React from "react"
 import ControlButtons from "./ControlButtons"
-import { Heading, Select, Text, VStack } from "@chakra-ui/react"
+import { Select, Text, VStack } from "@chakra-ui/react"
+import { FormContext } from "./Context"
+import Panel from "./ui/Panel"
+import Title from "./ui/Title"
 
-function Q2({ data, id }) {
-  const {
-    handleChange,
-    answers,
-    currentQuestion,
-    setCurrentQuestion,
-    showFrontPage,
-    direction,
-    setDirection,
-  } = data
+function Q2({ id }) {
+  const { handleChange, answers } = React.useContext(FormContext)
   return (
-    <VStack
-      align="flex-start"
-      spacing={8}
-      data-slide-index={id}
-      pt={[8, 8, 0]}
-      justify={["flex-start", "flex-start", "space-between"]}
-      layerStyle="fillSpaceAbsolute"
-      visibility="hidden"
-    >
+    <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
-        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Title id={id} />
         <Text>
           In addition to residence visas for your shareholders, you can apply
           for residence visas for your employees.
@@ -49,15 +36,8 @@ function Q2({ data, id }) {
           })}
         </Select>
       </VStack>
-      <ControlButtons
-        currentQuestion={currentQuestion}
-        setCurrentQuestion={setCurrentQuestion}
-        answers={answers}
-        showFrontPage={showFrontPage}
-        direction={direction}
-        setDirection={setDirection}
-      />
-    </VStack>
+      <ControlButtons />
+    </Panel>
   )
 }
 

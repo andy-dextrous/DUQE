@@ -1,29 +1,17 @@
 import React from "react"
+import { FormContext } from "./Context"
+
 import ControlButtons from "./ControlButtons"
+import Title from "./ui/Title"
+import Panel from "./ui/Panel"
 import { Heading, Select, Text, VStack } from "@chakra-ui/react"
 
-function Q1({ data, id }) {
-  const {
-    handleChange,
-    answers,
-    currentQuestion,
-    setCurrentQuestion,
-    showFrontPage,
-    direction,
-    setDirection,
-  } = data
+function Q1({ id }) {
+  const { handleChange, answers } = React.useContext(FormContext)
   return (
-    <VStack
-      align="flex-start"
-      spacing={8}
-      pt={[8, 8, 0]}
-      data-slide-index={id}
-      layerStyle="fillSpaceAbsolute"
-      justify={["flex-start", "flex-start", "space-between"]}
-      visibility="hidden"
-    >
+    <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
-        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Title id={id} />
         <Heading as="h6">Select the duration of your license</Heading>
         <Text>
           Whether you want a license for one year or you’re planning a long-term
@@ -55,15 +43,8 @@ function Q1({ data, id }) {
           Hotel.
         </Text>
       </VStack>
-      <ControlButtons
-        currentQuestion={currentQuestion}
-        setCurrentQuestion={setCurrentQuestion}
-        answers={answers}
-        showFrontPage={showFrontPage}
-        direction={direction}
-        setDirection={setDirection}
-      />
-    </VStack>
+      <ControlButtons />
+    </Panel>
   )
 }
 

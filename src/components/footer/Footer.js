@@ -55,7 +55,7 @@ function Footer({ withSignup = true }) {
           <VStack as="ul" flex="1" align="flex-start">
             {footerMenu1.menuItems.nodes.map(menuItem => {
               return (
-                <Link to={menuItem.path}>
+                <Link to={menuItem.path} key={`footer-link-${menuItem.id}`}>
                   <Text as="li" color="white" className="footerLink">
                     {menuItem.label}
                   </Text>
@@ -71,7 +71,7 @@ function Footer({ withSignup = true }) {
           <VStack as="ul" flex="1" align="flex-start">
             {footerMenu2.menuItems.nodes.map(menuItem => {
               return (
-                <Link to={menuItem.path}>
+                <Link to={menuItem.path} key={`footer-link-${menuItem.id}`}>
                   <Text as="li" color="white" className="footerLink">
                     {menuItem.label}
                   </Text>
@@ -87,7 +87,7 @@ function Footer({ withSignup = true }) {
           <VStack as="ul" flex="1" align="flex-start">
             {footerMenu3.menuItems.nodes.map(menuItem => {
               return (
-                <Link to={menuItem.path}>
+                <Link to={menuItem.path} key={`footer-link-${menuItem.id}`}>
                   <Text as="li" color="white" className="footerLink">
                     {menuItem.label}
                   </Text>

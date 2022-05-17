@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from "react"
-import ControlButtons from "./ControlButtons"
-import { Button, Heading, Text, VStack, Wrap } from "@chakra-ui/react"
-import ButtonCheckbox from "./ui/ButtonCheckbox"
+import React, { useState } from "react"
+import { FormContext } from "./Context"
 
-function Q5({ data, id }) {
-  const {
-    handleChange,
-    answers,
-    currentQuestion,
-    setCurrentQuestion,
-    showFrontPage,
-    direction,
-    setDirection,
-  } = data
+import ControlButtons from "./ControlButtons"
+import ButtonCheckbox from "./ui/ButtonCheckbox"
+import { Text, VStack, Wrap } from "@chakra-ui/react"
+import Panel from "./ui/Panel"
+import Title from "./ui/Title"
+
+function Q5({ id }) {
+  const { handleChange, answers } = React.useContext(FormContext)
   const [hasPlan, setHasPlan] = useState([])
 
   function handleClick(e, option) {
@@ -21,17 +17,9 @@ function Q5({ data, id }) {
   }
 
   return (
-    <VStack
-      align="flex-start"
-      pt={[8, 8, 0]}
-      justify={["flex-start", "flex-start", "space-between"]}
-      spacing={8}
-      data-slide-index={id}
-      layerStyle="fillSpaceAbsolute"
-      visibility="hidden"
-    >
+    <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
-        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Title id={id} />
         <Text>
           A business plan is required by banks and some free zones when
           establishing your company and business bank account. If you don't have
@@ -52,15 +40,8 @@ function Q5({ data, id }) {
           })}
         </Wrap>
       </VStack>
-      <ControlButtons
-        currentQuestion={currentQuestion}
-        setCurrentQuestion={setCurrentQuestion}
-        answers={answers}
-        showFrontPage={showFrontPage}
-        direction={direction}
-        setDirection={setDirection}
-      />
-    </VStack>
+      <ControlButtons />
+    </Panel>
   )
 }
 

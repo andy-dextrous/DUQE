@@ -153,7 +153,7 @@ function Modal() {
                     .map(item => {
                       return !item.childItems.nodes.length ? (
                         <Link
-                          key={item.databaseId}
+                          key={`nav-link-${item.id}`}
                           to={item.path}
                           onClick={() => setIsMenuOpen(false)}
                         >
@@ -162,7 +162,10 @@ function Modal() {
                           </Text>
                         </Link>
                       ) : (
-                        <AccordionItem border="none" key={item.id}>
+                        <AccordionItem
+                          border="none"
+                          key={`nav-link-${item.id}`}
+                        >
                           <AccordionButton
                             px="0"
                             py={2}

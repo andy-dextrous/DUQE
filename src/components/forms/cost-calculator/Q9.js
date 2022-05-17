@@ -1,42 +1,22 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
+import { FormContext } from "./Context"
+
 import ControlButtons from "./ControlButtons"
-import {
-  FormControl,
-  Heading,
-  Input,
-  SimpleGrid,
-  Text,
-  VStack,
-} from "@chakra-ui/react"
+import Panel from "./ui/Panel"
+import Title from "./ui/Title"
+import { FormControl, Input, SimpleGrid, Text, VStack } from "@chakra-ui/react"
 
-function Q9({ data, id }) {
-  const {
-    answers,
-    currentQuestion,
-    setCurrentQuestion,
-    showFrontPage,
-    direction,
-    setDirection,
-    handleChange,
-  } = data
-
+function Q9({ id }) {
+  const { handleChange } = React.useContext(FormContext)
   const [firstname, setFirstName] = useState("")
   const [lastname, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
 
   return (
-    <VStack
-      align="flex-start"
-      pt={[8, 8, 0]}
-      justify={["flex-start", "flex-start", "space-between"]}
-      spacing={8}
-      data-slide-index={id}
-      layerStyle="fillSpaceAbsolute"
-      visibility="hidden"
-    >
+    <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
-        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Title id={id} />
         <Text>
           Please enter your details to get your business setup cost estimate on
           the next screen. We will also send the quote via email:
@@ -93,7 +73,6 @@ function Q9({ data, id }) {
                 handleChange(e.target.value, 10)
               }}
             />
-
             <Input
               placeholder="Phone number"
               name="phone"
@@ -120,15 +99,8 @@ function Q9({ data, id }) {
           </SimpleGrid>
         </FormControl>
       </VStack>
-      <ControlButtons
-        currentQuestion={currentQuestion}
-        setCurrentQuestion={setCurrentQuestion}
-        answers={answers}
-        showFrontPage={showFrontPage}
-        direction={direction}
-        setDirection={setDirection}
-      />
-    </VStack>
+      <ControlButtons />
+    </Panel>
   )
 }
 

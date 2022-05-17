@@ -1,29 +1,17 @@
 import React from "react"
-import ControlButtons from "./ControlButtons"
-import { Heading, Select, Text, VStack } from "@chakra-ui/react"
+import { FormContext } from "./Context"
 
-function Q3({ data, id }) {
-  const {
-    handleChange,
-    answers,
-    currentQuestion,
-    setCurrentQuestion,
-    showFrontPage,
-    direction,
-    setDirection,
-  } = data
+import ControlButtons from "./ControlButtons"
+import Title from "./ui/Title"
+import Panel from "./ui/Panel"
+import { Select, Text, VStack } from "@chakra-ui/react"
+
+function Q3({ id }) {
+  const { handleChange, answers } = React.useContext(FormContext)
   return (
-    <VStack
-      align="flex-start"
-      spacing={8}
-      data-slide-index={id}
-      layerStyle="fillSpaceAbsolute"
-      pt={[8, 8, 0]}
-      justify={["flex-start", "flex-start", "space-between"]}
-      visibility="hidden"
-    >
+    <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
-        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Title id={id} />
         <Text>
           The number of owners/shareholders your company will have can help in
           identifying the most suitable legal structure for your company, as
@@ -50,15 +38,8 @@ function Q3({ data, id }) {
           })}
         </Select>
       </VStack>
-      <ControlButtons
-        currentQuestion={currentQuestion}
-        setCurrentQuestion={setCurrentQuestion}
-        answers={answers}
-        showFrontPage={showFrontPage}
-        direction={direction}
-        setDirection={setDirection}
-      />
-    </VStack>
+      <ControlButtons />
+    </Panel>
   )
 }
 

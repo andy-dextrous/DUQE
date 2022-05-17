@@ -2,17 +2,12 @@ import React, { useEffect, useState } from "react"
 import ControlButtons from "./ControlButtons"
 import { Heading, Text, VStack, Wrap } from "@chakra-ui/react"
 import ButtonCheckbox from "./ui/ButtonCheckbox"
+import { FormContext } from "./Context"
+import Title from "./ui/Title"
+import Panel from "./ui/Panel"
 
-function Q7({ data, id }) {
-  const {
-    handleChange,
-    answers,
-    currentQuestion,
-    setCurrentQuestion,
-    showFrontPage,
-    direction,
-    setDirection,
-  } = data
+function Q7({ id }) {
+  const { handleChange, answers } = React.useContext(FormContext)
 
   const [selectedOptions, setSelectedOptions] = useState([])
 
@@ -36,17 +31,9 @@ function Q7({ data, id }) {
   }, [selectedOptions])
 
   return (
-    <VStack
-      align="flex-start"
-      pt={[8, 8, 0]}
-      justify={["flex-start", "flex-start", "space-between"]}
-      spacing={8}
-      data-slide-index={id}
-      layerStyle="fillSpaceAbsolute"
-      visibility="hidden"
-    >
+    <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
-        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Title id={id} />
         <Text>
           What is the current or forecasted annual turn-over for your business
           in the next 12 months?
@@ -66,15 +53,8 @@ function Q7({ data, id }) {
           })}
         </Wrap>
       </VStack>
-      <ControlButtons
-        currentQuestion={currentQuestion}
-        setCurrentQuestion={setCurrentQuestion}
-        answers={answers}
-        showFrontPage={showFrontPage}
-        direction={direction}
-        setDirection={setDirection}
-      />
-    </VStack>
+      <ControlButtons />
+    </Panel>
   )
 }
 

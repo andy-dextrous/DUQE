@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import ControlButtons from "./ControlButtons"
-import { Button, Heading, Text, VStack, Wrap } from "@chakra-ui/react"
+import { Text, VStack, Wrap } from "@chakra-ui/react"
 import ButtonCheckbox from "./ui/ButtonCheckbox"
+import { FormContext } from "./Context"
+import Title from "./ui/Title"
+import Panel from "./ui/Panel"
 
-function Q6({ data, id }) {
-  const {
-    handleChange,
-    answers,
-    currentQuestion,
-    setCurrentQuestion,
-    showFrontPage,
-    direction,
-    setDirection,
-  } = data
+function Q6({ id }) {
+  const { handleChange, answers } = React.useContext(FormContext)
   const [liveUae, setLiveUae] = useState([])
 
   function handleClick(e, option) {
@@ -21,17 +16,9 @@ function Q6({ data, id }) {
   }
 
   return (
-    <VStack
-      align="flex-start"
-      pt={[8, 8, 0]}
-      justify={["flex-start", "flex-start", "space-between"]}
-      spacing={8}
-      data-slide-index={id}
-      layerStyle="fillSpaceAbsolute"
-      visibility="hidden"
-    >
+    <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
-        <Heading textTransform="uppercase">{answers[id].question}</Heading>
+        <Title id={id} />
         <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed
           laudantium veritatis nulla!
@@ -51,15 +38,8 @@ function Q6({ data, id }) {
           })}
         </Wrap>
       </VStack>
-      <ControlButtons
-        currentQuestion={currentQuestion}
-        setCurrentQuestion={setCurrentQuestion}
-        answers={answers}
-        showFrontPage={showFrontPage}
-        direction={direction}
-        setDirection={setDirection}
-      />
-    </VStack>
+      <ControlButtons />
+    </Panel>
   )
 }
 

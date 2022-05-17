@@ -1,13 +1,12 @@
 import React from "react"
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons"
 import { Button, ButtonGroup } from "@chakra-ui/react"
+import { FormContext } from "./Context"
 
-function ControlButtons({
-  currentQuestion,
-  setCurrentQuestion,
-  answers,
-  setDirection,
-}) {
+function ControlButtons({}) {
+  const { currentQuestion, setCurrentQuestion, answers, setDirection } =
+    React.useContext(FormContext)
+
   function handleBackButton() {
     setCurrentQuestion(currentQuestion - 1)
     setDirection("down")

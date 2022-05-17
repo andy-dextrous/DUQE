@@ -1,33 +1,17 @@
 import React from "react"
 import ControlButtons from "./ControlButtons"
-import { Heading, Select, Text, VStack } from "@chakra-ui/react"
+import { Select, VStack } from "@chakra-ui/react"
+import { FormContext } from "./Context"
+import Title from "./ui/Title"
+import Panel from "./ui/Panel"
 
-function Q8({ data, id }) {
-  const {
-    handleChange,
-    answers,
-    currentQuestion,
-    setCurrentQuestion,
-    showFrontPage,
-    direction,
-    setDirection,
-  } = data
+function Q8({ id }) {
+  const { handleChange, answers } = React.useContext(FormContext)
   return (
-    <VStack
-      align="flex-start"
-      pt={[8, 8, 0]}
-      justify={["flex-start", "flex-start", "space-between"]}
-      spacing={8}
-      data-slide-index={id}
-      layerStyle="fillSpaceAbsolute"
-      visibility="hidden"
-    >
+    <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
-        <Heading textTransform="uppercase">{answers[id].question}</Heading>
-        {/* <Text>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et minus nam
-          numquam.
-        </Text> */}
+        <Title id={id} />
+
         <Select
           variant="filled"
           name={answers[id].handle}
@@ -48,15 +32,8 @@ function Q8({ data, id }) {
           })}
         </Select>
       </VStack>
-      <ControlButtons
-        currentQuestion={currentQuestion}
-        setCurrentQuestion={setCurrentQuestion}
-        answers={answers}
-        showFrontPage={showFrontPage}
-        direction={direction}
-        setDirection={setDirection}
-      />
-    </VStack>
+      <ControlButtons />
+    </Panel>
   )
 }
 
