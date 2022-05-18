@@ -5,6 +5,7 @@ import {
   Image,
   VStack,
   useBreakpointValue,
+  Text,
 } from "@chakra-ui/react"
 import React, { useContext, useEffect, useRef } from "react"
 import CrossIcon from "../../../assets/icons/CrossIcon"
@@ -84,7 +85,9 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
         </Heading>
         <Heading as="h3" className="thin-h3" textAlign="center">
           Use the <strong>DUQE Cost Calculator</strong> to find out the cost of
-          your business setup. It’s the number one question we get asked. <br />
+          your business setup.
+          <Text as="br" display={["none", "none", "block"]} /> It’s the number
+          one question we get asked. <br />
           <strong>Find out in an instant.</strong>
         </Heading>
         <Link to="/cost-calculator">

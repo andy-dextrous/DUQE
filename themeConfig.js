@@ -22,7 +22,7 @@ const THEME_CONFIG = {
   mobileNavHeight: ["70px", "70px", 0],
 
   /**** FOOTER ****/
-  newsletterOffset: [0, 0, "224px"],
+  newsletterOffset: [0, 0, 0 /*"224px"*/],
 }
 
 module.exports = THEME_CONFIG

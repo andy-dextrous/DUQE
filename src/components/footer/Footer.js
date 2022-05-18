@@ -7,7 +7,7 @@ import NewsletterFooter from "./NewsletterFooter"
 import { useMenuQuery } from "../../hooks"
 import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/react"
 
-function Footer({ withSignup = true }) {
+function Footer({ withSignup = false }) {
   const footerMenu1 = useMenuQuery("Footer Menu 1")
   const footerMenu2 = useMenuQuery("Footer Menu 2")
   const footerMenu3 = useMenuQuery("Footer Menu 3")

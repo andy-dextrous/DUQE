@@ -25,8 +25,8 @@ function Mission() {
       >
         <Center position="relative" flex="1" layerStyle="fillSpace" h="300px">
           <Heading color="white" zIndex="1" textTransform="uppercase">
-            Our
-            <br /> <YellowHeading> mission</YellowHeading>
+            Why we
+            <br /> <YellowHeading> exist</YellowHeading>
           </Heading>
           <Image
             opacity="0.4"
@@ -61,7 +61,7 @@ function Mission() {
             <br />{" "}
             <Text as="span" color="brandBlue.default">
               {" "}
-              Vision
+              Ambition
             </Text>
           </Heading>
           <Image

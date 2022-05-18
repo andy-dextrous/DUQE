@@ -146,7 +146,7 @@ function Modal() {
                   align="start"
                   pl={[0, 0, 0]}
                   ref={primaryMenuLinks}
-                  defaultIndex={[0]}
+                  // defaultIndex={[0]}
                 >
                   {primaryMenu.menuItems.nodes
                     .filter(item => {

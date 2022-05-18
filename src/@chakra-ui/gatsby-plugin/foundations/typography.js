@@ -93,7 +93,7 @@ export const blockquote = {
 
 export const globalTextStyles = {
   ".thin-h3.chakra-heading": {
-    fontSize: ["24px", "24px", "28px"],
+    fontSize: ["24px", "24px", "24px"],
     fontWeight: "light",
     textTransform: "unset",
     lineHeight: "1.3",

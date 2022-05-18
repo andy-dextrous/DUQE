@@ -15,7 +15,7 @@ function BusinessActivities(props) {
         <Hero />
         <Choose />
       </DarkGroup>
-      <Activities />
+      {/* <Activities /> */}
     </Layout>
   )
 }

@@ -3,7 +3,16 @@ import { graphql } from "gatsby"
 
 import SectionWrapper from "../../../components/SectionWrapper"
 import QIcon from "../../../assets/icons/QIcon"
-import { Flex, Heading, Spacer, Text, VStack } from "@chakra-ui/react"
+import {
+  Button,
+  Flex,
+  Heading,
+  Spacer,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react"
+import { SmartLink } from "../../../components/SmartLink"
 
 export const query = graphql`
   fragment VISION_IMAGE on WpPage {
@@ -32,7 +41,20 @@ function Vision({ props }) {
           <Heading as="h3" className="thin-h3-caps">
             Do you have a vision the world needs to see?
           </Heading>
-          <Text className="custom-font-size-1">It starts with Duqe</Text>
+          <Stack
+            direction={["column", "column", "row"]}
+            w="full"
+            spacing={[5, 5, 6]}
+          >
+            <SmartLink url="/contact-us">
+              <Button minW="100px">Damn straight</Button>
+            </SmartLink>
+            <SmartLink url="/cost-calculator">
+              <Button variant="outlineWhite" minW="100px">
+                Not yet...
+              </Button>
+            </SmartLink>
+          </Stack>
         </VStack>
       </Flex>
       <QIcon

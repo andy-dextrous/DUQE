@@ -43,7 +43,7 @@ function Requirements() {
         >
           <Image
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141452/DUQE/Vector-1.svg"
-            h={["66px", "66px", "110px"]}
+            h={["66px", "66px", "80px"]}
           />
           <Heading as="h3">Individual</Heading>
           <HStack spacing={4}>
