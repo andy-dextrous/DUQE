@@ -132,10 +132,10 @@ export const globalTextStyles = {
     textTransform: "unset",
     transition: "color 0.1s ease-out",
     lineHeight: 1.4,
-    color: "white",
-    fontFamily: "HelveticaNowDisplay-Bd",
+    color: "dark.default",
+    fontFamily: "HelveticaNowText-Regular",
     _hover: {
-      color: "brandBlue.default",
+      color: "white",
       transform: "translateX(5px)",
     },
   },
@@ -149,9 +149,9 @@ export const globalTextStyles = {
   ".chakra-text.subMenuLink": {
     fontSize: ["lg", "lg", "xl"],
     fontWeight: "normal",
-    color: "whiteAlpha.800",
+    color: "dark.default",
     _hover: {
-      color: "brandBlue.default",
+      color: "white",
     },
   },
   ".custom-font-size-1.chakra-text": {

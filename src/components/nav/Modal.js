@@ -108,7 +108,7 @@ function Modal() {
         left="0"
         top="0"
         overflowY={["scroll", "scroll", "hidden"]}
-        bg="rgba(11,11,11,1)"
+        bg="brandConcrete.default"
         // sx={{ backdropFilter: "blur(10px)" }}
         id="navPopup"
         borderRight="1px solid rgba(187,187,187,0.3)"
@@ -130,7 +130,7 @@ function Modal() {
               px="0"
               spacing={[8, 8, 20]}
               m="auto"
-              divider={<Divider opacity="0.2" />}
+              divider={<Divider />}
             >
               <VStack
                 as="nav"
@@ -146,6 +146,7 @@ function Modal() {
                   align="start"
                   pl={[0, 0, 0]}
                   ref={primaryMenuLinks}
+                  defaultIndex={[0]}
                 >
                   {primaryMenu.menuItems.nodes
                     .filter(item => {
@@ -171,12 +172,13 @@ function Modal() {
                             px="0"
                             py={2}
                             className="link-wrapper"
+                            _hover={{ bg: "transaprent" }}
                           >
                             <Text className="primaryMenuLink">
                               {item.label}
                             </Text>
                             <AccordionIcon
-                              color="brandYellow.default"
+                              color="dark.default"
                               className="accordion-icon"
                               ml={1}
                             />
@@ -213,9 +215,9 @@ function Modal() {
                   direction="row"
                   button
                   size="md"
-                  variant="circleYellow"
+                  variant="circle"
                 />
-                <Logo useContrast={false} width="60px" />
+                <Logo useContrast={false} width="60px" initialColor="#0b0b0b" />
               </VStack>
             </Stack>
           </Center>
