@@ -20,6 +20,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react"
+import StarIcon from "../../assets/icons/StarIcon"
 
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
@@ -114,7 +115,12 @@ function Modal() {
         borderRight="1px solid rgba(187,187,187,0.3)"
         ref={menuWrapper}
       >
-        <Box w="full" h={["auto", "auto", "auto", "full"]}>
+        <Box
+          w="full"
+          h={["auto", "auto", "auto", "full"]}
+          position="relative"
+          overflow="hidden"
+        >
           <Center
             px={[12, 12, 16]}
             w="full"

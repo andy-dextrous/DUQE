@@ -15,7 +15,7 @@ import {
 
 function Requirements() {
   return (
-    <SectionWrapper containerSize="xl" className="light" mb={[0, 0, 60]}>
+    <SectionWrapper containerSize="lg" className="light" mb={[0, 0, 60]}>
       <VStack
         spacing={[8, 8, 12]}
         alignItems="flex-start"
@@ -34,7 +34,7 @@ function Requirements() {
       <Stack spacing={[12, 12, 24]} direction={["column", "column", "row"]}>
         <VStack
           bg="brandYellow.default"
-          spacing={[8, 8, 12]}
+          spacing={[8, 8]}
           flex="1"
           p={[8, 8, 20]}
           align="flex-start"
@@ -43,49 +43,43 @@ function Requirements() {
         >
           <Image
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141452/DUQE/Vector-1.svg"
-            h={["66px", "66px", "80px"]}
+            h={["66px", "66px", "70px"]}
           />
           <Heading as="h3">Individual</Heading>
           <HStack spacing={4}>
             <Image
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
-              h={["24px", "24px", "34px"]}
+              h={["24px", "24px", "24px"]}
             />
-            <Heading as="h3" className="thin-h3">
-              Clear Passport Copy
-            </Heading>
+            <Text>Clear Passport Copy</Text>
           </HStack>
           <HStack spacing={4}>
             <Image
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
-              h={["24px", "24px", "34px"]}
+              h={["24px", "24px", "24px"]}
             />
-            <Heading as="h3" className="thin-h3">
-              Entry Stamp/cancellation paper/UID number
-            </Heading>
+            <Text>Entry Stamp/cancellation paper/UID number</Text>
           </HStack>
           <HStack spacing={4}>
             <Image
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
-              h={["24px", "24px", "34px"]}
+              h={["24px", "24px", "24px"]}
             />
-            <Heading as="h3" className="thin-h3">
-              Personal details
-            </Heading>
+            <Text>Personal details</Text>
           </HStack>
           <HStack spacing={4}>
             <Image
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
-              h={["24px", "24px", "34px"]}
+              h={["24px", "24px", "24px"]}
             />
-            <Heading as="h3" className="thin-h3">
+            <Text>
               NOC (applicable for appointed Managers with residence visa)
-            </Heading>
+            </Text>
           </HStack>
         </VStack>
         <VStack
           bg="brandConcrete.default"
-          spacing={[8, 8, 12]}
+          spacing={[8, 8]}
           flex="1"
           p={[8, 8, 20]}
           align="flex-start"
@@ -94,62 +88,50 @@ function Requirements() {
         >
           <Image
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141452/DUQE/Vector.svg"
-            h={["66px", "66px", "110px"]}
+            h={["66px", "66px", "70px"]}
           />
           <Heading as="h3">Corporate Entity/Branch</Heading>
           <HStack spacing={4}>
             <Image
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
-              h={["24px", "24px", "34px"]}
+              h={["24px", "24px", "24px"]}
             />
-            <Heading as="h3" className="thin-h3">
-              License
-            </Heading>
+            <Text>License</Text>
           </HStack>
           <HStack spacing={4}>
             <Image
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
-              h={["24px", "24px", "34px"]}
+              h={["24px", "24px", "24px"]}
             />
-            <Heading as="h3" className="thin-h3">
-              Certificate of Incorporation
-            </Heading>
+            <Text>Certificate of Incorporation</Text>
           </HStack>
           <HStack spacing={4}>
             <Image
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
-              h={["24px", "24px", "34px"]}
+              h={["24px", "24px", "24px"]}
             />
-            <Heading as="h3" className="thin-h3">
-              Certificate of Incumbency or Good standing
-            </Heading>
+            <Text>Certificate of Incumbency or Good standing</Text>
           </HStack>
           <HStack spacing={4}>
             <Image
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
-              h={["24px", "24px", "34px"]}
+              h={["24px", "24px", "24px"]}
             />
-            <Heading as="h3" className="thin-h3">
-              Memorandum of Association
-            </Heading>
+            <Text>Memorandum of Association</Text>
           </HStack>
           <HStack spacing={4}>
             <Image
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
-              h={["24px", "24px", "34px"]}
+              h={["24px", "24px", "24px"]}
             />
-            <Heading as="h3" className="thin-h3">
-              Share registry/certificate
-            </Heading>
+            <Text>Share registry/certificate</Text>
           </HStack>
           <HStack spacing={4}>
             <Image
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
-              h={["24px", "24px", "34px"]}
+              h={["24px", "24px", "24px"]}
             />
-            <Heading as="h3" className="thin-h3">
-              Board Resolution
-            </Heading>
+            <Text>Board Resolution</Text>
           </HStack>
         </VStack>
       </Stack>

@@ -4,7 +4,7 @@ import { Link } from "@chakra-ui/react"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
 import { HStack } from "@chakra-ui/react"
 
-function TopMenu({ startDark }) {
+function TopMenu() {
   const menu = useMenuQuery("Top Bar")
 
   return (
@@ -14,9 +14,9 @@ function TopMenu({ startDark }) {
           key={item.databaseId}
           as={GatsbyLink}
           to={item.path}
-          color="white"
+          className="nav-link"
           fontWeight="normal"
-          _hover={{ textDecoration: "none", color: "brandGreen.500" }}
+          _hover={{ textDecoration: "none", color: "brandBlue.default" }}
         >
           {item.label}
         </Link>

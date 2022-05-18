@@ -19,16 +19,7 @@ function TopBar() {
       zIndex="sticky"
       justify="flex-end"
     >
-      <HStack
-        spacing="6"
-        pr="50px"
-        sx={{
-          a: {
-            color: "white",
-            _hover: { color: "brandBlue.default !important" },
-          },
-        }}
-      >
+      <HStack spacing="6" pr="50px">
         <TopMenu />
         <SearchToggle
           bg="transparent"

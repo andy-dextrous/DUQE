@@ -169,6 +169,12 @@ export const globalTextStyles = {
       fontSize: "16px",
     },
   },
+  "a.nav-link.chakra-link": {
+    color: "white",
+    _hover: {
+      color: "brandBlue.default",
+    },
+  },
 }
 
 export const base = {
