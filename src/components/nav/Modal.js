@@ -101,7 +101,7 @@ function Modal() {
         pt={mobileNavHeight}
         pb={[40, 40, 0]}
         h="100vh"
-        w={["100vw", "100vw", "500px"]}
+        w={["100vw", "100vw", "400px"]}
         justify="center"
         zIndex="modal"
         position="fixed"

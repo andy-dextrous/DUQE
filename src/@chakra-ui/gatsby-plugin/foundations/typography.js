@@ -127,7 +127,7 @@ export const globalTextStyles = {
     textTransform: "uppercase",
   },
   ".chakra-text.primaryMenuLink": {
-    fontSize: ["xl", "xl", "xl"],
+    fontSize: ["xl", "xl", "22px"],
     fontWeight: "extrabold",
     textTransform: "unset",
     transition: "color 0.1s ease-out",
