@@ -100,6 +100,10 @@ export const globalTextStyles = {
     fontFamily: "HelveticaNowText-Regular",
     letterSpacing: "-0.02em",
   },
+  "*.jumbo-custom.chakra-heading": {
+    ...h1,
+    fontSize: ["4xl", "4xl", "7xl", "7xl", "8xl", "8xl", "8xl"],
+  },
   ".thin.chakra-heading": {
     fontWeight: "normal",
     textTransform: "unset",

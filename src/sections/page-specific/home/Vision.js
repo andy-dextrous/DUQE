@@ -34,6 +34,7 @@ function Vision({ props }) {
       h={["60vh", "60vh", "100vh"]}
       overlay
       containerSize="xl"
+      zIndex="1"
     >
       <Flex h="full" w="full" align="center">
         <Spacer />

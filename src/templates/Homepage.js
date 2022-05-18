@@ -14,7 +14,7 @@ import Agent from "../sections/page-specific/home/Agent"
 import LatestBlogs from "../sections/page-specific/home/LatestBlogs"
 import Contact from "../sections/page-specific/home/Contact"
 import DarkGroup from "../components/common/DarkGroup"
-import CostSections from "../sections/page-specific/home/CostSections"
+import HowMuchDoesItCost from "../sections/page-specific/home/HowMuchDoesItCost"
 
 function Homepage(props) {
   const [masterTimeline, setMasterTimeline] = useState(
@@ -39,8 +39,10 @@ function Homepage(props) {
         <Perks />
       </DarkGroup>
       <YourLegacy />
-      <CostSections />
-      <Vision props={props} />
+      <DarkGroup>
+        <HowMuchDoesItCost />
+        <Vision props={props} />
+      </DarkGroup>
       <Benefits />
       <Access />
       <Agent />

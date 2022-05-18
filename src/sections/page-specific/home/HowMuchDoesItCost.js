@@ -1,3 +1,12 @@
+import React, { useContext, useEffect, useRef } from "react"
+import { gsap, ScrollTrigger } from "../../../gsap"
+import { SmoothContext } from "../../../components/SmoothWrapper"
+import { DarkContext } from "../../../components/Layout"
+
+import CrossIcon from "../../../assets/icons/CrossIcon"
+import SectionWrapper from "../../../components/SectionWrapper"
+import { Link } from "gatsby"
+import { ArrowForwardIcon } from "@chakra-ui/icons"
 import {
   Button,
   Center,
@@ -6,23 +15,28 @@ import {
   VStack,
   useBreakpointValue,
   Text,
+  Stack,
+  HStack,
+  Select,
 } from "@chakra-ui/react"
-import React, { useContext, useEffect, useRef } from "react"
-import CrossIcon from "../../../assets/icons/CrossIcon"
-import SectionWrapper from "../../../components/SectionWrapper"
-import { gsap, ScrollTrigger } from "../../../gsap"
-import { DarkContext } from "../../../components/Layout"
-import { Link } from "gatsby"
 
-function HowMuchDoesItCost({ darkActive, setDarkActive }) {
+function HowMuchDoesItCost() {
   const cross = useRef()
   const img = useRef()
   const button = useRef()
-  const { setIsDarkBackground } = useContext(DarkContext)
+  const content = useRef()
+  const animation = useRef(null)
   const addLag = useBreakpointValue([false, false, true])
 
   useEffect(() => {
-    if (!ScrollTrigger) return
+    console.log("here")
+    if (!ScrollTrigger || animation.current !== null) return
+    const contentDimensions = content.current.getBoundingClientRect()
+    const left = window.innerWidth / 2 - contentDimensions.width / 2
+    const bottom = window.innerHeight / 2 - contentDimensions.height / 2
+    const imgWidth = img.current.getBoundingClientRect()
+    const scale = window.innerWidth / (imgWidth.width * 0.9)
+
     gsap.to(cross.current, {
       rotation: -50,
       ease: "linear",
@@ -34,40 +48,43 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
       },
     })
 
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: "#how-much-does-it-cost",
-    //     start: "bottom bottom",
-    //     pin: true,
-    //     end: "+=100%",
-    //     scrub: true,
-    //     onStart: () => {
-    //       gsap.set("#how-much-does-it-cost", {
-    //         css: { overflow: "hidden" },
-    //       })
-    //     },
-    //     onEnterBack: () => {
-    //       gsap.set("#how-much-does-it-cost", {
-    //         css: { overflow: "visibility", backgroundColor: "#e0db29" },
-    //       })
-    //     },
-    //   },
-    // })
-    // tl.to(img.current, {
-    //   scale: 4,
-    //   ease: "linear",
-    //   duration: 20,
-    //   onComplete: () => {
-    //     setDarkActive(true)
-    //     setIsDarkBackground(true)
-    //     gsap.set("#how-much-does-it-cost", {
-    //       css: { backgroundColor: "#0b0b0b" },
-    //     })
-    //   },
-    // })
-    // tl.to(button.current, { autoAlpha: 0, delay: 10 })
-    // tl.set(img.current, { autoAlpha: 0 })
-  }, [setDarkActive, setIsDarkBackground])
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#how-much-does-it-cost",
+        start: "bottom bottom",
+        pin: true,
+        end: "+=100%",
+        scrub: true,
+        onEnter: () => {
+          gsap.set("#how-much-does-it-cost", { overflow: "hidden" })
+        },
+        onLeaveBack: () => {
+          gsap.set("#how-much-does-it-cost", { overflow: "visible" })
+        },
+      },
+    })
+    tl.to(img.current, {
+      scale: scale,
+      ease: "linear",
+      duration: 20,
+    })
+    tl.set(content.current, { left: left, bottom: bottom })
+    tl.fromTo(
+      content.current,
+      {
+        autoAlpha: 0,
+        scale: 0,
+      },
+      {
+        autoAlpha: 1,
+        scale: 1,
+        duration: 5,
+        ease: "power2.in",
+      }
+    )
+    tl.to(button.current, { autoAlpha: 0, delay: 10 })
+    animation.current = tl
+  }, [])
 
   return (
     <SectionWrapper
@@ -93,6 +110,37 @@ function HowMuchDoesItCost({ darkActive, setDarkActive }) {
         <Link to="/cost-calculator">
           <Button ref={button}>Calculate Cost</Button>
         </Link>
+      </VStack>
+      <VStack
+        spacing={12}
+        w="full"
+        ref={content}
+        visibility="hidden"
+        zIndex="20"
+        position="absolute"
+      >
+        <Heading color="white">
+          How long do you want to license your business?
+        </Heading>
+        <Stack direction={["column", "column", "row"]} w="full">
+          <VStack align={["flex-start", "flex-start", "center"]} w="full">
+            <Heading color="white" as="h6">
+              Select the duration of your license
+            </Heading>
+            <HStack>
+              <Select variant="filled" size="md" _focus={{ bg: "white" }}>
+                <option value="1">1 year</option>
+                <option value="2">2 years</option>
+                <option value="3">3 years</option>
+              </Select>
+              <Link to="/cost-calculator">
+                <Button w="200px" h="100%" rightIcon={<ArrowForwardIcon />}>
+                  Continue
+                </Button>
+              </Link>
+            </HStack>
+          </VStack>
+        </Stack>
       </VStack>
       <Center mt={[12, 12, 20]}>
         <Image
