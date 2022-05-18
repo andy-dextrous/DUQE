@@ -5,7 +5,7 @@ export const Button = {
     textTransform: "uppercase",
     transformOrigin: "center",
     letterSpacing: "0.5px",
-    borderRadius: "10px",
+    borderRadius: "5px",
     zIndex: 1,
     position: "relative",
     overflow: "hidden",
@@ -186,9 +186,9 @@ export const Button = {
   },
   sizes: {
     lg: {
-      px: 8,
-      py: 4,
-      fontSize: "16",
+      px: 6,
+      py: 3,
+      fontSize: "15",
     },
     sm: {
       px: 6,
