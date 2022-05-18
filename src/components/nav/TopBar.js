@@ -2,6 +2,7 @@ import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Button, HStack, Link, useBreakpointValue } from "@chakra-ui/react"
 import { useThemeOptions } from "../../hooks/useThemeOptions"
+import TopMenu from "./TopMenu"
 import SearchToggle from "../search/SearchToggle"
 
 function TopBar() {
@@ -18,7 +19,8 @@ function TopBar() {
       zIndex="sticky"
       justify="flex-end"
     >
-      <HStack spacing="6" pr="50px">
+      <HStack spacing="6" pr="50px" sx={{ a: { color: "white !important" } }}>
+        <TopMenu />
         <SearchToggle
           bg="transparent"
           color="white"

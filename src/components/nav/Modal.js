@@ -122,12 +122,13 @@ function Modal() {
           >
             <Stack
               w="full"
+              h="80%"
               direction={["column", "column", "column"]}
               justify={["center", "center", "space-between"]}
               align={["center", "center", "center"]}
-              py={[16, 8, 24]}
+              py={[16, 8, 20]}
               px="0"
-              spacing={[8, 8, 8]}
+              spacing={[8, 8, 20]}
               m="auto"
               divider={<Divider opacity="0.2" />}
             >
@@ -137,7 +138,7 @@ function Modal() {
                 align="flex-start"
                 spacing={[4, 4, 4, 12]}
                 p={[0, 0, 12, 8, 16, 0]}
-                justify="center"
+                justify="flex-start"
                 flex={[2]}
               >
                 <Accordion
@@ -212,7 +213,7 @@ function Modal() {
                   direction="row"
                   button
                   size="md"
-                  variant="circleBlue"
+                  variant="circleYellow"
                 />
                 <Logo useContrast={false} width="60px" />
               </VStack>

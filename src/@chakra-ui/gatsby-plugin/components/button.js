@@ -1,7 +1,7 @@
 export const Button = {
   baseStyle: {
     fontWeight: "bold",
-    fontFamily: "HelveticaNowDisplay-Bd",
+    fontFamily: "HelveticaNowText-Regular",
     textTransform: "uppercase",
     transformOrigin: "center",
     letterSpacing: "0.5px",
@@ -23,7 +23,7 @@ export const Button = {
       position: "absolute",
       transform: "scale(1)",
       zIndex: "-1",
-      borderRadius: "10px",
+      borderRadius: "5px",
     },
     _before: {
       content: "''",
@@ -45,14 +45,14 @@ export const Button = {
       bg: "brandBlue.default",
       color: "dark.default",
       p: { color: "dark.default" },
-      _before: { bg: "brandBlue.500" },
+      _before: { bg: "brandYellow.default" },
       _after: { bg: "brandBlue.default" },
     },
     secondary: {
       bg: "brandYellow.default",
       color: "dark.default",
       p: { color: "dark.default" },
-      _before: { bg: "brandYellow.200" },
+      _before: { bg: "brandBlue.default" },
       _after: { bg: "brandYellow.default" },
     },
     light: {
@@ -98,6 +98,11 @@ export const Button = {
     },
     circleBlue: {
       bg: "brandBlue.default",
+      svg: { fill: "dark.default" },
+      borderRadius: "full",
+    },
+    circleYellow: {
+      bg: "brandYellow.default",
       svg: { fill: "dark.default" },
       borderRadius: "full",
     },

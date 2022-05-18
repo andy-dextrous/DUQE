@@ -14,7 +14,7 @@ function TopMenu({ startDark }) {
           key={item.databaseId}
           as={GatsbyLink}
           to={item.path}
-          color={startDark ? "brandBlue.900" : "white"}
+          color="white"
           fontWeight="normal"
           _hover={{ textDecoration: "none", color: "brandGreen.500" }}
         >

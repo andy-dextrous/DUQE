@@ -127,7 +127,7 @@ export const globalTextStyles = {
     textTransform: "uppercase",
   },
   ".chakra-text.primaryMenuLink": {
-    fontSize: ["xl", "xl", "2xl"],
+    fontSize: ["xl", "xl", "xl"],
     fontWeight: "extrabold",
     textTransform: "unset",
     transition: "color 0.1s ease-out",
@@ -135,7 +135,7 @@ export const globalTextStyles = {
     color: "white",
     fontFamily: "HelveticaNowDisplay-Bd",
     _hover: {
-      color: "brandYellow.default",
+      color: "brandBlue.default",
       transform: "translateX(5px)",
     },
   },
@@ -151,7 +151,7 @@ export const globalTextStyles = {
     fontWeight: "normal",
     color: "whiteAlpha.800",
     _hover: {
-      color: "brandYellow.default",
+      color: "brandBlue.default",
     },
   },
   ".custom-font-size-1.chakra-text": {
