@@ -9,15 +9,10 @@ import BlurbInline from "../../../components/common/BlurbInline"
 import { Box, Container, Heading, Stack, VStack } from "@chakra-ui/react"
 
 function ContactUs() {
-  const mapHtml = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462562.6509516108!2d54.94729613679833!3d25.07575945545691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sau!4v1651720481315!5m2!1sen!2sau" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
-  const { containerPaddingY, componentSpacing } = useVariable()
+  const mapHtml = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462562.6509516108!2d54.94729613679833!3d25.07575945545691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sau!4v1651720481315!5m2!1sen!2sau" width="100%" height="500" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+  const { componentSpacing } = useVariable()
   return (
-    <SectionWrapper
-      minH="100vh"
-      containerSize="lg"
-      pb={containerPaddingY}
-      className="light"
-    >
+    <SectionWrapper minH="100vh" containerSize="lg" className="light">
       <VStack spacing={12} align="flex-start">
         <Heading className="jumbo">
           Contact Us <YellowHeading>Now!</YellowHeading>
@@ -31,7 +26,13 @@ function ContactUs() {
       <Container maxW="720" mt={20}>
         <Form formElements={<ContactPageElements />} />
       </Container>
-      <Box dangerouslySetInnerHTML={{ __html: mapHtml }} width="full" mt={20} />
+      <Box
+        dangerouslySetInnerHTML={{ __html: mapHtml }}
+        width="full"
+        mt={20}
+        rounded="10px"
+        overflow="hidden"
+      />
       <Stack
         direction={["column", "column", "row"]}
         mt={20}

@@ -1,10 +1,7 @@
-import React, { useContext, useEffect, useRef } from "react"
-import { gsap, ScrollTrigger } from "../../../gsap"
-import { SmoothContext } from "../../../components/SmoothWrapper"
-import { DarkContext } from "../../../components/Layout"
+import React, { useEffect, useRef } from "react"
+import { gsap, ScrollTrigger } from "../../../../gsap"
 
-import CrossIcon from "../../../assets/icons/CrossIcon"
-import SectionWrapper from "../../../components/SectionWrapper"
+import CrossIcon from "../../../../assets/icons/CrossIcon"
 import { Link } from "gatsby"
 import { ArrowForwardIcon } from "@chakra-ui/icons"
 import {
@@ -19,23 +16,25 @@ import {
   HStack,
   Select,
 } from "@chakra-ui/react"
+import SectionWrapperCustom from "./SectionWrapperCustom"
 
 function HowMuchDoesItCost() {
   const cross = useRef()
-  const img = useRef()
+  const img = useRef(null)
   const button = useRef()
   const content = useRef()
   const animation = useRef(null)
+  const section = useRef()
   const addLag = useBreakpointValue([false, false, true])
 
   useEffect(() => {
-    console.log("here")
-    if (!ScrollTrigger || animation.current !== null) return
+    ScrollTrigger.refresh()
+    if (animation.current !== null) return
     const contentDimensions = content.current.getBoundingClientRect()
     const left = window.innerWidth / 2 - contentDimensions.width / 2
     const bottom = window.innerHeight / 2 - contentDimensions.height / 2
-    const imgWidth = img.current.getBoundingClientRect()
-    const scale = window.innerWidth / (imgWidth.width * 0.9)
+    const imgDimensions = img.current.getBoundingClientRect()
+    const scale = window.innerWidth / (imgDimensions.width * 0.9)
 
     gsap.to(cross.current, {
       rotation: -50,
@@ -50,21 +49,21 @@ function HowMuchDoesItCost() {
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "#how-much-does-it-cost",
+        trigger: section.current,
         start: "bottom bottom",
         pin: true,
         end: "+=100%",
         scrub: true,
         onEnter: () => {
-          gsap.set("#how-much-does-it-cost", { overflow: "hidden" })
+          gsap.set(section.current, { overflow: "hidden" })
         },
         onLeaveBack: () => {
-          gsap.set("#how-much-does-it-cost", { overflow: "visible" })
+          gsap.set(section.current, { overflow: "visible" })
         },
       },
     })
     tl.to(img.current, {
-      scale: scale,
+      scale: 5,
       ease: "linear",
       duration: 20,
     })
@@ -78,7 +77,7 @@ function HowMuchDoesItCost() {
       {
         autoAlpha: 1,
         scale: 1,
-        duration: 5,
+        duration: 7,
         ease: "power2.in",
       }
     )
@@ -87,15 +86,7 @@ function HowMuchDoesItCost() {
   }, [])
 
   return (
-    <SectionWrapper
-      bg="brandYellow.default"
-      id="how-much-does-it-cost"
-      className="light"
-      containerSize="lg"
-      pb={0}
-      containerStyles={{ py: 0, pt: [20, 20, 6, 8, 60] }}
-      zIndex="1"
-    >
+    <SectionWrapperCustom ref={section}>
       <VStack spacing={[8, 8, 12]}>
         <Heading className="jumbo" textAlign="center">
           How much does it cost?
@@ -119,11 +110,11 @@ function HowMuchDoesItCost() {
         zIndex="20"
         position="absolute"
       >
-        <Heading color="white">
+        <Heading color="white" textAlign={["center", "center", "left"]}>
           How long do you want to license your business?
         </Heading>
         <Stack direction={["column", "column", "row"]} w="full">
-          <VStack align={["flex-start", "flex-start", "center"]} w="full">
+          <VStack align={["center", "center", "center"]} w="full">
             <Heading color="white" as="h6">
               Select the duration of your license
             </Heading>
@@ -145,6 +136,7 @@ function HowMuchDoesItCost() {
       <Center mt={[12, 12, 20]}>
         <Image
           h={["60vh", "60vh", "908px"]}
+          w={["100%", "100%", "614px"]}
           src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650944008/DUQE/Calculator.png"
           ref={img}
           transformOrigin="center 30%"
@@ -164,7 +156,7 @@ function HowMuchDoesItCost() {
         data-speed={addLag ? "1.1" : 1}
         ref={cross}
       />
-    </SectionWrapper>
+    </SectionWrapperCustom>
   )
 }
 
