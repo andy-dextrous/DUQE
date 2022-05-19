@@ -20,7 +20,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react"
-import StarIcon from "../../assets/icons/StarIcon"
 
 function Modal() {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)

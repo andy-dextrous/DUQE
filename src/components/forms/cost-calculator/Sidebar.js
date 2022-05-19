@@ -11,7 +11,6 @@ import {
   Tag,
   Text,
   VStack,
-  Wrap,
 } from "@chakra-ui/react"
 
 function Sidebar() {

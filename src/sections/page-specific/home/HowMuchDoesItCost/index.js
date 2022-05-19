@@ -33,8 +33,6 @@ function HowMuchDoesItCost() {
     const contentDimensions = content.current.getBoundingClientRect()
     const left = window.innerWidth / 2 - contentDimensions.width / 2
     const bottom = window.innerHeight / 2 - contentDimensions.height / 2
-    const imgDimensions = img.current.getBoundingClientRect()
-    const scale = window.innerWidth / (imgDimensions.width * 0.9)
 
     gsap.to(cross.current, {
       rotation: -50,

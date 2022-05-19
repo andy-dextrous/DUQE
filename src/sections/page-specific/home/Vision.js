@@ -3,16 +3,8 @@ import { graphql } from "gatsby"
 
 import SectionWrapper from "../../../components/SectionWrapper"
 import QIcon from "../../../assets/icons/QIcon"
-import {
-  Button,
-  Flex,
-  Heading,
-  Spacer,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react"
 import { SmartLink } from "../../../components/SmartLink"
+import { Button, Flex, Heading, Spacer, Stack, VStack } from "@chakra-ui/react"
 
 export const query = graphql`
   fragment VISION_IMAGE on WpPage {

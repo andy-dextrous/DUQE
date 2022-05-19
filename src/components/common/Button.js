@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import { Button as ChakraButton } from "@chakra-ui/react"
-import { gsap, SplitText } from "../../gsap"
+import { gsap } from "../../gsap"
 
 function Button({ children, ...props }) {
   const [ready, setReady] = useState(false)

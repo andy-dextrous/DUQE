@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ControlButtons from "./ControlButtons"
-import { Heading, Text, VStack, Wrap } from "@chakra-ui/react"
+import { Text, VStack, Wrap } from "@chakra-ui/react"
 import ButtonCheckbox from "./ui/ButtonCheckbox"
 import { FormContext } from "./Context"
 import Title from "./ui/Title"

@@ -1,3 +1,4 @@
+import React from "react"
 import {
   Button,
   Center,
@@ -7,7 +8,6 @@ import {
   InputRightElement,
   VStack,
 } from "@chakra-ui/react"
-import React from "react"
 
 function NewsletterFooter() {
   return (

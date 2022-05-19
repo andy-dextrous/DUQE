@@ -1,9 +1,8 @@
-import { Button, Heading, Stack, VStack } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import YellowHeading from "../../../components/common/YellowHeading"
 import { Link } from "gatsby"
-import StarIcon from "../../../assets/icons/StarIcon"
+import { Button, Heading, Stack, VStack } from "@chakra-ui/react"
 
 function Access() {
   return (

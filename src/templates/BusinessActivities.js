@@ -4,7 +4,6 @@ import { Seo } from "../components/seo/components/index"
 import { graphql } from "gatsby"
 import Hero from "../sections/page-specific/business-activities/Hero"
 import Choose from "../sections/page-specific/business-activities/Choose"
-import Activities from "../sections/page-specific/business-activities/Activities"
 import DarkGroup from "../components/common/DarkGroup"
 
 function BusinessActivities(props) {

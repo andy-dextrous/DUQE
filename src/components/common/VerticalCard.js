@@ -1,3 +1,6 @@
+import React from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import {
   AspectRatio,
   Button,
@@ -6,8 +9,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import React from "react"
 
 function VerticalCard({
   image,

@@ -1,5 +1,5 @@
-import { Box, Heading, Image, Text, VStack } from "@chakra-ui/react"
 import React from "react"
+import { Box, Heading, Image, Text, VStack } from "@chakra-ui/react"
 
 function Blurb({ img, title, text }) {
   return (

@@ -1,14 +1,14 @@
-import { Box, Heading, HStack, Image, Text, VStack } from "@chakra-ui/react"
-import { Link } from "gatsby"
 import React from "react"
+import { Link } from "gatsby"
+import { Box, Heading, HStack, Image, Text, VStack } from "@chakra-ui/react"
 
 function BlurbInline({ img, title, text, link }) {
   return (
     <HStack
       align="start"
       flex="1"
-      spacing={5}
       justifyContent="flex-start"
+      spacing={5}
       sx={{ ".blurb-title": { textTransform: "unset" } }}
     >
       <Link to={link}>

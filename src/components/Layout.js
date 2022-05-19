@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { gsap } from "../gsap"
 import Nav from "./nav/Nav"
 import Footer from "./footer/Footer"
 import SmoothWrapper from "./SmoothWrapper"
