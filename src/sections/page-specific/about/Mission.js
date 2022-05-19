@@ -61,7 +61,7 @@ function Mission() {
             <br />{" "}
             <Text as="span" color="brandBlue.default">
               {" "}
-              Ambition
+              Vision
             </Text>
           </Heading>
           <Image

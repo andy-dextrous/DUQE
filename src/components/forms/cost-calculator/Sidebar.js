@@ -80,14 +80,18 @@ function Sidebar() {
           Our licences are designed to be scalable, so you can easily add or
           remove users as your business grows or changes
         </Text>
-        <VStack align="flex-start">
+        <VStack
+          align="flex-start"
+          spacing={4}
+          display={["none", "none", "block"]}
+        >
           {answers
-            .filter((answer, i) => {
+            .filter(answer => {
               return answer.answer !== ""
             })
             .map((answer, index) => {
               return (
-                <HStack>
+                <HStack key={index}>
                   <Text fontSize="sm">{answer.summary}</Text>{" "}
                   <Tag bg="brandYellow.300">{answer.answer}</Tag>
                 </HStack>
