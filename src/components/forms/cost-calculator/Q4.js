@@ -8,7 +8,8 @@ import Title from "./ui/Title"
 import { Text, VStack, Wrap } from "@chakra-ui/react"
 
 function Q4({ id }) {
-  const { handleChange, answers } = React.useContext(FormContext)
+  const { handleChange, answers, currentQuestion } =
+    React.useContext(FormContext)
   const [selectedOptions, setSelectedOptions] = useState([])
 
   function handleSelection(e) {
@@ -23,12 +24,11 @@ function Q4({ id }) {
   }
 
   useEffect(() => {
-    if (selectedOptions.length > 0) {
-      handleChange(selectedOptions, id)
-    } else {
-      handleChange("", id)
-    }
-  }, [selectedOptions])
+    if (currentQuestion !== id) return
+    selectedOptions.length > 0
+      ? handleChange(selectedOptions, id)
+      : handleChange("", id)
+  }, [selectedOptions, id, handleChange, currentQuestion])
 
   return (
     <Panel id={id}>

@@ -87,7 +87,7 @@ function HomeBlogCard({ post, startVisible = false }) {
     return () => {
       observer.current.kill()
     }
-  }, [image.current, animateOnMobile])
+  }, [animateOnMobile])
 
   return (
     <VStack

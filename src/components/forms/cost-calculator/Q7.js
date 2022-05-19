@@ -7,7 +7,8 @@ import Title from "./ui/Title"
 import Panel from "./ui/Panel"
 
 function Q7({ id }) {
-  const { handleChange, answers } = React.useContext(FormContext)
+  const { handleChange, answers, currentQuestion } =
+    React.useContext(FormContext)
 
   const [selectedOptions, setSelectedOptions] = useState([])
 
@@ -23,12 +24,11 @@ function Q7({ id }) {
   }
 
   useEffect(() => {
-    if (selectedOptions.length > 0) {
-      handleChange(selectedOptions, id)
-    } else {
-      handleChange("", id)
-    }
-  }, [selectedOptions])
+    if (currentQuestion !== id) return
+    selectedOptions.length > 0
+      ? handleChange(selectedOptions, id)
+      : handleChange("", id)
+  }, [selectedOptions, id, handleChange, currentQuestion])
 
   return (
     <Panel id={id}>

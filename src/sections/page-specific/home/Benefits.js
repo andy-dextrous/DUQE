@@ -11,6 +11,56 @@ import { Heading, VStack } from "@chakra-ui/react"
 function Benefits() {
   const cross = useRef()
   const { containerPaddingY, sidebarMenuWidth, sectionPaddingX } = useVariable()
+  const data = [
+    {
+      title: "Accounting",
+      iconUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg",
+      imgUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1650947182/DUQE/Rectangle_21.png",
+      text: "Sorting out your invoices, receipts, payable and more can be a headache when you’ve got a business to run. If you need an expert to take care of your accounting, our accountants are here to lessen your burden as an entrepreneur. ",
+    },
+    {
+      title: "VAT Registration",
+      iconUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg",
+      imgUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1650940026/DUQE/Rectangle_15.png",
+      text: "We have a team specialising in the UAE’s VAT rules and regulations who can help you understand the VAT policies applicable to your business. If your business meets the criteria, our team can also help you to register your business for VAT. ",
+    },
+    {
+      title: "Bank Account Opening ",
+      iconUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg",
+      imgUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651111950/DUQE/About_Us.png",
+      text: "Opening a bank account for your business can be a swift and easy process with our banking specialists to assist you. From helping you choose the bank that best suits your business requirements, to guiding you through the requirements and steps, our team will be with you every step of the way.",
+    },
+    {
+      title: "Medical & Emirates ID",
+      iconUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg",
+      imgUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651118247/DUQE/Corporate_Services.png",
+      text: "What sets us apart from other business zones is that we have our own facilities for medical fitness tests and Emirates ID typing, so you can conveniently get it all done in one place. Save time, deal with less hassle and get more done with DUQE. ",
+    },
+    {
+      title: "Health Insurance",
+      iconUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg",
+      imgUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto,w_1080/v1651912082/DUQE/Agency_7_GS.jpg",
+      text: " Our accountants will sort out your invoices, receipts, payments,etc. and make sure your financial records are maintained per international standards, so you have one less thing to worry about.",
+    },
+    {
+      title: "Business Center",
+      iconUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg",
+      imgUrl:
+        "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto,w_1080/v1651912101/DUQE/Agency_charlesdeluvio-Lks7vei-eAg-unsplash.jpg",
+      text: "Enjoy the flexibility to work and get things done in your own terms. We offer a variety of flexible workspaces and you’re free to choose and book the one that suits you best – from virtual offices and dedicated desks, to private offices and meeting rooms. ",
+    },
+  ]
 
   useEffect(() => {
     ScrollTrigger.matchMedia({
@@ -91,7 +141,7 @@ function Benefits() {
         zIndex="-1"
         ref={cross}
       />
-      <CorporateServices />
+      <CorporateServices data={data} />
     </SectionWrapper>
   )
 }

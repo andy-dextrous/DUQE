@@ -39,6 +39,7 @@ function WhyDuqe() {
             src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651114618/DUQE/QImage.png"
             alt="Why Duqe"
             w="100%"
+            h={["auto", "auto", "730px"]}
             maxW="100vw"
             data-speed="0.9"
             zIndex="-1"

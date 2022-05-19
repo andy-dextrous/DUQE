@@ -20,10 +20,10 @@ function Mission() {
         direction={["column", "column", "row"]}
         zIndex="1"
         position="relative"
-        spacing={[24]}
+        spacing={[12, 12, 12, 12, 16, 20, 24]}
         mb={[20, 20]}
       >
-        <Center position="relative" flex="1" layerStyle="fillSpace" h="300px">
+        <Center position="relative" w="full" h={["40vh", "40vh", "300px"]}>
           <Heading color="white" zIndex="1" textTransform="uppercase">
             Why we
             <br /> <YellowHeading> exist</YellowHeading>
@@ -47,15 +47,15 @@ function Mission() {
         align="center"
         zIndex="1"
         position="relative"
-        spacing={[4, 4, 8, 12, 16, 20, 24]}
-        direction={["column", "column", "row"]}
+        spacing={[12, 12, 12, 12, 16, 20, 24]}
+        direction={["column-reverse", "column-reverse", "row"]}
       >
         <Heading as="h3" className="thin-h3" color="white" flex="1">
           We aim to be the go-to zone for individuals who are passionate and
           driven about their business ideas and ambitions and who want to be the
           next unicorn.
         </Heading>
-        <Center position="relative" flex="1" layerStyle="fillSpace" h="300px">
+        <Center position="relative" w="full" h={["40vh", "40vh", "300px"]}>
           <Heading color="white" zIndex="1" textTransform="uppercase">
             Our
             <br />{" "}
