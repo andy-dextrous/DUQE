@@ -20,10 +20,53 @@ import { Center } from "@chakra-ui/react"
 function Form() {
   const formRef = useRef()
   const { sectionPaddingX } = useVariable()
-  const { answers } = useContext(FormContext)
+  const { answers, setFinalAmount, setSubmitted } = useContext(FormContext)
 
   // ANIMATION HOOK
   useAnimations(formRef)
+
+  function submitForm(e, answers) {
+    handleSubmit(e, answers, setSubmitted)
+    const finalAmount =
+      getAmountFromVisas(answers) + getAmountFromActivities(answers)
+    setFinalAmount(finalAmount)
+  }
+
+  function getAmountFromVisas(answers) {
+    switch (answers[0].answer) {
+      case "1 year":
+        return 12500
+      case "2 years":
+        return 14250
+      case "3 years":
+        return 16000
+      case "4 years":
+        return 17750
+      case "5 years":
+        return 19500
+      case "6 years":
+        return 21250
+      case "7 years":
+        return 23000
+      default:
+        return 12500
+    }
+  }
+
+  function getAmountFromActivities(answers) {
+    switch (answers[3].answer) {
+      case "Activity 1":
+        return 0
+      case "Activity 2":
+        return 0
+      case "Activity 3":
+        return 0
+      case "Activity 4":
+        return 0
+      default:
+        return 0
+    }
+  }
 
   return (
     <Center
@@ -36,7 +79,7 @@ function Form() {
       position="relative"
       maxH={{ base: "unset", "2xl": "70vh", "3xl": "60vh" }}
       m={sectionPaddingX}
-      onSubmit={e => handleSubmit(e, answers)}
+      onSubmit={e => submitForm(e, answers)}
       ref={formRef}
     >
       <Q1 id={0} />

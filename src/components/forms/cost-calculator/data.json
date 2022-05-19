@@ -4,21 +4,24 @@
     "question": "How long do you want to license your business?",
     "options": ["1 year", "2 years", "3 years", "4 years", "5 years"],
     "answer": "",
-    "handle": "how_long__c"
+    "handle": "how_long__c",
+    "summary": "How long?"
   },
   {
     "id": 1,
     "question": "Number of employees",
     "options": ["1-5", "5-25", "25-50", "50-100", "100-500"],
     "answer": "",
-    "handle": "numemployees"
+    "handle": "numemployees",
+    "summary": "# Employees?"
   },
   {
     "id": 2,
     "question": "How many owners or shareholders will your company have?",
     "options": ["1", "2", "3", "4", "5"],
     "answer": "",
-    "handle": "number_of_shareholders__c"
+    "handle": "number_of_shareholders__c",
+    "summary": "# Shareholders?"
   },
   {
     "id": 3,
@@ -34,21 +37,24 @@
       "Activity 8"
     ],
     "answer": "",
-    "handle": "business_activities"
+    "handle": "business_activities",
+    "summary": "# Business Activities?"
   },
   {
     "id": 4,
     "question": "Do you have a Business Plan?",
     "options": ["Yes", "No"],
     "answer": "",
-    "handle": "business_plan__c"
+    "handle": "business_plan__c",
+    "summary": "Business Plan?"
   },
   {
     "id": 5,
     "question": "Are you currently living in the UAE?",
     "options": ["Yes", "No"],
     "answer": "",
-    "handle": "currently_living_in_uae__c"
+    "handle": "currently_living_in_uae__c",
+    "summary": "Live in UAE?"
   },
   {
     "id": 6,
@@ -61,9 +67,9 @@
       "AED 1,000,000 - 5,000,000",
       "AED 5,000,000 +"
     ],
-
     "answer": "",
-    "handle": "annualrevenue"
+    "handle": "annualrevenue",
+    "summary": "Annual Turnover?"
   },
   {
     "id": 7,
@@ -78,7 +84,8 @@
     "type": "radio",
     "multi": false,
     "answer": "",
-    "handle": "how_soon__c"
+    "handle": "how_soon__c",
+    "summary": "How soon?"
   },
   {
     "id": 8,

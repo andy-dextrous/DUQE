@@ -78,7 +78,6 @@ function HomeBlogCard({ post, startVisible = false }) {
         onEnter()
       },
       onHoverEnd: e => {
-        console.log(e)
         onLeave()
       },
       onMove: e => {

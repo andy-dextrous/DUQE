@@ -1,7 +1,7 @@
 import axios from "axios"
 import Cookies from "js-cookie"
 
-export default function handleSubmit(e, answers) {
+export default function handleSubmit(e, answers, setSubmitted) {
   e.preventDefault()
   const isBrowser = typeof window !== "undefined"
   const hutk = isBrowser ? Cookies.get("hubspotutk") : null
@@ -36,7 +36,7 @@ export default function handleSubmit(e, answers) {
   axios(config)
     .then(function (response) {
       console.log(JSON.stringify(response.data))
-      window.location = "/"
+      setSubmitted(true)
     })
     .catch(function (error) {
       alert(error)

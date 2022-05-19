@@ -8,16 +8,18 @@ import Form from "../components/forms/cost-calculator/Form"
 import Sidebar from "../components/forms/cost-calculator/Sidebar"
 import Columns from "../components/forms/cost-calculator/ui/Columns"
 import Section from "../components/forms/cost-calculator/ui/Section"
+import Cost from "../components/forms/cost-calculator/Cost"
 
 function CostCalculator(props) {
   return (
-    <Layout withSignup={false} withTopBar={false}>
+    <Layout withTopBar={false}>
       <Seo props={props} />
       <Context>
         <Section>
           <Columns>
             <Form />
             <Sidebar />
+            <Cost />
           </Columns>
         </Section>
       </Context>

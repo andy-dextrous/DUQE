@@ -11,7 +11,7 @@ function TopMenu() {
     <HStack spacing={3} as="nav">
       {menu.menuItems.nodes.map((item, i) => (
         <Link
-          key={item.databaseId}
+          key={`top-menu-${i}`}
           as={GatsbyLink}
           to={item.path}
           className="nav-link"

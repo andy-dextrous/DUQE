@@ -3,7 +3,16 @@ import { gsap } from "../../../gsap"
 
 import { useVariable } from "../../../hooks/useVariable"
 import { FormContext } from "./Context"
-import { Box, Heading, Progress, Text, VStack } from "@chakra-ui/react"
+import {
+  Box,
+  Heading,
+  HStack,
+  Progress,
+  Tag,
+  Text,
+  VStack,
+  Wrap,
+} from "@chakra-ui/react"
 
 function Sidebar() {
   const { currentQuestion, answers } = React.useContext(FormContext)
@@ -71,6 +80,20 @@ function Sidebar() {
           Our licences are designed to be scalable, so you can easily add or
           remove users as your business grows or changes
         </Text>
+        <VStack align="flex-start">
+          {answers
+            .filter((answer, i) => {
+              return answer.answer !== ""
+            })
+            .map((answer, index) => {
+              return (
+                <HStack>
+                  <Text fontSize="sm">{answer.summary}</Text>{" "}
+                  <Tag bg="brandYellow.300">{answer.answer}</Tag>
+                </HStack>
+              )
+            })}
+        </VStack>
       </VStack>
     </Box>
   )
