@@ -3,6 +3,7 @@ import React, { forwardRef } from "react"
 import YellowHeading from "../../../../components/common/YellowHeading"
 import { SmartLink } from "../../../../components/SmartLink"
 import { useVariable } from "../../../../hooks"
+// import FunButton from "./FunButton"
 
 const Content = forwardRef((props, ref) => {
   const { componentSpacing } = useVariable()
@@ -31,6 +32,7 @@ const Content = forwardRef((props, ref) => {
         <SmartLink url="/cost-calculator">
           <Button variant="outlineWhite">How much does it cost?</Button>
         </SmartLink>
+        {/* <FunButton /> */}
       </Stack>
     </Stack>
   )

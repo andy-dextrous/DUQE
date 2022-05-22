@@ -76,7 +76,6 @@ export const Button = {
       _before: { bg: "brandYellow.default" },
       _after: { bg: "brandYellow.default" },
     },
-
     outlineWhite: {
       bg: "transparent",
       border: "1px solid white",
@@ -110,6 +109,11 @@ export const Button = {
       bg: "white",
       borderRadius: "full",
       color: "dark.default",
+    },
+    experiment: {
+      bg: "white",
+      _hover: { transform: "scale(1)" },
+      _active: { transform: "scale(1)" },
     },
     menuToggle: {
       width: ["2.7rem", "2.7rem", "3.25rem"],

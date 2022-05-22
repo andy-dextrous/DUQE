@@ -1,3 +1,7 @@
+import React, { useEffect, useRef } from "react"
+import { gsap } from "../../../gsap"
+
+import { SmartImage } from "../../../components/SmartImage"
 import {
   Box,
   Grid,
@@ -8,9 +12,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react"
-import React, { useEffect, useRef } from "react"
-import { SmartImage } from "../../../components/SmartImage"
-import { gsap } from "../../../gsap"
 
 function CorporateServices({ data }) {
   const [selected, setSelected] = React.useState(0)
