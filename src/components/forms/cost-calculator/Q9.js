@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { FormContext } from "./Context"
 import countryCodes from "country-codes-list"
 
@@ -23,6 +23,7 @@ function Q9({ id }) {
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
   const [countryCode, setCountryCode] = useState("+971")
+
   const countryCallCodes = Object.entries(
     countryCodes.customList("countryCode", "+{countryCallingCode}")
   )
@@ -87,27 +88,27 @@ function Q9({ id }) {
                 handleChange(e.target.value, 10)
               }}
             />
-            <InputGroup
-              sx={{
-                select: {
-                  fontSize: ["xs", "sm", "sm"],
-                  bg: "transparent",
-                  fontWeight: "bold",
-                },
-              }}
-            >
+            <InputGroup>
               <InputLeftElement
                 width={28}
                 children={
                   <Select
                     value={countryCode}
+                    fontSize="sm"
+                    fontWeight="700"
                     onChange={e => {
                       setCountryCode(e.target.value)
+                      handleChange(e.target.value, 12)
                     }}
                   >
                     {countryCallCodes.map(code => {
                       return (
-                        <Text fontWeight="bold" as="option">
+                        <Text
+                          key={code}
+                          fontWeight="bold"
+                          as="option"
+                          value={code[1]}
+                        >
                           {code[0] + " " + code[1]}
                         </Text>
                       )

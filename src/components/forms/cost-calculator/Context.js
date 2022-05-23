@@ -16,7 +16,7 @@ function Context({ children }) {
   }
 
   const [answers, setAnswers] = useState(initialData)
-  const [currentQuestion, setCurrentQuestion] = useState(upTo)
+  const [currentQuestion, setCurrentQuestion] = useState(upTo <= 8 ? upTo : 8)
   const [direction, setDirection] = useState("up")
   const [submitted, setSubmitted] = useState(false)
   const [finalAmount, setFinalAmount] = useState("12,500")

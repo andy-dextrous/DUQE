@@ -42,55 +42,53 @@ const SectionWrapper = forwardRef((props, ref) => {
     : {}
 
   return (
-    <>
-      <Flex
-        as="section"
-        width="100%"
-        position="relative"
-        pt={[
-          isFirstSection ? `${mobileNavHeight}px` : 0,
-          isFirstSection ? `${mobileNavHeight}px` : 0,
-          0,
-        ]}
-        px={sectionPaddingX}
-        justify="center"
-        _before={beforeStyle}
-        {...sectionStyles}
-      >
-        {withContainer ? (
-          <Box
-            layerStyle="fillSpace"
-            w={["100%", "100%", `container.${containerSize}`]}
-            maxW={`container.${containerSize}`}
-            py={containerPaddingY}
-            ml={[0, 0, sidebarMenuWidth]}
-            {...containerStyles}
-          >
-            {children}
-          </Box>
-        ) : (
-          <>{children}</>
-        )}
-        {(bgImage || overlay || bgVideo) && (
-          <Box layerStyle="bgImage">
-            {overlay && (
-              <Box className="overlay" layerStyle="overlay" {...overlayStyle} />
+    <Flex
+      as="section"
+      width="100%"
+      position="relative"
+      pt={[
+        isFirstSection ? `${mobileNavHeight}px` : 0,
+        isFirstSection ? `${mobileNavHeight}px` : 0,
+        0,
+      ]}
+      px={sectionPaddingX}
+      justify="center"
+      _before={beforeStyle}
+      {...sectionStyles}
+    >
+      {withContainer ? (
+        <Box
+          layerStyle="fillSpace"
+          w={["100%", "100%", `container.${containerSize}`]}
+          maxW={`container.${containerSize}`}
+          py={containerPaddingY}
+          ml={[0, 0, sidebarMenuWidth]}
+          {...containerStyles}
+        >
+          {children}
+        </Box>
+      ) : (
+        <>{children}</>
+      )}
+      {(bgImage || overlay || bgVideo) && (
+        <Box layerStyle="bgImage">
+          {overlay && (
+            <Box className="overlay" layerStyle="overlay" {...overlayStyle} />
+          )}
+          <Box layerStyle="fillSpace" position="relative" overflow="hidden">
+            {bgImage && (
+              <SmartImage
+                img={bgImage}
+                layerStyle="bgImage"
+                alt={alt}
+                ref={ref}
+              />
             )}
-            <Box layerStyle="fillSpace" position="relative" overflow="hidden">
-              {bgImage && (
-                <SmartImage
-                  img={bgImage}
-                  layerStyle="bgImage"
-                  alt={alt}
-                  ref={ref}
-                />
-              )}
-              {bgVideo && <Video id="bgVideo" src={bgVideo} />}
-            </Box>
+            {bgVideo && <Video id="bgVideo" src={bgVideo} />}
           </Box>
-        )}
-      </Flex>
-    </>
+        </Box>
+      )}
+    </Flex>
   )
 })
 
