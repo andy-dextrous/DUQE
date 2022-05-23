@@ -1,13 +1,16 @@
 import React, { useState } from "react"
 import { FormContext } from "./Context"
+import countryCodes from "country-codes-list"
 
 import ControlButtons from "./ControlButtons"
 import Panel from "./ui/Panel"
-import Title from "./ui/Title"
 import {
   FormControl,
   Heading,
   Input,
+  InputGroup,
+  InputLeftElement,
+  Select,
   SimpleGrid,
   Text,
   VStack,
@@ -19,6 +22,10 @@ function Q9({ id }) {
   const [lastname, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
+  const [countryCode, setCountryCode] = useState("+971")
+  const countryCallCodes = Object.entries(
+    countryCodes.customList("countryCode", "+{countryCallingCode}")
+  )
 
   return (
     <Panel id={id}>
@@ -80,34 +87,52 @@ function Q9({ id }) {
                 handleChange(e.target.value, 10)
               }}
             />
-            <Input
-              placeholder="Phone number"
-              name="phone"
-              type="tel"
-              size="lg"
-              isRequired
-              w="full"
-              bg="dark.50"
-              fontSize={["xs", "sm", "md"]}
-              required
-              value={phone}
-              onChange={e => {
-                setPhone(e.target.value)
-                handleChange(e.target.value, 11)
+            <InputGroup
+              sx={{
+                select: {
+                  fontSize: ["xs", "sm", "sm"],
+                  bg: "transparent",
+                  fontWeight: "bold",
+                },
               }}
-            />
-
-            {/* {hiddenFields.map(field => {
-              return (
-                <input
-                  type="hidden"
-                  key={field.name}
-                  id={getIdentifier(field.name)}
-                  name={getIdentifier(field.name)}
-                  value={field.value}
-                />
-              )
-            })} */}
+            >
+              <InputLeftElement
+                width={28}
+                children={
+                  <Select
+                    value={countryCode}
+                    onChange={e => {
+                      setCountryCode(e.target.value)
+                    }}
+                  >
+                    {countryCallCodes.map(code => {
+                      return (
+                        <Text fontWeight="bold" as="option">
+                          {code[0] + " " + code[1]}
+                        </Text>
+                      )
+                    })}
+                  </Select>
+                }
+              />
+              <Input
+                placeholder="Phone number"
+                name="phone"
+                type="tel"
+                size="lg"
+                isRequired
+                w="full"
+                bg="dark.50"
+                pl={32}
+                fontSize={["xs", "sm", "md"]}
+                required
+                value={phone}
+                onChange={e => {
+                  setPhone(e.target.value)
+                  handleChange(e.target.value, 11)
+                }}
+              />
+            </InputGroup>
           </SimpleGrid>
         </FormControl>
       </VStack>

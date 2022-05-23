@@ -27,6 +27,7 @@
     "@fortawesome/react-fontawesome": "^0.1.17",
     "@fullpage/react-fullpage": "^0.1.19",
     "axios": "^0.26.1",
+    "country-codes-list": "^1.6.8",
     "framer-motion": "^5.5.5",
     "gatsby": "^4.7.2",
     "gatsby-awesome-pagination": "^0.3.8",
