@@ -35,20 +35,20 @@ function Form() {
   }
 
   function getAmountFromVisas(answers) {
-    switch (answers[0].answer) {
-      case "1 year":
+    switch (answers[3].answer) {
+      case "1":
         return 12500
-      case "2 years":
+      case "2":
         return 14250
-      case "3 years":
+      case "3":
         return 16000
-      case "4 years":
+      case "4":
         return 17750
-      case "5 years":
+      case "5":
         return 19500
-      case "6 years":
+      case "6":
         return 21250
-      case "7 years":
+      case "7":
         return 23000
       default:
         return 12500
@@ -56,15 +56,15 @@ function Form() {
   }
 
   function getAmountFromActivities(answers) {
-    switch (answers[3].answer) {
-      case "Activity 1":
+    switch (answers[1].answer) {
+      case "2":
         return 0
-      case "Activity 2":
-        return 0
-      case "Activity 3":
-        return 0
-      case "Activity 4":
-        return 0
+      case "3":
+        return 1000
+      case "4":
+        return 2000
+      case "5 or More":
+        return 3000
       default:
         return 0
     }

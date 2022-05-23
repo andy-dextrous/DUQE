@@ -11,7 +11,7 @@ function SmoothWrapper({ smoothScroll, children }) {
     const smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 1.4,
+      smooth: 1,
       effects: true,
       id: "smoother",
     })

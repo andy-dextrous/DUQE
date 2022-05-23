@@ -104,7 +104,7 @@ function Q9({ id }) {
                     {countryCallCodes.map(code => {
                       return (
                         <Text
-                          key={code}
+                          key={code[1]}
                           fontWeight="bold"
                           as="option"
                           value={code[1]}
