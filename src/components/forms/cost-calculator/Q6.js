@@ -19,10 +19,6 @@ function Q6({ id }) {
     <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
         <Title id={id} />
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed
-          laudantium veritatis nulla!
-        </Text>
 
         <Wrap>
           {answers[id]?.options?.map((option, index) => {

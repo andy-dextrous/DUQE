@@ -1,9 +1,12 @@
 import React, { useEffect, useRef } from "react"
 import { gsap, ScrollTrigger } from "../../../../gsap"
+import Cookies from "js-cookie"
+import data from "../../../../components/forms/cost-calculator/data.json"
 
 import CrossIcon from "../../../../assets/icons/CrossIcon"
 import { Link } from "gatsby"
 import { ArrowForwardIcon } from "@chakra-ui/icons"
+import SectionWrapperCustom from "./SectionWrapperCustom"
 import {
   Button,
   Center,
@@ -16,7 +19,6 @@ import {
   HStack,
   Select,
 } from "@chakra-ui/react"
-import SectionWrapperCustom from "./SectionWrapperCustom"
 
 function HowMuchDoesItCost() {
   const cross = useRef()
@@ -26,6 +28,14 @@ function HowMuchDoesItCost() {
   const animation = useRef(null)
   const section = useRef()
   const addLag = useBreakpointValue([false, false, true])
+  const cookieData = Cookies.get("cost-calculator")
+
+  function handleSelect(e) {
+    if (cookieData) return
+    const newAnswers = [...data]
+    newAnswers[0].answer = e.target.value
+    Cookies.set("cost-calculator", JSON.stringify(newAnswers), { expires: 1 })
+  }
 
   useEffect(() => {
     ScrollTrigger.refresh()
@@ -109,18 +119,31 @@ function HowMuchDoesItCost() {
         position="absolute"
       >
         <Heading color="white" textAlign={["center", "center", "left"]}>
-          How long do you want to license your business?
+          Calculate the cost of your business setup.
         </Heading>
         <Stack direction={["column", "column", "row"]} w="full">
           <VStack align={["center", "center", "center"]} w="full">
             <Heading color="white" as="h6">
-              Select the duration of your license
+              {data[0].question}
             </Heading>
             <HStack>
-              <Select variant="filled" size="md" _focus={{ bg: "white" }}>
-                <option value="1">1 year</option>
-                <option value="2">2 years</option>
-                <option value="3">3 years</option>
+              <Select
+                bg="white"
+                size="md"
+                name={data[0].handle}
+                w={["full", "full", "50%"]}
+                onChange={e => {
+                  handleSelect(e)
+                }}
+              >
+                <option value="">Select</option>
+                {data[0].options.map((option, index) => {
+                  return (
+                    <option key={index} value={option}>
+                      {option}
+                    </option>
+                  )
+                })}
               </Select>
               <Link to="/cost-calculator">
                 <Button w="200px" h="100%" rightIcon={<ArrowForwardIcon />}>

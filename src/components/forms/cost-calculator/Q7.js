@@ -28,7 +28,7 @@ function Q7({ id }) {
     selectedOptions.length > 0
       ? handleChange(selectedOptions, id)
       : handleChange("", id)
-  }, [selectedOptions, id, handleChange, currentQuestion])
+  }, [selectedOptions])
 
   return (
     <Panel id={id}>

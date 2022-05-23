@@ -11,8 +11,8 @@ function Q2({ id }) {
       <VStack align="flex-start" spacing={8}>
         <Title id={id} />
         <Text>
-          In addition to residence visas for your shareholders, you can apply
-          for residence visas for your employees.
+          2 activities are included additional activities can be added at AED
+          1000 per activity
         </Text>
         <DropDown id={id} />
       </VStack>

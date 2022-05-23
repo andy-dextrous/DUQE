@@ -9,7 +9,7 @@ function useAnimations(ref) {
     if (!ref.current) return
     const q = gsap.utils.selector(ref.current)
     gsap.set(q(`[data-slide-index]`), { autoAlpha: 0 })
-    gsap.set(q(`[data-slide-index="0"]`), { autoAlpha: 1 })
+    gsap.set(q(`[data-slide-index="${currentQuestion}"]`), { autoAlpha: 1 })
   }, [ref])
 
   useEffect(() => {

@@ -39,6 +39,12 @@ export const Button = {
         transformOrigin: "right center",
       },
     },
+    "&:disabled": {
+      transform: "scaleX(1)",
+    },
+    "&:disabled:after": {
+      transform: "scaleX(1)",
+    },
   },
   variants: {
     primary: {

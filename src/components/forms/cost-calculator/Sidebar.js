@@ -81,7 +81,7 @@ function Sidebar() {
         </Text>
         <VStack
           align="flex-start"
-          spacing={4}
+          spacing={2}
           display={["none", "none", "block"]}
         >
           {answers
@@ -89,11 +89,13 @@ function Sidebar() {
               return answer.answer !== ""
             })
             .map((answer, index) => {
-              return (
+              return answer.summary ? (
                 <HStack key={index}>
                   <Text fontSize="sm">{answer.summary}</Text>{" "}
                   <Tag bg="brandYellow.300">{answer.answer}</Tag>
                 </HStack>
+              ) : (
+                <></>
               )
             })}
         </VStack>

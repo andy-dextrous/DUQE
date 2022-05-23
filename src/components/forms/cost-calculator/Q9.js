@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { FormContext } from "./Context"
+import { getParams } from "../../../utils/getParams"
 
 import ControlButtons from "./ControlButtons"
 import Panel from "./ui/Panel"
@@ -12,6 +13,7 @@ function Q9({ id }) {
   const [lastname, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
+  const hiddenFields = getParams("campaignUrl")
 
   return (
     <Panel id={id}>
@@ -89,13 +91,23 @@ function Q9({ id }) {
                 handleChange(e.target.value, 11)
               }}
             />
-
             <input
               type="hidden"
               id="page"
               name="Page"
               value="Cost Calculator"
             />
+            {hiddenFields.map(field => {
+              return (
+                <input
+                  type="hidden"
+                  key={field.name}
+                  id={field.name}
+                  name={field.name}
+                  value={field.value}
+                />
+              )
+            })}
           </SimpleGrid>
         </FormControl>
       </VStack>

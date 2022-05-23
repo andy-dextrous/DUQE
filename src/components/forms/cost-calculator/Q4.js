@@ -6,6 +6,7 @@ import { FormContext } from "./Context"
 import Panel from "./ui/Panel"
 import Title from "./ui/Title"
 import { Text, VStack, Wrap } from "@chakra-ui/react"
+import DropDown from "./ui/DropDown"
 
 function Q4({ id }) {
   const { handleChange, answers, currentQuestion } =
@@ -28,30 +29,17 @@ function Q4({ id }) {
     selectedOptions.length > 0
       ? handleChange(selectedOptions, id)
       : handleChange("", id)
-  }, [selectedOptions, id, handleChange, currentQuestion])
+  }, [selectedOptions])
 
   return (
     <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
         <Title id={id} />
+        <DropDown id={id} />
         <Text>
-          Choose up to 2 business activity groups free of charge to provide your
-          business with the great flexibility. Additional activities will result
-          in a higher cost.
+          * Additional visa quota can be added at a later time. Does not include
+          residence visa
         </Text>
-        <Wrap>
-          {answers[id]?.options?.map((option, index) => {
-            return (
-              <ButtonCheckbox
-                key={index}
-                option={option}
-                selectedOptions={selectedOptions}
-                onClick={handleSelection}
-                handle={answers[id].handle}
-              />
-            )
-          })}
-        </Wrap>
       </VStack>
       <ControlButtons />
     </Panel>

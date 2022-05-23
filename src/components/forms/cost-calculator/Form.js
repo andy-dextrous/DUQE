@@ -4,6 +4,7 @@ import { useVariable } from "../../../hooks/useVariable"
 import handleSubmit from "./handleSubmit"
 import useAnimations from "./useAnimations.js"
 import { FormContext } from "./Context"
+import Cookies from "js-cookie"
 
 // Components
 import Q1 from "./Q1"
@@ -27,6 +28,7 @@ function Form() {
 
   function submitForm(e, answers) {
     handleSubmit(e, answers, setSubmitted)
+    Cookies.remove("cost-calculator")
     const finalAmount =
       getAmountFromVisas(answers) + getAmountFromActivities(answers)
     setFinalAmount(finalAmount)
@@ -77,7 +79,7 @@ function Form() {
       data-portal-id="21692856"
       flex={[14, 14, "7"]}
       position="relative"
-      maxH={{ base: "unset", "2xl": "70vh", "3xl": "60vh" }}
+      maxH={{ base: "unset", "2xl": "70vh", "3xl": "50vh" }}
       m={sectionPaddingX}
       onSubmit={e => submitForm(e, answers)}
       ref={formRef}

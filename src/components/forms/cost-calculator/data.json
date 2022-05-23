@@ -1,44 +1,75 @@
 [
   {
     "id": 0,
-    "question": "How long do you want to license your business?",
-    "options": ["1 year", "2 years", "3 years", "4 years", "5 years"],
+    "question": "Choose your business category",
+    "options": [
+      "Agriculture",
+      "Apparel",
+      "Banking",
+      "Biotechnology",
+      "Business Accelerator",
+      "Chemicals",
+      "Communications",
+      "Construction",
+      "Consulting",
+      "Education",
+      "Electronics",
+      "Energy",
+      "Engineering",
+      "Entertainment",
+      "Environmental",
+      "Finance",
+      "Food & Beverage",
+      "Government",
+      "Healthcare",
+      "Hospitality",
+      "Insurance",
+      "Machinery",
+      "Manufacturing",
+      "Marketing",
+      "Not For Profit",
+      "Media",
+      "Other",
+      "Private Equity",
+      "Publishing",
+      "Recreation",
+      "Recruitment",
+      "Retail",
+      "Shipping",
+      "Sports Management Services",
+      "Technology",
+      "Telecommunications",
+      "Transportation",
+      "Utilities",
+      "Venture Capital"
+    ],
     "answer": "",
-    "handle": "how_long__c",
-    "summary": "How long?"
+    "handle": "businessCategory",
+    "summary": "Category?"
   },
   {
     "id": 1,
-    "question": "Number of employees",
-    "options": ["1-5", "5-25", "25-50", "50-100", "100-500"],
-    "answer": "",
-    "handle": "numemployees",
-    "summary": "# Employees?"
+    "question": "Number of activities",
+    "options": ["2", "3", "4", "5 or More"],
+    "answer": "2",
+    "handle": "numActivities",
+    "summary": "# Activities?"
   },
   {
     "id": 2,
     "question": "How many owners or shareholders will your company have?",
-    "options": ["1", "2", "3", "4", "5"],
+    "options": ["1", "2", "3", "4", "5 or more"],
     "answer": "",
     "handle": "number_of_shareholders__c",
     "summary": "# Shareholders?"
   },
   {
     "id": 3,
-    "question": "How many business activities do you need?",
-    "options": [
-      "Activity 1",
-      "Activity 2",
-      "Activity 3",
-      "Activity 4",
-      "Activity 5",
-      "Activity 6",
-      "Activity 7",
-      "Activity 8"
-    ],
+    "question": "How many employees will your company have?",
+    "options": ["1", "2", "3", "4", "5"],
     "answer": "",
-    "handle": "business_activities",
-    "summary": "# Business Activities?"
+    "handle": "number_of_employees__c",
+    "summary": "# Employees?"
   },
   {
     "id": 4,
@@ -74,13 +105,7 @@
   {
     "id": 7,
     "question": "When do you plan to start your business?",
-    "options": [
-      "Immediately",
-      "This Month",
-      "Next Month",
-      "2 Months",
-      "3 Months"
-    ],
+    "options": ["This Month", "Next Month", "3 Months"],
     "type": "radio",
     "multi": false,
     "answer": "",

@@ -8,6 +8,7 @@ import { Box, Portal } from "@chakra-ui/react"
 import { showBreakpoints } from "../utils/showBreakpoints"
 import "../assets/MyFontsWebfontsKit.css"
 import Overlay from "../sections/page-specific/home/Overlay"
+import saveFirstUrl from "../utils/getParams"
 
 export const MenuContext = React.createContext()
 export const DarkContext = React.createContext()
@@ -27,10 +28,14 @@ export function Layout({
   const [isDarkBackground, setIsDarkBackground] = useState(false)
   const { shouldShowBreakpoints } = useThemeOptions()
 
-  // useStopScroll(isMenuOpen)
   useEffect(() => {
     showBreakpoints(shouldShowBreakpoints)
   }, [shouldShowBreakpoints])
+
+  useEffect(() => {
+    const cookieExpiresIn = 7 /* days */
+    saveFirstUrl("campaignUrl", cookieExpiresIn)
+  }, [])
 
   return (
     <MenuContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
