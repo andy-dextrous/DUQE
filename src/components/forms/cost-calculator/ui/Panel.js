@@ -6,7 +6,8 @@ function Panel({ children, id }) {
     <VStack
       align="flex-start"
       pt={[8, 8, 0]}
-      justify={["flex-start"]}
+      justify={["flex-start", "flex-start", "center"]}
+      h="full"
       spacing={8}
       data-slide-index={id}
       layerStyle="fillSpaceAbsolute"

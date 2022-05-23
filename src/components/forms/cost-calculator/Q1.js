@@ -11,7 +11,6 @@ function Q1({ id }) {
     <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
         <Title id={id} />
-
         <Text>
           Your business category will help determine which jurisdiction, trade
           licence and business activity will apply to your company.
