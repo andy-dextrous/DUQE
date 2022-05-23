@@ -23,7 +23,12 @@ function Mission() {
         spacing={[12, 12, 12, 12, 16, 20, 24]}
         mb={[20, 20]}
       >
-        <Center position="relative" w="full" h={["40vh", "40vh", "300px"]}>
+        <Center
+          position="relative"
+          w="full"
+          h={["40vh", "40vh", "300px"]}
+          flex="1"
+        >
           <Heading color="white" zIndex="1" textTransform="uppercase">
             Why we
             <br /> <YellowHeading> exist</YellowHeading>
@@ -55,7 +60,12 @@ function Mission() {
           driven about their business ideas and ambitions and who want to be the
           next unicorn.
         </Heading>
-        <Center position="relative" w="full" h={["40vh", "40vh", "300px"]}>
+        <Center
+          position="relative"
+          w="full"
+          h={["40vh", "40vh", "300px"]}
+          flex="1"
+        >
           <Heading color="white" zIndex="1" textTransform="uppercase">
             Our
             <br />{" "}
