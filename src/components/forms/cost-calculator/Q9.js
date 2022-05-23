@@ -133,6 +133,24 @@ function Q9({ id }) {
                   handleChange(e.target.value, 11)
                 }}
               />
+              <Input
+                placeholder="Phone number"
+                name="phone"
+                type="tel"
+                size="lg"
+                isRequired
+                w="full"
+                bg="dark.50"
+                gridColumn={[1, 1, 2]}
+                pl={32}
+                fontSize={["xs", "sm", "md"]}
+                required
+                value={phone}
+                onChange={e => {
+                  setPhone(e.target.value)
+                  handleChange(e.target.value, 11)
+                }}
+              />
             </InputGroup>
           </SimpleGrid>
         </FormControl>
