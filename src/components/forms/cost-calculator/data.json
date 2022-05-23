@@ -44,7 +44,7 @@
       "Venture Capital"
     ],
     "answer": "",
-    "handle": "businessCategory",
+    "handle": "duqe_business_category_cc",
     "summary": "Category?"
   },
   {
@@ -52,15 +52,15 @@
     "question": "Number of activities",
     "options": ["2", "3", "4", "5 or More"],
     "answer": "2",
-    "handle": "numActivities",
+    "handle": "duqe_number_activities_cc",
     "summary": "# Activities?"
   },
   {
     "id": 2,
     "question": "How many owners or shareholders will your company have?",
-    "options": ["1", "2", "3", "4", "5 or more"],
+    "options": ["1", "2", "3", "4", "5 or More"],
     "answer": "",
-    "handle": "number_of_shareholders__c",
+    "handle": "duqe_number_shareholders_cc",
     "summary": "# Shareholders?"
   },
   {
@@ -68,7 +68,7 @@
     "question": "How many employees will your company have?",
     "options": ["1", "2", "3", "4", "5"],
     "answer": "",
-    "handle": "number_of_employees__c",
+    "handle": "duqe_number_employees_cc",
     "summary": "# Employees?"
   },
   {
@@ -76,7 +76,7 @@
     "question": "Do you have a Business Plan?",
     "options": ["Yes", "No"],
     "answer": "",
-    "handle": "business_plan__c",
+    "handle": "duqe_plan_cc",
     "summary": "Business Plan?"
   },
   {
@@ -84,7 +84,7 @@
     "question": "Are you currently living in the UAE?",
     "options": ["Yes", "No"],
     "answer": "",
-    "handle": "currently_living_in_uae__c",
+    "handle": "duqe_living_uae_cc",
     "summary": "Live in UAE?"
   },
   {
@@ -99,7 +99,7 @@
       "AED 5,000,000 +"
     ],
     "answer": "",
-    "handle": "annualrevenue",
+    "handle": "duqe_annual_turnover_cc",
     "summary": "Annual Turnover?"
   },
   {
@@ -109,7 +109,7 @@
     "type": "radio",
     "multi": false,
     "answer": "",
-    "handle": "how_soon__c",
+    "handle": "duqe_start_cc",
     "summary": "How soon?"
   },
   {

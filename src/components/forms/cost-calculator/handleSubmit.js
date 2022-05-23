@@ -3,9 +3,12 @@ import Cookies from "js-cookie"
 
 export default function handleSubmit(e, answers, setSubmitted) {
   e.preventDefault()
-  const isBrowser = typeof window !== "undefined"
+  // Collect form context data
+  const isBrowser = typeof window != "undefined"
   const hutk = isBrowser ? Cookies.get("hubspotutk") : null
+  const tracking = isBrowser ? Cookies.get("campaignUrl") : null
   const pageUri = isBrowser ? window.location.href : null
+
   const body = {
     submittedAt: Date.now(),
     fields: answers.map(answer => {
@@ -20,6 +23,7 @@ export default function handleSubmit(e, answers, setSubmitted) {
     context: {
       hutk,
       pageUri,
+      tracking,
     },
   }
 
