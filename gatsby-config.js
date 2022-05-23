@@ -106,17 +106,17 @@ module.exports = {
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-perf-budgets`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `DUQE Free Zone`,
-        short_name: `DUQE`,
-        start_url: `/`,
-        theme_color: `#E0DB2A`,
-        display: `standalone`,
-        icon: `./static/favicon.svg`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `DUQE Free Zone`,
+    //     short_name: `DUQE`,
+    //     start_url: `/`,
+    //     theme_color: `#E0DB2A`,
+    //     display: `standalone`,
+    //     icon: `./static/favicon.svg`,
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-hubspot",
       options: {
