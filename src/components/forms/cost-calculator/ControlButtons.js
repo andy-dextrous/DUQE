@@ -23,7 +23,7 @@ function ControlButtons() {
       className="control"
       w={["full", "full", "unset"]}
       justifyContent={["space-between", "space-between", "flex-start"]}
-      pt={[12, 12, 0]}
+      pt={[12, 12, 40]}
     >
       <Button
         variant="light"

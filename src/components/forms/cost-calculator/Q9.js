@@ -1,11 +1,17 @@
 import React, { useState } from "react"
 import { FormContext } from "./Context"
-import { getParams } from "../../../utils/getParams"
 
 import ControlButtons from "./ControlButtons"
 import Panel from "./ui/Panel"
 import Title from "./ui/Title"
-import { FormControl, Input, SimpleGrid, Text, VStack } from "@chakra-ui/react"
+import {
+  FormControl,
+  Heading,
+  Input,
+  SimpleGrid,
+  Text,
+  VStack,
+} from "@chakra-ui/react"
 
 function Q9({ id }) {
   const { handleChange } = React.useContext(FormContext)
@@ -13,34 +19,14 @@ function Q9({ id }) {
   const [lastname, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
-  const hiddenFields = getParams("campaignUrl")
-
-  function getIdentifier(value) {
-    switch (value) {
-      case "utm_source":
-        return "utm_source__c"
-      case "utm_campaign":
-        return "utm_campaign__c"
-      case "utm_term":
-        return "utm_term__c"
-      case "utm_medium":
-        return "utm_medium__c"
-      case "fbclid":
-        return "facebook_click_id__c"
-      case "gclid":
-        return "gclid__c"
-      default:
-        return value
-    }
-  }
 
   return (
     <Panel id={id}>
       <VStack align="flex-start" spacing={8}>
-        <Title id={id} />
+        <Heading textTransform="uppercase">Contact Details</Heading>
         <Text>
           Please enter your details to get your business setup cost estimate on
-          the next screen. We will also send the quote via email:
+          the next screen. We will also send the quote via email.
         </Text>
 
         <FormControl>
@@ -110,13 +96,8 @@ function Q9({ id }) {
                 handleChange(e.target.value, 11)
               }}
             />
-            <input
-              type="hidden"
-              id="web_to_lead_url__c"
-              name="web_to_lead_url__c"
-              value="/cost-calculator"
-            />
-            {hiddenFields.map(field => {
+
+            {/* {hiddenFields.map(field => {
               return (
                 <input
                   type="hidden"
@@ -126,7 +107,7 @@ function Q9({ id }) {
                   value={field.value}
                 />
               )
-            })}
+            })} */}
           </SimpleGrid>
         </FormControl>
       </VStack>
