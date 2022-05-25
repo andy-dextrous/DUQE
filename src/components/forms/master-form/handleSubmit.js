@@ -1,8 +1,8 @@
 import axios from "axios"
 import Cookies from "js-cookie"
-import { getParams } from "../../utils/getParams"
+import { getParams } from "../../../utils/getParams"
 
-export default function handleSubmit(e, fields, setSubmitted, formId) {
+export default function handleSubmit(e, fields, setSubmitted) {
   e.preventDefault()
   const isBrowser = typeof window != "undefined"
   const hutk = isBrowser ? Cookies.get("hubspotutk") : null
@@ -13,6 +13,7 @@ export default function handleSubmit(e, fields, setSubmitted, formId) {
   hiddenFields.forEach(field => {
     allFields.push({ name: getIdentifier(field.name), value: field.value })
   })
+
   allFields.push({ name: "web_to_lead_url__c", value: window.location.href })
 
   function getIdentifier(value) {
@@ -47,7 +48,7 @@ export default function handleSubmit(e, fields, setSubmitted, formId) {
   console.log(data)
   const config = {
     method: "post",
-    url: `https://api.hsforms.com/submissions/v3/integration/submit/21692856/${formId}`,
+    url: process.env.GATSBY_MASTER_FORM_ENDPOINT,
     headers: {
       "Content-Type": "application/json",
     },

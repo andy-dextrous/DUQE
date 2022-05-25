@@ -2,7 +2,7 @@ import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import { Heading, Stack, VStack } from "@chakra-ui/react"
 import { useVariable } from "../../../hooks"
-import MasterForm from "../../../components/forms/master-form"
+import MasterForm from "../../../components/forms/master-form/Form"
 
 function Contact() {
   const { newsletterOffset } = useVariable()
@@ -16,7 +16,7 @@ function Contact() {
             bring your venture to the forefront of the global market.
           </Heading>
         </VStack>
-        <MasterForm />
+        <MasterForm flex="1" />
       </Stack>
     </SectionWrapper>
   )

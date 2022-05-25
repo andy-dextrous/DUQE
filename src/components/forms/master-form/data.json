@@ -1,0 +1,11 @@
+[
+  { "name": "firstname", "value": "" },
+  { "name": "lastname", "value": "" },
+  { "name": "email", "value": "" },
+  { "name": "countrycode", "value": "" },
+  { "name": "phone", "value": "" },
+  { "name": "interest", "value": "" },
+  { "name": "how_soon__c", "value": "" },
+  { "name": "duqe_services_corp", "value": "" },
+  { "name": "message", "value": "" }
+]

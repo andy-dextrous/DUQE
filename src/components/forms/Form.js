@@ -24,7 +24,6 @@ function Form({
       name={label}
       data-form-id={formId}
       data-portal-id="21692856"
-      onSubmit={e => handleSubmit(e, setSubmitted, formId)}
       ref={formRef}
       {...props}
     >

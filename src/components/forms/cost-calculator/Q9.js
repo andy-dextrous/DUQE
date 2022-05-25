@@ -25,8 +25,16 @@ function Q9({ id }) {
   const [countryCode, setCountryCode] = useState("+971")
 
   const countryCallCodes = Object.entries(
-    countryCodes.customList("countryCode", "+{countryCallingCode}")
+    countryCodes.customList("countryNameEn", "+{countryCallingCode}")
   )
+    .sort()
+    .map(code => {
+      return [code[1], code[0]]
+    })
+
+  useEffect(() => {
+    console.log(countryCode)
+  }, [countryCode])
 
   return (
     <Panel id={id}>
@@ -90,7 +98,7 @@ function Q9({ id }) {
             />
             <InputGroup>
               <InputLeftElement
-                width={28}
+                width={24}
                 children={
                   <Select
                     value={countryCode}
@@ -104,10 +112,10 @@ function Q9({ id }) {
                     {countryCallCodes.map(code => {
                       return (
                         <Text
-                          key={code[1]}
+                          key={code}
                           fontWeight="bold"
                           as="option"
-                          value={code[1]}
+                          value={code[0]}
                         >
                           {code[0] + " " + code[1]}
                         </Text>
@@ -124,25 +132,7 @@ function Q9({ id }) {
                 isRequired
                 w="full"
                 bg="dark.50"
-                pl={32}
-                fontSize={["xs", "sm", "md"]}
-                required
-                value={phone}
-                onChange={e => {
-                  setPhone(e.target.value)
-                  handleChange(e.target.value, 11)
-                }}
-              />
-              <Input
-                placeholder="Phone number"
-                name="phone"
-                type="tel"
-                size="lg"
-                isRequired
-                w="full"
-                bg="dark.50"
-                gridColumn={[1, 1, 2]}
-                pl={32}
+                pl={28}
                 fontSize={["xs", "sm", "md"]}
                 required
                 value={phone}
