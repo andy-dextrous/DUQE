@@ -66,12 +66,12 @@ function Hero() {
           width={["100%", "100%", "50%"]}
         >
           <Heading as="h1" color="white">
-            About
-            <YellowHeading> Us</YellowHeading>
+            NOT JUST ANOTHER
+            <YellowHeading> FREE ZONE</YellowHeading>
           </Heading>
           <Heading as="h3" color="white" className="thin-h3">
-            Not just another free zone. DUQE is the ZONE for the Game Changers.
-            The innovators. The disruptors. This is business setup done better.
+            DUQE is the free zone for the Game Changers. The Innovators. The
+            Disruptors. The Hustlers. This is business setup done better.
           </Heading>
         </VStack>
       </Stack>

@@ -24,7 +24,7 @@ function Requirements() {
         mb={24}
       >
         <Heading className="jumbo">
-          Trade License <YellowHeading>Requirements </YellowHeading>
+          Trade Licence <YellowHeading>Requirements </YellowHeading>
         </Heading>
         <Heading as="h3" className="thin-h3">
           Ready to start your business? You will need to prepare the following
@@ -73,7 +73,8 @@ function Requirements() {
               h={["24px", "24px", "24px"]}
             />
             <Text>
-              NOC (applicable for appointed Managers with residence visa)
+              No Objection Certificate (applicable for appointed managers with
+              residence visa)
             </Text>
           </HStack>
         </VStack>
@@ -96,7 +97,7 @@ function Requirements() {
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
               h={["24px", "24px", "24px"]}
             />
-            <Text>License</Text>
+            <Text>Licence</Text>
           </HStack>
           <HStack spacing={4}>
             <Image
@@ -117,7 +118,7 @@ function Requirements() {
               src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651141458/DUQE/tick.svg"
               h={["24px", "24px", "24px"]}
             />
-            <Text>Memorandum of Association</Text>
+            <Text>Memorandum of Association (MoA)</Text>
           </HStack>
           <HStack spacing={4}>
             <Image
@@ -137,8 +138,8 @@ function Requirements() {
       </Stack>
       <Container maxW="container.md" my={[20, 20, 40]} w="100%" px="0">
         <Text borderLeft={"10px solid #e0db2a"} pl={[8, 8, 12]} w="100%">
-          * Foreign Entity documents must be notarized and attested from the UAE
-          Consulate/Embassy of origin and Ministry of Foreign Affairs in UAE
+          *Foreign Entity documents must be notarised and attested from the UAE
+          Consulate/Embassy of origin and Ministry of Foreign Affairs in UAE.
         </Text>
       </Container>
       <VStack
@@ -149,7 +150,7 @@ function Requirements() {
         mb={[12, 12, 24]}
       >
         <Heading as="h3" className="jumbo">
-          The trade license <YellowHeading>Application Process </YellowHeading>
+          The trade licence <YellowHeading>Application Process </YellowHeading>
         </Heading>
         <Heading as="h3" className="thin-h3">
           We offer a quick 4-stage process for applying a trade licence for your
@@ -216,7 +217,7 @@ function Requirements() {
             display={["block", "block", "none"]}
           />
           <Heading as="h4" className="lower-case" textAlign="center">
-            Trade name reservation
+            Trade Name Reservation
           </Heading>
         </VStack>
         <VStack

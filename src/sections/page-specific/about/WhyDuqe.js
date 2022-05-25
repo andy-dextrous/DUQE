@@ -53,8 +53,7 @@ function WhyDuqe() {
           <Text>
             Equipped with a modern business centre that offers all-in-one
             support, DUQE is the ideal launchpad for both the budding
-            entrepreneurs and seasoned business owners, for the freelancers and
-            digital nomads, and for the hustlers and grinders.
+            entrepreneurs and seasoned business owners.
           </Text>
           <Link to="/business-activities">
             <Button>See All Activities</Button>

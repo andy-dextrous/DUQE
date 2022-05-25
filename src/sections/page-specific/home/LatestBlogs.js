@@ -55,8 +55,8 @@ function LatestBlogs() {
             From the blog
           </Heading>
           <Heading as="h3" className="thin-h3" color="white">
-            Stay up to date on all Free Zone business matters with inisghts from
-            our specialist team.
+            Stay up to date with the latest industry news and trends and get
+            exclusive insights from our team of experts.
           </Heading>
           <SmartLink url="/blog">
             <Button>View All</Button>

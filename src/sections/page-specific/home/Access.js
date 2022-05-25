@@ -19,7 +19,7 @@ function Access() {
           <Heading as="h3" className="thin-h3" color="dark.default">
             Setting up in DUQE means freedom. Freedom to chase your dreams.
             Freedom to explore new opportunities. And freedom to choose from
-            over 2,500 business activities.
+            thousands of business activities.
           </Heading>
           <Link to="/business-activities">
             <Button>See All Activities</Button>

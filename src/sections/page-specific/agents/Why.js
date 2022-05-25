@@ -48,7 +48,7 @@ function Why() {
           p="70px"
         >
           <Heading as="h3" className="thin-h3">
-            Competitive <strong>Commisions</strong>
+            Competitive <strong>Commissions</strong>
           </Heading>
           <Text>
             Get the best commission rates with our DUQE Agent Programme.

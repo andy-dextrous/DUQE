@@ -4,7 +4,13 @@ import { BsSearch } from "react-icons/bs"
 
 import SearchModal from "./SearchModal"
 
-function SearchToggle({ color, button = true, variant = "outline", ...props }) {
+function SearchToggle({
+  color,
+  button = true,
+  variant = "outline",
+  iconProps,
+  ...props
+}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -12,7 +18,7 @@ function SearchToggle({ color, button = true, variant = "outline", ...props }) {
         <IconButton
           variant={variant}
           onClick={onOpen}
-          icon={<BsSearch color={color} />}
+          icon={<BsSearch color={color} {...iconProps} />}
           {...props}
         />
       ) : (

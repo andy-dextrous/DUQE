@@ -7,7 +7,7 @@ import TradeLicenses from "../sections/page-specific/licenses/TradeLicenses"
 import Requirements from "../sections/page-specific/licenses/Requirements"
 import DarkGroup from "../components/common/DarkGroup"
 
-function Licenses(props) {
+function Licences(props) {
   return (
     <Layout>
       <Seo props={props} />
@@ -20,7 +20,7 @@ function Licenses(props) {
   )
 }
 
-export default Licenses
+export default Licences
 
 export const pageQuery = graphql`
   query GET_LICENSES_PAGE($id: String!) {

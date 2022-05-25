@@ -22,7 +22,7 @@ function Signup() {
               <YellowHeading>Sign up</YellowHeading> to be a DUQE agent
             </Heading>
             <Heading as="h3" className="thin-h3" color="dark.default">
-              Wanna become an exclusive DUQE agent? It's as easy as 1,2,3.
+              Want to become an exclusive DUQE Agent? It's as easy as 1,2,3.
             </Heading>
           </VStack>
           <VStack spacing={[8, 8, 24]} w="full">
@@ -74,7 +74,7 @@ function Signup() {
                 ]}
               >
                 <Heading as="h6" color="brandBlue.default">
-                  Step 1 - Register Yourself
+                  Step 1 - Register as an agent
                 </Heading>
                 <Heading as="h4" className="thin">
                   Register by filling out our form or send us a message at{" "}
@@ -123,10 +123,10 @@ function Signup() {
               </Box>
               <Box flexGrow="1" h="full">
                 <Heading as="h6" color="brandBlue.default">
-                  Step 2 - Login
+                  Complete the paperwork
                 </Heading>
                 <Heading as="h4" className="thin">
-                  <strong>Login an Agent Agreement</strong> with DUQE Free Zone.
+                  <strong>Sign an Agent Agreement</strong> with DUQE Free Zone.
                 </Heading>
               </Box>
             </Stack>
@@ -169,11 +169,11 @@ function Signup() {
               </Box>
               <Box flexGrow="1" h="full">
                 <Heading as="h6" color="brandBlue.default">
-                  Step 3 - Send Trade Licence
+                  Step 3 – Send a copy of your licence
                 </Heading>
                 <Heading as="h4" className="thin">
-                  Send a copy of your{" "}
-                  <strong>Trade Licence (Or Equivalent).</strong>
+                  Send us a copy of your trade licence or any equivalent
+                  document.
                 </Heading>
               </Box>
             </Stack>
@@ -193,7 +193,7 @@ function Signup() {
               className="normal-case"
               sx={{ "&.normal-case": { textTransform: "unset" } }}
             >
-              Login to your DUQE partner account
+              Log in to your DUQE Agent account
             </Heading>
             <Input placeholder="Email Address" />
             <Input placeholder="Password" />

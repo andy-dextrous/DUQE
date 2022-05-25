@@ -21,7 +21,7 @@ function Apply() {
       >
         <VStack spacing={5} flex="1">
           <Heading className="jumbo" flex="1">
-            To Start, Apply Now!
+            READY TO DUQE IT?
           </Heading>
           <Heading as="h3" className="thin-h3" color="dark.default">
             Want to focus on what you do best while we cross your t's and dot

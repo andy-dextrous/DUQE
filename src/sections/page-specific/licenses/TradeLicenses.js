@@ -3,7 +3,7 @@ import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import YellowHeading from "../../../components/common/YellowHeading"
 
-function TradeLicenses() {
+function TradeLicences() {
   return (
     <SectionWrapper
       bg="dark.default"
@@ -13,7 +13,7 @@ function TradeLicenses() {
       <Stack direction={["column", "column", "row"]} spacing={24}>
         <VStack spacing={[8, 8, 12]} mb={24} flex="1">
           <Heading className="jumbo" color="white">
-            Trade License in <YellowHeading>DUQE.</YellowHeading>
+            Trade Licence in <YellowHeading>DUQE</YellowHeading>
           </Heading>
           <Heading as="h3" className="thin-h3" color="white">
             We are excited to be a part of your success story. As such, we offer
@@ -36,7 +36,7 @@ function TradeLicenses() {
             p="70px"
           >
             <Heading as="h3" className="thin-h3">
-              Commercial <strong>License</strong>
+              Commercial <strong>Licence</strong>
             </Heading>
             <Text>
               Planning to sell physical goods in Dubai? A commercial licence
@@ -52,7 +52,7 @@ function TradeLicenses() {
             p="70px"
           >
             <Heading as="h3" className="thin-h3">
-              Professional <strong>License</strong>
+              Professional <strong>Licence</strong>
             </Heading>
             <Text>
               Are you an online business coach, artisan or craftsman? Then a
@@ -69,7 +69,7 @@ function TradeLicenses() {
           >
             <Heading as="h3" className="thin-h3">
               Industrial
-              <strong> License</strong>
+              <strong> Licence</strong>
             </Heading>
             <Text>
               If you’re interested in producing or manufacturing goods, then our
@@ -83,4 +83,4 @@ function TradeLicenses() {
   )
 }
 
-export default TradeLicenses
+export default TradeLicences

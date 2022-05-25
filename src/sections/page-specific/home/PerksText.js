@@ -14,8 +14,7 @@ function PerksText() {
     >
       <VStack spacing={componentSpacing}>
         <Heading className="jumbo" color="white">
-          The perks of Dubai's only free zone{" "}
-          <YellowHeading>on a ship</YellowHeading>
+          NOT JUST ANOTHER <YellowHeading>DUBAI FREE ZONE </YellowHeading>
         </Heading>
         <Heading as="h3" className="thin-h3" color="white">
           Make your mark in Dubai, the start-up capital of the world, and bring

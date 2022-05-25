@@ -31,17 +31,17 @@ function Perks() {
       >
         <Blurb
           img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972190/DUQE/swift-easy.svg"
-          title="Swift & Easy Process"
-          text="DUQE is where you can get everything done for your business – from setup and beyond. Having everything done in-house means you get to enjoy significant savings in time and money."
+          title="Fast & Easy Process"
+          text="DUQE is where you can get everything done for your business – from setup and beyond. Because we do everything in-house, you get to enjoy significant savings in time and money."
         />
         <Blurb
           img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/location.svg"
           title="Unique & Strategic Location"
-          text="DUQE is uniquely situated aboard the QE2, making it easily accessible from almost any part of Dubai. It’s 18 minutes from the Dubai International Airport and 15 minutes away from Burj Khalifa and Dubai Mall."
+          text="DUQE is uniquely situated aboard the QE2, making it easily accessible from almost any part of Dubai. It’s 18 minutes from Dubai International Airport and 15 minutes away from Burj Khalifa and Dubai Mall."
         />
         <Blurb
           img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/hip.svg"
-          title="Entrepreneurs Hip Made More Accessible"
+          title="Entrepreneurship Made More Accessible"
           text="With DUQE’s competitive and flexible company setup packages, realising your dreams doesn’t have to cost a fortune."
         />
       </Stack>
@@ -53,17 +53,17 @@ function Perks() {
       >
         <Blurb
           img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/holistic.svg"
-          title="Holistic Support"
-          text="We have a wide variety of growth services that cater to your every need as a business owner. Whether you need to apply for visas or open a bank account, DUQE can meet your needs."
+          title="End-to-end Support"
+          text="We have a wide variety of value-added services that cater to your every need as a business owner. Whether you need to apply for visas or open a bank account, DUQE can meet your needs."
         />
         <Blurb
           img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/business_centre.svg"
-          title="Business Center"
+          title="Business Centre"
           text="Featuring state-of-the-art facilities and workspaces, DUQE is designed to give you the ideal platform for realising your vision and making things happen."
         />
         <Blurb
           img="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650972189/DUQE/Society.svg"
-          title="Duqe Society"
+          title="Join the tribe"
           text="Join a thriving community of entrepreneurs and founders, grinders and hustlers, who share the same unyielding drive and passion for the things they do."
         />
       </Stack>

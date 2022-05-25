@@ -125,12 +125,12 @@ function ContactPageElements() {
           <Checkbox
             size="lg"
             rounded="2px"
-            value="UAE Driver's License Application"
-            name="UAE Driver's License Application"
-            aria-describedby="UAE Driver's License Application"
+            value="UAE Driver's Licence Application"
+            name="UAE Driver's Licence Application"
+            aria-describedby="UAE Driver's Licence Application"
           >
             <Text fontSize="sm" fontWeight="bold">
-              UAE Driver's License Application
+              UAE Driver's Licence Application
             </Text>
           </Checkbox>
           <Checkbox
@@ -161,12 +161,12 @@ function ContactPageElements() {
         <Checkbox
           size="lg"
           rounded="2px"
-          value="UAE Driver's License Transfer"
-          name="UAE Driver's License Transfer"
-          aria-describedby="UAE Driver's License Transfer"
+          value="UAE Driver's Licence Transfer"
+          name="UAE Driver's Licence Transfer"
+          aria-describedby="UAE Driver's Licence Transfer"
         >
           <Text fontSize="sm" fontWeight="bold">
-            UAE Driver's License Transfer
+            UAE Driver's Licence Transfer
           </Text>
         </Checkbox>
         <Checkbox

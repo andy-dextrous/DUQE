@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { SmartLink } from "./../../components/SmartLink"
 import { Box, Heading, HStack, Image, Text, VStack } from "@chakra-ui/react"
 
 function BlurbInline({ img, title, text, link }) {
@@ -9,9 +9,12 @@ function BlurbInline({ img, title, text, link }) {
       flex="1"
       justifyContent="flex-start"
       spacing={5}
-      sx={{ ".blurb-title": { textTransform: "unset" } }}
+      sx={{
+        ".blurb-title": { textTransform: "unset" },
+        _hover: { ".blurb-title": { color: "brandBlue.default" } },
+      }}
     >
-      <Link to={link}>
+      <SmartLink url={link}>
         <Box h={["40px", "50px"]}>
           <Image src={img} h="100%" />
         </Box>
@@ -21,7 +24,7 @@ function BlurbInline({ img, title, text, link }) {
             {text}
           </Heading>
         </VStack>
-      </Link>
+      </SmartLink>
     </HStack>
   )
 }

@@ -64,8 +64,8 @@ function Hero() {
             Latest articles &<YellowHeading> Insights</YellowHeading>
           </Heading>
           <Heading as="h3" color="white" className="thin-h3">
-            Stay up to date with the latest news and articles from our team of
-            experts in all UAE business matters.
+            Stay up to date with the latest industry news and trends and get
+            exclusive insights from our team of experts.
           </Heading>
         </VStack>
       </Stack>

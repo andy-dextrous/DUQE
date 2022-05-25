@@ -53,12 +53,12 @@ function Benefits() {
       text: " Our accountants will sort out your invoices, receipts, payments,etc. and make sure your financial records are maintained per international standards, so you have one less thing to worry about.",
     },
     {
-      title: "Business Center",
+      title: "Business Centre",
       iconUrl:
         "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1650950415/DUQE/accounting.svg",
       imgUrl:
         "https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/c_scale,q_auto,w_1080/v1651912101/DUQE/Agency_charlesdeluvio-Lks7vei-eAg-unsplash.jpg",
-      text: "Enjoy the flexibility to work and get things done in your own terms. We offer a variety of flexible workspaces and you’re free to choose and book the one that suits you best – from virtual offices and dedicated desks, to private offices and meeting rooms. ",
+      text: "We offer a variety of flexible workspaces and you’re free to choose and book the one that suits you best – from flexi and dedicated desks, to private offices and meeting rooms.",
     },
   ]
 
@@ -124,10 +124,9 @@ function Benefits() {
           Business setup with <YellowHeading>Benefits</YellowHeading>
         </Heading>
         <Heading as="h3" className="thin-h3">
-          You don’t have time to stop and count the beans. Your head needs to be
-          in the game. Making sales, hustling, working on your idea. At DUQE, we
-          take care of the small stuff with our complete spectrum of value-added
-          services that make sure you focus on what matters.
+          Keep your head in the game while we take care of the small stuff with
+          our complete spectrum of value-added services that make sure you focus
+          on what matters.
         </Heading>
       </VStack>
       <CrossIcon

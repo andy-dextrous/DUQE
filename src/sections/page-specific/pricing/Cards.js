@@ -94,8 +94,8 @@ function Cards() {
                 to shape your business{" "}
               </Heading>
               <Heading as="h3" className="thin-h3" color="white">
-                With DUQE, you have the freedom to shape your business and scale
-                it according to your needs.
+                Explore a range of business solutions tailored to give you the
+                most competitive edge and value for money.
               </Heading>
             </VStack>
             {cardData.map((card, i) => {
@@ -145,7 +145,9 @@ function Cards() {
                       )
                     })}
                   </Box>
-                  <Button>Buy Now</Button>
+                  <Link to="/contact-us#form">
+                    <Button>Buy Now</Button>
+                  </Link>
                 </VStack>
               )
             })}
@@ -163,7 +165,7 @@ function Cards() {
                 textAlign={["center", "center", "left"]}
                 color="white"
               >
-                Looking for the ultimate Free Zone?
+                Looking for the ultimate free zone?
               </Heading>
               <Heading
                 color="brandYellow.default"

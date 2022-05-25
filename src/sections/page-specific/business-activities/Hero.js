@@ -65,7 +65,7 @@ function Hero() {
           width={["full", "full", "50%"]}
         >
           <Heading as="h1" color="white">
-            Business
+            DUQE Business
             <YellowHeading>
               <br />
               Activities
@@ -74,7 +74,7 @@ function Hero() {
           <Heading as="h3" color="white" className="thin-h3">
             Setting up in DUQE means freedom. Freedom to chase your dreams.
             Freedom to explore new opportunities. And freedom to choose from
-            over 3,500 business activities.
+            thousands of business activities.
           </Heading>
         </VStack>
       </Stack>

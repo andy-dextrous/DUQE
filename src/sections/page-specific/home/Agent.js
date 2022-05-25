@@ -19,7 +19,7 @@ function Agent() {
           align="start"
           flex="1"
         >
-          <Heading className="jumbo">Become an agent</Heading>
+          <Heading className="jumbo">Be a DUQE agent</Heading>
           <Heading as="h3" className="thin-h3">
             Be part of DUQE’s vibrant start-up community. Connect with aspiring
             founders, CEOs, freelancers and digital nomads and let them know why
@@ -30,7 +30,7 @@ function Agent() {
           </Heading>
           <Link to="/agents">
             {" "}
-            <Button>Become an agent</Button>
+            <Button>Be a DUQE agent</Button>
           </Link>
         </VStack>
         <Square flex="1" zIndex="2">

@@ -56,9 +56,8 @@ function Mission() {
         direction={["column-reverse", "column-reverse", "row"]}
       >
         <Heading as="h3" className="thin-h3" color="white" flex="1">
-          We aim to be the go-to zone for individuals who are passionate and
-          driven about their business ideas and ambitions and who want to be the
-          next unicorn.
+          To be the free zone for the game changers and disruptors who shape our
+          world.
         </Heading>
         <Center
           position="relative"
@@ -71,7 +70,7 @@ function Mission() {
             <br />{" "}
             <Text as="span" color="brandBlue.default">
               {" "}
-              Vision
+              Ambition
             </Text>
           </Heading>
           <Image
