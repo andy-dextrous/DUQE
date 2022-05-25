@@ -1,10 +1,8 @@
-import React, { useContext } from "react"
-import { SubmitContext } from "./Form"
+import React, { useContext, useState } from "react"
 import {
   Button,
   HStack,
   Input,
-  Select,
   SimpleGrid,
   Textarea,
   useBreakpointValue,
@@ -12,7 +10,6 @@ import {
 
 function ContactPageElements() {
   const buttonSize = useBreakpointValue(["sm", "sm", "lg"])
-  const serverState = useContext(SubmitContext)
 
   return (
     <SimpleGrid spacing={4} columns={[1, 1, 2]} flex="1">
@@ -20,63 +17,56 @@ function ContactPageElements() {
         placeholder="Enter your first name"
         size="lg"
         w="full"
-        name="first name"
         fontSize={["xs", "sm", "md"]}
         bg="dark.50"
+        id="firstName"
+        name="firstName"
+        isRequired
       />
       <Input
         placeholder="Enter your last name"
         w="full"
         size="lg"
         bg="dark.50"
-        name="last name"
         fontSize={["xs", "sm", "md"]}
+        id="lastName"
+        name="lastName"
+        isRequired
       />
-
       <Input
-        placeholder="Company name"
+        placeholder="Email address"
         size="lg"
-        isRequired
         w="full"
         bg="dark.50"
-        name="Company Name"
+        fontSize={["xs", "sm", "md"]}
+        id="email"
+        name="email"
+        isRequired
+      />
+      <Input
+        placeholder="Phone"
+        size="lg"
+        w="full"
+        bg="dark.50"
+        id="phone"
+        name="phone"
+        isRequired
         fontSize={["xs", "sm", "md"]}
       />
-      <Select
-        placeholder="How did you hear about us?"
-        color="gray.400"
-        w="full"
-        size="lg"
-        bg="dark.50"
-        isRequired
-        name="Nature of enquiry"
-        fontSize={["xs", "sm", "md"]}
-      >
-        <option value="Google">Google</option>
-        <option value="Social Media">Social Media</option>
-        <option value="YouTube">YouTube</option>
-        <option value="Referral">Referral</option>
-        <option value="Other">Other</option>
-      </Select>
-
       <Textarea
         placeholder="What are you looking for?"
         size="lg"
         bg="dark.50"
+        id="message"
+        name="message"
         isRequired
-        name="Message"
         minH="200px"
         fontSize={["xs", "sm", "md"]}
         border="none"
         gridColumn={["1/ 2", "1/2", "1/3"]}
       />
-      <input type="hidden" id="page" name="Page" value="Contact Page"></input>
       <HStack justify="flex-start" mt={4}>
-        <Button
-          size={buttonSize}
-          type="submit"
-          isLoading={serverState.submitting}
-        >
+        <Button size={buttonSize} type="submit">
           Submit
         </Button>
       </HStack>

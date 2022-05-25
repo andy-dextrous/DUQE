@@ -2,7 +2,7 @@ import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import { Heading, Stack, VStack } from "@chakra-ui/react"
 import { useVariable } from "../../../hooks"
-import HubspotContactForm from "../../../components/forms/HubSpotForm"
+import MasterForm from "../../../components/forms/master-form/Form"
 
 function Contact() {
   const { newsletterOffset } = useVariable()
@@ -16,11 +16,7 @@ function Contact() {
             bring your venture to the forefront of the global market.
           </Heading>
         </VStack>
-        <HubspotContactForm
-          region="na1"
-          portalId="21692856"
-          formId="7c21f9f7-015d-4aea-bf3d-0a5947c1df3e"
-        />
+        <MasterForm flex="1" />
       </Stack>
     </SectionWrapper>
   )

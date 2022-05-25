@@ -3,8 +3,8 @@ import { useVariable } from "../../../hooks/useVariable"
 
 import SectionWrapper from "../../../components/SectionWrapper"
 import YellowHeading from "../../../components/common/YellowHeading"
-import Form from "../../../components/forms/Form"
-import ContactPageElements from "../../../components/forms/ContactPageElements"
+import MasterForm from "../../../components/forms/master-form/Form"
+
 import BlurbInline from "../../../components/common/BlurbInline"
 import { Box, Container, Heading, Stack, VStack } from "@chakra-ui/react"
 
@@ -24,7 +24,7 @@ function ContactUs() {
         </Heading>
       </VStack>
       <Container maxW="720" mt={20}>
-        <Form formElements={<ContactPageElements />} />
+        <MasterForm />
       </Container>
       <Box
         dangerouslySetInnerHTML={{ __html: mapHtml }}

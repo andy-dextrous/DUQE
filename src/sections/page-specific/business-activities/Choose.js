@@ -1,4 +1,4 @@
-import { Button, Heading, HStack, Text, VStack } from "@chakra-ui/react"
+import { Button, Heading, HStack, Link, Text, VStack } from "@chakra-ui/react"
 import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 
@@ -18,7 +18,9 @@ function Choose() {
             business activity. Don't worry though, we've got you. The process is
             super simple (and you can even select multiple activities).
           </Heading>
-          <Button>Download PDF</Button>
+          <Link href="https://duqe.me/wp-content/uploads/2022/05/Business-Activity-List.xlsx">
+            <Button>Download List</Button>
+          </Link>
         </VStack>
       </HStack>
     </SectionWrapper>

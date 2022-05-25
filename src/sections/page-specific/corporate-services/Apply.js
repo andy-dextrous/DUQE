@@ -3,6 +3,7 @@ import React from "react"
 import SectionWrapper from "../../../components/SectionWrapper"
 import Form from "../../../components/forms/Form"
 import CorpServicesElements from "../../../components/forms/CorpServicesElements"
+import MasterForm from "../../../components/forms/master-form/Form"
 
 function Apply() {
   return (
@@ -28,7 +29,7 @@ function Apply() {
           </Heading>
         </VStack>
         <VStack spacing={12} align="start" flex="1" w="full">
-          <Form formElements={<CorpServicesElements />} w="full" />
+          <MasterForm flex="1" />
         </VStack>
       </Stack>
     </SectionWrapper>
