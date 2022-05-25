@@ -8,7 +8,6 @@ export const Input = {
   variants: {
     filled: {
       bg: "#f6f6f6",
-      color: "red",
     },
   },
   sizes: {},

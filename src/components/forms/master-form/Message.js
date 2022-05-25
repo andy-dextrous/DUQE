@@ -13,7 +13,8 @@ function Message({ handleChange, index }) {
       minH="200px"
       fontSize={["xs", "sm", "md"]}
       border="none"
-      gridColumn={["1/ 2", "1/2", "1/3"]}
+      gridColumnStart={1}
+      gridColumnEnd={[3]}
       value={message}
       isRequired
       onChange={e => {

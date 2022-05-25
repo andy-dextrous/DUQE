@@ -7,5 +7,6 @@
   { "name": "interest", "value": "" },
   { "name": "how_soon__c", "value": "" },
   { "name": "duqe_services_corp", "value": "" },
+  { "name": "industry", "value": "" },
   { "name": "message", "value": "" }
 ]

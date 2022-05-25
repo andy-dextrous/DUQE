@@ -90,7 +90,7 @@ function Sidebar() {
             })
             .map((answer, index) => {
               return answer.summary ? (
-                <HStack key={index}>
+                <HStack key={answer.summary + index}>
                   <Text fontSize="sm">{answer.summary}</Text>{" "}
                   <Tag bg="brandYellow.300">{answer.answer}</Tag>
                 </HStack>

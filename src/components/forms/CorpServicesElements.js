@@ -21,7 +21,7 @@ function ContactPageElements() {
 
   return (
     <SimpleGrid spacing={4} columns={[1, 1, 2]} flex="1" width="full">
-      <Heading gridColumn={["1/2", "1/2", "1/3"]} pb={4}>
+      <Heading as="h4" gridColumn={["1/2", "1/2", "1/3"]} pb={4}>
         Apply Now
       </Heading>
       <Input

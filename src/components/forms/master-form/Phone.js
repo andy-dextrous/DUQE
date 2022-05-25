@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import countryCodes from "country-codes-list"
 import data from "./data.json"
 import {
@@ -23,7 +23,7 @@ function Phone({ handleChange, index }) {
     })
 
   return (
-    <InputGroup>
+    <InputGroup gridColumnStart={[1, 1, 2]} gridColumnEnd={[3, 3, 3]}>
       <InputLeftElement
         width={24}
         children={

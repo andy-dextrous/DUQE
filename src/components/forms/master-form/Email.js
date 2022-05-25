@@ -8,8 +8,9 @@ function Email({ handleChange, index }) {
     <Input
       placeholder="Email address"
       size="lg"
-      w="full"
       bg="dark.50"
+      gridColumnStart={1}
+      gridColumnEnd={[3, 3, 2]}
       fontSize={["xs", "sm", "md"]}
       id={data[index].name}
       name={data[index].name}
