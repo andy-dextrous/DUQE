@@ -2,7 +2,7 @@
   { "name": "firstname", "value": "" },
   { "name": "lastname", "value": "" },
   { "name": "email", "value": "" },
-  { "name": "countrycode", "value": "" },
+  { "name": "duqe_country_code_cc", "value": "" },
   { "name": "phone", "value": "" },
   { "name": "interest", "value": "" },
   { "name": "how_soon__c", "value": "" },
