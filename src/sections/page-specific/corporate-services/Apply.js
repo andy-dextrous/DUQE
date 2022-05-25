@@ -28,7 +28,7 @@ function Apply() {
           </Heading>
         </VStack>
         <VStack spacing={12} align="start" flex="1" w="full">
-          <Form formElements={<CorpServicesElements />} w="full" />
+          {/* <Form formElements={<CorpServicesElements />} w="full" /> */}
         </VStack>
       </Stack>
     </SectionWrapper>

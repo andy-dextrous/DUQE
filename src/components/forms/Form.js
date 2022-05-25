@@ -1,46 +1,17 @@
 import React, { useEffect, useRef, useState } from "react"
-import axios from "axios"
 import { Box, FormControl, Heading, Text } from "@chakra-ui/react"
 
-export const SubmitContext = React.createContext()
-
-function GetForm({ formElements, ...props }) {
+function Form({
+  label = "contact",
+  formElements,
+  formId = "",
+  initialState = {},
+  ...props
+}) {
   const [submitted, setSubmitted] = useState(false)
-  const [serverState, setServerState] = useState({
-    submitting: false,
-    status: null,
-  })
   const [formHeight, setFormHeight] = useState("50vh")
+
   const formRef = useRef()
-
-  function handleServerResponse(ok, msg, form) {
-    setServerState({
-      submitting: false,
-      status: { ok, msg },
-    })
-    if (ok) {
-      form.reset()
-      setSubmitted(true)
-      console.log(serverState)
-    }
-  }
-
-  function handleOnSubmit(e) {
-    e.preventDefault()
-    const form = e.target
-    setServerState({ submitting: true })
-    axios({
-      method: "post",
-      url: process.env.GATSBY_GETFORM_ENDPOINT,
-      data: new FormData(form),
-    })
-      .then(r => {
-        handleServerResponse(true, "Thanks!", form)
-      })
-      .catch(r => {
-        handleServerResponse(false, r.response.data.error, form)
-      })
-  }
 
   useEffect(() => {
     const height = formRef.current?.getBoundingClientRect().height
@@ -50,15 +21,14 @@ function GetForm({ formElements, ...props }) {
   return !submitted ? (
     <Box
       as="form"
-      name="contact"
-      onSubmit={handleOnSubmit}
+      name={label}
+      data-form-id={formId}
+      data-portal-id="21692856"
+      onSubmit={e => handleSubmit(e, setSubmitted, formId)}
       ref={formRef}
       {...props}
     >
-      <input type="hidden" name="form-name" value="contact" />
-      <SubmitContext.Provider value={serverState}>
-        <FormControl>{formElements}</FormControl>
-      </SubmitContext.Provider>
+      <FormControl>{formElements}</FormControl>
     </Box>
   ) : (
     <Box height={formHeight} {...props}>
@@ -68,4 +38,4 @@ function GetForm({ formElements, ...props }) {
   )
 }
 
-export default GetForm
+export default Form
