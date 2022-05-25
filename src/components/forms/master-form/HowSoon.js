@@ -21,9 +21,9 @@ function HowSoon({ handleChange, index }) {
         handleChange(e.target.value, index)
       }}
     >
-      <option value="Business Setup">This Month</option>
-      <option value="Corporate Services">Next Month</option>
-      <option value="General Enquiry">3 months</option>
+      <option value="This Month">This Month</option>
+      <option value="Nect Month">Next Month</option>
+      <option value="3 Months">3 months</option>
     </Select>
   )
 }
