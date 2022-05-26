@@ -47,7 +47,7 @@ function Hero() {
 
   return (
     <SectionWrapper
-      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651140760/DUQE/Licences.png"
+      bgImage="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/q_auto/v1651140760/DUQE/Licenses.png"
       h="100vh"
       overlay
       isFirstSection
@@ -78,7 +78,7 @@ function Hero() {
         </VStack>
       </Stack>
       <Image
-        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651140758/DUQE/Licence_vector.svg"
+        src="https://res.cloudinary.com/andrew-scrivens-guitar-lessons/image/upload/v1651140758/DUQE/License_vector.svg"
         position="absolute"
         top={"0"}
         right="0"
