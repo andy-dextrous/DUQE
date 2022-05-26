@@ -56,7 +56,7 @@ function TopBar() {
               _hover={{ transform: "scale(1.2)", bg: "rgba(255,255,255,0.1)" }}
               _focus={{ color: "dark.default" }}
               _active={{ color: "dark.default", transform: "scale(1.1)" }}
-              icon={<BsFillTelephoneFill size="22px" color="#62c6c1" />}
+              icon={<BsFillTelephoneFill size="20px" color="white" />}
             />
           </Link>
           <SearchToggle
